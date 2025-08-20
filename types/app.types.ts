@@ -1,4 +1,7 @@
-export type TranslationMode = 'toGenZ' | 'toEnglish';
+export enum TranslationMode {
+  TO_GENZ = 'toGenZ',
+  TO_ENGLISH = 'toEnglish'
+}
 
 // History item structure
 export interface HistoryItem {
