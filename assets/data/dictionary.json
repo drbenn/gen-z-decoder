@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "term": "no cap",
+    "definition": "No lie, telling the truth, being serious",
+    "example": "That movie was incredible, no cap"
+  },
+  {
+    "id": "2", 
+    "term": "bet",
+    "definition": "Agreement, okay, sounds good",
+    "example": "Wanna hang out later? Bet!"
+  },
+  {
+    "id": "3",
+    "term": "fr fr", 
+    "definition": "For real, for real - emphasizing truth or agreement",
+    "example": "That test was so hard fr fr"
+  },
+  {
+    "id": "4",
+    "term": "periodt",
+    "definition": "End of discussion, final statement",
+    "example": "I'm the best at this game, periodt"
+  },
+  {
+    "id": "5",
+    "term": "slay",
+    "definition": "To do something excellently or look amazing",
+    "example": "You absolutely slayed that presentation"
+  },
+  {
+    "id": "6",
+    "term": "it's giving",
+    "definition": "It reminds me of, it has the vibe of",
+    "example": "This outfit is giving main character energy"
+  },
+  {
+    "id": "7",
+    "term": "lowkey",
+    "definition": "Somewhat, kind of, secretly",
+    "example": "I'm lowkey excited about this party"
+  },
+  {
+    "id": "8",
+    "term": "highkey", 
+    "definition": "Obviously, definitely, openly",
+    "example": "I highkey love this song"
+  },
+  {
+    "id": "9",
+    "term": "bussin",
+    "definition": "Really good, especially referring to food",
+    "example": "This pizza is absolutely bussin"
+  },
+  {
+    "id": "10",
+    "term": "mid",
+    "definition": "Mediocre, average, not impressive",
+    "example": "That movie was pretty mid honestly"
+  },
+  {
+    "id": "11",
+    "term": "rizz",
+    "definition": "Charisma, charm, ability to attract someone",
+    "example": "He's got serious rizz with everyone"
+  },
+  {
+    "id": "12",
+    "term": "simp",
+    "definition": "Someone who does too much for someone they like",
+    "example": "Stop simping and just be yourself"
+  },
+  {
+    "id": "13",
+    "term": "sus",
+    "definition": "Suspicious, questionable, sketchy",
+    "example": "That excuse sounds pretty sus to me"
+  },
+  {
+    "id": "14",
+    "term": "fire",
+    "definition": "Excellent, amazing, really good",
+    "example": "Your new haircut is absolutely fire"
+  },
+  {
+    "id": "15",
+    "term": "drip",
+    "definition": "Stylish outfit or good fashion sense",
+    "example": "Your drip is unmatched today"
+  },
+  {
+    "id": "16",
+    "term": "based",
+    "definition": "Being yourself regardless of others' opinions",
+    "example": "That's such a based take on the situation"
+  },
+  {
+    "id": "17",
+    "term": "cap",
+    "definition": "Lie, false statement, not true",
+    "example": "You saying you studied all night is cap"
+  },
+  {
+    "id": "18",
+    "term": "slaps",
+    "definition": "Something that's really good, especially music",
+    "example": "This new song absolutely slaps"
+  },
+  {
+    "id": "19",
+    "term": "say less",
+    "definition": "I understand, you don't need to explain more",
+    "example": "Free food at the event? Say less!"
+  },
+  {
+    "id": "20",
+    "term": "vibe check",
+    "definition": "Assessing someone's mood or energy",
+    "example": "You seem off today, just doing a vibe check"
+  }
+]

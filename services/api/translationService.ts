@@ -68,15 +68,12 @@ export class TranslationService {
 
   // Download updated dictionary data
   static async downloadDictionary(): Promise<any[]> {
-    // Mock for development
+    // Load actual starter dictionary in development
     if (__DEV__) {
-      return [
-        { id: '1', term: 'no cap', definition: 'No lie, telling the truth', examples: ['That movie was amazing, no cap'] },
-        { id: '2', term: 'bet', definition: 'Agreement, okay', examples: ['Wanna hang out? Bet!'] },
-        { id: '3', term: 'fr fr', definition: 'For real, for real', examples: ['That test was hard fr fr'] },
-      ];
+      const dictionary = require('../../../assets/data/dictionary.json');
+      return dictionary;
     }
 
-    return HttpClient.getDictionaryVersion(); // You'll need to add downloadDictionary to HttpClient
+    return HttpClient.downloadDictionary();
   }
 }

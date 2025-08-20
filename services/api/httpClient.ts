@@ -1,3 +1,4 @@
+// src/services/api/httpClient.ts
 import { DeviceService } from './deviceService';
 
 const API_BASE = __DEV__ ? 'http://localhost:3000/api' : 'https://yoursite.com/api';
@@ -27,6 +28,11 @@ export class HttpClient {
       method: 'POST',
       body: JSON.stringify(data),
     });
+  }
+
+  // Download dictionary data from server
+  static async downloadDictionary(): Promise<any> {
+    return this.request('/dictionary/download', { method: 'GET' });
   }
 
   // Internal HTTP wrapper - adds device ID auth header to all requests
