@@ -27,22 +27,18 @@ export default function TabLayout() {
         }),
       }}>
       <Tabs.Screen
-        name="library"
+        name="translate"
         options={{
-          title: 'Library',
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="library-outline" size={28} color={color} />
-          ),
+          title: 'Translate',
+          tabBarIcon: ({ color }) => <Ionicons name="repeat" size={28} color={color} />,
         }}
       />
       
       <Tabs.Screen
-        name="translate"
+        name="library"
         options={{
-          title: 'Translate',
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="repeat" size={32} color={color} />
-          ),
+          title: 'Library', 
+          tabBarIcon: ({ color }) => <Ionicons name="library-outline" size={28} color={color} />,
         }}
       />
       
@@ -50,9 +46,7 @@ export default function TabLayout() {
         name="settings"
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="settings-outline" size={28} color={color} />
-          ),
+          tabBarIcon: ({ color }) => <Ionicons name="settings-outline" size={28} color={color} />,
         }}
       />
     </Tabs>
