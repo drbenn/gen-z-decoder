@@ -1,3 +1,136 @@
+# STUFF
+
+<!-- 
+   To clean and rebuild your Expo project's native directories (iOS and Android), you should use the command npx expo prebuild --clean. This command removes the existing native directories (ios and android) and then rebuilds them based on your project's configuration in app.json. It ensures that your native code is synchronized with your current configuration
+-->
+eas build:configure
+
+## Test Build vs Production Build
+
+# ⚠️ DANGER ZONE - EACH OF THESE COUNTS AS 1 BUILD
+
+eas build --platform android
+eas build --platform ios  
+eas build --platform all
+eas build --platform android --profile development                 THIS ONE!!! for personal dev testing(Allows notifications!!!)
+
+## When Building use this progression
+
+## step 1
+
+npx expo prebuild --clean                do this first to delete and rebuild android/ios folders(should fix cached app icons and splash screen)
+
+## Step 2
+
+a. npx expo run:android --variant release
+build a local release to test for build errors so you dont BURN/WASTE expo builds(bc errored builds still count towards free limit)
+definitely free, needs android emulator, and only runs on local machine
+
+OR
+
+b. eas build --platform android --profile preview --local
+should be free, can share apk file, requires android studio
+
+## Step 3
+
+Exactly! That's almost certainly the issue. EAS builds from your committed code, not your working directory changes.
+
+eas build --platform android --profile preview                     Similiar to dev but for test user and play store internal testing(But CANNOT TEST notifications!!)
+eas build --platform android --profile preview
+eas build --clear-cache --platform android --profile preview
+
+# ✅ SAFE ZONE - USE THESE ALL YOU WANT
+
+expo run:android                    # Local development
+expo run:android --device          # Run on physical device
+expo start                         # Start dev server
+expo install                       # Install packages
+eas login                          # Login to account
+eas build:configure                # Setup only (no build!)
+
+## Dev build to prod build
+
+# Clear NPX cache completely
+
+npm cache clean --force
+
+# Clear NPX specific cache
+
+npx expo start --clear --reset-cache
+
+## For development build
+
+npx expo run:android
+
+## or
+
+npx expo run:ios
+
+## Opening DevTools in Expo
+
+1. From Expo CLI (Terminal):
+While your development server is running, press:
+
+j → Opens DevTools in browser
+shift + d → Shows development menu in app
+
+2. From the Device/Emulator:
+Android Emulator:
+
+Ctrl + M (Windows/Linux) or Cmd + M (Mac)
+Or shake the device (if using physical device)
+
+3. From Expo DevTools in Browser:
+
+Look for the "Open DevTools" button in your Expo development server webpage
+Usually opens at <http://localhost:19002/> or similar
+
+What you get access to:
+React DevTools:
+
+Component tree inspection
+Props and state debugging
+Performance profiling
+
+Network Inspector:
+
+API calls and responses
+Network request timing
+
+Element Inspector:
+
+Layout and styling debugging
+Similar to browser DevTools
+
+Console/Logs:
+
+// logger.log outputs
+Error messages and warnings
+
+Pro Tips:
+Enable DevTools by default:
+Add this to your app.json:
+{
+  "expo": {
+    "developer": {
+      "tool": "expo-cli"
+    }
+  }
+}
+
+Keyboard shortcuts while DevTools open:
+
+Ctrl/Cmd + R → Reload app
+Ctrl/Cmd + Shift + R → Hard reload
+Ctrl/Cmd + Shift + I → Toggle inspector
+
+Alternative access:
+bash##
+From terminal while app is running
+npx expo start --dev-client
+
+## Then press 'j' to open DevTools
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
