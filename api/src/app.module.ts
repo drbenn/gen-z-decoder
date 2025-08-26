@@ -7,7 +7,9 @@ import { TranslationModule } from './translation/translation.module';
 import { DictionaryModule } from './dictionary/dictionary.module';
 import { utilities as nestWinstonModuleUtilities, WinstonModule } from 'nest-winston';
 import winston from 'winston';
-import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { APP_FILTER, APP_GUARD } from '@nestjs/core';
+import { ThrottleLoggingFilter } from './guards/throttle-logging-filter/throttle-logging-filter.guard';
 
 @Module({
   imports: [
@@ -50,6 +52,20 @@ import { ThrottlerModule } from '@nestjs/throttler';
   
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      /**
+       * Keep the simple built-in guard - needed in provider as the app module import only works on app level,
+       * whereas now as a provider can be used at any entrypoint
+       */
+      useClass: ThrottlerGuard,
+    },
+    {
+      provide: APP_FILTER,
+      useClass: ThrottleLoggingFilter,
+    }
+  ],
 })
 export class AppModule {}

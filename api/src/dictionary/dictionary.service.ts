@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { DictionaryVersionResponseDto, DictionaryDownloadResponseDto } from 'typings/dictionary.types';
+import { DictionaryVersionResponseDto, DictionaryDownloadResponseDto } from 'src/dictionary/dictionary.dto';
 
 @Injectable()
 export class DictionaryService {
