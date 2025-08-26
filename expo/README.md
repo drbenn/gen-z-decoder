@@ -1,5 +1,10 @@
 # STUFF
 
+
+# Development Command
+npx expo start --clear --reset-cache
+
+
 <!-- 
    To clean and rebuild your Expo project's native directories (iOS and Android), you should use the command npx expo prebuild --clean. This command removes the existing native directories (ios and android) and then rebuilds them based on your project's configuration in app.json. It ensures that your native code is synchronized with your current configuration
 -->
