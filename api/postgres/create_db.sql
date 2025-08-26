@@ -33,8 +33,8 @@ CREATE TABLE daily_usage (
     device_id VARCHAR(255) NOT NULL,
     date DATE NOT NULL,
     translation_count INTEGER DEFAULT 0,
-    mode_gen_to_english INTEGER DEFAULT 0,
-    mode_english_to_gen INTEGER DEFAULT 0,
+    mode_genz_to_english INTEGER DEFAULT 0,
+    mode_english_to_genz INTEGER DEFAULT 0,
     created_at TIMESTAMP DEFAULT NOW(),
     CONSTRAINT fk_daily_usage_device FOREIGN KEY (device_id) REFERENCES users(device_id) ON DELETE CASCADE,
     CONSTRAINT unique_device_date UNIQUE(device_id, date)
@@ -104,8 +104,8 @@ CREATE INDEX idx_analytics_device_id ON analytics_events(device_id);
 -- INITIAL DATA
 -- ============================================
 -- Insert initial dictionary version (placeholder)
-INSERT INTO dictionary_versions (version, release_date, download_url, is_active)
-VALUES ('1.0.0', CURRENT_DATE, 'https://api.sparkdart.com/dictionary/v1.json', true);
+-- INSERT INTO dictionary_versions (version, release_date, download_url, is_active)
+-- VALUES ('1.0.0', CURRENT_DATE, 'https://api.sparkdart.com/dictionary/v1.json', true);
 
 -- ============================================
 -- USEFUL QUERIES FOR DEVELOPMENT

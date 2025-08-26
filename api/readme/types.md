@@ -71,8 +71,8 @@ CREATE TABLE daily_usage (
   device_id VARCHAR(255),
   date DATE,
   translation_count INTEGER,
-  mode_gen_to_english INTEGER DEFAULT 0,
-  mode_english_to_gen INTEGER DEFAULT 0,
+  mode_genz_to_english INTEGER DEFAULT 0,
+  mode_english_to_genz INTEGER DEFAULT 0,
   UNIQUE(device_id, date)
 );
 

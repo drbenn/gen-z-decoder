@@ -1,0 +1,87 @@
+[
+  {
+    "id": "no-cap-001",
+    "term": "no cap",
+    "pronunciation": null,
+    "definition": "means 'no lie', 'for real', or 'I'm being honest'",
+    "examples": [
+      "that pizza was fire no cap",
+      "I'm going to bed early tonight no cap",
+      "she's the smartest person I know no cap"
+    ],
+    "category": "COMMUNICATION",
+    "sentiment": "NEUTRAL",
+    "contexts": ["TEXTING", "CASUAL_CONVERSATION", "SOCIAL_MEDIA"],
+    "popularity": 9,
+    "related_terms": ["fr", "for real", "deadass", "on god"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "cap-002", 
+    "term": "cap",
+    "pronunciation": null,
+    "definition": "means 'lie' or 'false statement' - the opposite of 'no cap'",
+    "examples": [
+      "that's cap, you didn't really meet him",
+      "stop capping about your grades",
+      "why you always capping bro"
+    ],
+    "category": "COMMUNICATION",
+    "sentiment": "NEGATIVE",
+    "contexts": ["TEXTING", "CASUAL_CONVERSATION"],
+    "popularity": 8,
+    "related_terms": ["no cap", "lying", "fake"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "bet-003",
+    "term": "bet", 
+    "pronunciation": null,
+    "definition": "means 'yes', 'okay', 'sounds good', or 'I agree'",
+    "examples": [
+      "want to go to the movies? bet",
+      "meet me at 6pm? bet that sounds good",
+      "you bringing snacks? bet"
+    ],
+    "category": "COMMUNICATION",
+    "sentiment": "POSITIVE", 
+    "contexts": ["TEXTING", "CASUAL_CONVERSATION"],
+    "popularity": 9,
+    "related_terms": ["say less", "word", "copy"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "say-less-004",
+    "term": "say less",
+    "pronunciation": null,
+    "definition": "means 'I understand', 'you don't need to explain more', or 'I'm already convinced'",
+    "examples": [
+      "there's free pizza in the break room. say less",
+      "want to skip class and go to the beach? say less",
+      "movie night at my place tonight. say less I'm there"
+    ],
+    "category": "COMMUNICATION", 
+    "sentiment": "POSITIVE",
+    "contexts": ["TEXTING", "CASUAL_CONVERSATION"],
+    "popularity": 7,
+    "related_terms": ["bet", "understood", "copy"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "periodt-005",
+    "term": "periodt",
+    "pronunciation": "PEE-ree-id",
+    "definition": "means 'period' but with extra emphasis - used to end a statement definitively, like 'and that's final'",
+    "examples": [
+      "I'm the best player on this team periodt", 
+      "pineapple belongs on pizza periodt",
+      "she's going to win that competition periodt"
+    ],
+    "category": "COMMUNICATION",
+    "sentiment": "POSITIVE",
+    "contexts": ["TEXTING", "SOCIAL_MEDIA"],
+    "popularity": 6,
+    "related_terms": ["period", "facts", "and that's on god"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  }
+]

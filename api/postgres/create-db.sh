@@ -31,8 +31,8 @@ CREATE TABLE \"daily_usage\" (
     device_id VARCHAR(255) NOT NULL,
     date DATE NOT NULL,
     translation_count INTEGER DEFAULT 0,
-    mode_gen_to_english INTEGER DEFAULT 0,
-    mode_english_to_gen INTEGER DEFAULT 0,
+    mode_genz_to_english INTEGER DEFAULT 0,
+    mode_english_to_genz INTEGER DEFAULT 0,
     created_at TIMESTAMP DEFAULT NOW(),
     CONSTRAINT fk_daily_usage_device FOREIGN KEY (device_id) REFERENCES users(device_id) ON DELETE CASCADE,
     CONSTRAINT unique_device_date UNIQUE(device_id, date)
@@ -68,10 +68,10 @@ CREATE INDEX idx_purchases_device_id ON purchases(device_id);
 -- ============================================
 -- Track dictionary \"updates\" (monthly releases)
 CREATE TABLE dictionary_versions (
-    id UUID PRIMARY KEY,
+    id UUID PRIMARY KEY, -- Client-generated UUID
     version VARCHAR(50) UNIQUE NOT NULL,
     release_date DATE NOT NULL,
-    download_url TEXT NOT NULL,
+    dictionary_content JSONB NOT NULL, -- The actual dictionary data
     is_active BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT NOW()
 );
@@ -97,5 +97,7 @@ CREATE TABLE \"analytics_events\" (
 CREATE INDEX idx_analytics_event_type ON analytics_events(event_type);
 CREATE INDEX idx_analytics_created_at ON analytics_events(created_at);
 CREATE INDEX idx_analytics_device_id ON analytics_events(device_id);
+
+
 
 "
