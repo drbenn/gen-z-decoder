@@ -4,12 +4,14 @@ import { Logger } from 'winston'
 import { v4 as uuidv4 } from 'uuid'
 import { DatabaseService } from '../database/database.service'
 import { TranslationMode } from '../translate/translate.dto'
+import { UserService } from 'src/user/user.service'
 
 @Injectable()
 export class UsageService {
   constructor(
     private readonly db: DatabaseService,
-    @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger
+    @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
+    private readonly userService: UserService,
   ) {}
 
   // Track a successful translation
@@ -19,11 +21,7 @@ export class UsageService {
 
     try {
       // Ensure user exists first
-      await this.db.query(`
-        INSERT INTO users (device_id, created_at, last_active)
-        VALUES ($1, NOW(), NOW())
-        ON CONFLICT (device_id) DO UPDATE SET last_active = NOW()
-      `, [deviceId])
+      await this.userService.ensureUser(deviceId)
 
       // Track usage with correct mode counters
       const isGenToEnglish = mode === TranslationMode.GENZ_TO_ENGLISH ? 1 : 0
