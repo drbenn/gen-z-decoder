@@ -50,12 +50,11 @@ import { DatabaseService } from './database/database.service';
     }),
     DictionaryModule,
     TranslateModule,
-    UsageModule
-  
+    UsageModule  
   ],
   controllers: [AppController],
   providers: [
-    AppService,
+    AppService,DatabaseService,
     {
       provide: APP_GUARD,
       /**
@@ -67,8 +66,8 @@ import { DatabaseService } from './database/database.service';
     {
       provide: APP_FILTER,
       useClass: ThrottleLoggingFilter,
-    }
+    },
+    
   ],
-  exports: [DatabaseService]
 })
 export class AppModule {}

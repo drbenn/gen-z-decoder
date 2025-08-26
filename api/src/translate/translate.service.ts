@@ -8,6 +8,7 @@ import {
   TranslateResponseDto, 
   TranslationMode 
 } from './translate.dto'
+import { DatabaseService } from 'src/database/database.service'
 
 @Injectable()
 export class TranslateService {
@@ -15,7 +16,8 @@ export class TranslateService {
 
   constructor(
     private readonly configService: ConfigService,
-    @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger
+    @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
+    private readonly db: DatabaseService
   ) {
     const apiKey = this.configService.get<string>('OPENAI_API_KEY')
     
@@ -26,6 +28,15 @@ export class TranslateService {
     this.openai = new OpenAI({
       apiKey: apiKey,
     })
+  }
+
+  // Add this simple test method
+  async testDatabase(): Promise<{ status: string, time: string }> {
+    const result = await this.db.query('SELECT NOW() as current_time')
+    return {
+      status: 'database connected',
+      time: result.rows[0].current_time
+    }
   }
 
   async translateText(

@@ -1,4 +1,4 @@
-import { Controller, Post, Body, UseGuards, Request } from '@nestjs/common'
+import { Controller, Post, Body, UseGuards, Request, Get } from '@nestjs/common'
 import { Throttle } from '@nestjs/throttler'
 import { DeviceAuthGuard } from 'src/guards/device-auth/device-auth.guard'
 import { TranslateService } from './translate.service'
@@ -31,5 +31,10 @@ export class TranslateController {
       status: 'Translation service is working!',
       deviceId: req.deviceId
     }
+  }
+
+  @Get('db-test')
+  async testDatabase() {
+    return await this.translationService.testDatabase()
   }
 }
