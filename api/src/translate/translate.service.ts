@@ -9,6 +9,7 @@ import {
   TranslationMode 
 } from './translate.dto'
 import { DatabaseService } from 'src/database/database.service'
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class TranslateService {
@@ -36,6 +37,35 @@ export class TranslateService {
     return {
       status: 'database connected',
       time: result.rows[0].current_time
+    }
+  }
+
+  // Test database write - track a fake translation
+  async testUsageTracking(deviceId: string): Promise<{ status: string, record: any }> {
+    const today = new Date().toISOString().split('T')[0] // YYYY-MM-DD
+    const recordId = uuidv4() // Generate proper UUID
+    
+    // First, ensure user exists (create if not exists)
+    await this.db.query(`
+      INSERT INTO users (device_id, created_at, last_active)
+      VALUES ($1, NOW(), NOW())
+      ON CONFLICT (device_id) DO NOTHING
+    `, [deviceId])
+    
+    // Then insert usage tracking
+    const result = await this.db.query(`
+      INSERT INTO daily_usage (id, device_id, date, translation_count, mode_genz_to_english, mode_english_to_genz)
+      VALUES ($1, $2, $3, 1, 1, 0)
+      ON CONFLICT (device_id, date) 
+      DO UPDATE SET 
+        translation_count = daily_usage.translation_count + 1,
+        mode_genz_to_english = daily_usage.mode_genz_to_english + 1
+      RETURNING *
+    `, [recordId, deviceId, today])
+
+    return {
+      status: 'usage tracked',
+      record: result.rows[0]
     }
   }
 
