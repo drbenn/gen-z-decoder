@@ -3,17 +3,18 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsageModule } from './usage/usage.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TranslationModule } from './translation/translation.module';
 import { DictionaryModule } from './dictionary/dictionary.module';
 import { utilities as nestWinstonModuleUtilities, WinstonModule } from 'nest-winston';
 import winston from 'winston';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { ThrottleLoggingFilter } from './guards/throttle-logging-filter/throttle-logging-filter.guard';
+import { TranslateModule } from './translate/translate.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
+      envFilePath: './env/namecheap.production.env',
       isGlobal: true,
     }),
     ThrottlerModule.forRootAsync({
@@ -47,7 +48,7 @@ import { ThrottleLoggingFilter } from './guards/throttle-logging-filter/throttle
       })
     }),
     DictionaryModule,
-    TranslationModule,
+    TranslateModule,
     UsageModule
   
   ],
