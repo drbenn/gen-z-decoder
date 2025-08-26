@@ -1,8 +1,8 @@
 import { IsString, IsEnum, IsNotEmpty, MaxLength } from 'class-validator'
 
 export enum TranslationMode {
-  GEN_TO_ENGLISH = 'genz_to_english',
-  ENGLISH_TO_GEN = 'english_to_genz'
+  GENZ_TO_ENGLISH = 'genz_to_english',
+  ENGLISH_TO_GENZ = 'english_to_genz'
 }
 
 export class TranslateRequestDto {

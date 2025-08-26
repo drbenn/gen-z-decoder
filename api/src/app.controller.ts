@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('db-test')
+  async testDatabase() {
+    return await this.appService.testDatabase()
+  }
 }

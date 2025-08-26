@@ -33,13 +33,4 @@ export class TranslateController {
     }
   }
 
-  @Get('db-test')
-  async testDatabase() {
-    return await this.translationService.testDatabase()
-  }
-
-  @Post('test-usage')
-  async testUsage(@Request() req) {
-    return await this.translationService.testUsageTracking(req.deviceId)
-  }
 }

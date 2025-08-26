@@ -11,6 +11,7 @@ import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { ThrottleLoggingFilter } from './guards/throttle-logging-filter/throttle-logging-filter.guard';
 import { TranslateModule } from './translate/translate.module';
 import { DatabaseService } from './database/database.service';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -50,7 +51,8 @@ import { DatabaseService } from './database/database.service';
     }),
     DictionaryModule,
     TranslateModule,
-    UsageModule  
+    UsageModule,
+    UserModule  
   ],
   controllers: [AppController],
   providers: [
