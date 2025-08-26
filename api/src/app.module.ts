@@ -10,6 +10,7 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { APP_FILTER, APP_GUARD } from '@nestjs/core';
 import { ThrottleLoggingFilter } from './guards/throttle-logging-filter/throttle-logging-filter.guard';
 import { TranslateModule } from './translate/translate.module';
+import { DatabaseService } from './database/database.service';
 
 @Module({
   imports: [
@@ -68,5 +69,6 @@ import { TranslateModule } from './translate/translate.module';
       useClass: ThrottleLoggingFilter,
     }
   ],
+  exports: [DatabaseService]
 })
 export class AppModule {}
