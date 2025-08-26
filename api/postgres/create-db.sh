@@ -47,7 +47,7 @@ CREATE INDEX idx_daily_usage_device_date ON daily_usage(device_id, date);
 -- PURCHASES TABLE
 -- ============================================
 -- Google Play IAP tracking (cross-device premium)
-CREATE TABLE \"purchase\" (
+CREATE TABLE \"purchases\" (
     id UUID PRIMARY KEY,
     google_order_id TEXT UNIQUE NOT NULL,
     product_id VARCHAR(100) NOT NULL,
@@ -58,10 +58,10 @@ CREATE TABLE \"purchase\" (
     CONSTRAINT fk_purchases_device FOREIGN KEY (device_id) REFERENCES users(device_id) ON DELETE SET NULL
 );
 
-# -- Indexes for performance  
-# CREATE INDEX idx_purchases_google_order_id ON purchases(google_order_id);
-# CREATE INDEX idx_purchases_verified ON purchases(verified);
-# CREATE INDEX idx_purchases_device_id ON purchases(device_id);
+-- Indexes for performance  
+CREATE INDEX idx_purchases_google_order_id ON purchases(google_order_id);
+CREATE INDEX idx_purchases_verified ON purchases(verified);
+CREATE INDEX idx_purchases_device_id ON purchases(device_id);
 
 -- ============================================
 -- DICTIONARY VERSIONS TABLE
