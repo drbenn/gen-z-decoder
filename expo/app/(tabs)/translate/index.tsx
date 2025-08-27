@@ -1,6 +1,7 @@
 import adInterstitialService from '@/services/ad/AdInterstitialService'
 import { useAppState } from '@/state/useAppState'
 import { TranslationMode } from '@/types/translate.types'
+import { router } from 'expo-router'
 import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -35,10 +36,12 @@ export default function TranslateInputScreen() {
         if (adShown) {
           markInterstitialShown()
         }
+
       } catch (error) {
         logger.log('❌ Ad service error:', error)
       }
     }
+    router.push('/(tabs)/translate/result')
   }
 
   const getPlaceholder = () => {

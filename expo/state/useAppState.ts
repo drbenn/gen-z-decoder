@@ -1,8 +1,9 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 import { adSlice, AdSlice } from './slices/adSlice';
 import { translateSlice, TranslateSlice } from './slices/translateSlice';
 import { appControlSlice, AppControlSlice } from './slices/appControlSlice';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export type AppState = AdSlice & TranslateSlice & AppControlSlice;
 
@@ -15,6 +16,7 @@ export const useAppState = create<AppState>()(
     }),
     {
       name: 'app-storage',
+      storage: createJSONStorage(() => AsyncStorage), // ✅ Configure AsyncStorage for React Native
       partialize: (state) => ({
         translationCount: state.translationCount,
         lastInterstitialAt: state.lastInterstitialAt,
