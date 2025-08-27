@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
-import { v4 as uuidv4 } from 'uuid'
+import uuid from 'react-native-uuid'
 
 
 export default function TranslateInputScreen() {
@@ -70,7 +70,7 @@ export default function TranslateInputScreen() {
 
       // 4. Update translation, history and usage from successful response
       const translationHistoryItem: TranslationHistoryItem = {
-        id: uuidv4(),
+        id: uuid.v4() as string,
         originalText: response.originalText,
         translatedText: response.translatedText,
         mode: response.mode,

@@ -51,16 +51,21 @@ export default function TranslateResultScreen() {
     console.log('Share pressed')
   }
 
-  const handleTTS = () => {
-    // TODO: Text-to-speech functionality
-    console.log('TTS pressed')
-  }
+  const handleTTS = async () => {
+    const isSpeaking = await Speech.isSpeakingAsync()
 
-  const testTTS = () => {
-    Speech.speak("that's bitch made bruh", {
+    if (isSpeaking) return
+
+    const availableVoices = await Speech.getAvailableVoicesAsync()
+    const englishEnhancedVoices = availableVoices.filter((voice: any) => voice.language.includes('en-') && voice.quality === 'Enhanced')
+      .map((voice: any) => voice.identifier)
+    logger.log('englishEnhancedVoices: ', englishEnhancedVoices);
+    
+    Speech.speak(currentTranslation?.translatedText ? currentTranslation.translatedText : 'Thats bitch made bruuh', {
       language: 'en-US',
-      pitch: 1.0,
-      rate: 0.8,
+      pitch: 1.4,
+      rate: 0.75,
+      voice: 'en-gb-x-rjs-local'
     })
   }
 
@@ -74,10 +79,6 @@ export default function TranslateResultScreen() {
           {currentTranslation?.originalText || "Sample original text here..."}
         </Text>
       </View>
-
-      <Pressable onPress={testTTS} style={{ marginTop: 20, padding: 10, backgroundColor: '#ddd' }}>
-        <Text>Test TTS</Text>
-      </Pressable>
 
       {/* Translated Text (Main Focus) */}
       <View style={styles.translatedContainer}>
