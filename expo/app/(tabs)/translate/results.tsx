@@ -1,10 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import * as Speech from 'expo-speech';
+
 
 export default function TranslateResultScreen() {
+
+    const testTTS = () => {
+      Speech.speak("that's bitch made bruh", {
+        language: 'en-US',
+        pitch: 1.0,
+        rate: 0.8,
+      });
+    };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Translation Result</Text>
       <Text style={styles.subtitle}>Original text, typewriter output, TTS, share</Text>
+      <TouchableOpacity onPress={testTTS} style={{ marginTop: 20, padding: 10, backgroundColor: '#ddd' }}>
+        <Text>Test TTS</Text>
+      </TouchableOpacity>
     </View>
   );
 }

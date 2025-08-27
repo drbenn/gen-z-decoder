@@ -5,7 +5,7 @@ import { StateCreator } from 'zustand';
 export interface TranslateSlice {
   
   // Current Translation State
-  isLoading: boolean;
+  isTranslating: boolean;
   currentTranslation: TranslateResponse | null;
   error: string | null;
   
@@ -21,7 +21,7 @@ export interface TranslateSlice {
   };
 
   // Actions
-  setLoading: (loading: boolean) => void;
+  setTranslating: (translating: boolean) => void;
   setCurrentTranslation: (translation: TranslateResponse | null) => void;
   setError: (error: string | null) => void;
   addToHistory: (item: TranslationHistoryItem) => void;
@@ -37,7 +37,7 @@ export const translateSlice: StateCreator<
   TranslateSlice
 > = (set, get) => ({
   // Initial state
-  isLoading: false,
+  isTranslating: false,
   currentTranslation: null,
   error: null,
   translationHistory: [],
@@ -49,8 +49,8 @@ export const translateSlice: StateCreator<
   },
 
   // Actions
-  setLoading: (loading: boolean) => {
-    set({ isLoading: loading });
+  setTranslating: (translating: boolean) => {
+    set({ isTranslating: translating });
   },
 
   setCurrentTranslation: (translation: TranslateResponse | null) => {

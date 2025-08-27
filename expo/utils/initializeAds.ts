@@ -1,5 +1,6 @@
 import adInterstitialService from '@/services/ad/AdInterstitialService';
-import useAdState from '@/state/useAdState';
+import { useAppState } from '@/state/useAppState';
+import logger from '@/utils/logger'; // Add this import
 
 let GoogleMobileAds: any;
 
@@ -24,8 +25,8 @@ const initializeAds = async () => {
       logger.log('❌ : Failed to initialize interstitial service:', error)
     }
     
-    // Reset ad state for new session
-    useAdState.getState().resetCounters()
+    // Reset ad state for new session (updated for slice architecture)
+    useAppState.getState().resetAdState()
     logger.log('🔄 : Ad state reset for new session')
     
     return;
@@ -50,8 +51,8 @@ const initializeAds = async () => {
     await adInterstitialService.initialize()
     logger.log('🏆 : Interstitial service initialized successfully!')
     
-    // 🔄 STEP 4: Reset ad state for new app session
-    useAdState.getState().resetCounters()
+    // 🔄 STEP 4: Reset ad state for new app session (updated for slice architecture)
+    useAppState.getState().resetAdState()
     logger.log('🔄 : Ad state reset for new session')
     
     logger.log('🎉 : Complete ad initialization finished!')
@@ -62,7 +63,7 @@ const initializeAds = async () => {
     // Even if AdMob fails, try to initialize our service
     try {
       await adInterstitialService.initialize()
-      useAdState.getState().resetCounters()
+      useAppState.getState().resetAdState()
       logger.log('🏆 : Fallback initialization completed')
     } catch (fallbackError) {
       logger.log('❌ : Fallback initialization failed:', fallbackError)

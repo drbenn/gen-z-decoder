@@ -1,35 +1,57 @@
-import { TranslationMode } from '@/types/translate.types';
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native';
+import adInterstitialService from '@/services/ad/AdInterstitialService'
+import { useAppState } from '@/state/useAppState'
+import { TranslationMode } from '@/types/translate.types'
+import React, { useState } from 'react'
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 
 export default function TranslateInputScreen() {
   const insets = useSafeAreaInsets()
-  const [mode, setMode] = useState<TranslationMode>(TranslationMode.GENZ_TO_ENGLISH);
-  const [inputText, setInputText] = useState('');
-  const [autoPlayAudio, setAutoPlayAudio] = useState(false);
+  const [mode, setMode] = useState<TranslationMode>(TranslationMode.GENZ_TO_ENGLISH)
+  const [inputText, setInputText] = useState('')
 
-  const toggleMode = () => {
-    setMode(mode === TranslationMode.GENZ_TO_ENGLISH ? TranslationMode.ENGLISH_TO_GENZ : TranslationMode.GENZ_TO_ENGLISH);
-  };
+  // ✅ GOOD: Single state value - regular selector
+  const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
+  
+  // ✅ GOOD: Action functions with individual selectors (prevents unnecessary re-renders)
+  const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio)
+  const incrementTranslationCount = useAppState((state) => state.incrementTranslationCount)
+  const setTranslating = useAppState((state) => state.setTranslating)
+  const checkInterstitialReady = useAppState((state) => state.checkInterstitialReady)
+  const markInterstitialShown = useAppState((state) => state.markInterstitialShown)
 
-  const handleTranslate = () => {
-    console.log('Translate pressed:', { mode, inputText, autoPlayAudio });
-    // TODO: Connect to translation flow
-  };
+  const handleTranslate = async () => {
+    incrementTranslationCount()
+    setTranslating(true)
+    
+    logger.log('Translate pressed:', { mode, inputText, autoPlayAudio })
+
+    const shouldShowAd = checkInterstitialReady()
+    if (shouldShowAd) {
+      try {
+        const adShown = await adInterstitialService.showAd()
+        
+        if (adShown) {
+          markInterstitialShown()
+        }
+      } catch (error) {
+        logger.log('❌ Ad service error:', error)
+      }
+    }
+  }
 
   const getPlaceholder = () => {
     return mode === TranslationMode.GENZ_TO_ENGLISH 
       ? 'Enter Gen Z text to translate...' 
-      : 'Enter English text to translate...';
-  };
+      : 'Enter English text to translate...'
+  }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom}]}>
       
       {/* Mode Toggle */}
-      <View style={[styles.toggleContainer, {paddingTop: insets.top, paddingBottom: insets.bottom}]}>
+      <View style={[styles.toggleContainer]}>
         <Pressable 
           style={[styles.toggleButton, mode === TranslationMode.GENZ_TO_ENGLISH && styles.activeToggle]}
           onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
@@ -74,7 +96,7 @@ export default function TranslateInputScreen() {
       </TouchableOpacity>
 
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -124,4 +146,4 @@ const styles = StyleSheet.create({
   translateButtonText: {
     color: '#fff',
   },
-});
+})
