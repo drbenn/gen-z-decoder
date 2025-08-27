@@ -1,59 +1,59 @@
-import { TranslationMode } from './app.types';
+// import { TranslationMode } from './app.types';
 
-// Translation API types
-export interface TranslationRequest {
-  text: string;
-  mode: TranslationMode;
-}
+// // Translation API types
+// export interface TranslationRequest {
+//   text: string;
+//   mode: TranslationMode;
+// }
 
-export interface TranslationResponse {
-  input: string;
-  output: string;
-  mode: TranslationMode;
-  timestamp: string;
-}
+// export interface TranslationResponse {
+//   input: string;
+//   output: string;
+//   mode: TranslationMode;
+//   timestamp: string;
+// }
 
-// Usage tracking types
-export interface UsageResponse {
-  dailyCount: number;
-  dailyLimit: number;
-  isPremium: boolean;
-  resetTime: string;
-}
+// // Usage tracking types
+// export interface UsageResponse {
+//   dailyCount: number;
+//   dailyLimit: number;
+//   isPremium: boolean;
+//   resetTime: string;
+// }
 
-// Premium upgrade types
-export interface PremiumUpgradeRequest {
-  purchaseToken: string;
-  obfuscatedAccountId?: string; // From Google Play if available
-}
+// // Premium upgrade types
+// export interface PremiumUpgradeRequest {
+//   purchaseToken: string;
+//   obfuscatedAccountId?: string; // From Google Play if available
+// }
 
-export interface PremiumUpgradeResponse {
-  success: boolean;
-  isPremium: boolean;
-  newDailyLimit: number;
-}
+// export interface PremiumUpgradeResponse {
+//   success: boolean;
+//   isPremium: boolean;
+//   newDailyLimit: number;
+// }
 
-// Dictionary update types
-export interface DictionaryVersionResponse {
-  version: string;
-  lastUpdated: string;
-  downloadUrl: string;
-}
+// // Dictionary update types
+// export interface DictionaryVersionResponse {
+//   version: string;
+//   lastUpdated: string;
+//   downloadUrl: string;
+// }
 
-export interface DictionaryDownloadResponse {
-  id: string;
-  term: string;
-  definition: string;
-  examples: string[];
-}
+// export interface DictionaryDownloadResponse {
+//   id: string;
+//   term: string;
+//   definition: string;
+//   examples: string[];
+// }
 
-// Generic API response wrapper
-export interface ApiResponse<T> {
-  success: boolean;
-  data?: T;
-  error?: string;
-  code?: string;
-}
+// // Generic API response wrapper
+// export interface ApiResponse<T> {
+//   success: boolean;
+//   data?: T;
+//   error?: string;
+//   code?: string;
+// }
 
 // You know it's really crazy to see like transition request and translation response without like a user id on it I feel like in a normal world i'd be tracking this except for I can't because you never know when someone could get a new phone therefore their phone ID would be different
 

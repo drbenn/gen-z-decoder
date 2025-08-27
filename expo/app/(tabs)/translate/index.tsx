@@ -5,6 +5,7 @@ import { router } from 'expo-router'
 import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { HttpClient } from '@/services/api/httpClient'
 
 
 export default function TranslateInputScreen() {
@@ -21,13 +22,14 @@ export default function TranslateInputScreen() {
   const setTranslating = useAppState((state) => state.setTranslating)
   const checkInterstitialReady = useAppState((state) => state.checkInterstitialReady)
   const markInterstitialShown = useAppState((state) => state.markInterstitialShown)
+  const setCurrentTranslation = useAppState((state) => state.setCurrentTranslation)
+  const updateUsageInfo = useAppState((state) => state.updateUsageInfo)
+  const setTranslateError = useAppState((state) => state.setTranslateError)
+
 
   const handleTranslate = async () => {
+    // 1. Handle ad first (blocking)
     incrementTranslationCount()
-    setTranslating(true)
-    
-    logger.log('Translate pressed:', { mode, inputText, autoPlayAudio })
-
     const shouldShowAd = checkInterstitialReady()
     if (shouldShowAd) {
       try {
@@ -41,8 +43,28 @@ export default function TranslateInputScreen() {
         logger.log('❌ Ad service error:', error)
       }
     }
+
+    logger.log('Translate pressed:', { mode, inputText, autoPlayAudio })
+    // 2. Start loading state & navigate
+    setTranslating(true)
     router.push('/(tabs)/translate/result')
+    
+    // 3. API call with error handling
+    try {
+      const response = await HttpClient.translateText({ text: inputText, mode })
+      setCurrentTranslation(response)
+      updateUsageInfo(response.usageInfo)
+      
+      // 4. Your 500ms delay
+      await new Promise(resolve => setTimeout(resolve, 500))
+    } catch (error: unknown | any) {
+      setTranslateError(error.message)
+    } finally {
+      // 5. Stop loading
+      setTranslating(false)
+    }
   }
+    
 
   const getPlaceholder = () => {
     return mode === TranslationMode.GENZ_TO_ENGLISH 

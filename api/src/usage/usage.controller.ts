@@ -4,6 +4,7 @@ import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { UsageService } from './usage.service';
 import { TranslationMode } from 'src/translate/translate.dto';
 import { DeviceAuthGuard } from 'src/guards/device-auth/device-auth.guard';
+import { UsageResponseDto } from './usage.dto';
 
 @Controller('usage')
 @UseGuards(DeviceAuthGuard) // Device auth for all endpoints
@@ -15,7 +16,7 @@ export class UsageController {
   ) {}
 
   @Get()
-  async getCurrentUsage(@Request() req: ExpressRequest & { deviceId: string }) {
+  async getCurrentUsage(@Request() req: ExpressRequest & { deviceId: string }): Promise<UsageResponseDto> {
     // Basic usage stats endpoint
     const usageStats = await this.usageService.getCurrentUsage(req.deviceId)
     return {

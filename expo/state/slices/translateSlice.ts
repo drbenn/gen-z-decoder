@@ -7,7 +7,7 @@ export interface TranslateSlice {
   // Current Translation State
   isTranslating: boolean;
   currentTranslation: TranslateResponse | null;
-  error: string | null;
+  translateError: string | null;
   
   // History
   translationHistory: TranslationHistoryItem[];
@@ -23,7 +23,7 @@ export interface TranslateSlice {
   // Actions
   setTranslating: (translating: boolean) => void;
   setCurrentTranslation: (translation: TranslateResponse | null) => void;
-  setError: (error: string | null) => void;
+  setTranslateError: (error: string | null) => void;
   addToHistory: (item: TranslationHistoryItem) => void;
   toggleFavorite: (id: string) => void;
   clearHistory: () => void;
@@ -39,7 +39,7 @@ export const translateSlice: StateCreator<
   // Initial state
   isTranslating: false,
   currentTranslation: null,
-  error: null,
+  translateError: null,
   translationHistory: [],
   usageInfo: {
     translationsUsedToday: 0,
@@ -57,7 +57,7 @@ export const translateSlice: StateCreator<
     set({ currentTranslation: translation });
   },
 
-  setError: (error: string | null) => {
+  setTranslateError: (error: string | null) => {
     set({ error });
   },
 
