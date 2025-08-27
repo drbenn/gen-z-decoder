@@ -1,44 +1,68 @@
-import { ScrollView, StyleSheet, Text, Pressable, View } from 'react-native';
-import * as Speech from 'expo-speech';
-import { useAppState } from '@/state/useAppState';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { router } from 'expo-router';
+import { ScrollView, StyleSheet, Text, Pressable, View } from 'react-native'
+import * as Speech from 'expo-speech'
+import { useAppState } from '@/state/useAppState'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { router, useFocusEffect } from 'expo-router'
+import React, { useCallback, useState } from 'react'
 
+type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
 export default function TranslateResultScreen() {
-    const insets = useSafeAreaInsets();
+  const insets = useSafeAreaInsets()
+  const [translateLoadState, setTranslateLoadState] = useState<TranslateLoadState>('loading')
+
+  // ✅ State values that trigger re-renders
+  const isTranslating = useAppState((state) => state.isTranslating)
+  const currentTranslation = useAppState((state) => state.currentTranslation)
+  const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
+  const ttsEnabled = useAppState((state) => state.ttsEnabled)
+  const translateError = useAppState((state) => state.translateError)
+
+
+  // Listen for when screen comes into focus (after navigation or ad dismissal)
+  useFocusEffect(
+    useCallback(() => {
+      // Always start with loading state
+      setTranslateLoadState('loading')
+      
+      // After minimum time, determine final state
+      const timer = setTimeout(() => {
+        if (translateError) {
+          setTranslateLoadState('error')
+        } else if (currentTranslation) {
+          setTranslateLoadState('success')
+        } else {
+          setTranslateLoadState('empty')
+        }
+      }, 1500) // 1.5 seconds minimum loading for all scenarios
+      
+      return () => clearTimeout(timer)
+    }, [translateError, currentTranslation])
+  )
   
-    // ✅ State values that trigger re-renders
-    const isTranslating = useAppState((state) => state.isTranslating);
-    const currentTranslation = useAppState((state) => state.currentTranslation);
-    const autoPlayAudio = useAppState((state) => state.autoPlayAudio);
-    const ttsEnabled = useAppState((state) => state.ttsEnabled);
-    
-    // ✅ Action functions (stable references)
-    const setTranslating = useAppState((state) => state.setTranslating);
+  // ✅ Action functions (stable references)
 
-    const handleTranslateAgain = () => {
-      setTranslating(false);
-      router.push('/(tabs)/translate')
-    };
+  const handleTranslateAgain = () => {
+    router.back()
+  }
 
-    const handleShare = () => {
-      // TODO: Share functionality
-      console.log('Share pressed');
-    };
+  const handleShare = () => {
+    // TODO: Share functionality
+    console.log('Share pressed')
+  }
 
-    const handleTTS = () => {
-      // TODO: Text-to-speech functionality
-      console.log('TTS pressed');
-    };
+  const handleTTS = () => {
+    // TODO: Text-to-speech functionality
+    console.log('TTS pressed')
+  }
 
-    const testTTS = () => {
-      Speech.speak("that's bitch made bruh", {
-        language: 'en-US',
-        pitch: 1.0,
-        rate: 0.8,
-      });
-    };
+  const testTTS = () => {
+    Speech.speak("that's bitch made bruh", {
+      language: 'en-US',
+      pitch: 1.0,
+      rate: 0.8,
+    })
+  }
 
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
@@ -57,17 +81,34 @@ export default function TranslateResultScreen() {
 
       {/* Translated Text (Main Focus) */}
       <View style={styles.translatedContainer}>
-        {isTranslating ? (
+
+        {translateLoadState === 'loading' && (
           <View style={styles.loadingContainer}>
-            <Text style={styles.loadingText}>Loading...</Text>
+            <Text style={styles.loadingText}>Translating...</Text>
           </View>
-        ) : (
+        )}
+
+        {translateLoadState === 'error' && (
+          <View style={styles.errorContainer}>
+            <Text style={styles.errorTitle}>Translation Failed</Text>
+            <Text style={styles.errorText}>{translateError}</Text>
+          </View>
+        )}
+
+        {translateLoadState === 'success' && (
           <ScrollView style={styles.translatedScroll}>
             <Text style={styles.translatedText}>
-              {currentTranslation?.translatedText || "Sample translated text will appear here with typewriter effect..."}
+              {currentTranslation?.translatedText}
             </Text>
           </ScrollView>
         )}
+
+        {translateLoadState === 'empty' && (
+          <View style={styles.emptyContainer}>
+            <Text style={styles.emptyText}>No translation available</Text>
+          </View>
+        )}
+
       </View>
 
       {/* Action Buttons */}
@@ -103,7 +144,7 @@ export default function TranslateResultScreen() {
       </Pressable>
 
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -145,6 +186,35 @@ const styles = StyleSheet.create({
     color: '#000',
     lineHeight: 24,
   },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  errorTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#d32f2f',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  errorText: {
+    fontSize: 14,
+    color: '#666',
+    textAlign: 'center',
+    lineHeight: 20,
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyText: {
+    fontSize: 16,
+    color: '#999',
+    fontStyle: 'italic',
+  },
   actionsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -173,4 +243,4 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
-});
+})

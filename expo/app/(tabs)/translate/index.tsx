@@ -1,11 +1,12 @@
 import adInterstitialService from '@/services/ad/AdInterstitialService'
 import { useAppState } from '@/state/useAppState'
-import { TranslationMode } from '@/types/translate.types'
+import { TranslationHistoryItem, TranslationMode } from '@/types/translate.types'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
+import { v4 as uuidv4 } from 'uuid'
 
 
 export default function TranslateInputScreen() {
@@ -25,6 +26,7 @@ export default function TranslateInputScreen() {
   const setCurrentTranslation = useAppState((state) => state.setCurrentTranslation)
   const updateUsageInfo = useAppState((state) => state.updateUsageInfo)
   const setTranslateError = useAppState((state) => state.setTranslateError)
+  const addToHistory = useAppState((state) => state.addToHistory)
 
 
   const handleTranslate = async () => {
@@ -50,14 +52,38 @@ export default function TranslateInputScreen() {
     router.push('/(tabs)/translate/result')
     
     // 3. API call with error handling
-    try {
-      const response = await HttpClient.translateText({ text: inputText, mode })
+    try {      
+      // const response = await HttpClient.translateText({ text: inputText, mode })
+      const response = {
+        translatedText: 'YOLO',
+        originalText: 'BOLO',
+        mode: TranslationMode.ENGLISH_TO_GENZ,
+        usageInfo: {
+          translationsUsedToday: 1,
+          dailyLimit: 10,
+          remainingTranslations: 9,
+          isPremium: false
+        }
+      }
+
+      logger.log('response: ', response)
+
+      // 4. Update translation, history and usage from successful response
+      const translationHistoryItem: TranslationHistoryItem = {
+        id: uuidv4(),
+        originalText: response.originalText,
+        translatedText: response.translatedText,
+        mode: response.mode,
+        timestamp: new Date().toISOString(),
+        isFavorite: false
+      }
+
+      addToHistory(translationHistoryItem)
       setCurrentTranslation(response)
       updateUsageInfo(response.usageInfo)
-      
-      // 4. Your 500ms delay
-      await new Promise(resolve => setTimeout(resolve, 500))
+
     } catch (error: unknown | any) {
+      logger.error('Error in handleTranslate:', error)
       setTranslateError(error.message)
     } finally {
       // 5. Stop loading

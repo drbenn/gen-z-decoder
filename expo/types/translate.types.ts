@@ -5,27 +5,27 @@ export enum TranslationMode {
 }
 
 export interface TranslateRequest {
-  text: string;
-  mode: TranslationMode;
+  text: string
+  mode: TranslationMode
 }
 
 export interface TranslateResponse {
-  translatedText: string;
-  originalText: string;
-  mode: TranslationMode;
+  translatedText: string
+  originalText: string
+  mode: TranslationMode
   usageInfo: {
-    translationsUsedToday: number;
-    dailyLimit: number;
-    remainingTranslations: number;
-    isPremium: boolean;
-  };
+    translationsUsedToday: number
+    dailyLimit: number
+    remainingTranslations: number
+    isPremium: boolean
+  }
 }
 
 export interface TranslationHistoryItem {
-  id: string;
-  originalText: string;
-  translatedText: string;
-  mode: TranslationMode;
-  timestamp: number;
-  isFavorite: boolean;
+  id: string
+  originalText: string
+  translatedText: string
+  mode: TranslationMode
+  timestamp: string
+  isFavorite: boolean
 }
