@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { DatabaseService } from '../database/database.service'
 import { TranslationMode } from '../translate/translate.dto'
 import { UserService } from 'src/user/user.service'
+import { ConfigService } from '@nestjs/config'
 
 @Injectable()
 export class UsageService {
@@ -12,6 +13,7 @@ export class UsageService {
     private readonly db: DatabaseService,
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
     private readonly userService: UserService,
+    private readonly configService: ConfigService,
   ) {}
 
   // Track a successful translation
@@ -76,8 +78,11 @@ export class UsageService {
       }
     }
 
+    const premiumLimit: number = Number(this.configService.get<string>('PREMIUM_LIMIT'))
+    const freeLimit: number = Number(this.configService.get<string>('FREE_LIMIT'))
+    
     const isPremium = result.rows[0].premium_status
-    const dailyLimit = isPremium ? 200 : 10
+    const dailyLimit = isPremium ?  premiumLimit || 200 : freeLimit || 10
     const used = result.rows[0].translations_used_today
     
     return {
@@ -87,33 +92,71 @@ export class UsageService {
       isPremium
     }
   }
+  
+  async checkUsageLimits(deviceId: string): Promise<{
+    canTranslate: boolean,
+    translationsUsedToday: number,
+    dailyLimit: number,
+    remainingTranslations: number,
+    isPremium: boolean
+  }> {
+    const today = new Date().toISOString().split('T')[0]
+    
+    const result = await this.db.query(`
+      SELECT 
+        u.premium_status,
+        COALESCE(d.translation_count, 0) as translations_used_today
+      FROM users u
+      LEFT JOIN daily_usage d ON d.device_id = u.device_id AND d.date = $1
+      WHERE u.device_id = $2
+    `, [today, deviceId])
 
-    // Test database write - track a fake translation
-    async testUsageTracking(deviceId: string): Promise<{ status: string, record: any }> {
-      const today = new Date().toISOString().split('T')[0] // YYYY-MM-DD
-      const recordId = uuidv4() // Generate proper UUID
-      
-      // First, ensure user exists (create if not exists)
-      await this.db.query(`
-        INSERT INTO users (device_id, created_at, last_active)
-        VALUES ($1, NOW(), NOW())
-        ON CONFLICT (device_id) DO NOTHING
-      `, [deviceId])
-      
-      // Then insert usage tracking
-      const result = await this.db.query(`
-        INSERT INTO daily_usage (id, device_id, date, translation_count, mode_genz_to_english, mode_english_to_genz)
-        VALUES ($1, $2, $3, 1, 1, 0)
-        ON CONFLICT (device_id, date) 
-        DO UPDATE SET 
-          translation_count = daily_usage.translation_count + 1,
-          mode_genz_to_english = daily_usage.mode_genz_to_english + 1
-        RETURNING *
-      `, [recordId, deviceId, today])
-
-      return {
-        status: 'usage tracked',
-        record: result.rows[0]
-      }
+    let isPremium = false
+    let used = 0
+    
+    if (result.rows.length > 0) {
+      isPremium = result.rows[0].premium_status
+      used = result.rows[0].translations_used_today
     }
+
+    const dailyLimit = isPremium ? 200 : 10
+    const remaining = Math.max(0, dailyLimit - used)
+    
+    return {
+      canTranslate: used < dailyLimit,
+      translationsUsedToday: used,
+      dailyLimit,
+      remainingTranslations: remaining,
+      isPremium
+    }
+  }
+
+  // Test database write - track a fake translation
+  async testUsageTracking(deviceId: string): Promise<{ status: string, record: any }> {
+    const today = new Date().toISOString().split('T')[0] // YYYY-MM-DD
+    const recordId = uuidv4() // Generate proper UUID
+    
+    // First, ensure user exists (create if not exists)
+    await this.db.query(`
+      INSERT INTO users (device_id, created_at, last_active)
+      VALUES ($1, NOW(), NOW())
+      ON CONFLICT (device_id) DO NOTHING
+    `, [deviceId])
+    
+    // Then insert usage tracking
+    const result = await this.db.query(`
+      INSERT INTO daily_usage (id, device_id, date, translation_count, mode_genz_to_english, mode_english_to_genz)
+      VALUES ($1, $2, $3, 1, 1, 0)
+      ON CONFLICT (device_id, date) 
+      DO UPDATE SET 
+        translation_count = daily_usage.translation_count + 1,
+        mode_genz_to_english = daily_usage.mode_genz_to_english + 1
+      RETURNING *
+    `, [recordId, deviceId, today])
+
+    return {
+      status: 'usage tracked',
+      record: result.rows[0]
+    }
+  }
 }

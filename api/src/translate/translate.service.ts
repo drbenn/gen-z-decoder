@@ -39,6 +39,11 @@ export class TranslateService {
   ): Promise<TranslateResponseDto> {
     
     try {
+      const usageCheck = await this.usageService.checkUsageLimits(deviceId)
+      
+      if (!usageCheck.canTranslate) {
+        throw new BadRequestException(`Daily limit exceeded. Used ${usageCheck.translationsUsedToday}/${usageCheck.dailyLimit} translations.`)
+      }
       const translatedText = await this.callChatGPT(request.text, request.mode)
       await this.usageService.trackUsage(deviceId, request.mode)
 
@@ -47,10 +52,10 @@ export class TranslateService {
         originalText: request.text,
         mode: request.mode,
         usageInfo: {
-          translationsUsedToday: 0, // Placeholder for now
-          dailyLimit: 999, // Unlimited for testing
-          remainingTranslations: 999,
-          isPremium: true // Treat everyone as premium during testing
+          translationsUsedToday: usageCheck.translationsUsedToday,
+          dailyLimit: usageCheck.dailyLimit,
+          remainingTranslations: usageCheck.remainingTranslations,
+          isPremium: usageCheck.isPremium
         }
       }
 

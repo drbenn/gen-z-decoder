@@ -1,6 +1,6 @@
 export enum TranslationMode {
-  TO_GENZ = 'toGenZ',
-  TO_ENGLISH = 'toEnglish'
+  GENZ_TO_ENGLISH = 'genz_to_english',
+  ENGLISH_TO_GENZ = 'english_to_genz'
 }
 
 // History item structure
