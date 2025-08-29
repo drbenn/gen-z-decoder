@@ -1,122 +1,3191 @@
 [
   {
-    "id": "1",
-    "term": "no cap",
-    "definition": "No lie, telling the truth, being serious",
-    "example": "That movie was incredible, no cap"
+    "id": "absolutely-001",
+    "term": "absolutely",
+    "pronunciation": null,
+    "definition": "means 'yes definitely', 'for sure', or 'without a doubt' - used for strong agreement",
+    "examples": [
+      "are you going to the party tonight? absolutely",
+      "did you like the movie? absolutely it was amazing",
+      "would you recommend this restaurant? absolutely"
+    ],
+    "category": "communication",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["definitely", "for sure", "bet", "facts"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "2", 
+    "id": "actually-002", 
+    "term": "actually",
+    "pronunciation": null,
+    "definition": "used to emphasize truth or correct misconceptions, often with attitude",
+    "examples": [
+      "actually I was here first",
+      "that's actually not what happened",
+      "I actually don't care what they think"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 8,
+    "related_terms": ["literally", "honestly", "for real"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "adorable-003",
+    "term": "adorable", 
+    "pronunciation": null,
+    "definition": "means extremely cute or endearing, used for people, animals, or things",
+    "examples": [
+      "that puppy is absolutely adorable",
+      "your little sister is so adorable",
+      "this tiny coffee shop is adorable"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 6,
+    "related_terms": ["cute", "precious", "wholesome", "sweet"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "aesthetic-004",
+    "term": "aesthetic",
+    "pronunciation": null,
+    "definition": "refers to a particular style or vibe, especially visual appearance or overall mood",
+    "examples": [
+      "her room has such a cozy aesthetic",
+      "I love the dark academia aesthetic",
+      "this cafe has the perfect study aesthetic"
+    ],
+    "category": "describing",
+    "sentiment": "positive", 
+    "contexts": ["social_media", "casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["vibe", "mood", "style", "look"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "aka-005",
+    "term": "aka",
+    "pronunciation": "ay-kay-ay",
+    "definition": "abbreviation for 'also known as' - used to give an alternative name or description",
+    "examples": [
+      "my best friend aka the funniest person alive",
+      "pizza aka the perfect food",
+      "monday morning aka my worst enemy"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["also known as", "or", "basically"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "alright-006",
+    "term": "alright",
+    "pronunciation": null,
+    "definition": "means 'okay', 'fine', or 'acceptable' - can show agreement or mild satisfaction",
+    "examples": [
+      "how was the test? it was alright",
+      "alright let's go to dinner",
+      "the movie was alright nothing special"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["okay", "fine", "decent", "whatever"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "amazing-007",
+    "term": "amazing",
+    "pronunciation": null,
+    "definition": "means extremely good, impressive, or wonderful - strong positive reaction",
+    "examples": [
+      "that concert was amazing",
+      "you did amazing on your presentation", 
+      "this food tastes amazing"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 8,
+    "related_terms": ["incredible", "awesome", "fire", "stunning"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "angel-008",
+    "term": "angel",
+    "pronunciation": null,
+    "definition": "used to describe someone who is extremely kind, helpful, or sweet",
+    "examples": [
+      "thanks for helping me move you're an angel",
+      "she's such an angel for bringing me soup",
+      "my mom is literally an angel"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 5,
+    "related_terms": ["sweetie", "precious", "saint", "goddess"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+
+  {
+    "id": "asap-010",
+    "term": "asap",
+    "pronunciation": "ay-sap",
+    "definition": "abbreviation for 'as soon as possible' - indicates urgency or immediate need",
+    "examples": [
+      "text me back asap",
+      "we need to leave asap",
+      "call me asap it's important"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 9,
+    "related_terms": ["right now", "immediately", "urgent", "rn"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "ate-011",
+    "term": "ate",
+    "pronunciation": null,
+    "definition": "means someone performed exceptionally well or 'killed it' - past tense of delivering excellence",
+    "examples": [
+      "she ate that performance",
+      "you ate with that outfit",
+      "he absolutely ate that presentation"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["slayed", "killed it", "served", "devoured"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "attracted-012",
+    "term": "attracted",
+    "pronunciation": null,
+    "definition": "means feeling romantic or physical interest in someone",
+    "examples": [
+      "I'm definitely attracted to them",
+      "she's attracted to funny guys",
+      "are you attracted to anyone in our class"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 6,
+    "related_terms": ["interested", "crushing", "feeling", "drawn to"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "aura-013",
+    "term": "aura",
+    "pronunciation": null,
+    "definition": "refers to someone's energy, vibe, or overall presence and how they make others feel",
+    "examples": [
+      "she has such positive aura",
+      "his confident aura is attractive",
+      "that place has a weird aura"
+    ],
+    "category": "describing",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "casual"],
+    "popularity": 7,
+    "related_terms": ["vibe", "energy", "presence", "mood"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "available-014",
+    "term": "available",
+    "pronunciation": null,
+    "definition": "means single or not in a relationship, ready to date",
+    "examples": [
+      "is she available or seeing someone",
+      "I'm finally available again",
+      "sorry I'm not available right now"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["dating", "casual"],
+    "popularity": 5,
+    "related_terms": ["single", "free", "unattached", "open"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "awful-015",
+    "term": "awful",
+    "pronunciation": null,
+    "definition": "means extremely bad, terrible, or unpleasant",
+    "examples": [
+      "that movie was awful",
+      "I feel awful about what happened",
+      "the weather is awful today"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["terrible", "horrible", "trash", "disgusting"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "awkward-016",
+    "term": "awkward",
+    "pronunciation": null,
+    "definition": "describes uncomfortable, embarrassing, or socially tense situations",
+    "examples": [
+      "that conversation was so awkward",
+      "running into my ex was awkward",
+      "I made things awkward by bringing that up"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 7,
+    "related_terms": ["uncomfortable", "cringe", "embarrassing", "weird"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "baby-017",
+    "term": "baby",
+    "pronunciation": null,
+    "definition": "term of endearment used for romantic partners, close friends, or cute things",
+    "examples": [
+      "hey baby how was your day",
+      "that puppy is such a baby",
+      "don't worry baby it'll be okay"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 7,
+    "related_terms": ["bae", "honey", "sweetie", "love"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "bae-018",
+    "term": "bae",
+    "pronunciation": "bay",
+    "definition": "stands for 'before anyone else' - term for romantic partner or crush",
+    "examples": [
+      "going out with bae tonight",
+      "miss you bae",
+      "bae is picking me up later"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "texting", "social_media"],
+    "popularity": 6,
+    "related_terms": ["baby", "boyfriend", "girlfriend", "crush"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "beat-019",
+    "term": "beat",
+    "pronunciation": null,
+    "definition": "means makeup application or when someone looks really good with their makeup done",
+    "examples": [
+      "her face is beat to perfection",
+      "I need to get my face beat for prom",
+      "she always looks beat for special occasions"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 5,
+    "related_terms": ["snatched", "served", "slayed", "makeup"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "beautiful-020",
+    "term": "beautiful",
+    "pronunciation": null,
+    "definition": "means extremely attractive, pretty, or aesthetically pleasing",
+    "examples": [
+      "you look beautiful today",
+      "what a beautiful sunset",
+      "she has beautiful eyes"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "dating"],
+    "popularity": 8,
+    "related_terms": ["gorgeous", "stunning", "pretty", "attractive"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "bestie-021",
+    "term": "bestie",
+    "pronunciation": null,
+    "definition": "short for 'best friend' - used for close friends or sometimes ironically",
+    "examples": [
+      "hey bestie want to go shopping",
+      "my bestie always has my back",
+      "bestie we need to talk about this drama"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 9,
+    "related_terms": ["best friend", "bff", "homie", "fam"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "bet-022",
     "term": "bet",
-    "definition": "Agreement, okay, sounds good",
-    "example": "Wanna hang out later? Bet!"
+    "pronunciation": null,
+    "definition": "means 'yes', 'okay', 'sounds good', or 'I agree' - universal agreement word",
+    "examples": [
+      "want to go to the movies? bet",
+      "meet me at 6pm? bet that works",
+      "you bringing snacks? bet"
+    ],
+    "category": "communication",
+    "sentiment": "positive",
+    "contexts": ["texting", "casual"],
+    "popularity": 9,
+    "related_terms": ["say less", "word", "copy", "sounds good"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "3",
-    "term": "fr fr", 
-    "definition": "For real, for real - emphasizing truth or agreement",
-    "example": "That test was so hard fr fr"
+    "id": "big-mood-023",
+    "term": "big mood",
+    "pronunciation": null,
+    "definition": "means 'that's totally relatable' or 'I feel that deeply' - stronger than just 'mood'",
+    "examples": [
+      "wanting to sleep all weekend? big mood",
+      "hating monday mornings is a big mood",
+      "not wanting to adult today big mood"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting", "casual"],
+    "popularity": 7,
+    "related_terms": ["mood", "same", "relatable", "felt"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "4",
-    "term": "periodt",
-    "definition": "End of discussion, final statement",
-    "example": "I'm the best at this game, periodt"
+    "id": "bizarre-024",
+    "term": "bizarre",
+    "pronunciation": null,
+    "definition": "means very strange, weird, or unusual in a notable way",
+    "examples": [
+      "that was a bizarre conversation",
+      "her behavior has been bizarre lately",
+      "what a bizarre coincidence"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 5,
+    "related_terms": ["weird", "strange", "odd", "random"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "5",
-    "term": "slay",
-    "definition": "To do something excellently or look amazing",
-    "example": "You absolutely slayed that presentation"
+    "id": "blessed-025",
+    "term": "blessed",
+    "pronunciation": null,
+    "definition": "means feeling grateful, lucky, or favored - often used to show appreciation",
+    "examples": [
+      "feeling so blessed to have good friends",
+      "blessed to get that job offer",
+      "truly blessed with this beautiful weather"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["grateful", "lucky", "thankful", "fortunate"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "6",
-    "term": "it's giving",
-    "definition": "It reminds me of, it has the vibe of",
-    "example": "This outfit is giving main character energy"
+    "id": "block-026",
+    "term": "block",
+    "pronunciation": null,
+    "definition": "to prevent someone from contacting you on social media or messaging apps",
+    "examples": [
+      "I had to block my ex on instagram",
+      "block them if they keep bothering you",
+      "she blocked me after that argument"
+    ],
+    "category": "internet",
+    "sentiment": "negative",
+    "contexts": ["social_media", "texting"],
+    "popularity": 8,
+    "related_terms": ["unfollow", "mute", "delete", "cut off"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+
+
+  {
+    "id": "boomer-029",
+    "term": "boomer",
+    "pronunciation": null,
+    "definition": "refers to older people, especially those seen as out of touch with modern culture",
+    "examples": [
+      "my dad is such a boomer with technology",
+      "okay boomer whatever you say",
+      "stop being a boomer and try the app"
+    ],
+    "category": "people",
+    "sentiment": "negative",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["old school", "outdated", "karen", "out of touch"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "7",
-    "term": "lowkey",
-    "definition": "Somewhat, kind of, secretly",
-    "example": "I'm lowkey excited about this party"
+    "id": "bottom-tier-030",
+    "term": "bottom tier",
+    "pronunciation": null,
+    "definition": "means the worst category or lowest quality - opposite of top tier",
+    "examples": [
+      "that movie was bottom tier trash",
+      "his jokes are bottom tier cringe",
+      "bottom tier service at that restaurant"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "social_media"],
+    "popularity": 5,
+    "related_terms": ["trash", "terrible", "worst", "mid"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "8",
-    "term": "highkey", 
-    "definition": "Obviously, definitely, openly",
-    "example": "I highkey love this song"
+    "id": "brb-031",
+    "term": "brb",
+    "pronunciation": "bee-arr-bee",
+    "definition": "abbreviation for 'be right back' - indicates temporary absence",
+    "examples": [
+      "brb going to grab some food",
+      "brb my mom is calling me",
+      "hold on brb need to use bathroom"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 8,
+    "related_terms": ["back in a sec", "one minute", "hold up"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "9",
+    "id": "bro-032",
+    "term": "bro",
+    "pronunciation": null,
+    "definition": "casual term for friend, buddy, or to address someone - not just males",
+    "examples": [
+      "thanks bro I appreciate it",
+      "bro did you see what happened",
+      "what's up bro how you been"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 9,
+    "related_terms": ["dude", "buddy", "homie", "man"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "bruh-033",
+    "term": "bruh",
+    "pronunciation": null,
+    "definition": "expression of disbelief, frustration, or 'seriously?' - variation of 'bro'",
+    "examples": [
+      "bruh are you kidding me right now",
+      "I forgot my keys again bruh",
+      "bruh that's not what I meant"
+    ],
+    "category": "reactions",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 9,
+    "related_terms": ["seriously", "come on", "are you kidding"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "buddy-034",
+    "term": "buddy",
+    "pronunciation": null,
+    "definition": "friendly term for friend or acquaintance, sometimes used sarcastically",
+    "examples": [
+      "hey buddy want to come with us",
+      "listen buddy that's not gonna work",
+      "thanks buddy you're the best"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["casual"],
+    "popularity": 6,
+    "related_terms": ["friend", "pal", "dude", "bro"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "bussin-035",
     "term": "bussin",
-    "definition": "Really good, especially referring to food",
-    "example": "This pizza is absolutely bussin"
+    "pronunciation": "BUSS-in",
+    "definition": "means something tastes amazing or is excellent quality - especially food",
+    "examples": [
+      "this sandwich is bussin",
+      "grandma's cookies are straight bussin",
+      "the cafeteria food is actually bussin today"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["food", "casual", "social_media"],
+    "popularity": 8,
+    "related_terms": ["fire", "bomb", "slaps", "delicious"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "10",
-    "term": "mid",
-    "definition": "Mediocre, average, not impressive",
-    "example": "That movie was pretty mid honestly"
+    "id": "btw-036",
+    "term": "btw",
+    "pronunciation": "bee-tee-double-you",
+    "definition": "abbreviation for 'by the way' - used to add information casually",
+    "examples": [
+      "btw I won't be at lunch tomorrow",
+      "that movie was good btw you should watch it",
+      "btw did you finish the homework"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 8,
+    "related_terms": ["by the way", "also", "fyi", "oh and"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "11",
-    "term": "rizz",
-    "definition": "Charisma, charm, ability to attract someone",
-    "example": "He's got serious rizz with everyone"
+    "id": "cackling-037",
+    "term": "cackling",
+    "pronunciation": null,
+    "definition": "means laughing very hard, uncontrollably - more intense than just laughing",
+    "examples": [
+      "I'm cackling at that meme",
+      "his joke had me cackling for minutes",
+      "we were cackling at the movie theater"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media", "texting"],
+    "popularity": 6,
+    "related_terms": ["dying", "wheezing", "screaming", "howling"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "12",
-    "term": "simp",
-    "definition": "Someone who does too much for someone they like",
-    "example": "Stop simping and just be yourself"
+    "id": "cant-even-038",
+    "term": "can't even",
+    "pronunciation": null,
+    "definition": "expression of being overwhelmed, speechless, or unable to handle something",
+    "examples": [
+      "that outfit is so cute I can't even",
+      "the drama today I just can't even",
+      "this test is so hard I can't even"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 7,
+    "related_terms": ["i can't", "speechless", "overwhelmed", "done"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "13",
-    "term": "sus",
-    "definition": "Suspicious, questionable, sketchy",
-    "example": "That excuse sounds pretty sus to me"
-  },
-  {
-    "id": "14",
-    "term": "fire",
-    "definition": "Excellent, amazing, really good",
-    "example": "Your new haircut is absolutely fire"
-  },
-  {
-    "id": "15",
-    "term": "drip",
-    "definition": "Stylish outfit or good fashion sense",
-    "example": "Your drip is unmatched today"
-  },
-  {
-    "id": "16",
-    "term": "based",
-    "definition": "Being yourself regardless of others' opinions",
-    "example": "That's such a based take on the situation"
-  },
-  {
-    "id": "17",
+    "id": "cap-039",
     "term": "cap",
-    "definition": "Lie, false statement, not true",
-    "example": "You saying you studied all night is cap"
+    "pronunciation": null,
+    "definition": "means 'lie' or 'false statement' - the opposite of 'no cap'",
+    "examples": [
+      "that's cap you didn't really meet him",
+      "stop capping about your grades",
+      "why you always capping bro"
+    ],
+    "category": "communication",
+    "sentiment": "negative",
+    "contexts": ["texting", "casual"],
+    "popularity": 8,
+    "related_terms": ["no cap", "lying", "fake", "false"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "18",
+    "id": "carry-040",
+    "term": "carry",
+    "pronunciation": null,
+    "definition": "means to support or do most of the work for a team or group",
+    "examples": [
+      "she carried our group project",
+      "I had to carry the whole basketball team",
+      "he always carries us in video games"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["support", "help", "lead", "save"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "chemistry-041",
+    "term": "chemistry",
+    "pronunciation": null,
+    "definition": "refers to natural romantic or personal connection between two people",
+    "examples": [
+      "we have such good chemistry together",
+      "there's no chemistry between us",
+      "I can feel the chemistry when we talk"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 6,
+    "related_terms": ["connection", "spark", "vibe", "energy"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "chile-042",
+    "term": "chile",
+    "pronunciation": "CHIE-lay",
+    "definition": "variation of 'child' used to express disbelief, disappointment, or 'oh honey no'",
+    "examples": [
+      "chile you did not just say that",
+      "chile please don't embarrass yourself",
+      "chile that outfit is not it"
+    ],
+    "category": "reactions",
+    "sentiment": "negative",
+    "contexts": ["casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["honey", "sweetie", "sis", "girl"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "chilling-043",
+    "term": "chilling",
+    "pronunciation": null,
+    "definition": "means relaxing, hanging out casually, or taking it easy",
+    "examples": [
+      "just chilling at home today",
+      "we're chilling at the park",
+      "what you up to? just chilling"
+    ],
+    "category": "actions",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting", "dating"],
+    "popularity": 8,
+    "related_terms": ["relaxing", "hanging out", "vibing", "lounging"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+
+  {
+    "id": "clean-045",
+    "term": "clean",
+    "pronunciation": null,
+    "definition": "means something looks really good, neat, or well-executed - especially outfits or style",
+    "examples": [
+      "your outfit looks clean today",
+      "that car is clean as hell",
+      "he keeps his room clean and organized"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["fresh", "crisp", "neat", "sharp"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "clearly-046",
+    "term": "clearly",
+    "pronunciation": null,
+    "definition": "used to emphasize something obvious or to show attitude about a situation",
+    "examples": [
+      "clearly you didn't listen to me",
+      "she clearly doesn't want to talk",
+      "clearly I was right about this"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["obviously", "definitely", "for sure", "no doubt"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "comment-047",
+    "term": "comment",
+    "pronunciation": null,
+    "definition": "to leave a written response on social media posts, videos, or online content",
+    "examples": [
+      "did you see what they commented on my post",
+      "I need to comment back on her story",
+      "don't comment anything stupid please"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 8,
+    "related_terms": ["reply", "respond", "like", "share"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "connection-048",
+    "term": "connection",
+    "pronunciation": null,
+    "definition": "refers to a meaningful bond or understanding between people",
+    "examples": [
+      "I feel a real connection with them",
+      "we have a deep connection",
+      "there's no connection here unfortunately"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 6,
+    "related_terms": ["chemistry", "bond", "spark", "vibe"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+
+  {
+    "id": "copy-050",
+    "term": "copy",
+    "pronunciation": null,
+    "definition": "means 'understood', 'got it', or 'I hear you' - like military/radio terminology",
+    "examples": [
+      "meet me at the library at 3pm. copy",
+      "we need to leave early tomorrow. copy that",
+      "change of plans for tonight. copy"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 6,
+    "related_terms": ["understood", "got it", "heard", "bet"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "crispy-051",
+    "term": "crispy",
+    "pronunciation": null,
+    "definition": "means something looks really good, fresh, or well put-together - especially style",
+    "examples": [
+      "those sneakers are crispy",
+      "your haircut came out crispy",
+      "that car is looking crispy after the wash"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["clean", "fresh", "sharp", "smooth"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "cringe-052",
+    "term": "cringe",
+    "pronunciation": null,
+    "definition": "means extremely awkward, embarrassing, or uncomfortable to watch/experience",
+    "examples": [
+      "that TikTok was so cringe",
+      "stop being cringe in front of my friends",
+      "I can't watch this it's too cringe"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["social_media", "casual", "texting"],
+    "popularity": 9,
+    "related_terms": ["awkward", "embarrassing", "uncomfortable", "secondhand embarrassment"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "crush-053",
+    "term": "crush",
+    "pronunciation": null,
+    "definition": "someone you have romantic feelings for or find attractive",
+    "examples": [
+      "I have a crush on someone in my class",
+      "my crush finally texted me back",
+      "does your crush know how you feel"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["bae", "attracted", "interested", "like"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "crushed-it-054",
+    "term": "crushed it",
+    "pronunciation": null,
+    "definition": "means performed excellently or succeeded beyond expectations",
+    "examples": [
+      "you crushed it on that presentation",
+      "she crushed it at the audition",
+      "we crushed it in the basketball game"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["killed it", "nailed it", "slayed", "ate"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "crusty-055",
+    "term": "crusty",
+    "pronunciation": null,
+    "definition": "means gross, dirty, old, or generally unpleasant - especially appearance",
+    "examples": [
+      "those shoes are crusty throw them away",
+      "why is your phone case so crusty",
+      "that sandwich looks crusty don't eat it"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["nasty", "gross", "musty", "dusty"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "crying-056",
+    "term": "crying",
+    "pronunciation": null,
+    "definition": "used to express extreme emotion - can be laughter, sadness, or being overwhelmed",
+    "examples": [
+      "that meme has me crying",
+      "I'm crying over this test grade",
+      "crying at how funny that was"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["texting", "social_media", "casual"],
+    "popularity": 8,
+    "related_terms": ["sobbing", "dying", "dead", "deceased"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "cute-057",
+    "term": "cute",
+    "pronunciation": null,
+    "definition": "means attractive, adorable, or appealing - used for people, animals, or things",
+    "examples": [
+      "you look really cute today",
+      "that puppy is so cute",
+      "what a cute coffee shop"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "dating", "texting"],
+    "popularity": 9,
+    "related_terms": ["adorable", "pretty", "sweet", "lovely"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "cutie-058",
+    "term": "cutie",
+    "pronunciation": null,
+    "definition": "term of endearment for someone attractive or adorable",
+    "examples": [
+      "hey cutie how was your day",
+      "look at that cutie over there",
+      "you're such a cutie when you smile"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 7,
+    "related_terms": ["baby", "sweetie", "honey", "babe"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "dating-059",
+    "term": "dating",
+    "pronunciation": null,
+    "definition": "being in a romantic relationship or going on dates with someone",
+    "examples": [
+      "are you two dating now",
+      "I'm dating someone from school",
+      "we've been dating for three months"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["dating", "casual"],
+    "popularity": 8,
+    "related_terms": ["seeing", "together", "going out", "talking"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "decent-063",
+    "term": "decent",
+    "pronunciation": null,
+    "definition": "means acceptable, okay, or reasonably good - not amazing but not bad",
+    "examples": [
+      "the movie was decent I guess",
+      "that restaurant has decent food",
+      "decent weather for the beach today"
+    ],
+    "category": "describing",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["alright", "okay", "fine", "not bad"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "delicious-064",
+    "term": "delicious",
+    "pronunciation": null,
+    "definition": "means food tastes really good or excellent - classic positive food descriptor",
+    "examples": [
+      "this pizza is delicious",
+      "your cooking is always delicious",
+      "found a delicious new restaurant"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["food", "casual"],
+    "popularity": 7,
+    "related_terms": ["tasty", "yummy", "bussin", "bomb"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "delivered-065",
+    "term": "delivered",
+    "pronunciation": null,
+    "definition": "means performed well, came through, or met expectations successfully",
+    "examples": [
+      "she delivered on that presentation",
+      "the movie definitely delivered",
+      "he delivered when we needed him most"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["came through", "executed", "performed", "nailed it"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+
+
+
+
+  {
+    "id": "disgusting-070",
+    "term": "disgusting",
+    "pronunciation": null,
+    "definition": "means extremely gross, nasty, or repulsive",
+    "examples": [
+      "that food looks disgusting",
+      "his behavior was disgusting",
+      "disgusting weather outside today"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["gross", "nasty", "terrible", "awful"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "divine-071",
+    "term": "divine",
+    "pronunciation": null,
+    "definition": "means absolutely perfect, heavenly, or exceptionally good",
+    "examples": [
+      "this chocolate cake is divine",
+      "you look absolutely divine tonight",
+      "the weather is divine for a picnic"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 5,
+    "related_terms": ["heavenly", "perfect", "amazing", "incredible"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "dm-072",
+    "term": "dm",
+    "pronunciation": "dee-em",
+    "definition": "abbreviation for 'direct message' - private message on social media",
+    "examples": [
+      "dm me the details later",
+      "she slid into my dms",
+      "check your dms I sent you something"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 9,
+    "related_terms": ["message", "text", "slide", "private message"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "done-073",
+    "term": "done",
+    "pronunciation": null,
+    "definition": "means finished, over it, or fed up with something/someone",
+    "examples": [
+      "I'm done with this drama",
+      "are you done with your homework",
+      "so done with this weather"
+    ],
+    "category": "reactions",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["over it", "finished", "fed up", "can't even"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "drip-074",
+    "term": "drip",
+    "pronunciation": null,
+    "definition": "refers to someone's style, fashion sense, or overall swag",
+    "examples": [
+      "your outfit has serious drip",
+      "he's got that drip today",
+      "showing up with the drip as always"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 8,
+    "related_terms": ["swag", "style", "fit", "outfit"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "dude-075",
+    "term": "dude",
+    "pronunciation": null,
+    "definition": "casual way to address someone - friend, acquaintance, or stranger regardless of gender",
+    "examples": [
+      "dude did you see what happened",
+      "hey dude how's it going",
+      "dude that's crazy"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["bro", "man", "guy", "friend"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "dusty-076",
+    "term": "dusty",
+    "pronunciation": null,
+    "definition": "means old, outdated, crusty, or generally undesirable",
+    "examples": [
+      "that phone is dusty get a new one",
+      "his jokes are dusty and not funny",
+      "why you wearing those dusty shoes"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 5,
+    "related_terms": ["crusty", "old", "outdated", "musty"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+
+  {
+    "id": "eh-078",
+    "term": "eh",
+    "pronunciation": "ay",
+    "definition": "means 'meh', 'whatever', or showing indifference or mild disappointment",
+    "examples": [
+      "how was the movie? eh it was okay",
+      "eh I don't really care either way",
+      "the food was eh nothing special"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["meh", "whatever", "okay", "fine"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "elite-079",
+    "term": "elite",
+    "pronunciation": null,
+    "definition": "means top-tier, excellent, or the best quality/performance",
+    "examples": [
+      "that play was elite level",
+      "she has elite skills at basketball",
+      "elite performance in that presentation"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["top tier", "excellent", "premium", "goated"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "embarrassing-080",
+    "term": "embarrassing",
+    "pronunciation": null,
+    "definition": "means causing shame, awkwardness, or social discomfort",
+    "examples": [
+      "that was so embarrassing to watch",
+      "stop being embarrassing in public",
+      "embarrassing that I forgot their name"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["cringe", "awkward", "uncomfortable", "shameful"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "energy-081",
+    "term": "energy",
+    "pronunciation": null,
+    "definition": "refers to someone's vibe, mood, or the feeling they give off",
+    "examples": [
+      "I love your positive energy today",
+      "that place has weird energy",
+      "she brings such good energy to the group"
+    ],
+    "category": "describing",
+    "sentiment": "neutral",
+    "contexts": ["casual", "social_media"],
+    "popularity": 8,
+    "related_terms": ["vibe", "aura", "mood", "presence"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "exactly-082",
+    "term": "exactly",
+    "pronunciation": null,
+    "definition": "means 'that's right', 'precisely', or shows strong agreement",
+    "examples": [
+      "exactly what I was thinking",
+      "exactly you get it",
+      "that's exactly the problem"
+    ],
+    "category": "communication",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["precisely", "absolutely", "facts", "this"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "executed-083",
+    "term": "executed",
+    "pronunciation": null,
+    "definition": "means performed something perfectly or carried out a plan successfully",
+    "examples": [
+      "she executed that dance routine flawlessly",
+      "we executed the group project perfectly",
+      "he executed his presentation like a pro"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["performed", "delivered", "nailed it", "accomplished"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "facts-084",
+    "term": "facts",
+    "pronunciation": null,
+    "definition": "means 'that's true', 'absolutely right', or 'I completely agree'",
+    "examples": [
+      "pizza is the best food. facts",
+      "monday mornings are terrible. facts",
+      "facts I was thinking the same thing"
+    ],
+    "category": "communication",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 9,
+    "related_terms": ["truth", "exactly", "absolutely", "no cap"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "fam-085",
+    "term": "fam",
+    "pronunciation": null,
+    "definition": "means family or close friends - used to address people you're close to",
+    "examples": [
+      "hey fam what's the plan tonight",
+      "thanks fam I appreciate you",
+      "fam we need to talk about this"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["family", "crew", "squad", "homie"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "fine-086",
+    "term": "fine",
+    "pronunciation": null,
+    "definition": "means okay, acceptable, or sometimes used to show mild annoyance",
+    "examples": [
+      "how was lunch? it was fine",
+      "fine I'll do it myself",
+      "the weather is fine for walking"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["okay", "alright", "whatever", "decent"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "finished-087",
+    "term": "finished",
+    "pronunciation": null,
+    "definition": "means completed, done, or sometimes fed up with something",
+    "examples": [
+      "are you finished with your homework",
+      "I'm finished with this drama",
+      "finally finished cleaning my room"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["done", "completed", "over", "through"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "fire-088",
+    "term": "fire",
+    "pronunciation": null,
+    "definition": "means something is excellent, amazing, or really good",
+    "examples": [
+      "that song is fire",
+      "your outfit is fire today",
+      "this food is straight fire"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media", "texting"],
+    "popularity": 9,
+    "related_terms": ["amazing", "excellent", "bussin", "slaps"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "fit-089",
+    "term": "fit",
+    "pronunciation": null,
+    "definition": "refers to someone's outfit or overall style and appearance",
+    "examples": [
+      "your fit is looking good today",
+      "I need to pick out a fit for tonight",
+      "everyone complimented my fit"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 8,
+    "related_terms": ["outfit", "style", "drip", "look"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "flawless-090",
+    "term": "flawless",
+    "pronunciation": null,
+    "definition": "means perfect, without any mistakes or problems",
+    "examples": [
+      "that performance was flawless",
+      "her makeup looks flawless",
+      "flawless execution on that project"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["perfect", "pristine", "immaculate", "clean"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "flex-091",
+    "term": "flex",
+    "pronunciation": null,
+    "definition": "means to show off or boast about something you have or achieved",
+    "examples": [
+      "stop trying to flex with your new phone",
+      "she's flexing her dance skills",
+      "not trying to flex but I got an A"
+    ],
+    "category": "actions",
+    "sentiment": "neutral",
+    "contexts": ["casual", "social_media"],
+    "popularity": 8,
+    "related_terms": ["show off", "boast", "brag", "flaunt"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "flopped-092",
+    "term": "flopped",
+    "pronunciation": null,
+    "definition": "means failed, didn't work out, or was unsuccessful",
+    "examples": [
+      "that movie completely flopped",
+      "my joke flopped nobody laughed",
+      "the party flopped barely anyone came"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["failed", "bombed", "didn't work", "unsuccessful"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "follow-093",
+    "term": "follow",
+    "pronunciation": null,
+    "definition": "to subscribe to someone's social media account to see their posts",
+    "examples": [
+      "you should follow me on instagram",
+      "I'll follow you back",
+      "how many people follow your account"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 9,
+    "related_terms": ["subscribe", "add", "connect", "friend"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "for-real-094",
+    "term": "for real",
+    "pronunciation": null,
+    "definition": "means seriously, truly, or I'm not joking - emphasizes honesty",
+    "examples": [
+      "for real that's what happened",
+      "are you for real right now",
+      "for real I think you should do it"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["seriously", "truly", "honestly", "no cap"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "fr-095",
+    "term": "fr",
+    "pronunciation": "eff-arr",
+    "definition": "abbreviation for 'for real' - means seriously or I'm being honest",
+    "examples": [
+      "that test was hard fr",
+      "fr I don't know what to do",
+      "you look good today fr"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "social_media"],
+    "popularity": 9,
+    "related_terms": ["for real", "seriously", "honestly", "no cap"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "fumbled-096",
+    "term": "fumbled",
+    "pronunciation": null,
+    "definition": "means messed up an opportunity or made a mistake when it mattered",
+    "examples": [
+      "he fumbled that job interview",
+      "I fumbled asking her to prom",
+      "don't fumble this chance"
+    ],
+    "category": "actions",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["messed up", "blew it", "missed", "failed"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "ghosting-097",
+    "term": "ghosting",
+    "pronunciation": null,
+    "definition": "suddenly stopping all communication with someone without explanation",
+    "examples": [
+      "she's been ghosting me for a week",
+      "stop ghosting people it's not cool",
+      "I think he's ghosting me"
+    ],
+    "category": "actions",
+    "sentiment": "negative",
+    "contexts": ["dating", "texting", "social_media"],
+    "popularity": 8,
+    "related_terms": ["ignoring", "avoiding", "disappearing", "cutting off"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "girl-098",
+    "term": "girl",
+    "pronunciation": null,
+    "definition": "used to address someone regardless of gender - like 'dude' or 'bro'",
+    "examples": [
+      "girl you need to see this",
+      "girl what are you thinking",
+      "girl that's not gonna work"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["sis", "honey", "friend", "dude"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "giving-099",
+    "term": "giving",
+    "pronunciation": null,
+    "definition": "means showing or radiating a particular vibe or energy",
+    "examples": [
+      "you're giving main character energy",
+      "this outfit is giving fancy vibes",
+      "she's giving confidence today"
+    ],
+    "category": "describing",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "casual"],
+    "popularity": 8,
+    "related_terms": ["radiating", "showing", "serving", "expressing"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "god-100",
+    "term": "god",
+    "pronunciation": null,
+    "definition": "used to describe someone who is extremely skilled or impressive at something",
+    "examples": [
+      "she's a math god",
+      "he's a basketball god",
+      "you're a cooking god"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["legend", "master", "expert", "pro"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "goddess-101",
+    "term": "goddess",
+    "pronunciation": null,
+    "definition": "used to describe someone who looks amazing or is exceptionally talented",
+    "examples": [
+      "you look like a goddess in that dress",
+      "she's a goddess at playing piano",
+      "absolute goddess energy today"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media", "dating"],
+    "popularity": 6,
+    "related_terms": ["queen", "angel", "icon", "legend"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "going-out-102",
+    "term": "going out",
+    "pronunciation": null,
+    "definition": "means dating someone or being in a relationship",
+    "examples": [
+      "are you two going out now",
+      "we've been going out for two months",
+      "I'm going out with someone from work"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 7,
+    "related_terms": ["dating", "seeing", "together", "relationship"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "good-103",
+    "term": "good",
+    "pronunciation": null,
+    "definition": "means positive, satisfactory, or acceptable quality",
+    "examples": [
+      "that movie was really good",
+      "you did good on the test",
+      "having a good time at the party"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["nice", "great", "solid", "decent"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "gorgeous-104",
+    "term": "gorgeous",
+    "pronunciation": null,
+    "definition": "means extremely beautiful or attractive",
+    "examples": [
+      "you look gorgeous tonight",
+      "what a gorgeous sunset",
+      "she's absolutely gorgeous"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["beautiful", "stunning", "amazing", "pretty"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "gtg-105",
+    "term": "gtg",
+    "pronunciation": "gee-tee-gee",
+    "definition": "abbreviation for 'got to go' - means I have to leave now",
+    "examples": [
+      "gtg my mom is calling me",
+      "gtg class is starting soon",
+      "sorry gtg talk to you later"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 7,
+    "related_terms": ["gotta go", "bye", "talk later", "brb"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "guy-106",
+    "term": "guy",
+    "pronunciation": null,
+    "definition": "casual way to refer to a person, regardless of gender",
+    "examples": [
+      "hey guys what's the plan",
+      "that guy over there looks familiar",
+      "you guys are the best"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["person", "dude", "friend", "people"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "hanging-out-107",
+    "term": "hanging out",
+    "pronunciation": null,
+    "definition": "means spending casual time together, relaxing with friends",
+    "examples": [
+      "just hanging out at the mall",
+      "want to hang out this weekend",
+      "we're hanging out at my place"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "dating"],
+    "popularity": 8,
+    "related_terms": ["chilling", "spending time", "vibing", "relaxing"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "heard-108",
+    "term": "heard",
+    "pronunciation": null,
+    "definition": "means 'understood', 'got it', or 'I acknowledge what you said'",
+    "examples": [
+      "meet me at 6pm. heard",
+      "we need to study tonight. heard",
+      "change of plans for tomorrow. heard"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 6,
+    "related_terms": ["understood", "got it", "copy", "acknowledged"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "heavenly-109",
+    "term": "heavenly",
+    "pronunciation": null,
+    "definition": "means absolutely perfect, divine, or exceptionally good",
+    "examples": [
+      "this chocolate cake is heavenly",
+      "the weather is heavenly today",
+      "that massage was heavenly"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "food"],
+    "popularity": 5,
+    "related_terms": ["divine", "perfect", "amazing", "incredible"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "highkey-110",
+    "term": "highkey",
+    "pronunciation": null,
+    "definition": "means openly, obviously, or very much - opposite of lowkey",
+    "examples": [
+      "I highkey love that song",
+      "highkey nervous about the test",
+      "she's highkey the best teacher"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 7,
+    "related_terms": ["openly", "obviously", "really", "very"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "hits-different-111",
+    "term": "hits different",
+    "pronunciation": null,
+    "definition": "means something is uniquely good or has a special quality that stands out",
+    "examples": [
+      "coffee just hits different in the morning",
+      "that song hits different at night",
+      "homemade food hits different"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media", "food"],
+    "popularity": 8,
+    "related_terms": ["special", "unique", "better", "distinct"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "homie-112",
+    "term": "homie",
+    "pronunciation": null,
+    "definition": "means close friend or buddy - term of friendship and familiarity",
+    "examples": [
+      "thanks homie I appreciate it",
+      "my homie always has my back",
+      "what's up homie how you been"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["friend", "buddy", "bro", "fam"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "honestly-113",
+    "term": "honestly",
+    "pronunciation": null,
+    "definition": "used to emphasize truth or give genuine opinion",
+    "examples": [
+      "honestly I don't know what to do",
+      "that was honestly amazing",
+      "honestly I think you're right"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["truly", "really", "for real", "genuinely"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "honey-114",
+    "term": "honey",
+    "pronunciation": null,
+    "definition": "term of endearment used for friends, romantic partners, or to address someone kindly",
+    "examples": [
+      "thanks honey you're the best",
+      "honey you need to see this",
+      "hey honey how was your day"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "dating"],
+    "popularity": 6,
+    "related_terms": ["sweetie", "baby", "love", "dear"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "horrible-115",
+    "term": "horrible",
+    "pronunciation": null,
+    "definition": "means extremely bad, terrible, or unpleasant",
+    "examples": [
+      "that movie was horrible",
+      "I had a horrible day at work",
+      "the weather is horrible outside"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["terrible", "awful", "bad", "disgusting"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "hottie-116",
+    "term": "hottie",
+    "pronunciation": null,
+    "definition": "means an attractive person - used to describe someone good looking",
+    "examples": [
+      "that person is a total hottie",
+      "she's such a hottie",
+      "did you see that hottie at the coffee shop"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "dating"],
+    "popularity": 6,
+    "related_terms": ["attractive", "good looking", "cute", "beautiful"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "howling-117",
+    "term": "howling",
+    "pronunciation": null,
+    "definition": "means laughing extremely hard or finding something hilarious",
+    "examples": [
+      "that joke had me howling",
+      "I'm howling at this meme",
+      "we were howling at the comedy show"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 6,
+    "related_terms": ["cackling", "laughing", "cracking up", "wheezing"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "icon-118",
+    "term": "icon",
+    "pronunciation": null,
+    "definition": "means someone who is legendary, influential, or exceptionally cool",
+    "examples": [
+      "she's such an icon",
+      "that teacher is an absolute icon",
+      "you're an icon for helping me"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 7,
+    "related_terms": ["legend", "queen", "goddess", "star"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "iconic-119",
+    "term": "iconic",
+    "pronunciation": null,
+    "definition": "means legendary, memorable, or representing the best of something",
+    "examples": [
+      "that outfit is iconic",
+      "such an iconic moment",
+      "her dance moves are iconic"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 7,
+    "related_terms": ["legendary", "classic", "memorable", "amazing"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "idk-120",
+    "term": "idk",
+    "pronunciation": "eye-dee-kay",
+    "definition": "abbreviation for 'I don't know' - shows uncertainty or lack of knowledge",
+    "examples": [
+      "what time does it start? idk",
+      "idk what to wear tonight",
+      "are you coming to the party? idk maybe"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 9,
+    "related_terms": ["I don't know", "not sure", "uncertain", "maybe"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "immaculate-121",
+    "term": "immaculate",
+    "pronunciation": null,
+    "definition": "means absolutely perfect, flawless, or extremely clean and well-done",
+    "examples": [
+      "your room looks immaculate",
+      "that presentation was immaculate",
+      "immaculate vibes at this party"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["perfect", "flawless", "pristine", "clean"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "incredible-122",
+    "term": "incredible",
+    "pronunciation": null,
+    "definition": "means amazing, extraordinary, or hard to believe how good something is",
+    "examples": [
+      "that concert was incredible",
+      "you did incredible on the test",
+      "incredible weather for the beach"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["amazing", "awesome", "fantastic", "unbelievable"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "interested-123",
+    "term": "interested",
+    "pronunciation": null,
+    "definition": "means wanting to know more, attracted to, or curious about something or someone",
+    "examples": [
+      "are you interested in going to the movies",
+      "I'm interested in learning guitar",
+      "she seems interested in him"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "dating"],
+    "popularity": 7,
+    "related_terms": ["curious", "attracted", "drawn to", "wanting"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "irl-124",
+    "term": "irl",
+    "pronunciation": "eye-arr-ell",
+    "definition": "abbreviation for 'in real life' - refers to offline or actual reality",
+    "examples": [
+      "we should meet up irl sometime",
+      "that's different from how they are irl",
+      "irl I'm actually pretty shy"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "social_media"],
+    "popularity": 8,
+    "related_terms": ["in real life", "offline", "actually", "in person"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "karen-125",
+    "term": "karen",
+    "pronunciation": null,
+    "definition": "refers to someone who complains excessively or demands to speak to managers",
+    "examples": [
+      "don't be a karen about the small mistake",
+      "she went full karen at the restaurant",
+      "that customer was such a karen"
+    ],
+    "category": "people",
+    "sentiment": "negative",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["complainer", "demanding", "entitled", "difficult"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "king-126",
+    "term": "king",
+    "pronunciation": null,
+    "definition": "used to praise someone, especially males, for being awesome or impressive",
+    "examples": [
+      "you're a king for helping me move",
+      "absolute king energy today",
+      "he's the king of basketball"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["legend", "champion", "hero", "boss"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "legend-127",
+    "term": "legend",
+    "pronunciation": null,
+    "definition": "means someone who is exceptionally cool, helpful, or impressive",
+    "examples": [
+      "thanks for the help you're a legend",
+      "she's an absolute legend at soccer",
+      "what a legend for bringing pizza"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 8,
+    "related_terms": ["hero", "icon", "champion", "star"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "legendary-128",
+    "term": "legendary",
+    "pronunciation": null,
+    "definition": "means extremely impressive, memorable, or worthy of legend status",
+    "examples": [
+      "that party was legendary",
+      "his performance was legendary",
+      "legendary comeback in the game"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["epic", "amazing", "iconic", "incredible"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "like-129",
+    "term": "like",
+    "pronunciation": null,
+    "definition": "filler word used frequently in speech, or to express similarity",
+    "examples": [
+      "I was like totally confused",
+      "it's like really cold outside",
+      "she was like whatever"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 9,
+    "related_terms": ["such as", "similar to", "kinda", "sort of"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "literally-130",
+    "term": "literally",
+    "pronunciation": null,
+    "definition": "used for emphasis, often meaning 'really' or 'actually' rather than literal truth",
+    "examples": [
+      "I literally can't even",
+      "that's literally the best pizza ever",
+      "literally everyone was there"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 9,
+    "related_terms": ["actually", "really", "totally", "completely"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "lmao-131",
+    "term": "lmao",
+    "pronunciation": "el-em-ay-oh",
+    "definition": "abbreviation for 'laughing my butt off' - shows something is very funny",
+    "examples": [
+      "that meme has me lmao",
+      "lmao that's hilarious",
+      "your joke made me lmao"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["texting", "social_media"],
+    "popularity": 8,
+    "related_terms": ["lol", "haha", "funny", "hilarious"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "love-132",
+    "term": "love",
+    "pronunciation": null,
+    "definition": "means really like, adore, or have strong positive feelings about",
+    "examples": [
+      "I love that song",
+      "love you bestie",
+      "love this weather today"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "dating"],
+    "popularity": 9,
+    "related_terms": ["adore", "cherish", "really like", "appreciate"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "lovely-133",
+    "term": "lovely",
+    "pronunciation": null,
+    "definition": "means beautiful, pleasant, or very nice",
+    "examples": [
+      "you look lovely today",
+      "what a lovely sunset",
+      "such a lovely gesture"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "dating"],
+    "popularity": 6,
+    "related_terms": ["beautiful", "nice", "pleasant", "sweet"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "lowkey-134",
+    "term": "lowkey",
+    "pronunciation": null,
+    "definition": "means somewhat, secretly, or not wanting to admit fully",
+    "examples": [
+      "I'm lowkey nervous about the test",
+      "lowkey that movie was boring",
+      "lowkey want to skip class today"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 9,
+    "related_terms": ["kinda", "secretly", "somewhat", "a little"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "main-character-135",
+    "term": "main character",
+    "pronunciation": null,
+    "definition": "someone who acts like they're the center of attention or most important person",
+    "examples": [
+      "she has main character energy",
+      "stop acting like the main character",
+      "living my main character moment"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "casual"],
+    "popularity": 7,
+    "related_terms": ["center of attention", "confident", "self-focused", "star"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "maybe-136",
+    "term": "maybe",
+    "pronunciation": null,
+    "definition": "means possibly, perhaps, or shows uncertainty about something",
+    "examples": [
+      "maybe I'll go to the party",
+      "are you free tonight? maybe",
+      "maybe we should study together"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["possibly", "perhaps", "not sure", "might"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "meh-137",
+    "term": "meh",
+    "pronunciation": null,
+    "definition": "shows indifference, mild disappointment, or lack of enthusiasm",
+    "examples": [
+      "how was the movie? meh it was okay",
+      "meh I don't really care",
+      "the food was meh nothing special"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["whatever", "eh", "okay", "indifferent"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "mood-138",
+    "term": "mood",
+    "pronunciation": null,
+    "definition": "means 'that's relatable' or 'I feel the same way'",
+    "examples": [
+      "not wanting to get out of bed. mood",
+      "craving pizza at midnight. mood",
+      "that's such a mood honestly"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting", "casual"],
+    "popularity": 9,
+    "related_terms": ["relatable", "same", "felt", "vibe"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "musty-139",
+    "term": "musty",
+    "pronunciation": null,
+    "definition": "means smelly, old, stale, or generally unpleasant",
+    "examples": [
+      "this room smells musty",
+      "those shoes are getting musty",
+      "why does your backpack smell musty"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 5,
+    "related_terms": ["stale", "smelly", "old", "gross"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "nailed-it-140",
+    "term": "nailed it",
+    "pronunciation": null,
+    "definition": "means performed perfectly or succeeded exactly as intended",
+    "examples": [
+      "you nailed it on that presentation",
+      "she nailed it at the audition",
+      "nailed it with that joke"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["crushed it", "perfect", "succeeded", "aced it"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "nasty-141",
+    "term": "nasty",
+    "pronunciation": null,
+    "definition": "means gross, disgusting, or unpleasant",
+    "examples": [
+      "that food looks nasty",
+      "your room smells nasty clean it",
+      "nasty weather outside today"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["gross", "disgusting", "yucky", "terrible"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "neat-142",
+    "term": "neat",
+    "pronunciation": null,
+    "definition": "means cool, interesting, or well-organized",
+    "examples": [
+      "that's a neat idea",
+      "your room looks so neat",
+      "neat I didn't know that"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 5,
+    "related_terms": ["cool", "nice", "interesting", "tidy"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "ngl-143",
+    "term": "ngl",
+    "pronunciation": "en-gee-ell",
+    "definition": "abbreviation for 'not gonna lie' - used before admitting something honest",
+    "examples": [
+      "ngl that movie was boring",
+      "ngl I forgot to do my homework",
+      "ngl you look really good today"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual", "social_media"],
+    "popularity": 9,
+    "related_terms": ["not gonna lie", "honestly", "to be honest", "tbh"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "nice-144",
+    "term": "nice",
+    "pronunciation": null,
+    "definition": "means good, pleasant, or showing approval",
+    "examples": [
+      "that's nice of you to help",
+      "nice job on the presentation",
+      "nice weather for a picnic"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["good", "pleasant", "cool", "sweet"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "no-cap-145",
+    "term": "no cap",
+    "pronunciation": null,
+    "definition": "means 'no lie', 'for real', or 'I'm being honest'",
+    "examples": [
+      "that pizza was fire no cap",
+      "I'm going to bed early tonight no cap",
+      "she's the smartest person I know no cap"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual", "social_media"],
+    "popularity": 9,
+    "related_terms": ["fr", "for real", "honestly", "on god"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "obviously-146",
+    "term": "obviously",
+    "pronunciation": null,
+    "definition": "means 'of course', 'clearly', or 'that should be apparent'",
+    "examples": [
+      "obviously I'm going to the party",
+      "obviously that's not going to work",
+      "you're obviously the better choice"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["clearly", "of course", "definitely", "naturally"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "odd-147",
+    "term": "odd",
+    "pronunciation": null,
+    "definition": "means strange, weird, or unusual in a notable way",
+    "examples": [
+      "that's an odd thing to say",
+      "she has odd taste in music",
+      "odd timing for that question"
+    ],
+    "category": "describing",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["strange", "weird", "unusual", "bizarre"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "okay-148",
+    "term": "okay",
+    "pronunciation": null,
+    "definition": "means acceptable, fine, or showing agreement",
+    "examples": [
+      "the movie was okay I guess",
+      "okay let's do that instead",
+      "okay I understand what you mean"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 9,
+    "related_terms": ["alright", "fine", "acceptable", "sure"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "omg-149",
+    "term": "omg",
+    "pronunciation": "oh-em-gee",
+    "definition": "abbreviation for 'oh my gosh' - shows surprise, excitement, or shock",
+    "examples": [
+      "omg did you see what happened",
+      "omg that's so cute",
+      "omg I can't believe it"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["texting", "social_media", "casual"],
+    "popularity": 9,
+    "related_terms": ["oh my gosh", "wow", "no way", "seriously"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "on-god-150",
+    "term": "on god",
+    "pronunciation": null,
+    "definition": "means 'I swear', 'for real', or 'I'm being completely honest'",
+    "examples": [
+      "on god that's what happened",
+      "I'm telling the truth on god",
+      "on god this is the best pizza"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["I swear", "for real", "no cap", "honestly"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "oop-151",
+    "term": "oop",
+    "pronunciation": null,
+    "definition": "expression used when something awkward happens or when you realize a mistake",
+    "examples": [
+      "oop I said the wrong thing",
+      "oop that's embarrassing",
+      "oop looks like I texted the wrong person"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["texting", "casual"],
+    "popularity": 6,
+    "related_terms": ["oops", "awkward", "my bad", "whoops"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "over-it-152",
+    "term": "over it",
+    "pronunciation": null,
+    "definition": "means fed up, done, or no longer interested in something",
+    "examples": [
+      "I'm so over it with this drama",
+      "over it let's talk about something else",
+      "completely over it at this point"
+    ],
+    "category": "reactions",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["done", "fed up", "finished", "moving on"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "peak-153",
+    "term": "peak",
+    "pronunciation": null,
+    "definition": "means the highest quality, best possible, or perfect example of something",
+    "examples": [
+      "that performance was peak excellence",
+      "peak comedy right there",
+      "this is peak summer weather"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["perfect", "top tier", "best", "ultimate"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "perfect-154",
+    "term": "perfect",
+    "pronunciation": null,
+    "definition": "means flawless, exactly right, or the best possible outcome",
+    "examples": [
+      "that timing was perfect",
+      "you look perfect tonight",
+      "perfect weather for the beach"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting", "dating"],
+    "popularity": 8,
+    "related_terms": ["flawless", "ideal", "excellent", "amazing"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "periodt-155",
+    "term": "periodt",
+    "pronunciation": "PEE-ree-id",
+    "definition": "means 'period' but with extra emphasis - used to end a statement definitively",
+    "examples": [
+      "I'm the best player on this team periodt",
+      "pineapple belongs on pizza periodt",
+      "she's going to win that competition periodt"
+    ],
+    "category": "communication",
+    "sentiment": "positive",
+    "contexts": ["texting", "social_media"],
+    "popularity": 6,
+    "related_terms": ["period", "facts", "final answer", "end of discussion"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "pop-off-156",
+    "term": "pop off",
+    "pronunciation": null,
+    "definition": "means to perform exceptionally well or go beyond expectations",
+    "examples": [
+      "she really popped off in that dance",
+      "time to pop off on this test",
+      "he popped off with those basketball shots"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["went off", "exceeded", "impressed", "showed out"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "posted-157",
+    "term": "posted",
+    "pronunciation": null,
+    "definition": "means shared content on social media or staying in one place",
+    "examples": [
+      "I posted that photo on instagram",
+      "did you see what she posted",
+      "we're posted at the coffee shop"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 8,
+    "related_terms": ["shared", "uploaded", "published", "hanging"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "precious-158",
+    "term": "precious",
+    "pronunciation": null,
+    "definition": "means extremely cute, sweet, or endearing",
+    "examples": [
+      "that puppy is so precious",
+      "you're precious for remembering my birthday",
+      "such a precious little baby"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["adorable", "sweet", "cute", "darling"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "pretty-159",
+    "term": "pretty",
+    "pronunciation": null,
+    "definition": "means attractive, beautiful, or used as an intensifier meaning 'quite'",
+    "examples": [
+      "you look pretty today",
+      "that sunset is pretty",
+      "I'm pretty tired right now"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "dating", "texting"],
+    "popularity": 8,
+    "related_terms": ["beautiful", "attractive", "quite", "fairly"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "pristine-160",
+    "term": "pristine",
+    "pronunciation": null,
+    "definition": "means perfectly clean, flawless, or in excellent condition",
+    "examples": [
+      "your car looks pristine after the wash",
+      "keep your room pristine for guests",
+      "that performance was pristine"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 5,
+    "related_terms": ["perfect", "flawless", "immaculate", "clean"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "pure-161",
+    "term": "pure",
+    "pronunciation": null,
+    "definition": "means completely innocent, wholesome, or genuinely good",
+    "examples": [
+      "that gesture was pure kindness",
+      "you have such a pure heart",
+      "pure happiness on her face"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 6,
+    "related_terms": ["innocent", "wholesome", "genuine", "sweet"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "queen-162",
+    "term": "queen",
+    "pronunciation": null,
+    "definition": "used to praise someone, especially females, for being awesome or impressive",
+    "examples": [
+      "you're a queen for helping me",
+      "absolute queen energy today",
+      "she's the queen of volleyball"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 8,
+    "related_terms": ["goddess", "legend", "icon", "star"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "random-163",
+    "term": "random",
+    "pronunciation": null,
+    "definition": "means unexpected, weird, or out of nowhere",
+    "examples": [
+      "that was so random",
+      "why did you say something so random",
+      "random question but do you like pizza"
+    ],
+    "category": "describing",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["unexpected", "weird", "strange", "out of nowhere"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "real-talk-164",
+    "term": "real talk",
+    "pronunciation": null,
+    "definition": "means 'being serious now' or 'let me be honest with you'",
+    "examples": [
+      "real talk you need to study more",
+      "real talk that movie was terrible",
+      "real talk I think you should go for it"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["honestly", "seriously", "for real", "straight up"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "really-165",
+    "term": "really",
+    "pronunciation": null,
+    "definition": "used for emphasis meaning 'very' or 'truly' or to express surprise",
+    "examples": [
+      "that's really good news",
+      "really? I can't believe it",
+      "I'm really excited about this"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 9,
+    "related_terms": ["very", "truly", "seriously", "actually"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "relatable-166",
+    "term": "relatable",
+    "pronunciation": null,
+    "definition": "means you can identify with or understand someone's experience",
+    "examples": [
+      "that's so relatable I do that too",
+      "your story is very relatable",
+      "relatable content right there"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["same", "mood", "I feel that", "understandable"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "reply-167",
+    "term": "reply",
+    "pronunciation": null,
+    "definition": "to respond to a message, comment, or post on social media",
+    "examples": [
+      "did you reply to her text",
+      "I need to reply to that email",
+      "reply to my story when you see this"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 8,
+    "related_terms": ["respond", "answer", "text back", "comment"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "respond-168",
+    "term": "respond",
+    "pronunciation": null,
+    "definition": "to answer or react to something someone said or did",
+    "examples": [
+      "how should I respond to that",
+      "she didn't respond to my message",
+      "respond when you get a chance"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["answer", "reply", "react", "get back"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "rizz-169",
+    "term": "rizz",
+    "pronunciation": null,
+    "definition": "means charisma or charm, especially ability to attract romantic interest",
+    "examples": [
+      "he's got serious rizz with everyone",
+      "work on your rizz before asking her out",
+      "she has natural rizz"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual", "social_media"],
+    "popularity": 9,
+    "related_terms": ["charisma", "charm", "game", "smooth"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "rofl-170",
+    "term": "rofl",
+    "pronunciation": "rah-full",
+    "definition": "abbreviation for 'rolling on floor laughing' - means extremely funny",
+    "examples": [
+      "that joke has me rofl",
+      "rofl that's hilarious",
+      "rofl I can't stop laughing"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["texting", "social_media"],
+    "popularity": 6,
+    "related_terms": ["lol", "lmao", "hilarious", "funny"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "rough-171",
+    "term": "rough",
+    "pronunciation": null,
+    "definition": "means difficult, hard, or not going well",
+    "examples": [
+      "that test was rough",
+      "having a rough day today",
+      "the weather looks rough outside"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["hard", "difficult", "tough", "challenging"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "royalty-172",
+    "term": "royalty",
+    "pronunciation": null,
+    "definition": "means someone who deserves to be treated like a king or queen",
+    "examples": [
+      "treat yourself like royalty",
+      "she carries herself like royalty",
+      "you deserve to be treated like royalty"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 5,
+    "related_terms": ["queen", "king", "noble", "elite"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "same-173",
+    "term": "same",
+    "pronunciation": null,
+    "definition": "means 'I relate to that' or 'I feel the same way'",
+    "examples": [
+      "I hate monday mornings. same",
+      "craving ice cream right now. same",
+      "same I was thinking that too"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["texting", "social_media", "casual"],
+    "popularity": 9,
+    "related_terms": ["mood", "relatable", "me too", "I feel that"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "seeing-174",
+    "term": "seeing",
+    "pronunciation": null,
+    "definition": "means casually dating someone but not officially in a relationship",
+    "examples": [
+      "I'm seeing someone from school",
+      "are you seeing anyone right now",
+      "we've been seeing each other for a month"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["dating", "casual"],
+    "popularity": 7,
+    "related_terms": ["dating", "talking", "going out", "involved with"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "send-me-175",
+    "term": "send me",
+    "pronunciation": null,
+    "definition": "means something is so funny or shocking it overwhelms you",
+    "examples": [
+      "that meme would send me",
+      "if that happened it would send me",
+      "that joke absolutely sent me"
+    ],
+    "category": "reactions",
+    "sentiment": "positive",
+    "contexts": ["texting", "social_media"],
+    "popularity": 6,
+    "related_terms": ["overwhelm", "shock", "amaze", "surprise"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "seriously-176",
+    "term": "seriously",
+    "pronunciation": null,
+    "definition": "means 'for real', 'are you kidding', or emphasizes importance",
+    "examples": [
+      "seriously you need to see this",
+      "are you seriously going to do that",
+      "seriously I can't believe it happened"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 8,
+    "related_terms": ["for real", "really", "honestly", "truly"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "served-177",
+    "term": "served",
+    "pronunciation": null,
+    "definition": "means delivered an excellent performance or looked amazing",
+    "examples": [
+      "she served in that dance routine",
+      "you served looks at the party",
+      "he served with that comeback"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 7,
+    "related_terms": ["delivered", "performed", "slayed", "impressed"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "serving-178",
+    "term": "serving",
+    "pronunciation": null,
+    "definition": "means delivering or showing off something impressive, especially style or performance",
+    "examples": [
+      "you're serving looks today",
+      "serving main character energy",
+      "she's serving excellence in that presentation"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 8,
+    "related_terms": ["delivering", "showing", "giving", "radiating"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "share-179",
+    "term": "share",
+    "pronunciation": null,
+    "definition": "to repost or forward content on social media platforms",
+    "examples": [
+      "can you share my post",
+      "I'm going to share this story",
+      "share this with your friends"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 8,
+    "related_terms": ["repost", "forward", "spread", "pass along"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "sheesh-180",
+    "term": "sheesh",
+    "pronunciation": null,
+    "definition": "expression of amazement, disbelief, or being impressed by something",
+    "examples": [
+      "sheesh that car is expensive",
+      "sheesh you really did that",
+      "sheesh that's a lot of homework"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 8,
+    "related_terms": ["wow", "dang", "impressive", "unbelievable"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+    {
+    "id": "simp-181",
+    "term": "simp",
+    "pronunciation": null,
+    "definition": "someone who does way too much for someone they like, often without getting anything back",
+    "examples": [
+      "stop being a simp and just ask her out",
+      "he's such a simp for buying her everything",
+      "don't simp just be yourself"
+    ],
+    "category": "people",
+    "sentiment": "negative",
+    "contexts": ["dating", "casual", "social_media"],
+    "popularity": 8,
+    "related_terms": ["try-hard", "desperate", "overdoing it", "clingy"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "single-182",
+    "term": "single",
+    "pronunciation": null,
+    "definition": "means not in a romantic relationship or available to date",
+    "examples": [
+      "I'm single and ready to mingle",
+      "she's been single for six months",
+      "are you single or taken"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["dating", "casual"],
+    "popularity": 8,
+    "related_terms": ["available", "unattached", "free", "not dating"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "sis-183",
+    "term": "sis",
+    "pronunciation": null,
+    "definition": "short for sister, used to address friends regardless of gender",
+    "examples": [
+      "sis you need to see this",
+      "come on sis let's go",
+      "sis that's not gonna work"
+    ],
+    "category": "people",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["girl", "friend", "honey", "bestie"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "slaps-184",
     "term": "slaps",
-    "definition": "Something that's really good, especially music",
-    "example": "This new song absolutely slaps"
+    "pronunciation": null,
+    "definition": "means something is really good, especially music or food",
+    "examples": [
+      "this song absolutely slaps",
+      "your mom's cooking slaps",
+      "that beat slaps so hard"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media", "food"],
+    "popularity": 8,
+    "related_terms": ["hits", "bangs", "fire", "amazing"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "19",
-    "term": "say less",
-    "definition": "I understand, you don't need to explain more",
-    "example": "Free food at the event? Say less!"
+    "id": "slay-185",
+    "term": "slay",
+    "pronunciation": null,
+    "definition": "means to do something exceptionally well or look amazing",
+    "examples": [
+      "you absolutely slayed that presentation",
+      "she's going to slay in that dress",
+      "slay queen you look incredible"
+    ],
+    "category": "actions",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 9,
+    "related_terms": ["excel", "dominate", "succeed", "impress"],
+    "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "20",
-    "term": "vibe check",
-    "definition": "Assessing someone's mood or energy",
-    "example": "You seem off today, just doing a vibe check"
+    "id": "slide-186",
+    "term": "slide",
+    "pronunciation": null,
+    "definition": "means to send a private message, especially romantically interested messages",
+    "examples": [
+      "slide into my dms",
+      "he tried to slide but I ignored it",
+      "should I slide or wait for them"
+    ],
+    "category": "actions",
+    "sentiment": "neutral",
+    "contexts": ["dating", "social_media"],
+    "popularity": 7,
+    "related_terms": ["message", "dm", "reach out", "contact"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "smooth-187",
+    "term": "smooth",
+    "pronunciation": null,
+    "definition": "means charming, suave, or skillfully executed",
+    "examples": [
+      "that pickup line was smooth",
+      "smooth moves on the dance floor",
+      "he's smooth with his words"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 7,
+    "related_terms": ["charming", "suave", "skilled", "cool"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "snap-188",
+    "term": "snap",
+    "pronunciation": null,
+    "definition": "refers to Snapchat or sending a photo message",
+    "examples": [
+      "send me a snap when you get there",
+      "did you see my snap story",
+      "snap me back when you can"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 8,
+    "related_terms": ["snapchat", "photo", "message", "picture"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "snatched-189",
+    "term": "snatched",
+    "pronunciation": null,
+    "definition": "means looking really good, especially with makeup, hair, or outfit",
+    "examples": [
+      "your makeup looks snatched today",
+      "she's snatched in that dress",
+      "eyebrows looking snatched"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 6,
+    "related_terms": ["beat", "perfect", "on point", "flawless"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "sobbing-190",
+    "term": "sobbing",
+    "pronunciation": null,
+    "definition": "means crying hard or being extremely emotional about something",
+    "examples": [
+      "I'm sobbing over this movie",
+      "sobbing at how cute that puppy is",
+      "literally sobbing from laughing"
+    ],
+    "category": "reactions",
+    "sentiment": "neutral",
+    "contexts": ["texting", "social_media"],
+    "popularity": 6,
+    "related_terms": ["crying", "emotional", "tears", "weeping"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "solid-191",
+    "term": "solid",
+    "pronunciation": null,
+    "definition": "means good, reliable, or respectable quality",
+    "examples": [
+      "that's a solid plan",
+      "he's a solid friend",
+      "solid performance on the test"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["good", "reliable", "decent", "strong"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "spark-192",
+    "term": "spark",
+    "pronunciation": null,
+    "definition": "refers to romantic chemistry or initial attraction between people",
+    "examples": [
+      "there's definitely a spark between us",
+      "I felt a spark when we first met",
+      "no spark on that first date"
+    ],
+    "category": "people",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual"],
+    "popularity": 6,
+    "related_terms": ["chemistry", "connection", "attraction", "vibe"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "stan-193",
+    "term": "stan",
+    "pronunciation": null,
+    "definition": "means to be a big fan of someone or support them enthusiastically",
+    "examples": [
+      "I stan that singer so hard",
+      "we stan a talented queen",
+      "do you stan any celebrities"
+    ],
+    "category": "internet",
+    "sentiment": "positive",
+    "contexts": ["social_media", "casual"],
+    "popularity": 7,
+    "related_terms": ["support", "fan", "love", "admire"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "story-194",
+    "term": "story",
+    "pronunciation": null,
+    "definition": "refers to temporary social media posts that disappear after 24 hours",
+    "examples": [
+      "did you see my instagram story",
+      "post that on your story",
+      "reply to my story when you see it"
+    ],
+    "category": "internet",
+    "sentiment": "neutral",
+    "contexts": ["social_media", "texting"],
+    "popularity": 9,
+    "related_terms": ["post", "snap", "update", "share"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "straight-up-195",
+    "term": "straight up",
+    "pronunciation": null,
+    "definition": "means 'honestly', 'for real', or 'I'm being direct with you'",
+    "examples": [
+      "straight up that's not okay",
+      "I straight up forgot about homework",
+      "straight up you need to apologize"
+    ],
+    "category": "communication",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 7,
+    "related_terms": ["honestly", "for real", "directly", "bluntly"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "strange-196",
+    "term": "strange",
+    "pronunciation": null,
+    "definition": "means weird, unusual, or not normal",
+    "examples": [
+      "that's strange I've never seen that",
+      "he's acting strange today",
+      "strange weather for this time of year"
+    ],
+    "category": "describing",
+    "sentiment": "neutral",
+    "contexts": ["casual", "texting"],
+    "popularity": 6,
+    "related_terms": ["weird", "odd", "unusual", "peculiar"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "stunning-197",
+    "term": "stunning",
+    "pronunciation": null,
+    "definition": "means extremely beautiful, impressive, or breathtaking",
+    "examples": [
+      "you look absolutely stunning tonight",
+      "that view is stunning",
+      "stunning performance at the concert"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["dating", "casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["gorgeous", "beautiful", "breathtaking", "amazing"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "style-198",
+    "term": "style",
+    "pronunciation": null,
+    "definition": "refers to someone's fashion sense, way of dressing, or personal aesthetic",
+    "examples": [
+      "I love your style",
+      "she has such unique style",
+      "that's not really my style"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 8,
+    "related_terms": ["fashion", "look", "aesthetic", "vibe"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "sus-199",
+    "term": "sus",
+    "pronunciation": null,
+    "definition": "short for 'suspicious' - means something seems sketchy or questionable",
+    "examples": [
+      "that text message seems sus",
+      "he's acting sus about something",
+      "sus that she's not answering calls"
+    ],
+    "category": "describing",
+    "sentiment": "negative",
+    "contexts": ["casual", "texting", "social_media"],
+    "popularity": 8,
+    "related_terms": ["suspicious", "sketchy", "questionable", "weird"],
+    "last_updated": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "swag-200",
+    "term": "swag",
+    "pronunciation": null,
+    "definition": "refers to someone's style, confidence, or cool factor",
+    "examples": [
+      "he's got serious swag",
+      "your swag is unmatched today",
+      "walking with that swag"
+    ],
+    "category": "describing",
+    "sentiment": "positive",
+    "contexts": ["casual", "social_media"],
+    "popularity": 7,
+    "related_terms": ["style", "confidence", "cool", "drip"],
+    "last_updated": "2025-01-01T00:00:00Z"
   }
 ]
