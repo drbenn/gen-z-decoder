@@ -23,6 +23,7 @@ export interface DictionaryEntry {
   popularity: number            // 1-10 scale (how common/trending)
   related_terms: string[]       // ["for real", "fr", "deadass"]
   last_updated: string          // ISO string
+  is_favorite?: boolean
 }
 
 export enum SlangCategory {

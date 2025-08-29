@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+// import { useAppState } from '@/state/useAppState';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -16,6 +17,8 @@ export default function RootLayout() {
     // Async font loading only occurs in development.
     return null;
   }
+
+  // const setDictionaryTerms = useAppState((state) => state.setDictionaryTerms)
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>

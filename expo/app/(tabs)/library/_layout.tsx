@@ -2,8 +2,11 @@ import { Stack } from 'expo-router';
 
 export default function LibraryLayout() {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" /> {/* Main library with chips */}
-    </Stack>
+    <Stack 
+      screenOptions={{ 
+        headerShown: false,
+        animation: 'slide_from_right',
+      }}
+    />
   );
 }

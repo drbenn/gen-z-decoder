@@ -1,6 +1,6 @@
 [
   {
-    "id": "absolutely-001",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "absolutely",
     "pronunciation": null,
     "definition": "means 'yes definitely', 'for sure', or 'without a doubt' - used for strong agreement",
@@ -11,13 +11,21 @@
     ],
     "category": "communication",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["definitely", "for sure", "bet", "facts"],
+    "related_terms": [
+      "definitely",
+      "for sure",
+      "bet",
+      "facts"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "actually-002", 
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "actually",
     "pronunciation": null,
     "definition": "used to emphasize truth or correct misconceptions, often with attitude",
@@ -28,14 +36,22 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["literally", "honestly", "for real"],
+    "related_terms": [
+      "literally",
+      "honestly",
+      "for real"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "adorable-003",
-    "term": "adorable", 
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
+    "term": "adorable",
     "pronunciation": null,
     "definition": "means extremely cute or endearing, used for people, animals, or things",
     "examples": [
@@ -45,13 +61,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["cute", "precious", "wholesome", "sweet"],
+    "related_terms": [
+      "cute",
+      "precious",
+      "wholesome",
+      "sweet"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "aesthetic-004",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "aesthetic",
     "pronunciation": null,
     "definition": "refers to a particular style or vibe, especially visual appearance or overall mood",
@@ -61,14 +86,23 @@
       "this cafe has the perfect study aesthetic"
     ],
     "category": "describing",
-    "sentiment": "positive", 
-    "contexts": ["social_media", "casual", "texting"],
+    "sentiment": "positive",
+    "contexts": [
+      "social_media",
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["vibe", "mood", "style", "look"],
+    "related_terms": [
+      "vibe",
+      "mood",
+      "style",
+      "look"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "aka-005",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "aka",
     "pronunciation": "ay-kay-ay",
     "definition": "abbreviation for 'also known as' - used to give an alternative name or description",
@@ -79,13 +113,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual", "social_media"],
+    "contexts": [
+      "texting",
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["also known as", "or", "basically"],
+    "related_terms": [
+      "also known as",
+      "or",
+      "basically"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "alright-006",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "alright",
     "pronunciation": null,
     "definition": "means 'okay', 'fine', or 'acceptable' - can show agreement or mild satisfaction",
@@ -96,30 +138,47 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["okay", "fine", "decent", "whatever"],
+    "related_terms": [
+      "okay",
+      "fine",
+      "decent",
+      "whatever"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "amazing-007",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "amazing",
     "pronunciation": null,
     "definition": "means extremely good, impressive, or wonderful - strong positive reaction",
     "examples": [
       "that concert was amazing",
-      "you did amazing on your presentation", 
+      "you did amazing on your presentation",
       "this food tastes amazing"
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["incredible", "awesome", "fire", "stunning"],
+    "related_terms": [
+      "incredible",
+      "awesome",
+      "fire",
+      "stunning"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "angel-008",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "angel",
     "pronunciation": null,
     "definition": "used to describe someone who is extremely kind, helpful, or sweet",
@@ -130,14 +189,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 5,
-    "related_terms": ["sweetie", "precious", "saint", "goddess"],
+    "related_terms": [
+      "sweetie",
+      "precious",
+      "saint",
+      "goddess"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-
   {
-    "id": "asap-010",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "asap",
     "pronunciation": "ay-sap",
     "definition": "abbreviation for 'as soon as possible' - indicates urgency or immediate need",
@@ -148,13 +214,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 9,
-    "related_terms": ["right now", "immediately", "urgent", "rn"],
+    "related_terms": [
+      "right now",
+      "immediately",
+      "urgent",
+      "rn"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "ate-011",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "ate",
     "pronunciation": null,
     "definition": "means someone performed exceptionally well or 'killed it' - past tense of delivering excellence",
@@ -165,13 +239,22 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual", "texting"],
+    "contexts": [
+      "social_media",
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["slayed", "killed it", "served", "devoured"],
+    "related_terms": [
+      "slayed",
+      "killed it",
+      "served",
+      "devoured"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "attracted-012",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "attracted",
     "pronunciation": null,
     "definition": "means feeling romantic or physical interest in someone",
@@ -182,13 +265,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["interested", "crushing", "feeling", "drawn to"],
+    "related_terms": [
+      "interested",
+      "crushing",
+      "feeling",
+      "drawn to"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "aura-013",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "aura",
     "pronunciation": null,
     "definition": "refers to someone's energy, vibe, or overall presence and how they make others feel",
@@ -199,13 +290,21 @@
     ],
     "category": "describing",
     "sentiment": "neutral",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["vibe", "energy", "presence", "mood"],
+    "related_terms": [
+      "vibe",
+      "energy",
+      "presence",
+      "mood"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "available-014",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "available",
     "pronunciation": null,
     "definition": "means single or not in a relationship, ready to date",
@@ -216,13 +315,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 5,
-    "related_terms": ["single", "free", "unattached", "open"],
+    "related_terms": [
+      "single",
+      "free",
+      "unattached",
+      "open"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "awful-015",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "awful",
     "pronunciation": null,
     "definition": "means extremely bad, terrible, or unpleasant",
@@ -233,13 +340,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["terrible", "horrible", "trash", "disgusting"],
+    "related_terms": [
+      "terrible",
+      "horrible",
+      "trash",
+      "disgusting"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "awkward-016",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "awkward",
     "pronunciation": null,
     "definition": "describes uncomfortable, embarrassing, or socially tense situations",
@@ -250,13 +365,22 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["uncomfortable", "cringe", "embarrassing", "weird"],
+    "related_terms": [
+      "uncomfortable",
+      "cringe",
+      "embarrassing",
+      "weird"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "baby-017",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "baby",
     "pronunciation": null,
     "definition": "term of endearment used for romantic partners, close friends, or cute things",
@@ -267,13 +391,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["bae", "honey", "sweetie", "love"],
+    "related_terms": [
+      "bae",
+      "honey",
+      "sweetie",
+      "love"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "bae-018",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bae",
     "pronunciation": "bay",
     "definition": "stands for 'before anyone else' - term for romantic partner or crush",
@@ -284,13 +416,22 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "texting", "social_media"],
+    "contexts": [
+      "dating",
+      "texting",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["baby", "boyfriend", "girlfriend", "crush"],
+    "related_terms": [
+      "baby",
+      "boyfriend",
+      "girlfriend",
+      "crush"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "beat-019",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "beat",
     "pronunciation": null,
     "definition": "means makeup application or when someone looks really good with their makeup done",
@@ -301,13 +442,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 5,
-    "related_terms": ["snatched", "served", "slayed", "makeup"],
+    "related_terms": [
+      "snatched",
+      "served",
+      "slayed",
+      "makeup"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "beautiful-020",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "beautiful",
     "pronunciation": null,
     "definition": "means extremely attractive, pretty, or aesthetically pleasing",
@@ -318,13 +467,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "dating"],
+    "contexts": [
+      "casual",
+      "texting",
+      "dating"
+    ],
     "popularity": 8,
-    "related_terms": ["gorgeous", "stunning", "pretty", "attractive"],
+    "related_terms": [
+      "gorgeous",
+      "stunning",
+      "pretty",
+      "attractive"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "bestie-021",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bestie",
     "pronunciation": null,
     "definition": "short for 'best friend' - used for close friends or sometimes ironically",
@@ -335,13 +493,22 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["best friend", "bff", "homie", "fam"],
+    "related_terms": [
+      "best friend",
+      "bff",
+      "homie",
+      "fam"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "bet-022",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bet",
     "pronunciation": null,
     "definition": "means 'yes', 'okay', 'sounds good', or 'I agree' - universal agreement word",
@@ -352,13 +519,21 @@
     ],
     "category": "communication",
     "sentiment": "positive",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 9,
-    "related_terms": ["say less", "word", "copy", "sounds good"],
+    "related_terms": [
+      "say less",
+      "word",
+      "copy",
+      "sounds good"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "big-mood-023",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "big mood",
     "pronunciation": null,
     "definition": "means 'that's totally relatable' or 'I feel that deeply' - stronger than just 'mood'",
@@ -369,13 +544,22 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting", "casual"],
+    "contexts": [
+      "social_media",
+      "texting",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["mood", "same", "relatable", "felt"],
+    "related_terms": [
+      "mood",
+      "same",
+      "relatable",
+      "felt"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "bizarre-024",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bizarre",
     "pronunciation": null,
     "definition": "means very strange, weird, or unusual in a notable way",
@@ -386,13 +570,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 5,
-    "related_terms": ["weird", "strange", "odd", "random"],
+    "related_terms": [
+      "weird",
+      "strange",
+      "odd",
+      "random"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "blessed-025",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "blessed",
     "pronunciation": null,
     "definition": "means feeling grateful, lucky, or favored - often used to show appreciation",
@@ -403,13 +595,22 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual", "texting"],
+    "contexts": [
+      "social_media",
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["grateful", "lucky", "thankful", "fortunate"],
+    "related_terms": [
+      "grateful",
+      "lucky",
+      "thankful",
+      "fortunate"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "block-026",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "block",
     "pronunciation": null,
     "definition": "to prevent someone from contacting you on social media or messaging apps",
@@ -420,15 +621,21 @@
     ],
     "category": "internet",
     "sentiment": "negative",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["unfollow", "mute", "delete", "cut off"],
+    "related_terms": [
+      "unfollow",
+      "mute",
+      "delete",
+      "cut off"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-
-
   {
-    "id": "boomer-029",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "boomer",
     "pronunciation": null,
     "definition": "refers to older people, especially those seen as out of touch with modern culture",
@@ -439,13 +646,21 @@
     ],
     "category": "people",
     "sentiment": "negative",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["old school", "outdated", "karen", "out of touch"],
+    "related_terms": [
+      "old school",
+      "outdated",
+      "karen",
+      "out of touch"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "bottom-tier-030",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bottom tier",
     "pronunciation": null,
     "definition": "means the worst category or lowest quality - opposite of top tier",
@@ -456,13 +671,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 5,
-    "related_terms": ["trash", "terrible", "worst", "mid"],
+    "related_terms": [
+      "trash",
+      "terrible",
+      "worst",
+      "mid"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "brb-031",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "brb",
     "pronunciation": "bee-arr-bee",
     "definition": "abbreviation for 'be right back' - indicates temporary absence",
@@ -473,13 +696,20 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["back in a sec", "one minute", "hold up"],
+    "related_terms": [
+      "back in a sec",
+      "one minute",
+      "hold up"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "bro-032",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bro",
     "pronunciation": null,
     "definition": "casual term for friend, buddy, or to address someone - not just males",
@@ -490,13 +720,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["dude", "buddy", "homie", "man"],
+    "related_terms": [
+      "dude",
+      "buddy",
+      "homie",
+      "man"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "bruh-033",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bruh",
     "pronunciation": null,
     "definition": "expression of disbelief, frustration, or 'seriously?' - variation of 'bro'",
@@ -507,13 +745,20 @@
     ],
     "category": "reactions",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["seriously", "come on", "are you kidding"],
+    "related_terms": [
+      "seriously",
+      "come on",
+      "are you kidding"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "buddy-034",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "buddy",
     "pronunciation": null,
     "definition": "friendly term for friend or acquaintance, sometimes used sarcastically",
@@ -524,13 +769,20 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["casual"],
+    "contexts": [
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["friend", "pal", "dude", "bro"],
+    "related_terms": [
+      "friend",
+      "pal",
+      "dude",
+      "bro"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "bussin-035",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "bussin",
     "pronunciation": "BUSS-in",
     "definition": "means something tastes amazing or is excellent quality - especially food",
@@ -541,13 +793,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["food", "casual", "social_media"],
+    "contexts": [
+      "food",
+      "casual",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["fire", "bomb", "slaps", "delicious"],
+    "related_terms": [
+      "fire",
+      "bomb",
+      "slaps",
+      "delicious"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "btw-036",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "btw",
     "pronunciation": "bee-tee-double-you",
     "definition": "abbreviation for 'by the way' - used to add information casually",
@@ -558,13 +819,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["by the way", "also", "fyi", "oh and"],
+    "related_terms": [
+      "by the way",
+      "also",
+      "fyi",
+      "oh and"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "cackling-037",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "cackling",
     "pronunciation": null,
     "definition": "means laughing very hard, uncontrollably - more intense than just laughing",
@@ -575,13 +844,22 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media", "texting"],
+    "contexts": [
+      "casual",
+      "social_media",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["dying", "wheezing", "screaming", "howling"],
+    "related_terms": [
+      "dying",
+      "wheezing",
+      "screaming",
+      "howling"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "cant-even-038",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "can't even",
     "pronunciation": null,
     "definition": "expression of being overwhelmed, speechless, or unable to handle something",
@@ -592,13 +870,22 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["i can't", "speechless", "overwhelmed", "done"],
+    "related_terms": [
+      "i can't",
+      "speechless",
+      "overwhelmed",
+      "done"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "cap-039",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "cap",
     "pronunciation": null,
     "definition": "means 'lie' or 'false statement' - the opposite of 'no cap'",
@@ -609,13 +896,21 @@
     ],
     "category": "communication",
     "sentiment": "negative",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["no cap", "lying", "fake", "false"],
+    "related_terms": [
+      "no cap",
+      "lying",
+      "fake",
+      "false"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "carry-040",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "carry",
     "pronunciation": null,
     "definition": "means to support or do most of the work for a team or group",
@@ -626,13 +921,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["support", "help", "lead", "save"],
+    "related_terms": [
+      "support",
+      "help",
+      "lead",
+      "save"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "chemistry-041",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "chemistry",
     "pronunciation": null,
     "definition": "refers to natural romantic or personal connection between two people",
@@ -643,13 +946,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["connection", "spark", "vibe", "energy"],
+    "related_terms": [
+      "connection",
+      "spark",
+      "vibe",
+      "energy"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "chile-042",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "chile",
     "pronunciation": "CHIE-lay",
     "definition": "variation of 'child' used to express disbelief, disappointment, or 'oh honey no'",
@@ -660,13 +971,21 @@
     ],
     "category": "reactions",
     "sentiment": "negative",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["honey", "sweetie", "sis", "girl"],
+    "related_terms": [
+      "honey",
+      "sweetie",
+      "sis",
+      "girl"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "chilling-043",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "chilling",
     "pronunciation": null,
     "definition": "means relaxing, hanging out casually, or taking it easy",
@@ -677,14 +996,22 @@
     ],
     "category": "actions",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting", "dating"],
+    "contexts": [
+      "casual",
+      "texting",
+      "dating"
+    ],
     "popularity": 8,
-    "related_terms": ["relaxing", "hanging out", "vibing", "lounging"],
+    "related_terms": [
+      "relaxing",
+      "hanging out",
+      "vibing",
+      "lounging"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-
   {
-    "id": "clean-045",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "clean",
     "pronunciation": null,
     "definition": "means something looks really good, neat, or well-executed - especially outfits or style",
@@ -695,13 +1022,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["fresh", "crisp", "neat", "sharp"],
+    "related_terms": [
+      "fresh",
+      "crisp",
+      "neat",
+      "sharp"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "clearly-046",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "clearly",
     "pronunciation": null,
     "definition": "used to emphasize something obvious or to show attitude about a situation",
@@ -712,13 +1047,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["obviously", "definitely", "for sure", "no doubt"],
+    "related_terms": [
+      "obviously",
+      "definitely",
+      "for sure",
+      "no doubt"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "comment-047",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "comment",
     "pronunciation": null,
     "definition": "to leave a written response on social media posts, videos, or online content",
@@ -729,13 +1072,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["reply", "respond", "like", "share"],
+    "related_terms": [
+      "reply",
+      "respond",
+      "like",
+      "share"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "connection-048",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "connection",
     "pronunciation": null,
     "definition": "refers to a meaningful bond or understanding between people",
@@ -746,14 +1097,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["chemistry", "bond", "spark", "vibe"],
+    "related_terms": [
+      "chemistry",
+      "bond",
+      "spark",
+      "vibe"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-
   {
-    "id": "copy-050",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "copy",
     "pronunciation": null,
     "definition": "means 'understood', 'got it', or 'I hear you' - like military/radio terminology",
@@ -764,13 +1122,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["understood", "got it", "heard", "bet"],
+    "related_terms": [
+      "understood",
+      "got it",
+      "heard",
+      "bet"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "crispy-051",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "crispy",
     "pronunciation": null,
     "definition": "means something looks really good, fresh, or well put-together - especially style",
@@ -781,13 +1147,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["clean", "fresh", "sharp", "smooth"],
+    "related_terms": [
+      "clean",
+      "fresh",
+      "sharp",
+      "smooth"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "cringe-052",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "cringe",
     "pronunciation": null,
     "definition": "means extremely awkward, embarrassing, or uncomfortable to watch/experience",
@@ -798,13 +1172,22 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["social_media", "casual", "texting"],
+    "contexts": [
+      "social_media",
+      "casual",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["awkward", "embarrassing", "uncomfortable", "secondhand embarrassment"],
+    "related_terms": [
+      "awkward",
+      "embarrassing",
+      "uncomfortable",
+      "secondhand embarrassment"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "crush-053",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "crush",
     "pronunciation": null,
     "definition": "someone you have romantic feelings for or find attractive",
@@ -815,13 +1198,22 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual", "texting"],
+    "contexts": [
+      "dating",
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["bae", "attracted", "interested", "like"],
+    "related_terms": [
+      "bae",
+      "attracted",
+      "interested",
+      "like"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "crushed-it-054",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "crushed it",
     "pronunciation": null,
     "definition": "means performed excellently or succeeded beyond expectations",
@@ -832,13 +1224,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["killed it", "nailed it", "slayed", "ate"],
+    "related_terms": [
+      "killed it",
+      "nailed it",
+      "slayed",
+      "ate"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "crusty-055",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "crusty",
     "pronunciation": null,
     "definition": "means gross, dirty, old, or generally unpleasant - especially appearance",
@@ -849,13 +1249,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["nasty", "gross", "musty", "dusty"],
+    "related_terms": [
+      "nasty",
+      "gross",
+      "musty",
+      "dusty"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "crying-056",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "crying",
     "pronunciation": null,
     "definition": "used to express extreme emotion - can be laughter, sadness, or being overwhelmed",
@@ -866,13 +1274,22 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["texting", "social_media", "casual"],
+    "contexts": [
+      "texting",
+      "social_media",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["sobbing", "dying", "dead", "deceased"],
+    "related_terms": [
+      "sobbing",
+      "dying",
+      "dead",
+      "deceased"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "cute-057",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "cute",
     "pronunciation": null,
     "definition": "means attractive, adorable, or appealing - used for people, animals, or things",
@@ -883,13 +1300,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "dating", "texting"],
+    "contexts": [
+      "casual",
+      "dating",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["adorable", "pretty", "sweet", "lovely"],
+    "related_terms": [
+      "adorable",
+      "pretty",
+      "sweet",
+      "lovely"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "cutie-058",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "cutie",
     "pronunciation": null,
     "definition": "term of endearment for someone attractive or adorable",
@@ -900,13 +1326,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["baby", "sweetie", "honey", "babe"],
+    "related_terms": [
+      "baby",
+      "sweetie",
+      "honey",
+      "babe"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "dating-059",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "dating",
     "pronunciation": null,
     "definition": "being in a romantic relationship or going on dates with someone",
@@ -917,13 +1351,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["seeing", "together", "going out", "talking"],
+    "related_terms": [
+      "seeing",
+      "together",
+      "going out",
+      "talking"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "decent-063",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "decent",
     "pronunciation": null,
     "definition": "means acceptable, okay, or reasonably good - not amazing but not bad",
@@ -934,13 +1376,21 @@
     ],
     "category": "describing",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["alright", "okay", "fine", "not bad"],
+    "related_terms": [
+      "alright",
+      "okay",
+      "fine",
+      "not bad"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "delicious-064",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "delicious",
     "pronunciation": null,
     "definition": "means food tastes really good or excellent - classic positive food descriptor",
@@ -951,13 +1401,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["food", "casual"],
+    "contexts": [
+      "food",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["tasty", "yummy", "bussin", "bomb"],
+    "related_terms": [
+      "tasty",
+      "yummy",
+      "bussin",
+      "bomb"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "delivered-065",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "delivered",
     "pronunciation": null,
     "definition": "means performed well, came through, or met expectations successfully",
@@ -968,17 +1426,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["came through", "executed", "performed", "nailed it"],
+    "related_terms": [
+      "came through",
+      "executed",
+      "performed",
+      "nailed it"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-
-
-
-
   {
-    "id": "disgusting-070",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "disgusting",
     "pronunciation": null,
     "definition": "means extremely gross, nasty, or repulsive",
@@ -989,13 +1451,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["gross", "nasty", "terrible", "awful"],
+    "related_terms": [
+      "gross",
+      "nasty",
+      "terrible",
+      "awful"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "divine-071",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "divine",
     "pronunciation": null,
     "definition": "means absolutely perfect, heavenly, or exceptionally good",
@@ -1006,13 +1476,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 5,
-    "related_terms": ["heavenly", "perfect", "amazing", "incredible"],
+    "related_terms": [
+      "heavenly",
+      "perfect",
+      "amazing",
+      "incredible"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "dm-072",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "dm",
     "pronunciation": "dee-em",
     "definition": "abbreviation for 'direct message' - private message on social media",
@@ -1023,13 +1501,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["message", "text", "slide", "private message"],
+    "related_terms": [
+      "message",
+      "text",
+      "slide",
+      "private message"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "done-073",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "done",
     "pronunciation": null,
     "definition": "means finished, over it, or fed up with something/someone",
@@ -1040,13 +1526,21 @@
     ],
     "category": "reactions",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["over it", "finished", "fed up", "can't even"],
+    "related_terms": [
+      "over it",
+      "finished",
+      "fed up",
+      "can't even"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "drip-074",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "drip",
     "pronunciation": null,
     "definition": "refers to someone's style, fashion sense, or overall swag",
@@ -1057,13 +1551,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["swag", "style", "fit", "outfit"],
+    "related_terms": [
+      "swag",
+      "style",
+      "fit",
+      "outfit"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "dude-075",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "dude",
     "pronunciation": null,
     "definition": "casual way to address someone - friend, acquaintance, or stranger regardless of gender",
@@ -1074,13 +1576,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["bro", "man", "guy", "friend"],
+    "related_terms": [
+      "bro",
+      "man",
+      "guy",
+      "friend"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "dusty-076",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "dusty",
     "pronunciation": null,
     "definition": "means old, outdated, crusty, or generally undesirable",
@@ -1091,14 +1601,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 5,
-    "related_terms": ["crusty", "old", "outdated", "musty"],
+    "related_terms": [
+      "crusty",
+      "old",
+      "outdated",
+      "musty"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-
   {
-    "id": "eh-078",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "eh",
     "pronunciation": "ay",
     "definition": "means 'meh', 'whatever', or showing indifference or mild disappointment",
@@ -1109,13 +1626,21 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["meh", "whatever", "okay", "fine"],
+    "related_terms": [
+      "meh",
+      "whatever",
+      "okay",
+      "fine"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "elite-079",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "elite",
     "pronunciation": null,
     "definition": "means top-tier, excellent, or the best quality/performance",
@@ -1126,13 +1651,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["top tier", "excellent", "premium", "goated"],
+    "related_terms": [
+      "top tier",
+      "excellent",
+      "premium",
+      "goated"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "embarrassing-080",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "embarrassing",
     "pronunciation": null,
     "definition": "means causing shame, awkwardness, or social discomfort",
@@ -1143,13 +1676,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["cringe", "awkward", "uncomfortable", "shameful"],
+    "related_terms": [
+      "cringe",
+      "awkward",
+      "uncomfortable",
+      "shameful"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "energy-081",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "energy",
     "pronunciation": null,
     "definition": "refers to someone's vibe, mood, or the feeling they give off",
@@ -1160,13 +1701,21 @@
     ],
     "category": "describing",
     "sentiment": "neutral",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["vibe", "aura", "mood", "presence"],
+    "related_terms": [
+      "vibe",
+      "aura",
+      "mood",
+      "presence"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "exactly-082",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "exactly",
     "pronunciation": null,
     "definition": "means 'that's right', 'precisely', or shows strong agreement",
@@ -1177,13 +1726,21 @@
     ],
     "category": "communication",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["precisely", "absolutely", "facts", "this"],
+    "related_terms": [
+      "precisely",
+      "absolutely",
+      "facts",
+      "this"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "executed-083",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "executed",
     "pronunciation": null,
     "definition": "means performed something perfectly or carried out a plan successfully",
@@ -1194,13 +1751,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["performed", "delivered", "nailed it", "accomplished"],
+    "related_terms": [
+      "performed",
+      "delivered",
+      "nailed it",
+      "accomplished"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "facts-084",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "facts",
     "pronunciation": null,
     "definition": "means 'that's true', 'absolutely right', or 'I completely agree'",
@@ -1211,13 +1776,22 @@
     ],
     "category": "communication",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["truth", "exactly", "absolutely", "no cap"],
+    "related_terms": [
+      "truth",
+      "exactly",
+      "absolutely",
+      "no cap"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "fam-085",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "fam",
     "pronunciation": null,
     "definition": "means family or close friends - used to address people you're close to",
@@ -1228,13 +1802,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["family", "crew", "squad", "homie"],
+    "related_terms": [
+      "family",
+      "crew",
+      "squad",
+      "homie"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "fine-086",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "fine",
     "pronunciation": null,
     "definition": "means okay, acceptable, or sometimes used to show mild annoyance",
@@ -1245,13 +1827,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["okay", "alright", "whatever", "decent"],
+    "related_terms": [
+      "okay",
+      "alright",
+      "whatever",
+      "decent"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "finished-087",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "finished",
     "pronunciation": null,
     "definition": "means completed, done, or sometimes fed up with something",
@@ -1262,13 +1852,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["done", "completed", "over", "through"],
+    "related_terms": [
+      "done",
+      "completed",
+      "over",
+      "through"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "fire-088",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "fire",
     "pronunciation": null,
     "definition": "means something is excellent, amazing, or really good",
@@ -1279,13 +1877,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media", "texting"],
+    "contexts": [
+      "casual",
+      "social_media",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["amazing", "excellent", "bussin", "slaps"],
+    "related_terms": [
+      "amazing",
+      "excellent",
+      "bussin",
+      "slaps"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "fit-089",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "fit",
     "pronunciation": null,
     "definition": "refers to someone's outfit or overall style and appearance",
@@ -1296,13 +1903,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["outfit", "style", "drip", "look"],
+    "related_terms": [
+      "outfit",
+      "style",
+      "drip",
+      "look"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "flawless-090",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "flawless",
     "pronunciation": null,
     "definition": "means perfect, without any mistakes or problems",
@@ -1313,13 +1928,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["perfect", "pristine", "immaculate", "clean"],
+    "related_terms": [
+      "perfect",
+      "pristine",
+      "immaculate",
+      "clean"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "flex-091",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "flex",
     "pronunciation": null,
     "definition": "means to show off or boast about something you have or achieved",
@@ -1330,13 +1953,21 @@
     ],
     "category": "actions",
     "sentiment": "neutral",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["show off", "boast", "brag", "flaunt"],
+    "related_terms": [
+      "show off",
+      "boast",
+      "brag",
+      "flaunt"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "flopped-092",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "flopped",
     "pronunciation": null,
     "definition": "means failed, didn't work out, or was unsuccessful",
@@ -1347,13 +1978,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["failed", "bombed", "didn't work", "unsuccessful"],
+    "related_terms": [
+      "failed",
+      "bombed",
+      "didn't work",
+      "unsuccessful"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "follow-093",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "follow",
     "pronunciation": null,
     "definition": "to subscribe to someone's social media account to see their posts",
@@ -1364,13 +2003,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["subscribe", "add", "connect", "friend"],
+    "related_terms": [
+      "subscribe",
+      "add",
+      "connect",
+      "friend"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "for-real-094",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "for real",
     "pronunciation": null,
     "definition": "means seriously, truly, or I'm not joking - emphasizes honesty",
@@ -1381,13 +2028,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["seriously", "truly", "honestly", "no cap"],
+    "related_terms": [
+      "seriously",
+      "truly",
+      "honestly",
+      "no cap"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "fr-095",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "fr",
     "pronunciation": "eff-arr",
     "definition": "abbreviation for 'for real' - means seriously or I'm being honest",
@@ -1398,13 +2053,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "social_media"],
+    "contexts": [
+      "texting",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["for real", "seriously", "honestly", "no cap"],
+    "related_terms": [
+      "for real",
+      "seriously",
+      "honestly",
+      "no cap"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "fumbled-096",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "fumbled",
     "pronunciation": null,
     "definition": "means messed up an opportunity or made a mistake when it mattered",
@@ -1415,13 +2078,21 @@
     ],
     "category": "actions",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["messed up", "blew it", "missed", "failed"],
+    "related_terms": [
+      "messed up",
+      "blew it",
+      "missed",
+      "failed"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "ghosting-097",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "ghosting",
     "pronunciation": null,
     "definition": "suddenly stopping all communication with someone without explanation",
@@ -1432,13 +2103,22 @@
     ],
     "category": "actions",
     "sentiment": "negative",
-    "contexts": ["dating", "texting", "social_media"],
+    "contexts": [
+      "dating",
+      "texting",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["ignoring", "avoiding", "disappearing", "cutting off"],
+    "related_terms": [
+      "ignoring",
+      "avoiding",
+      "disappearing",
+      "cutting off"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "girl-098",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "girl",
     "pronunciation": null,
     "definition": "used to address someone regardless of gender - like 'dude' or 'bro'",
@@ -1449,13 +2129,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["sis", "honey", "friend", "dude"],
+    "related_terms": [
+      "sis",
+      "honey",
+      "friend",
+      "dude"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "giving-099",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "giving",
     "pronunciation": null,
     "definition": "means showing or radiating a particular vibe or energy",
@@ -1466,13 +2154,21 @@
     ],
     "category": "describing",
     "sentiment": "neutral",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["radiating", "showing", "serving", "expressing"],
+    "related_terms": [
+      "radiating",
+      "showing",
+      "serving",
+      "expressing"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "god-100",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "god",
     "pronunciation": null,
     "definition": "used to describe someone who is extremely skilled or impressive at something",
@@ -1483,13 +2179,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["legend", "master", "expert", "pro"],
+    "related_terms": [
+      "legend",
+      "master",
+      "expert",
+      "pro"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "goddess-101",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "goddess",
     "pronunciation": null,
     "definition": "used to describe someone who looks amazing or is exceptionally talented",
@@ -1500,13 +2204,22 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media", "dating"],
+    "contexts": [
+      "casual",
+      "social_media",
+      "dating"
+    ],
     "popularity": 6,
-    "related_terms": ["queen", "angel", "icon", "legend"],
+    "related_terms": [
+      "queen",
+      "angel",
+      "icon",
+      "legend"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "going-out-102",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "going out",
     "pronunciation": null,
     "definition": "means dating someone or being in a relationship",
@@ -1517,13 +2230,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["dating", "seeing", "together", "relationship"],
+    "related_terms": [
+      "dating",
+      "seeing",
+      "together",
+      "relationship"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "good-103",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "good",
     "pronunciation": null,
     "definition": "means positive, satisfactory, or acceptable quality",
@@ -1534,13 +2255,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["nice", "great", "solid", "decent"],
+    "related_terms": [
+      "nice",
+      "great",
+      "solid",
+      "decent"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "gorgeous-104",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "gorgeous",
     "pronunciation": null,
     "definition": "means extremely beautiful or attractive",
@@ -1551,13 +2280,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["dating", "casual", "social_media"],
+    "contexts": [
+      "dating",
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["beautiful", "stunning", "amazing", "pretty"],
+    "related_terms": [
+      "beautiful",
+      "stunning",
+      "amazing",
+      "pretty"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "gtg-105",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "gtg",
     "pronunciation": "gee-tee-gee",
     "definition": "abbreviation for 'got to go' - means I have to leave now",
@@ -1568,13 +2306,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["gotta go", "bye", "talk later", "brb"],
+    "related_terms": [
+      "gotta go",
+      "bye",
+      "talk later",
+      "brb"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "guy-106",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "guy",
     "pronunciation": null,
     "definition": "casual way to refer to a person, regardless of gender",
@@ -1585,13 +2331,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["person", "dude", "friend", "people"],
+    "related_terms": [
+      "person",
+      "dude",
+      "friend",
+      "people"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "hanging-out-107",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "hanging out",
     "pronunciation": null,
     "definition": "means spending casual time together, relaxing with friends",
@@ -1602,13 +2356,22 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "dating"],
+    "contexts": [
+      "casual",
+      "texting",
+      "dating"
+    ],
     "popularity": 8,
-    "related_terms": ["chilling", "spending time", "vibing", "relaxing"],
+    "related_terms": [
+      "chilling",
+      "spending time",
+      "vibing",
+      "relaxing"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "heard-108",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "heard",
     "pronunciation": null,
     "definition": "means 'understood', 'got it', or 'I acknowledge what you said'",
@@ -1619,13 +2382,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["understood", "got it", "copy", "acknowledged"],
+    "related_terms": [
+      "understood",
+      "got it",
+      "copy",
+      "acknowledged"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "heavenly-109",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "heavenly",
     "pronunciation": null,
     "definition": "means absolutely perfect, divine, or exceptionally good",
@@ -1636,13 +2407,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "food"],
+    "contexts": [
+      "casual",
+      "food"
+    ],
     "popularity": 5,
-    "related_terms": ["divine", "perfect", "amazing", "incredible"],
+    "related_terms": [
+      "divine",
+      "perfect",
+      "amazing",
+      "incredible"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "highkey-110",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "highkey",
     "pronunciation": null,
     "definition": "means openly, obviously, or very much - opposite of lowkey",
@@ -1653,13 +2432,22 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["openly", "obviously", "really", "very"],
+    "related_terms": [
+      "openly",
+      "obviously",
+      "really",
+      "very"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "hits-different-111",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "hits different",
     "pronunciation": null,
     "definition": "means something is uniquely good or has a special quality that stands out",
@@ -1670,13 +2458,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media", "food"],
+    "contexts": [
+      "casual",
+      "social_media",
+      "food"
+    ],
     "popularity": 8,
-    "related_terms": ["special", "unique", "better", "distinct"],
+    "related_terms": [
+      "special",
+      "unique",
+      "better",
+      "distinct"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "homie-112",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "homie",
     "pronunciation": null,
     "definition": "means close friend or buddy - term of friendship and familiarity",
@@ -1687,13 +2484,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["friend", "buddy", "bro", "fam"],
+    "related_terms": [
+      "friend",
+      "buddy",
+      "bro",
+      "fam"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "honestly-113",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "honestly",
     "pronunciation": null,
     "definition": "used to emphasize truth or give genuine opinion",
@@ -1704,13 +2509,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["truly", "really", "for real", "genuinely"],
+    "related_terms": [
+      "truly",
+      "really",
+      "for real",
+      "genuinely"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "honey-114",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "honey",
     "pronunciation": null,
     "definition": "term of endearment used for friends, romantic partners, or to address someone kindly",
@@ -1721,13 +2534,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "dating"],
+    "contexts": [
+      "casual",
+      "dating"
+    ],
     "popularity": 6,
-    "related_terms": ["sweetie", "baby", "love", "dear"],
+    "related_terms": [
+      "sweetie",
+      "baby",
+      "love",
+      "dear"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "horrible-115",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "horrible",
     "pronunciation": null,
     "definition": "means extremely bad, terrible, or unpleasant",
@@ -1738,13 +2559,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["terrible", "awful", "bad", "disgusting"],
+    "related_terms": [
+      "terrible",
+      "awful",
+      "bad",
+      "disgusting"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "hottie-116",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "hottie",
     "pronunciation": null,
     "definition": "means an attractive person - used to describe someone good looking",
@@ -1755,13 +2584,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "dating"],
+    "contexts": [
+      "casual",
+      "dating"
+    ],
     "popularity": 6,
-    "related_terms": ["attractive", "good looking", "cute", "beautiful"],
+    "related_terms": [
+      "attractive",
+      "good looking",
+      "cute",
+      "beautiful"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "howling-117",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "howling",
     "pronunciation": null,
     "definition": "means laughing extremely hard or finding something hilarious",
@@ -1772,13 +2609,22 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["cackling", "laughing", "cracking up", "wheezing"],
+    "related_terms": [
+      "cackling",
+      "laughing",
+      "cracking up",
+      "wheezing"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "icon-118",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "icon",
     "pronunciation": null,
     "definition": "means someone who is legendary, influential, or exceptionally cool",
@@ -1789,13 +2635,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["legend", "queen", "goddess", "star"],
+    "related_terms": [
+      "legend",
+      "queen",
+      "goddess",
+      "star"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "iconic-119",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "iconic",
     "pronunciation": null,
     "definition": "means legendary, memorable, or representing the best of something",
@@ -1806,13 +2660,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["legendary", "classic", "memorable", "amazing"],
+    "related_terms": [
+      "legendary",
+      "classic",
+      "memorable",
+      "amazing"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "idk-120",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "idk",
     "pronunciation": "eye-dee-kay",
     "definition": "abbreviation for 'I don't know' - shows uncertainty or lack of knowledge",
@@ -1823,13 +2685,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 9,
-    "related_terms": ["I don't know", "not sure", "uncertain", "maybe"],
+    "related_terms": [
+      "I don't know",
+      "not sure",
+      "uncertain",
+      "maybe"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "immaculate-121",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "immaculate",
     "pronunciation": null,
     "definition": "means absolutely perfect, flawless, or extremely clean and well-done",
@@ -1840,13 +2710,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["perfect", "flawless", "pristine", "clean"],
+    "related_terms": [
+      "perfect",
+      "flawless",
+      "pristine",
+      "clean"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "incredible-122",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "incredible",
     "pronunciation": null,
     "definition": "means amazing, extraordinary, or hard to believe how good something is",
@@ -1857,13 +2735,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["amazing", "awesome", "fantastic", "unbelievable"],
+    "related_terms": [
+      "amazing",
+      "awesome",
+      "fantastic",
+      "unbelievable"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "interested-123",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "interested",
     "pronunciation": null,
     "definition": "means wanting to know more, attracted to, or curious about something or someone",
@@ -1874,13 +2760,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "dating"],
+    "contexts": [
+      "casual",
+      "dating"
+    ],
     "popularity": 7,
-    "related_terms": ["curious", "attracted", "drawn to", "wanting"],
+    "related_terms": [
+      "curious",
+      "attracted",
+      "drawn to",
+      "wanting"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "irl-124",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "irl",
     "pronunciation": "eye-arr-ell",
     "definition": "abbreviation for 'in real life' - refers to offline or actual reality",
@@ -1891,13 +2785,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "social_media"],
+    "contexts": [
+      "texting",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["in real life", "offline", "actually", "in person"],
+    "related_terms": [
+      "in real life",
+      "offline",
+      "actually",
+      "in person"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "karen-125",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "karen",
     "pronunciation": null,
     "definition": "refers to someone who complains excessively or demands to speak to managers",
@@ -1908,13 +2810,21 @@
     ],
     "category": "people",
     "sentiment": "negative",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["complainer", "demanding", "entitled", "difficult"],
+    "related_terms": [
+      "complainer",
+      "demanding",
+      "entitled",
+      "difficult"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "king-126",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "king",
     "pronunciation": null,
     "definition": "used to praise someone, especially males, for being awesome or impressive",
@@ -1925,13 +2835,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["legend", "champion", "hero", "boss"],
+    "related_terms": [
+      "legend",
+      "champion",
+      "hero",
+      "boss"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "legend-127",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "legend",
     "pronunciation": null,
     "definition": "means someone who is exceptionally cool, helpful, or impressive",
@@ -1942,13 +2860,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["hero", "icon", "champion", "star"],
+    "related_terms": [
+      "hero",
+      "icon",
+      "champion",
+      "star"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "legendary-128",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "legendary",
     "pronunciation": null,
     "definition": "means extremely impressive, memorable, or worthy of legend status",
@@ -1959,13 +2885,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["epic", "amazing", "iconic", "incredible"],
+    "related_terms": [
+      "epic",
+      "amazing",
+      "iconic",
+      "incredible"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "like-129",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "like",
     "pronunciation": null,
     "definition": "filler word used frequently in speech, or to express similarity",
@@ -1976,13 +2910,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["such as", "similar to", "kinda", "sort of"],
+    "related_terms": [
+      "such as",
+      "similar to",
+      "kinda",
+      "sort of"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "literally-130",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "literally",
     "pronunciation": null,
     "definition": "used for emphasis, often meaning 'really' or 'actually' rather than literal truth",
@@ -1993,13 +2935,22 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["actually", "really", "totally", "completely"],
+    "related_terms": [
+      "actually",
+      "really",
+      "totally",
+      "completely"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "lmao-131",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "lmao",
     "pronunciation": "el-em-ay-oh",
     "definition": "abbreviation for 'laughing my butt off' - shows something is very funny",
@@ -2010,13 +2961,21 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["texting", "social_media"],
+    "contexts": [
+      "texting",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["lol", "haha", "funny", "hilarious"],
+    "related_terms": [
+      "lol",
+      "haha",
+      "funny",
+      "hilarious"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "love-132",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "love",
     "pronunciation": null,
     "definition": "means really like, adore, or have strong positive feelings about",
@@ -2027,13 +2986,22 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "dating"],
+    "contexts": [
+      "casual",
+      "texting",
+      "dating"
+    ],
     "popularity": 9,
-    "related_terms": ["adore", "cherish", "really like", "appreciate"],
+    "related_terms": [
+      "adore",
+      "cherish",
+      "really like",
+      "appreciate"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "lovely-133",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "lovely",
     "pronunciation": null,
     "definition": "means beautiful, pleasant, or very nice",
@@ -2044,13 +3012,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "dating"],
+    "contexts": [
+      "casual",
+      "dating"
+    ],
     "popularity": 6,
-    "related_terms": ["beautiful", "nice", "pleasant", "sweet"],
+    "related_terms": [
+      "beautiful",
+      "nice",
+      "pleasant",
+      "sweet"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "lowkey-134",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "lowkey",
     "pronunciation": null,
     "definition": "means somewhat, secretly, or not wanting to admit fully",
@@ -2061,13 +3037,22 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["kinda", "secretly", "somewhat", "a little"],
+    "related_terms": [
+      "kinda",
+      "secretly",
+      "somewhat",
+      "a little"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "main-character-135",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "main character",
     "pronunciation": null,
     "definition": "someone who acts like they're the center of attention or most important person",
@@ -2078,13 +3063,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["center of attention", "confident", "self-focused", "star"],
+    "related_terms": [
+      "center of attention",
+      "confident",
+      "self-focused",
+      "star"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "maybe-136",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "maybe",
     "pronunciation": null,
     "definition": "means possibly, perhaps, or shows uncertainty about something",
@@ -2095,13 +3088,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["possibly", "perhaps", "not sure", "might"],
+    "related_terms": [
+      "possibly",
+      "perhaps",
+      "not sure",
+      "might"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "meh-137",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "meh",
     "pronunciation": null,
     "definition": "shows indifference, mild disappointment, or lack of enthusiasm",
@@ -2112,13 +3113,21 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["whatever", "eh", "okay", "indifferent"],
+    "related_terms": [
+      "whatever",
+      "eh",
+      "okay",
+      "indifferent"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "mood-138",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "mood",
     "pronunciation": null,
     "definition": "means 'that's relatable' or 'I feel the same way'",
@@ -2129,13 +3138,22 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting", "casual"],
+    "contexts": [
+      "social_media",
+      "texting",
+      "casual"
+    ],
     "popularity": 9,
-    "related_terms": ["relatable", "same", "felt", "vibe"],
+    "related_terms": [
+      "relatable",
+      "same",
+      "felt",
+      "vibe"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "musty-139",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "musty",
     "pronunciation": null,
     "definition": "means smelly, old, stale, or generally unpleasant",
@@ -2146,13 +3164,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 5,
-    "related_terms": ["stale", "smelly", "old", "gross"],
+    "related_terms": [
+      "stale",
+      "smelly",
+      "old",
+      "gross"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "nailed-it-140",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "nailed it",
     "pronunciation": null,
     "definition": "means performed perfectly or succeeded exactly as intended",
@@ -2163,13 +3189,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["crushed it", "perfect", "succeeded", "aced it"],
+    "related_terms": [
+      "crushed it",
+      "perfect",
+      "succeeded",
+      "aced it"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "nasty-141",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "nasty",
     "pronunciation": null,
     "definition": "means gross, disgusting, or unpleasant",
@@ -2180,13 +3214,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["gross", "disgusting", "yucky", "terrible"],
+    "related_terms": [
+      "gross",
+      "disgusting",
+      "yucky",
+      "terrible"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "neat-142",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "neat",
     "pronunciation": null,
     "definition": "means cool, interesting, or well-organized",
@@ -2197,13 +3239,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 5,
-    "related_terms": ["cool", "nice", "interesting", "tidy"],
+    "related_terms": [
+      "cool",
+      "nice",
+      "interesting",
+      "tidy"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "ngl-143",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "ngl",
     "pronunciation": "en-gee-ell",
     "definition": "abbreviation for 'not gonna lie' - used before admitting something honest",
@@ -2214,13 +3264,22 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual", "social_media"],
+    "contexts": [
+      "texting",
+      "casual",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["not gonna lie", "honestly", "to be honest", "tbh"],
+    "related_terms": [
+      "not gonna lie",
+      "honestly",
+      "to be honest",
+      "tbh"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "nice-144",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "nice",
     "pronunciation": null,
     "definition": "means good, pleasant, or showing approval",
@@ -2231,13 +3290,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["good", "pleasant", "cool", "sweet"],
+    "related_terms": [
+      "good",
+      "pleasant",
+      "cool",
+      "sweet"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "no-cap-145",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "no cap",
     "pronunciation": null,
     "definition": "means 'no lie', 'for real', or 'I'm being honest'",
@@ -2248,13 +3315,22 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual", "social_media"],
+    "contexts": [
+      "texting",
+      "casual",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["fr", "for real", "honestly", "on god"],
+    "related_terms": [
+      "fr",
+      "for real",
+      "honestly",
+      "on god"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "obviously-146",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "obviously",
     "pronunciation": null,
     "definition": "means 'of course', 'clearly', or 'that should be apparent'",
@@ -2265,13 +3341,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["clearly", "of course", "definitely", "naturally"],
+    "related_terms": [
+      "clearly",
+      "of course",
+      "definitely",
+      "naturally"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "odd-147",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "odd",
     "pronunciation": null,
     "definition": "means strange, weird, or unusual in a notable way",
@@ -2282,13 +3366,21 @@
     ],
     "category": "describing",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["strange", "weird", "unusual", "bizarre"],
+    "related_terms": [
+      "strange",
+      "weird",
+      "unusual",
+      "bizarre"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "okay-148",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "okay",
     "pronunciation": null,
     "definition": "means acceptable, fine, or showing agreement",
@@ -2299,13 +3391,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["alright", "fine", "acceptable", "sure"],
+    "related_terms": [
+      "alright",
+      "fine",
+      "acceptable",
+      "sure"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "omg-149",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "omg",
     "pronunciation": "oh-em-gee",
     "definition": "abbreviation for 'oh my gosh' - shows surprise, excitement, or shock",
@@ -2316,13 +3416,22 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["texting", "social_media", "casual"],
+    "contexts": [
+      "texting",
+      "social_media",
+      "casual"
+    ],
     "popularity": 9,
-    "related_terms": ["oh my gosh", "wow", "no way", "seriously"],
+    "related_terms": [
+      "oh my gosh",
+      "wow",
+      "no way",
+      "seriously"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "on-god-150",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "on god",
     "pronunciation": null,
     "definition": "means 'I swear', 'for real', or 'I'm being completely honest'",
@@ -2333,13 +3442,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["I swear", "for real", "no cap", "honestly"],
+    "related_terms": [
+      "I swear",
+      "for real",
+      "no cap",
+      "honestly"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "oop-151",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "oop",
     "pronunciation": null,
     "definition": "expression used when something awkward happens or when you realize a mistake",
@@ -2350,13 +3467,21 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["texting", "casual"],
+    "contexts": [
+      "texting",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["oops", "awkward", "my bad", "whoops"],
+    "related_terms": [
+      "oops",
+      "awkward",
+      "my bad",
+      "whoops"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "over-it-152",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "over it",
     "pronunciation": null,
     "definition": "means fed up, done, or no longer interested in something",
@@ -2367,13 +3492,21 @@
     ],
     "category": "reactions",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["done", "fed up", "finished", "moving on"],
+    "related_terms": [
+      "done",
+      "fed up",
+      "finished",
+      "moving on"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "peak-153",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "peak",
     "pronunciation": null,
     "definition": "means the highest quality, best possible, or perfect example of something",
@@ -2384,13 +3517,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["perfect", "top tier", "best", "ultimate"],
+    "related_terms": [
+      "perfect",
+      "top tier",
+      "best",
+      "ultimate"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "perfect-154",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "perfect",
     "pronunciation": null,
     "definition": "means flawless, exactly right, or the best possible outcome",
@@ -2401,13 +3542,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting", "dating"],
+    "contexts": [
+      "casual",
+      "texting",
+      "dating"
+    ],
     "popularity": 8,
-    "related_terms": ["flawless", "ideal", "excellent", "amazing"],
+    "related_terms": [
+      "flawless",
+      "ideal",
+      "excellent",
+      "amazing"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "periodt-155",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "periodt",
     "pronunciation": "PEE-ree-id",
     "definition": "means 'period' but with extra emphasis - used to end a statement definitively",
@@ -2418,13 +3568,21 @@
     ],
     "category": "communication",
     "sentiment": "positive",
-    "contexts": ["texting", "social_media"],
+    "contexts": [
+      "texting",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["period", "facts", "final answer", "end of discussion"],
+    "related_terms": [
+      "period",
+      "facts",
+      "final answer",
+      "end of discussion"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "pop-off-156",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "pop off",
     "pronunciation": null,
     "definition": "means to perform exceptionally well or go beyond expectations",
@@ -2435,13 +3593,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["went off", "exceeded", "impressed", "showed out"],
+    "related_terms": [
+      "went off",
+      "exceeded",
+      "impressed",
+      "showed out"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "posted-157",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "posted",
     "pronunciation": null,
     "definition": "means shared content on social media or staying in one place",
@@ -2452,13 +3618,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["shared", "uploaded", "published", "hanging"],
+    "related_terms": [
+      "shared",
+      "uploaded",
+      "published",
+      "hanging"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "precious-158",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "precious",
     "pronunciation": null,
     "definition": "means extremely cute, sweet, or endearing",
@@ -2469,13 +3643,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["adorable", "sweet", "cute", "darling"],
+    "related_terms": [
+      "adorable",
+      "sweet",
+      "cute",
+      "darling"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "pretty-159",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "pretty",
     "pronunciation": null,
     "definition": "means attractive, beautiful, or used as an intensifier meaning 'quite'",
@@ -2486,13 +3668,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "dating", "texting"],
+    "contexts": [
+      "casual",
+      "dating",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["beautiful", "attractive", "quite", "fairly"],
+    "related_terms": [
+      "beautiful",
+      "attractive",
+      "quite",
+      "fairly"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "pristine-160",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "pristine",
     "pronunciation": null,
     "definition": "means perfectly clean, flawless, or in excellent condition",
@@ -2503,13 +3694,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 5,
-    "related_terms": ["perfect", "flawless", "immaculate", "clean"],
+    "related_terms": [
+      "perfect",
+      "flawless",
+      "immaculate",
+      "clean"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "pure-161",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "pure",
     "pronunciation": null,
     "definition": "means completely innocent, wholesome, or genuinely good",
@@ -2520,13 +3719,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["innocent", "wholesome", "genuine", "sweet"],
+    "related_terms": [
+      "innocent",
+      "wholesome",
+      "genuine",
+      "sweet"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "queen-162",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "queen",
     "pronunciation": null,
     "definition": "used to praise someone, especially females, for being awesome or impressive",
@@ -2537,13 +3744,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["goddess", "legend", "icon", "star"],
+    "related_terms": [
+      "goddess",
+      "legend",
+      "icon",
+      "star"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "random-163",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "random",
     "pronunciation": null,
     "definition": "means unexpected, weird, or out of nowhere",
@@ -2554,13 +3769,21 @@
     ],
     "category": "describing",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["unexpected", "weird", "strange", "out of nowhere"],
+    "related_terms": [
+      "unexpected",
+      "weird",
+      "strange",
+      "out of nowhere"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "real-talk-164",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "real talk",
     "pronunciation": null,
     "definition": "means 'being serious now' or 'let me be honest with you'",
@@ -2571,13 +3794,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["honestly", "seriously", "for real", "straight up"],
+    "related_terms": [
+      "honestly",
+      "seriously",
+      "for real",
+      "straight up"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "really-165",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "really",
     "pronunciation": null,
     "definition": "used for emphasis meaning 'very' or 'truly' or to express surprise",
@@ -2588,13 +3819,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["very", "truly", "seriously", "actually"],
+    "related_terms": [
+      "very",
+      "truly",
+      "seriously",
+      "actually"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "relatable-166",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "relatable",
     "pronunciation": null,
     "definition": "means you can identify with or understand someone's experience",
@@ -2605,13 +3844,22 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual", "texting"],
+    "contexts": [
+      "social_media",
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["same", "mood", "I feel that", "understandable"],
+    "related_terms": [
+      "same",
+      "mood",
+      "I feel that",
+      "understandable"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "reply-167",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "reply",
     "pronunciation": null,
     "definition": "to respond to a message, comment, or post on social media",
@@ -2622,13 +3870,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["respond", "answer", "text back", "comment"],
+    "related_terms": [
+      "respond",
+      "answer",
+      "text back",
+      "comment"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "respond-168",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "respond",
     "pronunciation": null,
     "definition": "to answer or react to something someone said or did",
@@ -2639,13 +3895,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["answer", "reply", "react", "get back"],
+    "related_terms": [
+      "answer",
+      "reply",
+      "react",
+      "get back"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "rizz-169",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "rizz",
     "pronunciation": null,
     "definition": "means charisma or charm, especially ability to attract romantic interest",
@@ -2656,13 +3920,22 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual", "social_media"],
+    "contexts": [
+      "dating",
+      "casual",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["charisma", "charm", "game", "smooth"],
+    "related_terms": [
+      "charisma",
+      "charm",
+      "game",
+      "smooth"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "rofl-170",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "rofl",
     "pronunciation": "rah-full",
     "definition": "abbreviation for 'rolling on floor laughing' - means extremely funny",
@@ -2673,13 +3946,21 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["texting", "social_media"],
+    "contexts": [
+      "texting",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["lol", "lmao", "hilarious", "funny"],
+    "related_terms": [
+      "lol",
+      "lmao",
+      "hilarious",
+      "funny"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "rough-171",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "rough",
     "pronunciation": null,
     "definition": "means difficult, hard, or not going well",
@@ -2690,13 +3971,21 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["hard", "difficult", "tough", "challenging"],
+    "related_terms": [
+      "hard",
+      "difficult",
+      "tough",
+      "challenging"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "royalty-172",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "royalty",
     "pronunciation": null,
     "definition": "means someone who deserves to be treated like a king or queen",
@@ -2707,13 +3996,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 5,
-    "related_terms": ["queen", "king", "noble", "elite"],
+    "related_terms": [
+      "queen",
+      "king",
+      "noble",
+      "elite"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "same-173",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "same",
     "pronunciation": null,
     "definition": "means 'I relate to that' or 'I feel the same way'",
@@ -2724,13 +4021,22 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["texting", "social_media", "casual"],
+    "contexts": [
+      "texting",
+      "social_media",
+      "casual"
+    ],
     "popularity": 9,
-    "related_terms": ["mood", "relatable", "me too", "I feel that"],
+    "related_terms": [
+      "mood",
+      "relatable",
+      "me too",
+      "I feel that"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "seeing-174",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "seeing",
     "pronunciation": null,
     "definition": "means casually dating someone but not officially in a relationship",
@@ -2741,13 +4047,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["dating", "talking", "going out", "involved with"],
+    "related_terms": [
+      "dating",
+      "talking",
+      "going out",
+      "involved with"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "send-me-175",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "send me",
     "pronunciation": null,
     "definition": "means something is so funny or shocking it overwhelms you",
@@ -2758,13 +4072,21 @@
     ],
     "category": "reactions",
     "sentiment": "positive",
-    "contexts": ["texting", "social_media"],
+    "contexts": [
+      "texting",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["overwhelm", "shock", "amaze", "surprise"],
+    "related_terms": [
+      "overwhelm",
+      "shock",
+      "amaze",
+      "surprise"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "seriously-176",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "seriously",
     "pronunciation": null,
     "definition": "means 'for real', 'are you kidding', or emphasizes importance",
@@ -2775,13 +4097,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["for real", "really", "honestly", "truly"],
+    "related_terms": [
+      "for real",
+      "really",
+      "honestly",
+      "truly"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "served-177",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "served",
     "pronunciation": null,
     "definition": "means delivered an excellent performance or looked amazing",
@@ -2792,13 +4122,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["delivered", "performed", "slayed", "impressed"],
+    "related_terms": [
+      "delivered",
+      "performed",
+      "slayed",
+      "impressed"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "serving-178",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "serving",
     "pronunciation": null,
     "definition": "means delivering or showing off something impressive, especially style or performance",
@@ -2809,13 +4147,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["delivering", "showing", "giving", "radiating"],
+    "related_terms": [
+      "delivering",
+      "showing",
+      "giving",
+      "radiating"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "share-179",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "share",
     "pronunciation": null,
     "definition": "to repost or forward content on social media platforms",
@@ -2826,13 +4172,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["repost", "forward", "spread", "pass along"],
+    "related_terms": [
+      "repost",
+      "forward",
+      "spread",
+      "pass along"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "sheesh-180",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "sheesh",
     "pronunciation": null,
     "definition": "expression of amazement, disbelief, or being impressed by something",
@@ -2843,13 +4197,22 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["wow", "dang", "impressive", "unbelievable"],
+    "related_terms": [
+      "wow",
+      "dang",
+      "impressive",
+      "unbelievable"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
-    {
-    "id": "simp-181",
+  {
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "simp",
     "pronunciation": null,
     "definition": "someone who does way too much for someone they like, often without getting anything back",
@@ -2860,13 +4223,22 @@
     ],
     "category": "people",
     "sentiment": "negative",
-    "contexts": ["dating", "casual", "social_media"],
+    "contexts": [
+      "dating",
+      "casual",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["try-hard", "desperate", "overdoing it", "clingy"],
+    "related_terms": [
+      "try-hard",
+      "desperate",
+      "overdoing it",
+      "clingy"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "single-182",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "single",
     "pronunciation": null,
     "definition": "means not in a romantic relationship or available to date",
@@ -2877,13 +4249,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 8,
-    "related_terms": ["available", "unattached", "free", "not dating"],
+    "related_terms": [
+      "available",
+      "unattached",
+      "free",
+      "not dating"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "sis-183",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "sis",
     "pronunciation": null,
     "definition": "short for sister, used to address friends regardless of gender",
@@ -2894,13 +4274,21 @@
     ],
     "category": "people",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["girl", "friend", "honey", "bestie"],
+    "related_terms": [
+      "girl",
+      "friend",
+      "honey",
+      "bestie"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "slaps-184",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "slaps",
     "pronunciation": null,
     "definition": "means something is really good, especially music or food",
@@ -2911,13 +4299,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media", "food"],
+    "contexts": [
+      "casual",
+      "social_media",
+      "food"
+    ],
     "popularity": 8,
-    "related_terms": ["hits", "bangs", "fire", "amazing"],
+    "related_terms": [
+      "hits",
+      "bangs",
+      "fire",
+      "amazing"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "slay-185",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "slay",
     "pronunciation": null,
     "definition": "means to do something exceptionally well or look amazing",
@@ -2928,13 +4325,21 @@
     ],
     "category": "actions",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 9,
-    "related_terms": ["excel", "dominate", "succeed", "impress"],
+    "related_terms": [
+      "excel",
+      "dominate",
+      "succeed",
+      "impress"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "slide-186",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "slide",
     "pronunciation": null,
     "definition": "means to send a private message, especially romantically interested messages",
@@ -2945,13 +4350,21 @@
     ],
     "category": "actions",
     "sentiment": "neutral",
-    "contexts": ["dating", "social_media"],
+    "contexts": [
+      "dating",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["message", "dm", "reach out", "contact"],
+    "related_terms": [
+      "message",
+      "dm",
+      "reach out",
+      "contact"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "smooth-187",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "smooth",
     "pronunciation": null,
     "definition": "means charming, suave, or skillfully executed",
@@ -2962,13 +4375,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["charming", "suave", "skilled", "cool"],
+    "related_terms": [
+      "charming",
+      "suave",
+      "skilled",
+      "cool"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "snap-188",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "snap",
     "pronunciation": null,
     "definition": "refers to Snapchat or sending a photo message",
@@ -2979,13 +4400,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 8,
-    "related_terms": ["snapchat", "photo", "message", "picture"],
+    "related_terms": [
+      "snapchat",
+      "photo",
+      "message",
+      "picture"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "snatched-189",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "snatched",
     "pronunciation": null,
     "definition": "means looking really good, especially with makeup, hair, or outfit",
@@ -2996,13 +4425,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["beat", "perfect", "on point", "flawless"],
+    "related_terms": [
+      "beat",
+      "perfect",
+      "on point",
+      "flawless"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "sobbing-190",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "sobbing",
     "pronunciation": null,
     "definition": "means crying hard or being extremely emotional about something",
@@ -3013,13 +4450,21 @@
     ],
     "category": "reactions",
     "sentiment": "neutral",
-    "contexts": ["texting", "social_media"],
+    "contexts": [
+      "texting",
+      "social_media"
+    ],
     "popularity": 6,
-    "related_terms": ["crying", "emotional", "tears", "weeping"],
+    "related_terms": [
+      "crying",
+      "emotional",
+      "tears",
+      "weeping"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "solid-191",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "solid",
     "pronunciation": null,
     "definition": "means good, reliable, or respectable quality",
@@ -3030,13 +4475,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["good", "reliable", "decent", "strong"],
+    "related_terms": [
+      "good",
+      "reliable",
+      "decent",
+      "strong"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "spark-192",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "spark",
     "pronunciation": null,
     "definition": "refers to romantic chemistry or initial attraction between people",
@@ -3047,13 +4500,21 @@
     ],
     "category": "people",
     "sentiment": "positive",
-    "contexts": ["dating", "casual"],
+    "contexts": [
+      "dating",
+      "casual"
+    ],
     "popularity": 6,
-    "related_terms": ["chemistry", "connection", "attraction", "vibe"],
+    "related_terms": [
+      "chemistry",
+      "connection",
+      "attraction",
+      "vibe"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "stan-193",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "stan",
     "pronunciation": null,
     "definition": "means to be a big fan of someone or support them enthusiastically",
@@ -3064,13 +4525,21 @@
     ],
     "category": "internet",
     "sentiment": "positive",
-    "contexts": ["social_media", "casual"],
+    "contexts": [
+      "social_media",
+      "casual"
+    ],
     "popularity": 7,
-    "related_terms": ["support", "fan", "love", "admire"],
+    "related_terms": [
+      "support",
+      "fan",
+      "love",
+      "admire"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "story-194",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "story",
     "pronunciation": null,
     "definition": "refers to temporary social media posts that disappear after 24 hours",
@@ -3081,13 +4550,21 @@
     ],
     "category": "internet",
     "sentiment": "neutral",
-    "contexts": ["social_media", "texting"],
+    "contexts": [
+      "social_media",
+      "texting"
+    ],
     "popularity": 9,
-    "related_terms": ["post", "snap", "update", "share"],
+    "related_terms": [
+      "post",
+      "snap",
+      "update",
+      "share"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "straight-up-195",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "straight up",
     "pronunciation": null,
     "definition": "means 'honestly', 'for real', or 'I'm being direct with you'",
@@ -3098,13 +4575,21 @@
     ],
     "category": "communication",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 7,
-    "related_terms": ["honestly", "for real", "directly", "bluntly"],
+    "related_terms": [
+      "honestly",
+      "for real",
+      "directly",
+      "bluntly"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "strange-196",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "strange",
     "pronunciation": null,
     "definition": "means weird, unusual, or not normal",
@@ -3115,13 +4600,21 @@
     ],
     "category": "describing",
     "sentiment": "neutral",
-    "contexts": ["casual", "texting"],
+    "contexts": [
+      "casual",
+      "texting"
+    ],
     "popularity": 6,
-    "related_terms": ["weird", "odd", "unusual", "peculiar"],
+    "related_terms": [
+      "weird",
+      "odd",
+      "unusual",
+      "peculiar"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "stunning-197",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "stunning",
     "pronunciation": null,
     "definition": "means extremely beautiful, impressive, or breathtaking",
@@ -3132,13 +4625,22 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["dating", "casual", "social_media"],
+    "contexts": [
+      "dating",
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["gorgeous", "beautiful", "breathtaking", "amazing"],
+    "related_terms": [
+      "gorgeous",
+      "beautiful",
+      "breathtaking",
+      "amazing"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "style-198",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "style",
     "pronunciation": null,
     "definition": "refers to someone's fashion sense, way of dressing, or personal aesthetic",
@@ -3149,13 +4651,21 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["fashion", "look", "aesthetic", "vibe"],
+    "related_terms": [
+      "fashion",
+      "look",
+      "aesthetic",
+      "vibe"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "sus-199",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "sus",
     "pronunciation": null,
     "definition": "short for 'suspicious' - means something seems sketchy or questionable",
@@ -3166,13 +4676,22 @@
     ],
     "category": "describing",
     "sentiment": "negative",
-    "contexts": ["casual", "texting", "social_media"],
+    "contexts": [
+      "casual",
+      "texting",
+      "social_media"
+    ],
     "popularity": 8,
-    "related_terms": ["suspicious", "sketchy", "questionable", "weird"],
+    "related_terms": [
+      "suspicious",
+      "sketchy",
+      "questionable",
+      "weird"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   },
   {
-    "id": "swag-200",
+    "id": "9cdec4ba-382b-4c6a-8edc-0540121aad0a",
     "term": "swag",
     "pronunciation": null,
     "definition": "refers to someone's style, confidence, or cool factor",
@@ -3183,9 +4702,17 @@
     ],
     "category": "describing",
     "sentiment": "positive",
-    "contexts": ["casual", "social_media"],
+    "contexts": [
+      "casual",
+      "social_media"
+    ],
     "popularity": 7,
-    "related_terms": ["style", "confidence", "cool", "drip"],
+    "related_terms": [
+      "style",
+      "confidence",
+      "cool",
+      "drip"
+    ],
     "last_updated": "2025-01-01T00:00:00Z"
   }
 ]
