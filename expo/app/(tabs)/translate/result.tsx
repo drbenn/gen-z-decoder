@@ -1,9 +1,10 @@
-import { ScrollView, StyleSheet, Text, Pressable, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, Pressable, View, Share } from 'react-native'
 import * as Speech from 'expo-speech'
 import { useAppState } from '@/state/useAppState'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { router, useFocusEffect } from 'expo-router'
 import React, { useCallback, useState } from 'react'
+import APP_CONSTANTS from '@/constants/appConstants'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -31,6 +32,7 @@ export default function TranslateResultScreen() {
           setTranslateLoadState('error')
         } else if (currentTranslation) {
           setTranslateLoadState('success')
+          autoplayAudio()
         } else {
           setTranslateLoadState('empty')
         }
@@ -46,9 +48,26 @@ export default function TranslateResultScreen() {
     router.back()
   }
 
-  const handleShare = () => {
-    // TODO: Share functionality
-    console.log('Share pressed')
+  const handleShare = async () => {
+    if (currentTranslation?.translatedText) {
+      try {
+        await Share.share({
+          title: `${APP_CONSTANTS.APP_NAME}`,
+          message: `Check out this translation: ${currentTranslation.translatedText} \n\n
+          ${APP_CONSTANTS.APP_NAME} available on mobile! ${APP_CONSTANTS.APP_WEBSITE}`,
+        })
+      } catch (error) {
+        logger.error('Error sharing translation:', error)
+      }
+    }
+  }
+
+  const autoplayAudio = () => {
+    if (autoPlayAudio) {
+      setTimeout(() => {
+        handleTTS()
+      }, 1200)
+    }
   }
 
   const handleTTS = async () => {
@@ -122,18 +141,21 @@ export default function TranslateResultScreen() {
           disabled={!ttsEnabled || isTranslating}
         >
           <Text style={styles.actionButtonText}>
-            🔊 {autoPlayAudio ? 'Playing...' : 'Play Audio'}
+            🔊 Play Audio
           </Text>
         </Pressable>
 
         {/* Share Button */}
-        <Pressable 
-          style={styles.actionButton}
-          onPress={handleShare}
-          disabled={isTranslating}
-        >
-          <Text style={styles.actionButtonText}>📤 Share</Text>
-        </Pressable>
+
+        { currentTranslation?.translatedText && 
+          <Pressable 
+            style={styles.actionButton}
+            onPress={handleShare}
+            disabled={isTranslating}
+          >
+            <Text style={styles.actionButtonText}>📤 Share</Text>
+          </Pressable>
+        }
       </View>
 
       {/* Translate Again Button */}

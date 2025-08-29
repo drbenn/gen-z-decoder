@@ -21,7 +21,7 @@ export const appControlSlice: StateCreator<
   AppControlSlice
 > = (set, get) => ({
   // Initial state
-  autoPlayAudio: false,
+  autoPlayAudio: true,
   ttsEnabled: true,
   isAppLoading: false,
 

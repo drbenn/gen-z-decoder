@@ -3,7 +3,7 @@ const googlePlayStorePackageName = "NEED!"
 
 const APP_CONSTANTS = {
   // Overview
-  APP_NAME: 'Gen-Z Decoder',
+  APP_NAME: 'Gen-Z Translator: No Cap',
   APP_TAGLINE: 'IDK WHATEVER',
   VERSION_NO: '1.0',
 
@@ -17,6 +17,11 @@ const APP_CONSTANTS = {
    */
   ADS_TESTING_PHASE: true, // Set to FALSE !!only!! when submitting to App Store - 
   DEBUG_TOOLS_ACTIVE: false,
+
+  // API Access
+  LOCAL_API_IOS: 'http://localhost:3000/v1',
+  LOCAL_API_ANDROID: 'http://10.0.2.2:3000/v1',
+  PRODUCTION_WEB_API: 'https://genz.sparkdart.com/v1',
   
   // Developer
   DEVELOPER_CO: 'SparkDart',
