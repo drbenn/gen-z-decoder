@@ -3,10 +3,10 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import { adSlice, AdSlice } from './slices/adSlice';
 import { translateSlice, TranslateSlice } from './slices/translateSlice';
 import { appControlSlice, AppControlSlice } from './slices/appControlSlice';
-// import { librarySlice, LibrarySlice } from './slices/librarySlice';
+import { librarySlice, LibrarySlice } from './slices/librarySlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export type AppState = AdSlice & TranslateSlice & AppControlSlice;
+export type AppState = AdSlice & TranslateSlice & AppControlSlice & LibrarySlice;
 
 export const useAppState = create<AppState>()(
   persist(
@@ -14,7 +14,7 @@ export const useAppState = create<AppState>()(
       ...adSlice(...a),
       ...translateSlice(...a),
       ...appControlSlice(...a),
-      // ...librarySlice(...a),
+      ...librarySlice(...a)
     }),
     {
       name: 'app-storage',
@@ -25,7 +25,7 @@ export const useAppState = create<AppState>()(
         autoPlayAudio: state.autoPlayAudio,
         ttsEnabled: state.ttsEnabled,
         translationHistory: state.translationHistory,
-        // dictionaryTerms: state.dictionaryTerms
+        dictionaryTerms: state.dictionaryTerms
       }),
     }
   )

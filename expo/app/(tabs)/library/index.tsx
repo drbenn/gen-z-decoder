@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import HistoryContent from '@/components/ui/custom/library/HistoryContent';
+import DictionaryContent from '@/components/ui/custom/library/DictionaryContent';
 
 export default function LibraryScreen() {
   const insets = useSafeAreaInsets()
-  const [activeChip, setActiveChip] = useState<'Library' | 'History' | 'Favorites'>('History')
+  const [activeChip, setActiveChip] = useState<'Dictionary' | 'History' | 'Favorites'>('History')
 
 
-  const handleChipPress = (chip: 'Library' | 'History' | 'Favorites') => {
+  const handleChipPress = (chip: 'Dictionary' | 'History' | 'Favorites') => {
     setActiveChip(chip)
     console.log(chip);
     
@@ -21,7 +22,7 @@ export default function LibraryScreen() {
   return (
     <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom}]}>
       <View style={styles.chipContainer}>
-        <Chip label={'Library'} onPress={() => handleChipPress('Library')}></Chip>
+        <Chip label={'Dictionary'} onPress={() => handleChipPress('Dictionary')}></Chip>
         <View style={[{paddingHorizontal: 16}]}>
           <Chip label={'History'} onPress={() => handleChipPress('History')}></Chip>
         </View>
@@ -32,7 +33,7 @@ export default function LibraryScreen() {
       </View>
       <View style={styles.contentContainer}>
         {activeChip === 'History' && <HistoryContent />}
-        {/* {activeChip === 'Dictionary' && <DictionaryContent />} */}
+        {activeChip === 'Dictionary' && <DictionaryContent />}
         {/* {activeChip === 'Favorites' && <FavoritesContent />} */}
       </View>
     </View>

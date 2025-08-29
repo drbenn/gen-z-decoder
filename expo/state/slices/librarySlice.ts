@@ -1,15 +1,15 @@
-import { DictionaryEntry } from '@/types/dictionary.types';
-import { StateCreator } from 'zustand';
+import { DictionaryEntry } from '@/types/dictionary.types'
+import { StateCreator } from 'zustand'
 
 export interface LibrarySlice {
-  dictionaryTerms: DictionaryEntry[];
+  dictionaryTerms: DictionaryEntry[]
   
   // Actions
-  setDictionaryTerms: (enabled: DictionaryEntry[]) => void;
-  setDictionaryFavorite: (favorite: boolean) => void;
+  setDictionaryTerms: (enabled: DictionaryEntry[]) => void
+  setDictionaryFavorite: (id: string, favorite: boolean) => void
 }
 
-export const appControlSlice: StateCreator<
+export const librarySlice: StateCreator<
   any, // Full app state - avoid circular dependency
   [],
   [],
@@ -20,12 +20,17 @@ export const appControlSlice: StateCreator<
 
   // Actions
   setDictionaryTerms: (dictionaryTerms: DictionaryEntry[]) => {
-    set({ dictionaryTerms: dictionaryTerms });
+    set({ dictionaryTerms: dictionaryTerms })
   },
 
-  setDictionaryFavorite: (enabled: boolean) => {
-    // set({ ttsEnabled: enabled });
+  setDictionaryFavorite: (id: string, favorite: boolean) => {
+    const currentTerms: DictionaryEntry[] = get().dictionaryTerms
+    const updatedTerms = currentTerms.map((term: DictionaryEntry) => {
+      return term.id === id ? {...term, is_favorite: favorite} : term
+    })
+    set({ dictionaryTerms: updatedTerms })
+    
   },
 
 
-});
+})

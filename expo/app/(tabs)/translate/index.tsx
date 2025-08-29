@@ -53,18 +53,18 @@ export default function TranslateInputScreen() {
     
     // 3. API call with error handling
     try {      
-      // const response = await HttpClient.translateText({ text: inputText, mode })
-      const response = {
-        translatedText: 'YOLO',
-        originalText: 'BOLO',
-        mode: TranslationMode.ENGLISH_TO_GENZ,
-        usageInfo: {
-          translationsUsedToday: 1,
-          dailyLimit: 10,
-          remainingTranslations: 9,
-          isPremium: false
-        }
-      }
+      const response = await HttpClient.translateText({ text: inputText, mode })
+      // const response = {
+      //   translatedText: 'YOLO',
+      //   originalText: 'BOLO',
+      //   mode: TranslationMode.ENGLISH_TO_GENZ,
+      //   usageInfo: {
+      //     translationsUsedToday: 1,
+      //     dailyLimit: 10,
+      //     remainingTranslations: 9,
+      //     isPremium: false
+      //   }
+      // }
 
       logger.log('response: ', response)
 

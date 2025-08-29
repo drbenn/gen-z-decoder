@@ -5,20 +5,45 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
-// import { useAppState } from '@/state/useAppState';
+import { useAppState } from '@/state/useAppState';
+import { useEffect } from 'react';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const dictionaryTerms = useAppState((state) => state.dictionaryTerms)
+  const setDictionaryTerms = useAppState((state) => state.setDictionaryTerms)
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
+
+  useEffect(() => {
+    const loadDictionary = () => {
+      if (!dictionaryTerms) {   
+        try {
+          // Import your newDictionary.json with UUIDs       
+        
+            const dictionaryData = require('@/assets/data/dictionary.json')
+            
+            // Set it in state
+            setDictionaryTerms(dictionaryData)
+          
+        } catch (error) {
+          logger.error('Failed to load dictionary:', error)
+          // Set empty array as fallback
+          setDictionaryTerms([])
+        }
+      }
+    }
+
+    loadDictionary()
+  }, [setDictionaryTerms])
 
   if (!loaded) {
     // Async font loading only occurs in development.
     return null;
   }
 
-  // const setDictionaryTerms = useAppState((state) => state.setDictionaryTerms)
+  
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
