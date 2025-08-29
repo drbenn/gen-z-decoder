@@ -6,7 +6,7 @@ import HistoryContent from '@/components/ui/custom/library/HistoryContent';
 import DictionaryContent from '@/components/ui/custom/library/DictionaryContent';
 import FavoriteToggle from '@/components/ui/custom/library/FavoriteToggle';
 import { useAppState } from '@/state/useAppState';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Colors } from '@/constants/Colors';;
 
 export default function LibraryScreen() {
   const colorScheme = useColorScheme();
@@ -21,7 +21,7 @@ export default function LibraryScreen() {
   }
 
   return (
-    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, backgroundColor: 'red'}]}>
+    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, backgroundColor: theme.background}]}>
       <View style={styles.chipContainer}>
         <Chip label={'Dictionary'} onPress={() => handleChipPress('Dictionary')}></Chip>
         <View style={[{paddingHorizontal: 16}]}>

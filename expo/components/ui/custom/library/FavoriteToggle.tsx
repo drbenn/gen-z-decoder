@@ -1,6 +1,7 @@
 import React from 'react'
-import { TouchableOpacity, Text, StyleSheet, useColorScheme } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { Pressable, Text, useColorScheme } from 'react-native'
+import { Colors } from '@/constants/Colors'
+import { Ionicons } from '@expo/vector-icons'
 
 interface FavoriteToggleProps {
   isActive: boolean
@@ -11,38 +12,34 @@ export default function FavoriteToggle({ isActive, onPress }: FavoriteToggleProp
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
 
-
   return (
-    <TouchableOpacity 
-      style={[styles.toggle, isActive && styles.activeToggle]} 
+    <Pressable
+      style={({ pressed }) => ({
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: isActive ? theme.primary : theme.borderColor,
+        backgroundColor: pressed 
+          ? theme.primary
+          : isActive 
+            ? theme.primaryTint 
+            : 'transparent',
+      })}
       onPress={onPress}
     >
-      <Text style={[styles.text, isActive && styles.activeText]}>
-        Favorites
+      <Text style={{
+        fontSize: 14,
+        fontWeight: '500',
+        color: theme.text,
+      }}>
+      <Ionicons 
+        name={isActive ? 'bookmark' : 'bookmark-outline'} 
+        size={12} 
+        color={isActive ? theme.primary : theme.textMuted}
+      />
+        &nbsp;Favorites
       </Text>
-    </TouchableOpacity>
+    </Pressable>
   )
 }
-
-const styles = StyleSheet.create({
-  toggle: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-    backgroundColor: '#f0f0f0',
-    borderWidth: 1,
-    borderColor: '#d0d0d0',
-  },
-  activeToggle: {
-    backgroundColor: '#007AFF',
-    borderColor: '#007AFF',
-  },
-  text: {
-    fontSize: 14,
-    color: '#333',
-    fontWeight: '500',
-  },
-  activeText: {
-    color: '#fff',
-  },
-})

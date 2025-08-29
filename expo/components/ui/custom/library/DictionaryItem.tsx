@@ -1,21 +1,8 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
-
-interface DictionaryEntry {
-  id: string
-  term: string
-  pronunciation?: string
-  definition: string
-  examples: string[]
-  category: string // SlangCategory
-  sentiment: string // SlangSentiment
-  contexts: string[] // UsageContext[]
-  popularity: number
-  related_terms: string[]
-  last_updated: string
-  is_favorite?: boolean
-}
+import { View, Text, Pressable, useColorScheme } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
+import { Colors } from '@/constants/Colors'
+import { DictionaryEntry } from '@/types/dictionary.types'
 
 interface DictionaryItemProps {
   item: DictionaryEntry
@@ -25,50 +12,147 @@ interface DictionaryItemProps {
 export default function DictionaryItem({ item, onToggleFavorite }: DictionaryItemProps) {
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
-
   const [expanded, setExpanded] = useState(false)
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => setExpanded(!expanded)} style={styles.header}>
-        <View style={styles.titleRow}>
-          <Text style={styles.term}>
+    <View style={{
+      backgroundColor: theme.surface,
+      marginVertical: 4,
+      borderRadius: theme.borderRadius,
+      borderWidth: 1,
+      borderColor: theme.borderColor,
+    }}>
+      <Pressable 
+        onPress={() => setExpanded(!expanded)} 
+        style={({ pressed }) => ({
+          padding: 16,
+          backgroundColor: pressed ? theme.primaryTint : 'transparent',
+          borderRadius: theme.borderRadius,
+        })}
+      >
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          marginBottom: 4,
+        }}>
+          <Text style={{
+            fontSize: 18,
+            fontWeight: 'bold',
+            color: theme.text,
+            flex: 1,
+          }}>
             {item.term}
-            {item.pronunciation && <Text style={styles.pronunciation}> ({item.pronunciation})</Text>}
+            {item.pronunciation && (
+              <Text style={{
+                fontWeight: 'normal',
+                color: theme.textMuted,
+                fontSize: 14,
+              }}> ({item.pronunciation})</Text>
+            )}
           </Text>
-          <TouchableOpacity onPress={() => onToggleFavorite(item.id)}>
-            <Text style={styles.favorite}>{item.is_favorite ? '⭐' : '☆'}</Text>
-          </TouchableOpacity>
+          <Pressable 
+            onPress={() => onToggleFavorite(item.id)}
+            style={({ pressed }) => ({
+              backgroundColor: pressed ? theme.primaryTint : 'transparent',
+              borderRadius: 12,
+              padding: 4,
+            })}
+          >
+            <Ionicons 
+              name={item.is_favorite ? 'bookmark' : 'bookmark-outline'} 
+              size={18} 
+              color={item.is_favorite ? theme.primary : theme.textMuted} 
+            />
+          </Pressable>
         </View>
-        
-        <Text style={styles.definition}>{item.definition}</Text>
-        
-        <View style={styles.expandRow}>
-          <Text style={styles.category}>{item.category}</Text>
-          <Text style={styles.expandIcon}>{expanded ? '−' : '+'}</Text>
+      
+        <Text style={{
+          fontSize: 15,
+          color: theme.text,
+          marginBottom: 8,
+          lineHeight: 20,
+        }}>{item.definition}</Text>
+      
+        <View style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+          <Text style={{
+            fontSize: 12,
+            color: theme.primary,
+            fontWeight: '600',
+            textTransform: 'uppercase',
+          }}>{item.category}</Text>
+          <Text style={{
+            fontSize: 18,
+            color: theme.textMuted,
+            fontWeight: 'bold',
+          }}>{expanded ? '−' : '+'}</Text>
         </View>
-      </TouchableOpacity>
+      </Pressable>
 
       {expanded && (
-        <View style={styles.expandedContent}>
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Examples:</Text>
+        <View style={{
+          paddingHorizontal: 16,
+          paddingBottom: 16,
+          borderTopWidth: 1,
+          borderTopColor: theme.borderColor,
+        }}>
+          <View style={{ marginVertical: 12 }}>
+            <Text style={{
+              fontSize: 13,
+              fontWeight: 'bold',
+              color: theme.text,
+              marginBottom: 4,
+            }}>Examples:</Text>
             {item.examples.map((example: string, index: number) => (
-              <Text key={index} style={styles.example}>• {example}</Text>
+              <Text key={index} style={{
+                fontSize: 14,
+                color: theme.textMuted,
+                fontStyle: 'italic',
+                marginBottom: 2,
+              }}>• {example}</Text>
             ))}
           </View>
 
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Details:</Text>
-            <Text style={styles.detail}>Sentiment: {item.sentiment}</Text>
-            <Text style={styles.detail}>Popularity: {item.popularity}/10</Text>
-            <Text style={styles.detail}>Contexts: {item.contexts.join(', ')}</Text>
+          <View style={{ marginBottom: 12 }}>
+            <Text style={{
+              fontSize: 13,
+              fontWeight: 'bold',
+              color: theme.text,
+              marginBottom: 4,
+            }}>Details:</Text>
+            <Text style={{
+              fontSize: 13,
+              color: theme.textMuted,
+              marginBottom: 2,
+            }}>Sentiment: {item.sentiment}</Text>
+            <Text style={{
+              fontSize: 13,
+              color: theme.textMuted,
+              marginBottom: 2,
+            }}>Popularity: {item.popularity}/10</Text>
+            <Text style={{
+              fontSize: 13,
+              color: theme.textMuted,
+              marginBottom: 2,
+            }}>Contexts: {item.contexts.join(', ')}</Text>
           </View>
 
           {item.related_terms.length > 0 && (
-            <View style={styles.section}>
-              <Text style={styles.sectionTitle}>Related:</Text>
-              <Text style={styles.detail}>{item.related_terms.join(', ')}</Text>
+            <View style={{ marginBottom: 12 }}>
+              <Text style={{
+                fontSize: 13,
+                fontWeight: 'bold',
+                color: theme.text,
+                marginBottom: 4,
+              }}>Related:</Text>
+              <Text style={{
+                fontSize: 13,
+                color: theme.textMuted,
+              }}>{item.related_terms.join(', ')}</Text>
             </View>
           )}
         </View>
@@ -76,84 +160,3 @@ export default function DictionaryItem({ item, onToggleFavorite }: DictionaryIte
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#f9f9f9',
-    marginVertical: 4,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
-  },
-  header: {
-    padding: 16,
-  },
-  titleRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 4,
-  },
-  term: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-    flex: 1,
-  },
-  pronunciation: {
-    fontWeight: 'normal',
-    color: '#666',
-    fontSize: 14,
-  },
-  favorite: {
-    fontSize: 18,
-  },
-  definition: {
-    fontSize: 15,
-    color: '#555',
-    marginBottom: 8,
-    lineHeight: 20,
-  },
-  expandRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  category: {
-    fontSize: 12,
-    color: '#007AFF',
-    fontWeight: '600',
-    textTransform: 'uppercase',
-  },
-  expandIcon: {
-    fontSize: 18,
-    color: '#666',
-    fontWeight: 'bold',
-  },
-  expandedContent: {
-    paddingHorizontal: 16,
-    paddingBottom: 16,
-    borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
-  },
-  section: {
-    marginBottom: 12,
-  },
-  sectionTitle: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 4,
-  },
-  example: {
-    fontSize: 14,
-    color: '#555',
-    fontStyle: 'italic',
-    marginBottom: 2,
-  },
-  detail: {
-    fontSize: 13,
-    color: '#666',
-    marginBottom: 2,
-  },
-})

@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { router, useFocusEffect } from 'expo-router'
 import React, { useCallback, useState } from 'react'
 import APP_CONSTANTS from '@/constants/appConstants'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { Colors } from '@/constants/Colors';
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -22,6 +22,8 @@ export default function TranslateResultScreen() {
   const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
   const ttsEnabled = useAppState((state) => state.ttsEnabled)
   const translateError = useAppState((state) => state.translateError)
+
+  const clearAllHistory = useAppState((state) => state.clearAllHistory)
 
 
   // Listen for when screen comes into focus (after navigation or ad dismissal)
@@ -161,6 +163,8 @@ export default function TranslateResultScreen() {
           </Pressable>
         }
       </View>
+
+      <Text onPress={clearAllHistory}>Clear History</Text>
 
       {/* Translate Again Button */}
       <Pressable 

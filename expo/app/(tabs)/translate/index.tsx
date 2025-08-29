@@ -69,8 +69,6 @@ export default function TranslateInputScreen() {
       //   }
       // }
 
-      logger.log('response: ', response)
-
       // 4. Update translation, history and usage from successful response
       const translationHistoryItem: TranslationHistoryItem = {
         id: uuid.v4() as string,
@@ -79,7 +77,7 @@ export default function TranslateInputScreen() {
         mode: response.mode,
         timestamp: new Date().toISOString(),
         isFavorite: false
-      }
+      }     
 
       addToHistory(translationHistoryItem)
       setCurrentTranslation(response)

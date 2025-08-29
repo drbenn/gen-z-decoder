@@ -1,6 +1,6 @@
 import React from 'react'
-import { TouchableOpacity, Text, StyleSheet, useColorScheme } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
+import { Pressable, Text, useColorScheme } from 'react-native'
+import { Colors } from '@/constants/Colors'
 
 interface ChipProps {
   label: string
@@ -12,37 +12,29 @@ export default function Chip({ label, onPress, active = false }: ChipProps) {
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
 
-
   return (
-    <TouchableOpacity 
-      style={[styles.chip, active && styles.activeChip]} 
+    <Pressable
+      style={({ pressed }) => ({
+        paddingHorizontal: 22,
+        paddingVertical: 8,
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: active ? theme.primary : theme.borderColor,
+        backgroundColor: pressed 
+          ? theme.primaryTint 
+          : active 
+            ? theme.primary 
+            : 'transparent',
+      })}
       onPress={onPress}
     >
-      <Text style={[styles.text, active && styles.activeText]}>
+      <Text style={{
+        fontSize: 14,
+        fontWeight: '500',
+        color: active ? '#fff' : theme.text,
+      }}>
         {label}
       </Text>
-    </TouchableOpacity>
+    </Pressable>
   )
 }
-
-const styles = StyleSheet.create({
-  chip: {
-    paddingHorizontal: 22,
-    paddingVertical: 8,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: '#d0d0d0',
-  },
-  activeChip: {
-    // backgroundColor: '#007AFF',
-    // borderColor: '#007AFF',
-  },
-  text: {
-    fontSize: 14,
-    color: '#333',
-    fontWeight: '500',
-  },
-  activeText: {
-    color: '#fff',
-  },
-})

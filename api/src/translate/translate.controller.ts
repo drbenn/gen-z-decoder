@@ -21,7 +21,6 @@ export class TranslateController {
     @Request() req
   ): Promise<TranslateResponseDto> {
 
-// console.log('YOOOOO');
 
 //   try {
 //     // Import the original dictionary

@@ -1,33 +1,35 @@
-import { TranslateResponse, TranslationHistoryItem } from '@/types/translate.types';
-import { StateCreator } from 'zustand';
+import { TranslateResponse, TranslationHistoryItem } from '@/types/translate.types'
+import { StateCreator } from 'zustand'
 
 
 export interface TranslateSlice {
   
   // Current Translation State
-  isTranslating: boolean;
-  currentTranslation: TranslateResponse | null;
-  translateError: string | null;
+  isTranslating: boolean
+  currentTranslation: TranslateResponse | null
+  translateError: string | null
   
   // History
-  translationHistory: TranslationHistoryItem[];
+  translationHistory: TranslationHistoryItem[]
   
   // Usage Info
   usageInfo: {
-    translationsUsedToday: number;
-    dailyLimit: number;
-    remainingTranslations: number;
-    isPremium: boolean;
-  };
+    translationsUsedToday: number
+    dailyLimit: number
+    remainingTranslations: number
+    isPremium: boolean
+  }
 
   // Actions
-  setTranslating: (translating: boolean) => void;
-  setCurrentTranslation: (translation: TranslateResponse | null) => void;
-  setTranslateError: (error: string | null) => void;
-  addToHistory: (item: TranslationHistoryItem) => void;
-  setHistoryFavorite: (id: string, favorite: boolean) => void;
-  clearHistory: () => void;
-  updateUsageInfo: (usageInfo: TranslateResponse['usageInfo']) => void;
+  setTranslating: (translating: boolean) => void
+  setCurrentTranslation: (translation: TranslateResponse | null) => void
+  setTranslateError: (error: string | null) => void
+  addToHistory: (item: TranslationHistoryItem) => void
+  clearAllHistory: () => void
+  setHistoryFavorite: (id: string, favorite: boolean) => void
+  clearHistory: () => void
+  removeOneFromHistory: (id: string) => void
+  updateUsageInfo: (usageInfo: TranslateResponse['usageInfo']) => void
 }
 
 export const translateSlice: StateCreator<
@@ -50,22 +52,35 @@ export const translateSlice: StateCreator<
 
   // Actions
   setTranslating: (translating: boolean) => {
-    set({ isTranslating: translating });
+    set({ isTranslating: translating })
   },
 
   setCurrentTranslation: (translation: TranslateResponse | null) => {
-    set({ currentTranslation: translation });
+    set({ currentTranslation: translation })
   },
 
   setTranslateError: (error: string | null) => {
-    set({ error });
+    set({ error })
   },
 
   addToHistory: (item: TranslationHistoryItem) => {
-    const { translationHistory } = get();
+    const { translationHistory } = get()    
     set({ 
       translationHistory: [item, ...translationHistory] // Latest first
-    });
+    })
+  },
+
+  clearAllHistory: () => {
+    set({ 
+      translationHistory: []
+    })
+  },
+
+  removeOneFromHistory: (id: string) => {
+    const { translationHistory } = get()
+    set({
+      translationHistory: translationHistory.filter((item: TranslationHistoryItem) => item.id !== id)
+    })
   },
 
   setHistoryFavorite: (id: string, favorite: boolean) => {
@@ -77,10 +92,10 @@ export const translateSlice: StateCreator<
   },
 
   clearHistory: () => {
-    set({ translationHistory: [] });
+    set({ translationHistory: [] })
   },
 
   updateUsageInfo: (usageInfo) => {
-    set({ usageInfo });
+    set({ usageInfo })
   },
-});
+})
