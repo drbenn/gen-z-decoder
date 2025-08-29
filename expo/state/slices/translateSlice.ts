@@ -25,7 +25,7 @@ export interface TranslateSlice {
   setCurrentTranslation: (translation: TranslateResponse | null) => void;
   setTranslateError: (error: string | null) => void;
   addToHistory: (item: TranslationHistoryItem) => void;
-  toggleFavorite: (id: string) => void;
+  setHistoryFavorite: (id: string, favorite: boolean) => void;
   clearHistory: () => void;
   updateUsageInfo: (usageInfo: TranslateResponse['usageInfo']) => void;
 }
@@ -68,13 +68,12 @@ export const translateSlice: StateCreator<
     });
   },
 
-  toggleFavorite: (id: string) => {
-    const { translationHistory } = get();
-    set({
-      translationHistory: translationHistory.map((item: TranslationHistoryItem) =>
-        item.id === id ? { ...item, isFavorite: !item.isFavorite } : item
-      )
-    });
+  setHistoryFavorite: (id: string, favorite: boolean) => {
+    const currentItem: TranslationHistoryItem[] = get().dictionaryTerms
+    const updatedItems = currentItem.map((item: TranslationHistoryItem) => {
+      return item.id === id ? {...item, isFavorite: favorite} : item
+    })
+    set({ translationHistory: updatedItems })
   },
 
   clearHistory: () => {

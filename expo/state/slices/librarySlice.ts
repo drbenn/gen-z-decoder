@@ -29,8 +29,6 @@ export const librarySlice: StateCreator<
       return term.id === id ? {...term, is_favorite: favorite} : term
     })
     set({ dictionaryTerms: updatedTerms })
-    
   },
-
 
 })

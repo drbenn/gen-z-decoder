@@ -15,15 +15,12 @@ interface TranslationHistoryItem {
 
 export default function HistoryContent() {
   const translationHistory = useAppState((state) => state.translationHistory)
-
-  const toggleHistoryFavorite = () => {
-    
-  }
+  const setHistoryFavorite = useAppState((state) => state.setHistoryFavorite)
 
   const renderHistoryItem = ({ item }: { item: TranslationHistoryItem }) => (
     <HistoryItem 
       item={item} 
-      onToggleFavorite={toggleHistoryFavorite}
+      onToggleFavorite={(id: string) => setHistoryFavorite(id, !item.isFavorite)}
     />
   )
 
