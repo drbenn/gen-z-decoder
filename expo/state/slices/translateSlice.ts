@@ -69,7 +69,7 @@ export const translateSlice: StateCreator<
   },
 
   setHistoryFavorite: (id: string, favorite: boolean) => {
-    const currentItem: TranslationHistoryItem[] = get().dictionaryTerms
+    const currentItem: TranslationHistoryItem[] = get().translationHistory
     const updatedItems = currentItem.map((item: TranslationHistoryItem) => {
       return item.id === id ? {...item, isFavorite: favorite} : item
     })
