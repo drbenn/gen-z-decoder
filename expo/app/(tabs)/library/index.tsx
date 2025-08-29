@@ -1,40 +1,37 @@
 import Chip from '@/components/ui/custom/Chip';
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, useColorScheme, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import HistoryContent from '@/components/ui/custom/library/HistoryContent';
 import DictionaryContent from '@/components/ui/custom/library/DictionaryContent';
+import FavoriteToggle from '@/components/ui/custom/library/FavoriteToggle';
+import { useAppState } from '@/state/useAppState';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function LibraryScreen() {
+  const colorScheme = useColorScheme();
+  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
   const insets = useSafeAreaInsets()
-  const [activeChip, setActiveChip] = useState<'Dictionary' | 'History' | 'Favorites'>('History')
+  const [activeChip, setActiveChip] = useState<'Dictionary' | 'History'>('History')
+  const isFavoritesChipActive = useAppState((state) => state.isFavoritesChipActive)
+  const setIsFavoritesChipActive = useAppState((state) => state.setIsFavoritesChipActive)
 
-
-  const handleChipPress = (chip: 'Dictionary' | 'History' | 'Favorites') => {
+  const handleChipPress = (chip: 'Dictionary' | 'History') => {
     setActiveChip(chip)
-    console.log(chip);
-    
   }
 
-
-
-
   return (
-    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom}]}>
+    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, backgroundColor: 'red'}]}>
       <View style={styles.chipContainer}>
         <Chip label={'Dictionary'} onPress={() => handleChipPress('Dictionary')}></Chip>
         <View style={[{paddingHorizontal: 16}]}>
           <Chip label={'History'} onPress={() => handleChipPress('History')}></Chip>
         </View>
-        <Chip label={'Favorites'} onPress={() => handleChipPress('Favorites')}></Chip>
-      </View>
-      <View>
-        <Text>yooooo</Text>
+        <FavoriteToggle isActive={isFavoritesChipActive} onPress={() => setIsFavoritesChipActive(!isFavoritesChipActive)}></FavoriteToggle>
       </View>
       <View style={styles.contentContainer}>
         {activeChip === 'History' && <HistoryContent />}
         {activeChip === 'Dictionary' && <DictionaryContent />}
-        {/* {activeChip === 'Favorites' && <FavoritesContent />} */}
       </View>
     </View>
   );
@@ -45,21 +42,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#fff',
   },
   chipContainer: {
-    flex: 1,
+    flex: 0,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    backgroundColor: '#fff',
   },
   contentContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    backgroundColor: '#fff',
   },
   title: { fontSize: 24, fontWeight: 'bold' },
   subtitle: { fontSize: 16, color: '#666', marginTop: 8 },

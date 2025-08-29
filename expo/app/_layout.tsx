@@ -21,12 +21,10 @@ export default function RootLayout() {
       if (!dictionaryTerms) {   
         try {
           // Import your newDictionary.json with UUIDs       
-        
             const dictionaryData = require('@/assets/data/dictionary.json')
             
             // Set it in state
             setDictionaryTerms(dictionaryData)
-          
         } catch (error) {
           logger.error('Failed to load dictionary:', error)
           // Set empty array as fallback

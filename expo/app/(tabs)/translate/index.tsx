@@ -3,15 +3,18 @@ import { useAppState } from '@/state/useAppState'
 import { TranslationHistoryItem, TranslationMode } from '@/types/translate.types'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable, useColorScheme } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
 import uuid from 'react-native-uuid'
-
+import { Colors } from '@/constants/Colors'
 
 export default function TranslateInputScreen() {
+  const colorScheme = useColorScheme();
+  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
+
   const insets = useSafeAreaInsets()
-  const [mode, setMode] = useState<TranslationMode>(TranslationMode.GENZ_TO_ENGLISH)
+  const [mode, setMode] = useState<TranslationMode>(TranslationMode.ENGLISH_TO_GENZ)
   const [inputText, setInputText] = useState('')
 
   // ✅ GOOD: Single state value - regular selector
@@ -99,21 +102,21 @@ export default function TranslateInputScreen() {
   }
 
   return (
-    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom}]}>
+    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, backgroundColor: theme.background}]}>
       
       {/* Mode Toggle */}
       <View style={[styles.toggleContainer]}>
-        <Pressable 
-          style={[styles.toggleButton, mode === TranslationMode.GENZ_TO_ENGLISH && styles.activeToggle]}
-          onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
-        >
-          <Text>Gen Z → English</Text>
-        </Pressable>
         <Pressable 
           style={[styles.toggleButton, mode === TranslationMode.ENGLISH_TO_GENZ && styles.activeToggle]}
           onPress={() => setMode(TranslationMode.ENGLISH_TO_GENZ)}
         >
           <Text>English → Gen Z</Text>
+        </Pressable>
+        <Pressable 
+          style={[styles.toggleButton, mode === TranslationMode.GENZ_TO_ENGLISH && styles.activeToggle]}
+          onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
+        >
+          <Text>Gen Z → English</Text>
         </Pressable>
       </View>
 
@@ -162,15 +165,12 @@ const styles = StyleSheet.create({
   toggleButton: {
     flex: 1,
     padding: 12,
-    backgroundColor: '#ddd',
     alignItems: 'center',
   },
   activeToggle: {
-    backgroundColor: '#999',
   },
   textInput: {
     borderWidth: 1,
-    borderColor: '#ccc',
     padding: 15,
     minHeight: 120,
     marginBottom: 20,
@@ -183,18 +183,14 @@ const styles = StyleSheet.create({
   audioToggle: {
     marginLeft: 10,
     padding: 8,
-    backgroundColor: '#ddd',
     alignItems: 'center',
   },
   audioToggleActive: {
-    backgroundColor: '#999',
   },
   translateButton: {
-    backgroundColor: '#666',
     padding: 15,
     alignItems: 'center',
   },
   translateButtonText: {
-    color: '#fff',
   },
 })

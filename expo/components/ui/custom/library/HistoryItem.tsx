@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 interface TranslationHistoryItem {
   id: string
@@ -16,6 +17,10 @@ interface HistoryItemProps {
 }
 
 export default function HistoryItem({ item, onToggleFavorite }: HistoryItemProps) {
+  const colorScheme = useColorScheme()
+  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
+
+
   const formatTime = (timestamp: string) => {
     const date = new Date(timestamp)
     return date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })

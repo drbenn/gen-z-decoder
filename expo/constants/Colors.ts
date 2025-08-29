@@ -6,22 +6,39 @@
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
+
+// primary color(primary tint) from uiGradients Ibiza Sunset gradient
+
 export const Colors = {
   light: {
     text: '#11181C',
-    background: '#fff',
+    textMuted: '#00a2ff90',
+    background: '#f0f0f0ff',
+    surface: '#ffffff',
+    primary: '#ee0979',
+    primaryTint: '#ee0979bb',
     tint: tintColorLight,
     icon: '#687076',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
+    borderColor: '#ccccd8ff',
+    borderRadius: 4,
+    standardBodyHorizontalMargin: 20,
   },
   dark: {
     text: '#ECEDEE',
+    textMuted: '#ecedee90',
     background: '#151718',
+    surface: '#2a2a2a',
+    primary: '#ee0979',
+    primaryTint: '#ee0979bb',
     tint: tintColorDark,
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
+    borderColor: '#484848',
+    borderRadius: 4,
+    standardBodyHorizontalMargin: 20,
   },
   spacing: {
     xs: 4,

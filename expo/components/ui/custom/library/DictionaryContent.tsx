@@ -1,7 +1,8 @@
-import React from 'react'
-import { FlatList, View, Text, StyleSheet } from 'react-native'
+import React, { useMemo } from 'react'
+import { FlatList, View, Text, StyleSheet, useColorScheme } from 'react-native'
 import DictionaryItem from './DictionaryItem'
 import { useAppState } from '@/state/useAppState'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 interface DictionaryEntry {
   id: string
@@ -19,8 +20,23 @@ interface DictionaryEntry {
 }
 
 export default function DictionaryContent() {
+  const colorScheme = useColorScheme()
+  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
+
+
     const dictionaryTerms = useAppState((state) => state.dictionaryTerms)
     const setDictionaryFavorite = useAppState((state) => state.setDictionaryFavorite)
+
+    // top nav chip used in librarySlice for filtering of both dictionary and history 
+    const isFavoritesChipActive = useAppState((state) => state.isFavoritesChipActive)
+
+    // useMemo prevents re-filtering on every render (only when dependencies change)
+    const filteredTerms = useMemo(() => {
+      return isFavoritesChipActive
+        ? dictionaryTerms.filter((term: DictionaryEntry) => term.is_favorite)
+        : dictionaryTerms
+    }, [isFavoritesChipActive, dictionaryTerms])
+
 
   const renderDictionaryItem = ({ item }: { item: DictionaryEntry }) => (
     <DictionaryItem 
@@ -29,18 +45,22 @@ export default function DictionaryContent() {
     />
   )
 
-  if (!dictionaryTerms || dictionaryTerms.length === 0) {
+  // empty state message for favorites
+  if (!filteredTerms || filteredTerms.length === 0) {
+    const emptyText = isFavoritesChipActive ? 'No favorite terms yet' : 'Dictionary not loaded'
+    const emptySubtext = isFavoritesChipActive ? 'Star some terms to see them here' : 'Gen-Z slang terms will appear here'
+    
     return (
       <View style={styles.emptyContainer}>
-        <Text style={styles.emptyText}>Dictionary not loaded</Text>
-        <Text style={styles.emptySubtext}>Slang terms will appear here</Text>
+        <Text style={styles.emptyText}>{emptyText}</Text>
+        <Text style={styles.emptySubtext}>{emptySubtext}</Text>
       </View>
     )
   }
 
   return (
     <FlatList
-      data={dictionaryTerms}
+      data={filteredTerms}
       keyExtractor={(item: DictionaryEntry) => item.id}
       renderItem={renderDictionaryItem}
       contentContainerStyle={styles.listContainer}

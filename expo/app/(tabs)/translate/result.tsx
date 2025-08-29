@@ -1,14 +1,18 @@
-import { ScrollView, StyleSheet, Text, Pressable, View, Share } from 'react-native'
+import { ScrollView, StyleSheet, Text, Pressable, View, Share, useColorScheme } from 'react-native'
 import * as Speech from 'expo-speech'
 import { useAppState } from '@/state/useAppState'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { router, useFocusEffect } from 'expo-router'
 import React, { useCallback, useState } from 'react'
 import APP_CONSTANTS from '@/constants/appConstants'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
 export default function TranslateResultScreen() {
+  const colorScheme = useColorScheme()
+  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
+
   const insets = useSafeAreaInsets()
   const [translateLoadState, setTranslateLoadState] = useState<TranslateLoadState>('loading')
 
@@ -180,12 +184,10 @@ const styles = StyleSheet.create({
   },
   originalLabel: {
     fontSize: 12,
-    color: '#666',
     marginBottom: 5,
   },
   originalText: {
     fontSize: 14,
-    color: '#333',
     fontStyle: 'italic',
   },
   translatedContainer: {
@@ -199,14 +201,12 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     fontSize: 16,
-    color: '#666',
   },
   translatedScroll: {
     flex: 1,
   },
   translatedText: {
     fontSize: 18,
-    color: '#000',
     lineHeight: 24,
   },
   errorContainer: {
@@ -224,7 +224,6 @@ const styles = StyleSheet.create({
   },
   errorText: {
     fontSize: 14,
-    color: '#666',
     textAlign: 'center',
     lineHeight: 20,
   },
@@ -235,7 +234,6 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 16,
-    color: '#999',
     fontStyle: 'italic',
   },
   actionsContainer: {
@@ -244,26 +242,22 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   actionButton: {
-    backgroundColor: '#ddd',
     padding: 12,
     borderRadius: 5,
     flex: 0.4,
     alignItems: 'center',
   },
   disabledButton: {
-    backgroundColor: '#ccc',
     opacity: 0.5,
   },
   actionButtonText: {
     fontSize: 14,
   },
   translateAgainButton: {
-    backgroundColor: '#666',
     padding: 15,
     alignItems: 'center',
   },
   translateAgainText: {
-    color: '#fff',
     fontSize: 16,
   },
 })

@@ -27,9 +27,9 @@ const APP_CONSTANTS = {
   DEVELOPER_CO: 'SparkDart',
   DEVELOPER_EMAIL: 'sparkdart.contact@gmail.com',
   DEVELOPER_WEBSITE: 'https://sparkdart.com',
-  APP_WEBSITE: 'https://sparkdart.com/apps/gen-z-decoder',
-  APP_WEBSITE_APP_PRIVACY_POLICY: 'https://sparkdart.com/apps/gen-z-decoder/privacy-policy',
-  APP_WEBSITE_APP_TERMS_OF_SERVICE: 'https://sparkdart.com/apps/gen-z-decoder/terms-of-service',
+  APP_WEBSITE: 'https://sparkdart.com/apps/gen-z-translator',
+  APP_WEBSITE_APP_PRIVACY_POLICY: 'https://sparkdart.com/apps/gen-z-translator/privacy-policy',
+  APP_WEBSITE_APP_TERMS_OF_SERVICE: 'https://sparkdart.com/apps/gen-z-translator/terms-of-service',
 
   // App store
   APPLE_APP_STORE_REVIEW_LINK: `https://apps.apple.com/app/id${appleStoreId}?action=write-review`,

@@ -2,40 +2,40 @@ import React from 'react'
 import { TouchableOpacity, Text, StyleSheet, useColorScheme } from 'react-native'
 import { Colors } from 'react-native/Libraries/NewAppScreen'
 
-interface ChipProps {
-  label: string
+interface FavoriteToggleProps {
+  isActive: boolean
   onPress: () => void
-  active?: boolean
 }
 
-export default function Chip({ label, onPress, active = false }: ChipProps) {
+export default function FavoriteToggle({ isActive, onPress }: FavoriteToggleProps) {
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
 
 
   return (
     <TouchableOpacity 
-      style={[styles.chip, active && styles.activeChip]} 
+      style={[styles.toggle, isActive && styles.activeToggle]} 
       onPress={onPress}
     >
-      <Text style={[styles.text, active && styles.activeText]}>
-        {label}
+      <Text style={[styles.text, isActive && styles.activeText]}>
+        Favorites
       </Text>
     </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
-  chip: {
-    paddingHorizontal: 22,
+  toggle: {
+    paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
+    backgroundColor: '#f0f0f0',
     borderWidth: 1,
     borderColor: '#d0d0d0',
   },
-  activeChip: {
-    // backgroundColor: '#007AFF',
-    // borderColor: '#007AFF',
+  activeToggle: {
+    backgroundColor: '#007AFF',
+    borderColor: '#007AFF',
   },
   text: {
     fontSize: 14,

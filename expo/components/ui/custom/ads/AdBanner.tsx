@@ -179,17 +179,17 @@ const styles = StyleSheet.create({
   },
   placeholderAd: {
     height: 50,
-    backgroundColor: '#228B22', // Forest green for unlimited money!
+    backgroundColor: '#ceca98ff',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 0,
     width: '100%',
     borderWidth: 3,
-    borderColor: '#FFD700',
+    borderColor: '#464646ff',
     paddingVertical: 8,
   },
   placeholderText: {
-    color: '#FFD700',
+    color: '#7e7544ff',
     fontSize: 12,
     fontWeight: 'bold',
     textAlign: 'center',

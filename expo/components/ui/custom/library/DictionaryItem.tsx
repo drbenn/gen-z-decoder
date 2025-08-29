@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 interface DictionaryEntry {
   id: string
@@ -22,6 +23,9 @@ interface DictionaryItemProps {
 }
 
 export default function DictionaryItem({ item, onToggleFavorite }: DictionaryItemProps) {
+  const colorScheme = useColorScheme()
+  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
+
   const [expanded, setExpanded] = useState(false)
 
   return (

@@ -3,10 +3,12 @@ import { StateCreator } from 'zustand'
 
 export interface LibrarySlice {
   dictionaryTerms: DictionaryEntry[]
+  isFavoritesChipActive: boolean
   
   // Actions
   setDictionaryTerms: (enabled: DictionaryEntry[]) => void
   setDictionaryFavorite: (id: string, favorite: boolean) => void
+  setIsFavoritesChipActive: (active: boolean) => void
 }
 
 export const librarySlice: StateCreator<
@@ -17,6 +19,7 @@ export const librarySlice: StateCreator<
 > = (set, get) => ({
   // Initial state
   dictionaryTerms: [],
+  isFavoritesChipActive: false,
 
   // Actions
   setDictionaryTerms: (dictionaryTerms: DictionaryEntry[]) => {
@@ -29,6 +32,9 @@ export const librarySlice: StateCreator<
       return term.id === id ? {...term, is_favorite: favorite} : term
     })
     set({ dictionaryTerms: updatedTerms })
+  },
+  setIsFavoritesChipActive: (active: boolean) => {
+    set({ isFavoritesChipActive: active })
   },
 
 })
