@@ -52,6 +52,8 @@ export class UsageController {
   }
 
 
+  // https://genz.sparkdart.com/v1/usage/admin/stats?key=your_secret_key&days=7
+
   @Get('admin/stats')
   async getAdminStats(
     @Query('key') adminKey: string,
@@ -67,17 +69,18 @@ export class UsageController {
     return await this.usageService.getUsageStats(daysCount)
   }
 
-@Get('admin/devices')
-async getDeviceStats(
-  @Query('key') adminKey: string,
-  @Query('days') days: string = '7'
-): Promise<any> {
-  const expectedKey = this.configService.get<string>('ADMIN_KEY')
-  if (!expectedKey || adminKey !== expectedKey) {
-    throw new UnauthorizedException('Invalid admin key')
-  }
+  // https://genz.sparkdart.com/v1/usage/admin/devices?key=your_secret_key&days=3
+  @Get('admin/devices')
+  async getDeviceStats(
+    @Query('key') adminKey: string,
+    @Query('days') days: string = '7'
+  ): Promise<any> {
+    const expectedKey = this.configService.get<string>('ADMIN_KEY')
+    if (!expectedKey || adminKey !== expectedKey) {
+      throw new UnauthorizedException('Invalid admin key')
+    }
 
-  const daysCount = parseInt(days) || 7
-  return await this.usageService.getDeviceBreakdown(daysCount)
-}
+    const daysCount = parseInt(days) || 7
+    return await this.usageService.getDeviceBreakdown(daysCount)
+  }
 }

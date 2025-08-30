@@ -8,6 +8,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
 import uuid from 'react-native-uuid'
 import { Colors } from '@/constants/Colors'
+import LottieAnimation from '@/components/ui/custom/LottieAnimation'
+
 
 export default function TranslateInputScreen() {
   const colorScheme = useColorScheme()
@@ -94,8 +96,8 @@ export default function TranslateInputScreen() {
     
   const getPlaceholder = () => {
     return mode === TranslationMode.GENZ_TO_ENGLISH 
-      ? 'Enter Gen Z text to translate...' 
-      : 'Enter English text to translate...'
+      ? 'Enter Gen Z text to translate into English...' 
+      : 'Enter English text to translate to Gen Z...'
   }
 
   return (
@@ -171,6 +173,28 @@ export default function TranslateInputScreen() {
           fontSize: 20
         }}>English</Text>
       </Pressable>
+    </View>
+
+    <View style={{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      {mode === TranslationMode.GENZ_TO_ENGLISH ?
+        <LottieAnimation
+          animation="welcome_screen"
+          width={225}
+          height={225}
+          loop={true}
+        />
+        :
+        <LottieAnimation
+          animation="man_running"
+          width={225}
+          height={225}
+          loop={true}
+        />
+      }
     </View>
 
     {/* Auto-play Audio Toggle */}
