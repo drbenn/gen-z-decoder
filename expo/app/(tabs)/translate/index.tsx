@@ -9,6 +9,7 @@ import { HttpClient } from '@/services/api/httpClient'
 import uuid from 'react-native-uuid'
 import { Colors } from '@/constants/Colors'
 import LottieAnimation from '@/components/ui/custom/LottieAnimation'
+import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 
 
 export default function TranslateInputScreen() {
@@ -109,9 +110,11 @@ export default function TranslateInputScreen() {
       paddingBottom: insets.bottom,
       backgroundColor: theme.background,
     }}>
+
+    {/* Bold Translate to Text */}
     <View>
       <Text style={{
-        fontSize: 58,
+        fontSize: 50,
         fontWeight: 'bold',
         textAlign:'center',
         color: theme.text,
@@ -175,27 +178,71 @@ export default function TranslateInputScreen() {
       </Pressable>
     </View>
 
+    {/* Lottie Animations */}
     <View style={{
-      flex: 1,
+      minHeight: 225,
+      minWidth: 225,
       justifyContent: 'center',
       alignItems: 'center'
     }}>
-      {mode === TranslationMode.GENZ_TO_ENGLISH ?
-        <LottieAnimation
-          animation="welcome_screen"
-          width={225}
-          height={225}
-          loop={true}
-        />
-        :
-        <LottieAnimation
-          animation="man_running"
-          width={225}
-          height={225}
-          loop={true}
-        />
-      }
+      {mode === TranslationMode.GENZ_TO_ENGLISH ? (
+        <Animated.View
+          key="welcome"
+          entering={FadeIn.duration(300)}
+          exiting={FadeOut.duration(300)}
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <LottieAnimation
+            animation="welcome_screen"
+            width={225}
+            height={225}
+            loop={true}
+          />
+        </Animated.View>
+      ) : (
+        <Animated.View
+          key="running"
+          entering={FadeIn.duration(300)}
+          exiting={FadeOut.duration(300)}
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <LottieAnimation
+            animation="man_running"
+            width={225}
+            height={225}
+            loop={true}
+          />
+        </Animated.View>
+      )}
     </View>
+
+    {/* Text Input */}
+    <TextInput
+      style={{
+        borderWidth: 1,
+        borderColor: theme.borderColor,
+        backgroundColor: theme.surface,
+        color: theme.text,
+        padding: 15,
+        minHeight: 200,
+        marginBottom: theme.verticalMargin,
+        borderRadius: theme.borderRadius,
+        fontSize: 16,
+        textAlignVertical: 'top',
+      }}
+      placeholder={getPlaceholder()}
+      placeholderTextColor={theme.textMuted}
+      value={inputText}
+      onChangeText={setInputText}
+      multiline
+      numberOfLines={6}
+    />
 
     {/* Auto-play Audio Toggle */}
     <View style={{
@@ -230,33 +277,11 @@ export default function TranslateInputScreen() {
       </Pressable>
     </View>
 
-    {/* Text Input */}
-    <TextInput
-      style={{
-        borderWidth: 1,
-        borderColor: theme.borderColor,
-        backgroundColor: theme.surface,
-        color: theme.text,
-        padding: 15,
-        minHeight: 200,
-        marginBottom: theme.verticalMargin,
-        borderRadius: theme.borderRadius,
-        fontSize: 16,
-        textAlignVertical: 'top',
-      }}
-      placeholder={getPlaceholder()}
-      placeholderTextColor={theme.textMuted}
-      value={inputText}
-      onChangeText={setInputText}
-      multiline
-      numberOfLines={6}
-    />
-
     {/* Translate Button */}
     <Pressable 
       style={({ pressed }) => ({
         backgroundColor: pressed ? theme.primaryTint : theme.primary,
-        padding: 24,
+        padding: 12,
         alignItems: 'center',
         borderRadius: theme.borderRadius,
         marginTop: theme.verticalMargin,
@@ -265,7 +290,7 @@ export default function TranslateInputScreen() {
     >
       <Text style={{
         color: '#fff',
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         letterSpacing: 1,
       }}>TRANSLATE</Text>
