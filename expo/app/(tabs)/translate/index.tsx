@@ -3,14 +3,14 @@ import { useAppState } from '@/state/useAppState'
 import { TranslationHistoryItem, TranslationMode } from '@/types/translate.types'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable, useColorScheme } from 'react-native'
+import { View, Text, TextInput, Pressable, useColorScheme } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
 import uuid from 'react-native-uuid'
 import { Colors } from '@/constants/Colors'
 
 export default function TranslateInputScreen() {
-  const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
 
   const insets = useSafeAreaInsets()
@@ -30,7 +30,6 @@ export default function TranslateInputScreen() {
   const updateUsageInfo = useAppState((state) => state.updateUsageInfo)
   const setTranslateError = useAppState((state) => state.setTranslateError)
   const addToHistory = useAppState((state) => state.addToHistory)
-
 
   const handleTranslate = async () => {
     // 1. Handle ad first (blocking)
@@ -57,6 +56,7 @@ export default function TranslateInputScreen() {
     // 3. API call with error handling
     try {      
       const response = await HttpClient.translateText({ text: inputText, mode })
+
       // const response = {
       //   translatedText: 'YOLO',
       //   originalText: 'BOLO',
@@ -92,7 +92,6 @@ export default function TranslateInputScreen() {
     }
   }
     
-
   const getPlaceholder = () => {
     return mode === TranslationMode.GENZ_TO_ENGLISH 
       ? 'Enter Gen Z text to translate...' 
@@ -100,95 +99,154 @@ export default function TranslateInputScreen() {
   }
 
   return (
-    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, backgroundColor: theme.background}]}>
-      
-      {/* Mode Toggle */}
-      <View style={[styles.toggleContainer]}>
-        <Pressable 
-          style={[styles.toggleButton, mode === TranslationMode.ENGLISH_TO_GENZ && styles.activeToggle]}
-          onPress={() => setMode(TranslationMode.ENGLISH_TO_GENZ)}
-        >
-          <Text>English → Gen Z</Text>
-        </Pressable>
-        <Pressable 
-          style={[styles.toggleButton, mode === TranslationMode.GENZ_TO_ENGLISH && styles.activeToggle]}
-          onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
-        >
-          <Text>Gen Z → English</Text>
-        </Pressable>
-      </View>
+    <View style={{
+      flex: 0,
+      alignItems: 'stretch',
+      paddingHorizontal: theme.paddingHorizontal,
+      paddingTop: insets.top + theme.verticalMargin,
+      paddingBottom: insets.bottom,
+      backgroundColor: theme.background,
+    }}>
+    <View>
+      <Text style={{
+        fontSize: 58,
+        fontWeight: 'bold',
+        textAlign:'center',
+        color: theme.text,
+        textShadowColor: theme.primary,
+        textShadowOffset: { width: -1, height: -1 },
+        textShadowRadius: 0,
+        // Add multiple shadows for better outline effect
+      }}>
+        Translate to
+      </Text>
+    </View>
 
-      {/* Text Input */}
-      <TextInput
-        style={styles.textInput}
-        placeholder={getPlaceholder()}
-        value={inputText}
-        onChangeText={setInputText}
-        multiline
-        numberOfLines={6}
-      />
+    {/* Mode Toggle */}
+    <View style={{
+      flexDirection: 'row',
+      marginBottom: theme.verticalMargin,
+      borderRadius: theme.borderRadius,
+      backgroundColor: theme.surface,
+      borderColor: theme.borderColor,
+      borderWidth: 1,
+      padding: 0,
+    }}>
+      <Pressable 
+        style={({ pressed }) => ({
+          flex: 1,
+          padding: 8,
+          alignItems: 'center',
 
-      {/* Auto-play Audio Toggle */}
-      <View style={styles.audioToggleContainer}>
-        <Text>Auto-play audio:</Text>
-        <TouchableOpacity 
-          style={[styles.audioToggle, autoPlayAudio && styles.audioToggleActive]}
-          onPress={() => setAutoPlayAudio(!autoPlayAudio)}
-        >
-          <Text>{autoPlayAudio ? 'ON' : 'OFF'}</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Translate Button */}
-      <TouchableOpacity 
-        style={styles.translateButton}
-        onPress={handleTranslate}
+          backgroundColor: pressed 
+            ? theme.primaryTint 
+            : mode === TranslationMode.ENGLISH_TO_GENZ 
+              ? theme.primary 
+              : 'transparent',
+        })}
+        onPress={() => setMode(TranslationMode.ENGLISH_TO_GENZ)}
       >
-        <Text style={styles.translateButtonText}>TRANSLATE</Text>
-      </TouchableOpacity>
+        <Text style={{
+          color: mode === TranslationMode.ENGLISH_TO_GENZ ? '#fff' : theme.text,
+          fontWeight: '500',
+          fontSize: 20
+        }}>Gen Z</Text>
+      </Pressable>
+      <Pressable 
+        style={({ pressed }) => ({
+          flex: 1,
+          padding: 8,
+          alignItems: 'center',
+          backgroundColor: pressed 
+            ? theme.primaryTint 
+            : mode === TranslationMode.GENZ_TO_ENGLISH 
+              ? theme.primary 
+              : 'transparent',
+        })}
+        onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
+      >
+        <Text style={{
+          color: mode === TranslationMode.GENZ_TO_ENGLISH ? '#fff' : theme.text,
+          fontWeight: '500',
+          fontSize: 20
+        }}>English</Text>
+      </Pressable>
+    </View>
+
+    {/* Auto-play Audio Toggle */}
+    <View style={{
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginVertical: theme.verticalMargin,
+    }}>
+      <Text style={{
+        color: theme.text,
+        fontSize: 16,
+      }}>Auto-play audio:</Text>
+      <Pressable 
+        style={({ pressed }) => ({
+          marginLeft: 10,
+          paddingHorizontal: 16,
+          paddingVertical: 8,
+          borderWidth: 1,
+          borderRadius: theme.borderRadius,
+          borderColor: autoPlayAudio ? theme.primary : theme.borderColor,
+          backgroundColor: pressed 
+            ? theme.primaryTint 
+            : autoPlayAudio 
+              ? theme.primary 
+              : 'transparent',
+        })}
+        onPress={() => setAutoPlayAudio(!autoPlayAudio)}
+      >
+        <Text style={{
+          color: autoPlayAudio ? '#fff' : theme.text,
+          fontWeight: '500',
+        }}>{autoPlayAudio ? 'ON' : 'OFF'}</Text>
+      </Pressable>
+    </View>
+
+    {/* Text Input */}
+    <TextInput
+      style={{
+        borderWidth: 1,
+        borderColor: theme.borderColor,
+        backgroundColor: theme.surface,
+        color: theme.text,
+        padding: 15,
+        minHeight: 200,
+        marginBottom: theme.verticalMargin,
+        borderRadius: theme.borderRadius,
+        fontSize: 16,
+        textAlignVertical: 'top',
+      }}
+      placeholder={getPlaceholder()}
+      placeholderTextColor={theme.textMuted}
+      value={inputText}
+      onChangeText={setInputText}
+      multiline
+      numberOfLines={6}
+    />
+
+    {/* Translate Button */}
+    <Pressable 
+      style={({ pressed }) => ({
+        backgroundColor: pressed ? theme.primaryTint : theme.primary,
+        padding: 24,
+        alignItems: 'center',
+        borderRadius: theme.borderRadius,
+        marginTop: theme.verticalMargin,
+      })}
+      onPress={handleTranslate}
+    >
+      <Text style={{
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+        letterSpacing: 1,
+      }}>TRANSLATE</Text>
+    </Pressable>
 
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
-  toggleContainer: {
-    flexDirection: 'row',
-    marginBottom: 20,
-  },
-  toggleButton: {
-    flex: 1,
-    padding: 12,
-    alignItems: 'center',
-  },
-  activeToggle: {
-  },
-  textInput: {
-    borderWidth: 1,
-    padding: 15,
-    minHeight: 120,
-    marginBottom: 20,
-  },
-  audioToggleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  audioToggle: {
-    marginLeft: 10,
-    padding: 8,
-    alignItems: 'center',
-  },
-  audioToggleActive: {
-  },
-  translateButton: {
-    padding: 15,
-    alignItems: 'center',
-  },
-  translateButtonText: {
-  },
-})

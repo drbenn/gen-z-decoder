@@ -159,4 +159,45 @@ export class UsageService {
       record: result.rows[0]
     }
   }
+
+  async getUsageStats(days: number): Promise<any> {
+    const result = await this.db.query(`
+      SELECT 
+        date,
+        COUNT(DISTINCT device_id) as unique_devices,
+        SUM(translation_count) as total_translations,
+        SUM(mode_genz_to_english) as genz_to_english,
+        SUM(mode_english_to_genz) as english_to_genz
+      FROM daily_usage 
+      WHERE date >= CURRENT_DATE - INTERVAL '${days} days'
+      GROUP BY date
+      ORDER BY date DESC
+    `)
+
+    return {
+      summary: result.rows,
+      period: `Last ${days} days`
+    }
+  }
+
+  async getDeviceBreakdown(days: number): Promise<any> {
+    const result = await this.db.query(`
+      SELECT 
+        u.device_id,
+        u.premium_status,
+        u.created_at,
+        SUM(d.translation_count) as total_translations
+      FROM users u
+      LEFT JOIN daily_usage d ON d.device_id = u.device_id 
+        AND d.date >= CURRENT_DATE - INTERVAL '${days} days'
+      GROUP BY u.device_id, u.premium_status, u.created_at
+      ORDER BY total_translations DESC NULLS LAST
+      LIMIT 50
+    `)
+
+    return {
+      top_devices: result.rows,
+      period: `Last ${days} days`
+    }
+  }
 }

@@ -12,7 +12,7 @@ import {
   useColorScheme
 } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { Colors } from '@/constants/Colors';
+import { Colors } from '@/constants/Colors'
 
 
 export default function AboutScreen() {
@@ -93,7 +93,7 @@ export default function AboutScreen() {
           }}>
             {APP_CONSTANTS.APP_NAME} is the two-way slang translator that bridges the communication gap between Gen Z and older generations, helping families understand each other better.
             {'\n'}{'\n'}
-            Translate Gen Z slang to standard English and vice versa using AI-powered translation that understands context and nuance. Browse an extensive dictionary of authentic slang terms, save your favorites, and keep a history of translations. Whether you&apos;re a parent trying to decode your teen&apos;s texts or a Gen Z user explaining something to family, we&apos;ve got you covered - no cap!
+            Translate Gen Z slang to standard English and vice versa using AI-powered translation that understands context and nuance. Browse an extensive dictionary of authentic slang terms, save your favorites, and keep a history of translations. Whether you&aposre a parent trying to decode your teen&aposs texts or a Gen Z user explaining something to family, we&aposve got you covered - no cap!
           </Text>
           <Text style={{
             fontSize: 12,

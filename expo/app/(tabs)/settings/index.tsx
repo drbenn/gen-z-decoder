@@ -1,9 +1,10 @@
-import APP_CONSTANTS from '@/constants/appConstants';
-import { router } from 'expo-router';
-import { Pressable, ScrollView, Share, Text, useColorScheme, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Colors } from '@/constants/Colors';import { Ionicons } from '@expo/vector-icons';
-;
+import APP_CONSTANTS from '@/constants/appConstants'
+import { router } from 'expo-router'
+import { Pressable, ScrollView, Share, Text, useColorScheme, View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Colors } from '@/constants/Colors'
+import { Ionicons } from '@expo/vector-icons'
+
 
 export default function SettingsScreen() {
   const colorScheme = useColorScheme()
@@ -20,9 +21,9 @@ export default function SettingsScreen() {
         message: `Bridge the generational communication gap with ${APP_CONSTANTS.APP_NAME} - the AI-powered translator that actually understands Gen Z slang! Translate between Gen Z and standard English in both directions, browse an authentic slang dictionary.\n\n${APP_CONSTANTS.APP_NAME}: ${APP_CONSTANTS.APP_WEBSITE}`,
         url: APP_CONSTANTS.APP_WEBSITE,
         title: `${APP_CONSTANTS.APP_NAME} App`
-      });
+      })
     } catch (error) {
-      logger.log('Error sharing:', error);
+      logger.log('Error sharing:', error)
     }
   }
 
