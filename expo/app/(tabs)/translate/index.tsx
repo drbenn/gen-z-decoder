@@ -217,6 +217,7 @@ export default function TranslateInputScreen() {
             width={225}
             height={225}
             loop={true}
+            flipped={true}
           />
         </Animated.View>
       )}
@@ -230,7 +231,7 @@ export default function TranslateInputScreen() {
         backgroundColor: theme.surface,
         color: theme.text,
         padding: 15,
-        minHeight: 200,
+        minHeight: 140,
         marginBottom: theme.verticalMargin,
         borderRadius: theme.borderRadius,
         fontSize: 16,

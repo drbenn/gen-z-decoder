@@ -16,6 +16,7 @@ interface LottieAnimationProps {
   height: number
   loop?: boolean
   autoPlay?: boolean
+  flipped?: boolean
   onAnimationFinish?: () => void
 }
 
@@ -31,6 +32,7 @@ export default function LottieAnimation({
   height, 
   loop = true, 
   autoPlay = true,
+  flipped = false,
   onAnimationFinish 
 }: LottieAnimationProps) {
   const colorScheme = useColorScheme()
@@ -45,6 +47,7 @@ export default function LottieAnimation({
       style={{
         width,
         height,
+        transform: flipped ? [{ scaleX: -1 }] : undefined,
       }}
     />
   )
