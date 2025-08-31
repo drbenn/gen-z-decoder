@@ -3,13 +3,18 @@ import { useFonts } from 'expo-font'
 import { Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import 'react-native-reanimated'
-
+import { Colors } from '@/constants/Colors'
 import { useColorScheme } from '@/hooks/useColorScheme'
 import { useAppState } from '@/state/useAppState'
 import { useEffect } from 'react'
+import AdBanner from '@/components/ui/custom/ads/AdBanner'
+import { View } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 export default function RootLayout() {
+  const insets = useSafeAreaInsets()
   const colorScheme = useColorScheme()
+  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
   const dictionaryTerms = useAppState((state) => state.dictionaryTerms)
   const setDictionaryTerms = useAppState((state) => state.setDictionaryTerms)
   const [loaded] = useFonts({
@@ -45,11 +50,27 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
+      <View style={{ flex: 1, backgroundColor: theme.background, paddingBottom: Math.max(insets.bottom, 10) }}>
+        <StatusBar 
+          style={colorScheme === 'dark' ? "light" : "dark"} 
+          backgroundColor={theme.background} 
+        />
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+        <StatusBar style="auto" />
+        
+        <AdBanner 
+          marginVertical={0}
+          style={{ 
+            paddingHorizontal: 0,
+            backgroundColor: theme.background,
+            zIndex: 1000,
+            elevation: 1000,
+          }}
+        />
+      </View>
     </ThemeProvider>
   )
 }

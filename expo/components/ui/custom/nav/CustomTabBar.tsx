@@ -12,8 +12,8 @@ function AnimatedTab({ route, isFocused, onPress, theme }: any) {
   const opacity = useSharedValue(isFocused ? 1 : 0)
 
   React.useEffect(() => {
-    scaleX.value = withTiming(isFocused ? 1 : 0.65, { duration: 240 })
-    opacity.value = withTiming(isFocused ? 1 : 0, { duration: 240 })
+    scaleX.value = withTiming(isFocused ? 1 : 0.65, { duration: 340 })
+    opacity.value = withTiming(isFocused ? 1 : 0, { duration: 340 })
   }, [isFocused])
 
   const animatedPillStyle = useAnimatedStyle(() => ({
@@ -36,7 +36,7 @@ function AnimatedTab({ route, isFocused, onPress, theme }: any) {
   }
 
   return (
-    <View style={{ flex: 1, alignItems: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', marginTop: 8 }}>
       <Pressable onPress={onPress} style={{ position: 'relative' }}>
         <Animated.View
           style={[
@@ -67,7 +67,7 @@ function AnimatedTab({ route, isFocused, onPress, theme }: any) {
         marginTop: 4,
         fontSize: 11,
         color: isFocused ? theme.primary : theme.textMuted,
-        fontWeight: isFocused ? '600' : '400',
+        fontWeight: isFocused ? '600' : '340',
       }}>
         {route.name.charAt(0).toUpperCase() + route.name.slice(1)}
       </Text>
@@ -80,7 +80,7 @@ function AnimatedTranslateTab({ route, isFocused, onPress, theme }: any) {
   const opacity = useSharedValue(isFocused ? 1 : 0.6)
 
   React.useEffect(() => {
-    opacity.value = withTiming(isFocused ? 1 : 0.6, { duration: 240 })
+    opacity.value = withTiming(isFocused ? 1 : 0.6, { duration: 340 })
   }, [isFocused])
 
   const animatedStyle = useAnimatedStyle(() => ({
@@ -132,8 +132,7 @@ export default function CustomTabBar({ state, descriptors, navigation }: CustomT
     <View style={{
       flexDirection: 'row',
       backgroundColor: theme.surface,
-      paddingBottom: insets.bottom,
-      paddingTop: 12,
+      paddingVertical: 12,
       borderTopWidth: 1,
       borderTopColor: theme.borderColor,
     }}>

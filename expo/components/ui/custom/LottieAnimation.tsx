@@ -1,7 +1,5 @@
 import React from 'react'
-import { useColorScheme } from 'react-native'
 import LottieView from 'lottie-react-native'
-import { Colors } from '@/constants/Colors'
 
 // Import your animations
 import loadingCatAnimation from '@/assets/animations/loading_cat.json'
@@ -35,8 +33,6 @@ export default function LottieAnimation({
   flipped = false,
   onAnimationFinish 
 }: LottieAnimationProps) {
-  const colorScheme = useColorScheme()
-  const theme = colorScheme === 'light' ? Colors.light : Colors.dark
 
   return (
     <LottieView

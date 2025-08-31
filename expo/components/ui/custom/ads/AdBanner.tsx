@@ -112,7 +112,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
             <Text style={[styles.placeholderText, { fontSize: 10, marginTop: 4 }]}>
               Position: {position} | Next Interstitial: {quizCompletionCounter}/{showAdEvery}
             </Text>
-            <Text style={[styles.placeholderText, { fontSize: 8, color: '#90EE90' }]}>
+            <Text style={[styles.placeholderText, { fontSize: 8, color: '#ffd61fff' }]}>
               NO LIMITS • MAXIMUM REVENUE MODE ACTIVE
             </Text>
           </View>
@@ -179,17 +179,17 @@ const styles = StyleSheet.create({
   },
   placeholderAd: {
     height: 50,
-    backgroundColor: '#ceca98ff',
+    backgroundColor: '#3ec591ff',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 0,
     width: '100%',
-    borderWidth: 3,
-    borderColor: '#464646ff',
+    borderWidth: 2,
+    borderColor: '#2b2b2bff',
     paddingVertical: 8,
   },
   placeholderText: {
-    color: '#7e7544ff',
+    color: '#ffffffff',
     fontSize: 12,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     borderRadius: 0,
   },
   debugText: {
-    color: '#90EE90',
+    color: '#fefffeff',
     fontSize: 8,
     fontWeight: 'bold',
   },
