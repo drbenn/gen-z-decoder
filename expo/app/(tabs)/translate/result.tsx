@@ -6,6 +6,7 @@ import { router, useFocusEffect } from 'expo-router'
 import React, { useCallback, useState } from 'react'
 import APP_CONSTANTS from '@/constants/appConstants'
 import { Colors } from '@/constants/Colors';
+import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -96,83 +97,84 @@ export default function TranslateResultScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
-      
-      {/* Original Text (Small) */}
-      <View style={styles.originalContainer}>
-        <Text style={styles.originalLabel}>Original:</Text>
-        <Text style={styles.originalText}>
-          {currentTranslation?.originalText || "Sample original text here..."}
-        </Text>
-      </View>
-
-      {/* Translated Text (Main Focus) */}
-      <View style={styles.translatedContainer}>
-
-        {translateLoadState === 'loading' && (
-          <View style={styles.loadingContainer}>
-            <Text style={styles.loadingText}>Translating...</Text>
-          </View>
-        )}
-
-        {translateLoadState === 'error' && (
-          <View style={styles.errorContainer}>
-            <Text style={styles.errorTitle}>Translation Failed</Text>
-            <Text style={styles.errorText}>{translateError}</Text>
-          </View>
-        )}
-
-        {translateLoadState === 'success' && (
-          <ScrollView style={styles.translatedScroll}>
-            <Text style={styles.translatedText}>
-              {currentTranslation?.translatedText}
-            </Text>
-          </ScrollView>
-        )}
-
-        {translateLoadState === 'empty' && (
-          <View style={styles.emptyContainer}>
-            <Text style={styles.emptyText}>No translation available</Text>
-          </View>
-        )}
-
-      </View>
-
-      {/* Action Buttons */}
-      <View style={styles.actionsContainer}>
-        
-        {/* TTS Button */}
-        <Pressable 
-          style={[styles.actionButton, !ttsEnabled && styles.disabledButton]}
-          onPress={handleTTS}
-          disabled={!ttsEnabled || isTranslating}
-        >
-          <Text style={styles.actionButtonText}>
-            🔊 Play Audio
+      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
+        {/* Original Text (Small) */}
+        <View style={styles.originalContainer}>
+          <Text style={styles.originalLabel}>Original:</Text>
+          <Text style={styles.originalText}>
+            {currentTranslation?.originalText || "Sample original text here..."}
           </Text>
-        </Pressable>
+        </View>
 
-        {/* Share Button */}
+        {/* Translated Text (Main Focus) */}
+        <View style={styles.translatedContainer}>
 
-        { currentTranslation?.translatedText && 
+          {translateLoadState === 'loading' && (
+            <View style={styles.loadingContainer}>
+              <Text style={styles.loadingText}>Translating...</Text>
+            </View>
+          )}
+
+          {translateLoadState === 'error' && (
+            <View style={styles.errorContainer}>
+              <Text style={styles.errorTitle}>Translation Failed</Text>
+              <Text style={styles.errorText}>{translateError}</Text>
+            </View>
+          )}
+
+          {translateLoadState === 'success' && (
+            <ScrollView style={styles.translatedScroll}>
+              <Text style={styles.translatedText}>
+                {currentTranslation?.translatedText}
+              </Text>
+            </ScrollView>
+          )}
+
+          {translateLoadState === 'empty' && (
+            <View style={styles.emptyContainer}>
+              <Text style={styles.emptyText}>No translation available</Text>
+            </View>
+          )}
+
+        </View>
+
+        {/* Action Buttons */}
+        <View style={styles.actionsContainer}>
+          
+          {/* TTS Button */}
           <Pressable 
-            style={styles.actionButton}
-            onPress={handleShare}
-            disabled={isTranslating}
+            style={[styles.actionButton, !ttsEnabled && styles.disabledButton]}
+            onPress={handleTTS}
+            disabled={!ttsEnabled || isTranslating}
           >
-            <Text style={styles.actionButtonText}>📤 Share</Text>
+            <Text style={styles.actionButtonText}>
+              🔊 Play Audio
+            </Text>
           </Pressable>
-        }
-      </View>
 
-      <Text onPress={clearAllHistory}>Clear History</Text>
+          {/* Share Button */}
 
-      {/* Translate Again Button */}
-      <Pressable 
-        style={styles.translateAgainButton}
-        onPress={handleTranslateAgain}
-      >
-        <Text style={styles.translateAgainText}>TRANSLATE AGAIN</Text>
-      </Pressable>
+          { currentTranslation?.translatedText && 
+            <Pressable 
+              style={styles.actionButton}
+              onPress={handleShare}
+              disabled={isTranslating}
+            >
+              <Text style={styles.actionButtonText}>📤 Share</Text>
+            </Pressable>
+          }
+        </View>
+
+        <Text onPress={clearAllHistory}>Clear History</Text>
+
+        {/* Translate Again Button */}
+        <Pressable 
+          style={styles.translateAgainButton}
+          onPress={handleTranslateAgain}
+        >
+          <Text style={styles.translateAgainText}>TRANSLATE AGAIN</Text>
+        </Pressable>
+      </AnimatedTabWrapper>
 
     </View>
   )

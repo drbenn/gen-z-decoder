@@ -4,6 +4,7 @@ import { Pressable, ScrollView, Share, Text, useColorScheme, View } from 'react-
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
+import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper'
 
 
 export default function SettingsScreen() {
@@ -39,110 +40,112 @@ export default function SettingsScreen() {
         { paddingTop: insets.top, paddingBottom: insets.bottom }
       ]}
     >
-      <View style={{ paddingTop: theme.verticalMargin }}>
-      
-        {/* About */}
-        <Pressable 
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: theme.paddingHorizontal,
-            paddingVertical: 16,
-            minHeight: 70,
-          }} 
-          onPress={handleAbout}
-        >
-          <View style={{
-            width: 40,
-            height: 40,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginRight: 16,
-          }}>
-            <Ionicons name="information-circle-outline" size={24} color={theme.textMuted} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={{
-              fontSize: 17,
-              fontWeight: '400',
-              marginBottom: 2,
-              color: theme.text,
-            }}>About</Text>
-            <Text style={{
-              fontSize: 14,
-              color: theme.textMuted,
-            }}>App info and version details</Text>
-          </View>
-        </Pressable>
+      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
+        <View style={{ paddingTop: theme.verticalMargin }}>
+        
+          {/* About */}
+          <Pressable 
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingHorizontal: theme.paddingHorizontal,
+              paddingVertical: 16,
+              minHeight: 70,
+            }} 
+            onPress={handleAbout}
+          >
+            <View style={{
+              width: 40,
+              height: 40,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginRight: 16,
+            }}>
+              <Ionicons name="information-circle-outline" size={24} color={theme.textMuted} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 17,
+                fontWeight: '400',
+                marginBottom: 2,
+                color: theme.text,
+              }}>About</Text>
+              <Text style={{
+                fontSize: 14,
+                color: theme.textMuted,
+              }}>App info and version details</Text>
+            </View>
+          </Pressable>
 
-        {/* Share */}
-        <Pressable 
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: theme.paddingHorizontal,
-            paddingVertical: 16,
-            minHeight: 70,
-          }} 
-          onPress={handleShareAppWithFriends}
-        >
-          <View style={{
-            width: 40,
-            height: 40,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginRight: 16,
-          }}>
-            <Ionicons name="share-outline" size={24} color={theme.textMuted} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={{
-              fontSize: 17,
-              fontWeight: '400',
-              marginBottom: 2,
-              color: theme.text,
-            }}>Share</Text>
-            <Text style={{
-              fontSize: 14,
-              color: theme.textMuted,
-            }}>Tell friends about this app</Text>
-          </View>
-        </Pressable>
+          {/* Share */}
+          <Pressable 
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingHorizontal: theme.paddingHorizontal,
+              paddingVertical: 16,
+              minHeight: 70,
+            }} 
+            onPress={handleShareAppWithFriends}
+          >
+            <View style={{
+              width: 40,
+              height: 40,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginRight: 16,
+            }}>
+              <Ionicons name="share-outline" size={24} color={theme.textMuted} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 17,
+                fontWeight: '400',
+                marginBottom: 2,
+                color: theme.text,
+              }}>Share</Text>
+              <Text style={{
+                fontSize: 14,
+                color: theme.textMuted,
+              }}>Tell friends about this app</Text>
+            </View>
+          </Pressable>
 
-        {/* Auto Play Speech Toggle */}
-        <Pressable 
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            paddingHorizontal: theme.paddingHorizontal,
-            paddingVertical: 16,
-            minHeight: 70,
-          }} 
-          onPress={handleToggleAutoPlay}
-        >
-          <View style={{
-            width: 40,
-            height: 40,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginRight: 16,
-          }}>
-            <Ionicons name="volume-high-outline" size={24} color={theme.textMuted} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={{
-              fontSize: 17,
-              fontWeight: '400',
-              marginBottom: 2,
-              color: theme.text,
-            }}>Auto Play Speech</Text>
-            <Text style={{
-              fontSize: 14,
-              color: theme.textMuted,
-            }}>Automatically read translations aloud</Text>
-          </View>
-        </Pressable>
-      </View>
+          {/* Auto Play Speech Toggle */}
+          <Pressable 
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingHorizontal: theme.paddingHorizontal,
+              paddingVertical: 16,
+              minHeight: 70,
+            }} 
+            onPress={handleToggleAutoPlay}
+          >
+            <View style={{
+              width: 40,
+              height: 40,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginRight: 16,
+            }}>
+              <Ionicons name="volume-high-outline" size={24} color={theme.textMuted} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 17,
+                fontWeight: '400',
+                marginBottom: 2,
+                color: theme.text,
+              }}>Auto Play Speech</Text>
+              <Text style={{
+                fontSize: 14,
+                color: theme.textMuted,
+              }}>Automatically read translations aloud</Text>
+            </View>
+          </Pressable>
+        </View>
+      </AnimatedTabWrapper>
     </ScrollView>
   )
 }

@@ -10,6 +10,7 @@ import uuid from 'react-native-uuid'
 import { Colors } from '@/constants/Colors'
 import LottieAnimation from '@/components/ui/custom/LottieAnimation'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
+import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper'
 
 
 export default function TranslateInputScreen() {
@@ -110,192 +111,193 @@ export default function TranslateInputScreen() {
       paddingBottom: insets.bottom,
       backgroundColor: theme.background,
     }}>
+      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
+        {/* Bold Translate to Text */}
+        <View>
+          <Text style={{
+            fontSize: 50,
+            fontWeight: 'bold',
+            textAlign:'center',
+            color: theme.text,
+            textShadowColor: theme.primary,
+            textShadowOffset: { width: -1, height: -1 },
+            textShadowRadius: 0,
+            // Add multiple shadows for better outline effect
+          }}>
+            Translate to
+          </Text>
+        </View>
 
-    {/* Bold Translate to Text */}
-    <View>
-      <Text style={{
-        fontSize: 50,
-        fontWeight: 'bold',
-        textAlign:'center',
-        color: theme.text,
-        textShadowColor: theme.primary,
-        textShadowOffset: { width: -1, height: -1 },
-        textShadowRadius: 0,
-        // Add multiple shadows for better outline effect
-      }}>
-        Translate to
-      </Text>
-    </View>
-
-    {/* Mode Toggle */}
-    <View style={{
-      flexDirection: 'row',
-      marginBottom: theme.verticalMargin,
-      borderRadius: theme.borderRadius,
-      backgroundColor: theme.surface,
-      borderColor: theme.borderColor,
-      borderWidth: 1,
-      padding: 0,
-    }}>
-      <Pressable 
-        style={({ pressed }) => ({
-          flex: 1,
-          padding: 8,
-          alignItems: 'center',
-
-          backgroundColor: pressed 
-            ? theme.primaryTint 
-            : mode === TranslationMode.ENGLISH_TO_GENZ 
-              ? theme.primary 
-              : 'transparent',
-        })}
-        onPress={() => setMode(TranslationMode.ENGLISH_TO_GENZ)}
-      >
-        <Text style={{
-          color: mode === TranslationMode.ENGLISH_TO_GENZ ? '#fff' : theme.text,
-          fontWeight: '500',
-          fontSize: 20
-        }}>Gen Z</Text>
-      </Pressable>
-      <Pressable 
-        style={({ pressed }) => ({
-          flex: 1,
-          padding: 8,
-          alignItems: 'center',
-          backgroundColor: pressed 
-            ? theme.primaryTint 
-            : mode === TranslationMode.GENZ_TO_ENGLISH 
-              ? theme.primary 
-              : 'transparent',
-        })}
-        onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
-      >
-        <Text style={{
-          color: mode === TranslationMode.GENZ_TO_ENGLISH ? '#fff' : theme.text,
-          fontWeight: '500',
-          fontSize: 20
-        }}>English</Text>
-      </Pressable>
-    </View>
-
-    {/* Lottie Animations */}
-    <View style={{
-      minHeight: 225,
-      minWidth: 225,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-      {mode === TranslationMode.GENZ_TO_ENGLISH ? (
-        <Animated.View
-          key="welcome"
-          entering={FadeIn.duration(300)}
-          exiting={FadeOut.duration(300)}
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <LottieAnimation
-            animation="welcome_screen"
-            width={225}
-            height={225}
-            loop={true}
-          />
-        </Animated.View>
-      ) : (
-        <Animated.View
-          key="running"
-          entering={FadeIn.duration(300)}
-          exiting={FadeOut.duration(300)}
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          <LottieAnimation
-            animation="man_running"
-            width={225}
-            height={225}
-            loop={true}
-            flipped={true}
-          />
-        </Animated.View>
-      )}
-    </View>
-
-    {/* Text Input */}
-    <TextInput
-      style={{
-        borderWidth: 1,
-        borderColor: theme.borderColor,
-        backgroundColor: theme.surface,
-        color: theme.text,
-        padding: 15,
-        minHeight: 140,
-        marginBottom: theme.verticalMargin,
-        borderRadius: theme.borderRadius,
-        fontSize: 16,
-        textAlignVertical: 'top',
-      }}
-      placeholder={getPlaceholder()}
-      placeholderTextColor={theme.textMuted}
-      value={inputText}
-      onChangeText={setInputText}
-      multiline
-      numberOfLines={6}
-    />
-
-    {/* Auto-play Audio Toggle */}
-    <View style={{
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginVertical: theme.verticalMargin,
-    }}>
-      <Text style={{
-        color: theme.text,
-        fontSize: 16,
-      }}>Auto-play audio:</Text>
-      <Pressable 
-        style={({ pressed }) => ({
-          marginLeft: 10,
-          paddingHorizontal: 16,
-          paddingVertical: 8,
-          borderWidth: 1,
+        {/* Mode Toggle */}
+        <View style={{
+          flexDirection: 'row',
+          marginBottom: theme.verticalMargin,
           borderRadius: theme.borderRadius,
-          borderColor: autoPlayAudio ? theme.primary : theme.borderColor,
-          backgroundColor: pressed 
-            ? theme.primaryTint 
-            : autoPlayAudio 
-              ? theme.primary 
-              : 'transparent',
-        })}
-        onPress={() => setAutoPlayAudio(!autoPlayAudio)}
-      >
-        <Text style={{
-          color: autoPlayAudio ? '#fff' : theme.text,
-          fontWeight: '500',
-        }}>{autoPlayAudio ? 'ON' : 'OFF'}</Text>
-      </Pressable>
-    </View>
+          backgroundColor: theme.surface,
+          borderColor: theme.borderColor,
+          borderWidth: 1,
+          padding: 0,
+        }}>
+          <Pressable 
+            style={({ pressed }) => ({
+              flex: 1,
+              padding: 8,
+              alignItems: 'center',
 
-    {/* Translate Button */}
-    <Pressable 
-      style={({ pressed }) => ({
-        backgroundColor: pressed ? theme.primaryTint : theme.primary,
-        padding: 12,
-        alignItems: 'center',
-        borderRadius: theme.borderRadius,
-        marginTop: theme.verticalMargin,
-      })}
-      onPress={handleTranslate}
-    >
-      <Text style={{
-        color: '#fff',
-        fontSize: 20,
-        fontWeight: 'bold',
-        letterSpacing: 1,
-      }}>TRANSLATE</Text>
-    </Pressable>
+              backgroundColor: pressed 
+                ? theme.primaryTint 
+                : mode === TranslationMode.ENGLISH_TO_GENZ 
+                  ? theme.primary 
+                  : 'transparent',
+            })}
+            onPress={() => setMode(TranslationMode.ENGLISH_TO_GENZ)}
+          >
+            <Text style={{
+              color: mode === TranslationMode.ENGLISH_TO_GENZ ? '#fff' : theme.text,
+              fontWeight: '500',
+              fontSize: 20
+            }}>Gen Z</Text>
+          </Pressable>
+          <Pressable 
+            style={({ pressed }) => ({
+              flex: 1,
+              padding: 8,
+              alignItems: 'center',
+              backgroundColor: pressed 
+                ? theme.primaryTint 
+                : mode === TranslationMode.GENZ_TO_ENGLISH 
+                  ? theme.primary 
+                  : 'transparent',
+            })}
+            onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
+          >
+            <Text style={{
+              color: mode === TranslationMode.GENZ_TO_ENGLISH ? '#fff' : theme.text,
+              fontWeight: '500',
+              fontSize: 20
+            }}>English</Text>
+          </Pressable>
+        </View>
+
+        {/* Lottie Animations */}
+        <View style={{
+          minHeight: 225,
+          minWidth: 225,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          {mode === TranslationMode.GENZ_TO_ENGLISH ? (
+            <Animated.View
+              key="welcome"
+              entering={FadeIn.duration(300)}
+              exiting={FadeOut.duration(300)}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <LottieAnimation
+                animation="welcome_screen"
+                width={225}
+                height={225}
+                loop={true}
+              />
+            </Animated.View>
+          ) : (
+            <Animated.View
+              key="running"
+              entering={FadeIn.duration(300)}
+              exiting={FadeOut.duration(300)}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <LottieAnimation
+                animation="man_running"
+                width={225}
+                height={225}
+                loop={true}
+                flipped={true}
+              />
+            </Animated.View>
+          )}
+        </View>
+
+        {/* Text Input */}
+        <TextInput
+          style={{
+            borderWidth: 1,
+            borderColor: theme.borderColor,
+            backgroundColor: theme.surface,
+            color: theme.text,
+            padding: 15,
+            minHeight: 140,
+            marginBottom: theme.verticalMargin,
+            borderRadius: theme.borderRadius,
+            fontSize: 16,
+            textAlignVertical: 'top',
+          }}
+          placeholder={getPlaceholder()}
+          placeholderTextColor={theme.textMuted}
+          value={inputText}
+          onChangeText={setInputText}
+          multiline
+          numberOfLines={6}
+        />
+
+        {/* Auto-play Audio Toggle */}
+        <View style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: theme.verticalMargin,
+        }}>
+          <Text style={{
+            color: theme.text,
+            fontSize: 16,
+          }}>Auto-play audio:</Text>
+          <Pressable 
+            style={({ pressed }) => ({
+              marginLeft: 10,
+              paddingHorizontal: 16,
+              paddingVertical: 8,
+              borderWidth: 1,
+              borderRadius: theme.borderRadius,
+              borderColor: autoPlayAudio ? theme.primary : theme.borderColor,
+              backgroundColor: pressed 
+                ? theme.primaryTint 
+                : autoPlayAudio 
+                  ? theme.primary 
+                  : 'transparent',
+            })}
+            onPress={() => setAutoPlayAudio(!autoPlayAudio)}
+          >
+            <Text style={{
+              color: autoPlayAudio ? '#fff' : theme.text,
+              fontWeight: '500',
+            }}>{autoPlayAudio ? 'ON' : 'OFF'}</Text>
+          </Pressable>
+        </View>
+
+        {/* Translate Button */}
+        <Pressable 
+          style={({ pressed }) => ({
+            backgroundColor: pressed ? theme.primaryTint : theme.primary,
+            padding: 12,
+            alignItems: 'center',
+            borderRadius: theme.borderRadius,
+            marginTop: theme.verticalMargin,
+          })}
+          onPress={handleTranslate}
+        >
+          <Text style={{
+            color: '#fff',
+            fontSize: 20,
+            fontWeight: 'bold',
+            letterSpacing: 1,
+          }}>TRANSLATE</Text>
+        </Pressable>
+      </AnimatedTabWrapper>
 
     </View>
   )
