@@ -25,6 +25,7 @@ export default function TranslateResultScreen() {
   const ttsEnabled = useAppState((state) => state.ttsEnabled)
   const translateError = useAppState((state) => state.translateError)
   const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio) 
+  const usageInfo = useAppState((state) => state.usageInfo) 
 
   // Listen for when screen comes into focus (after navigation or ad dismissal)
   useFocusEffect(
@@ -133,7 +134,6 @@ export default function TranslateResultScreen() {
         borderWidth: 1,
         borderColor: theme.borderColor,
         padding: 15,
-        marginBottom: theme.verticalMargin,
       }}>
         <Text style={{
           fontSize: 12,
@@ -149,6 +149,22 @@ export default function TranslateResultScreen() {
           lineHeight: 22,
         }}>
           {currentTranslation?.originalText || "Sample original text here..."}
+        </Text>
+      </View>
+
+      <View style={{
+        height: 20,
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+        marginTop: 4,
+        marginBottom: theme.verticalMargin / 2,
+        marginEnd: 10,
+      }}>
+        <Text style={{
+          fontSize: 12,
+          color: theme.text,
+        }}>
+          Daily Translations Remaining ({ usageInfo.isPremium ? 'premium mode' : 'free mode'}):  { usageInfo.remainingTranslations }/{ usageInfo.dailyLimit }
         </Text>
       </View>
 

@@ -35,9 +35,11 @@ export default function TranslateInputScreen() {
   const updateUsageInfo = useAppState((state) => state.updateUsageInfo)
   const setTranslateError = useAppState((state) => state.setTranslateError)
   const addToHistory = useAppState((state) => state.addToHistory)
+  const usageInfo = useAppState((state) => state.usageInfo) 
+
 
   // Check if translation is allowed
-  const canTranslate = inputText.trim().length >= MIN_TEXT_LENGTH && inputText.trim().length <= MAX_TEXT_LENGTH
+  const canTranslate = inputText.trim().length >= MIN_TEXT_LENGTH && inputText.trim().length <= MAX_TEXT_LENGTH && usageInfo.remainingTranslations > 0
 
   const handleTranslate = async () => {
     // Early return if text is too short
@@ -74,7 +76,8 @@ export default function TranslateInputScreen() {
     // 4. API call with error handling
     try {      
       const response = await HttpClient.translateText({ text: textToTranslate, mode })
-
+      console.log('api response: ', response);
+      
       // const response = {
       //   translatedText: 'YOLO',
       //   originalText: 'BOLO',
@@ -397,6 +400,24 @@ export default function TranslateInputScreen() {
             letterSpacing: 1,
           }}>TRANSLATE</Text>
         </Pressable>
+
+        { usageInfo.remainingTranslations < 6 && (
+          <View style={{
+            height: 20,
+            alignItems: 'flex-end',
+            justifyContent: 'center',
+            marginTop: 2,
+            marginBottom: theme.verticalMargin / 2,
+            marginEnd: 10,
+          }}>
+            <Text style={{
+              fontSize: 12,
+              color: theme.text,
+            }}>
+              Daily Translations Remaining ({ usageInfo.isPremium ? 'premium mode' : 'free mode'}):  { usageInfo.remainingTranslations }/{ usageInfo.dailyLimit }
+            </Text>
+          </View>
+        )}
 
     </View>
   )
