@@ -11,6 +11,8 @@ import { Colors } from '@/constants/Colors'
 import LottieAnimation from '@/components/ui/custom/LottieAnimation'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 
+const MIN_TEXT_LENGTH = 5
+const MAX_TEXT_LENGTH = 200
 
 export default function TranslateInputScreen() {
   const colorScheme = useColorScheme()
@@ -20,10 +22,10 @@ export default function TranslateInputScreen() {
   const [mode, setMode] = useState<TranslationMode>(TranslationMode.ENGLISH_TO_GENZ)
   const [inputText, setInputText] = useState('')
 
-  // ✅ GOOD: Single state value - regular selector
+  // State value - regular selector
   const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
   
-  // ✅ GOOD: Action functions with individual selectors (prevents unnecessary re-renders)
+  // Action functions with individual selectors (prevents unnecessary re-renders)
   const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio)
   const incrementTranslationCount = useAppState((state) => state.incrementTranslationCount)
   const setTranslating = useAppState((state) => state.setTranslating)
@@ -34,7 +36,15 @@ export default function TranslateInputScreen() {
   const setTranslateError = useAppState((state) => state.setTranslateError)
   const addToHistory = useAppState((state) => state.addToHistory)
 
+  // Check if translation is allowed
+  const canTranslate = inputText.trim().length >= MIN_TEXT_LENGTH && inputText.trim().length <= MAX_TEXT_LENGTH
+
   const handleTranslate = async () => {
+    // Early return if text is too short
+    if (!canTranslate) {
+      return
+    }
+
     // 1. Handle ad first (blocking)
     incrementTranslationCount()
     const shouldShowAd = checkInterstitialReady()
@@ -47,18 +57,23 @@ export default function TranslateInputScreen() {
         }
 
       } catch (error) {
-        logger.log('❌ Ad service error:', error)
+        logger.log('Ad service error:', error)
       }
     }
 
     logger.log('Translate pressed:', { mode, inputText, autoPlayAudio })
-    // 2. Start loading state & navigate
+    
+    // 2. Clear input text immediately
+    const textToTranslate = inputText.trim()
+    setInputText('')
+    
+    // 3. Start loading state & navigate
     setTranslating(true)
     router.push('/(tabs)/translate/result')
     
-    // 3. API call with error handling
+    // 4. API call with error handling
     try {      
-      const response = await HttpClient.translateText({ text: inputText, mode })
+      const response = await HttpClient.translateText({ text: textToTranslate, mode })
 
       // const response = {
       //   translatedText: 'YOLO',
@@ -72,7 +87,7 @@ export default function TranslateInputScreen() {
       //   }
       // }
 
-      // 4. Update translation, history and usage from successful response
+      // 5. Update translation, history and usage from successful response
       const translationHistoryItem: TranslationHistoryItem = {
         id: uuid.v4() as string,
         originalText: response.originalText,
@@ -90,7 +105,7 @@ export default function TranslateInputScreen() {
       logger.error('Error in handleTranslate:', error)
       setTranslateError(error.message)
     } finally {
-      // 5. Stop loading
+      // 6. Stop loading
       setTranslating(false)
     }
   }
@@ -108,9 +123,8 @@ export default function TranslateInputScreen() {
       paddingHorizontal: theme.paddingHorizontal,
       paddingTop: insets.top + theme.verticalMargin,
       paddingBottom: insets.bottom,
-      // backgroundColor: theme.background
     }}>
-        {/* Sick svg-ish pattern background */}
+        {/* Background Pattern */}
         <ImageBackground 
           source={colorScheme === 'dark' 
             ? require('@/assets/images/i-like-food-dark-blue-260.png') 
@@ -127,6 +141,7 @@ export default function TranslateInputScreen() {
           resizeMode="repeat"
           fadeDuration={0}
         />
+        
         {/* Bold Translate to Text */}
         <View style={{ position: 'relative', alignItems: 'center' }}>
           {/* Base layer - Red (bottom) */}
@@ -270,7 +285,7 @@ export default function TranslateInputScreen() {
         <TextInput
           style={{
             borderWidth: 1,
-            borderColor: theme.borderColor,
+            borderColor: !canTranslate && inputText.length > 0 ? theme.error : theme.borderColor,
             backgroundColor: theme.surface,
             color: theme.text,
             padding: 15,
@@ -289,53 +304,94 @@ export default function TranslateInputScreen() {
           numberOfLines={6}
         />
 
+
         {/* Auto-play Audio Toggle */}
         <View style={{
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between'
         }}>
-          <Text style={{
-            color: theme.text,
-            fontSize: 16,
-          }}>Auto-play audio:</Text>
-          <Pressable 
-            style={({ pressed }) => ({
-              marginLeft: 10,
-              width: 60,
-              justifyContent: 'center',
-              alignItems: 'center',
-              paddingVertical: 8,
-              borderWidth: 1,
-              borderRadius: theme.borderRadius,
-              borderColor: autoPlayAudio ? theme.primary : theme.borderColor,
-              backgroundColor: pressed 
-                ? theme.primaryTint 
-                : autoPlayAudio 
-                  ? theme.primary 
-                  : theme.surface,
-            })}
-            onPress={() => setAutoPlayAudio(!autoPlayAudio)}
-          >
+          <View  style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'flex-start'
+          }}>
             <Text style={{
-              color: autoPlayAudio ? '#fff' : theme.text,
-              fontWeight: '500',
-            }}>{autoPlayAudio ? 'ON' : 'OFF'}</Text>
-          </Pressable>
+              color: theme.text,
+              fontSize: 16,
+            }}>Auto-play audio:</Text>
+            <Pressable 
+              style={({ pressed }) => ({
+                marginLeft: 10,
+                width: 60,
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingVertical: 8,
+                borderWidth: 1,
+                borderRadius: theme.borderRadius,
+                borderColor: autoPlayAudio ? theme.primary : theme.borderColor,
+                backgroundColor: pressed 
+                  ? theme.primaryTint 
+                  : autoPlayAudio 
+                    ? theme.primary 
+                    : theme.surface,
+              })}
+              onPress={() => setAutoPlayAudio(!autoPlayAudio)}
+            >
+              <Text style={{
+                color: autoPlayAudio ? '#fff' : theme.text,
+                fontWeight: '500',
+              }}>{autoPlayAudio ? 'ON' : 'OFF'}</Text>
+            </Pressable>
+          </View>
+
+          <View>
+            {/* Character count / validation message */}
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              {inputText.length > 0 && (
+                <Text style={{
+                  fontSize: 12,
+                  color: canTranslate ? theme.textMuted : theme.error,
+                }}>
+                  { inputText.trim().length < MIN_TEXT_LENGTH && inputText.trim().length !== 0 && (
+                    <Text>
+                      {MIN_TEXT_LENGTH} characters minimum
+                    </Text>
+                  )}
+                  { inputText.trim().length > MAX_TEXT_LENGTH && inputText.trim().length !== 0 && (
+                    <Text>
+                      {MAX_TEXT_LENGTH} characters maximum
+                    </Text>
+                  )}
+                  
+                </Text>
+              )}
+            </View>
+          </View>
         </View>
 
         {/* Translate Button */}
         <Pressable 
           style={({ pressed }) => ({
-            backgroundColor: pressed ? theme.primaryTint : theme.primary,
+            backgroundColor: !canTranslate 
+              ? theme.textMuted 
+              : pressed 
+                ? theme.primaryTint 
+                : theme.primary,
             padding: 12,
             alignItems: 'center',
             borderRadius: theme.borderRadius,
             marginTop: theme.verticalMargin,
+            opacity: !canTranslate ? 0.5 : 1,
           })}
           onPress={handleTranslate}
+          disabled={!canTranslate}
         >
           <Text style={{
-            color: '#fff',
+            color: !canTranslate ? theme.textMuted : '#fff',
             fontSize: 20,
             fontWeight: 'bold',
             letterSpacing: 1,

@@ -26,6 +26,7 @@ export const Colors = {
     borderColor: '#ccccd8ff',
     borderRadius: 10,
     standardBodyHorizontalMargin: 20,
+    error: '#ec5d5d',
   },
   dark: {
     text: '#ECEDEE',
@@ -43,6 +44,7 @@ export const Colors = {
     borderColor: '#484848',
     borderRadius: 4,
     standardBodyHorizontalMargin: 20,
+    error: '#ec5d5d',
   },
   spacing: {
     xs: 4,

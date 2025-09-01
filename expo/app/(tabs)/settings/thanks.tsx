@@ -101,8 +101,7 @@ export default function ThanksScreen() {
                   color: theme.text,
                 }}>For their excellent animations platform. 
                 {'\n'}{'\n'}
-                I would have loved to have provided the actual links to the people who created the lottie files - but lottiefiles.com is not the most conducive to finding who created the image after its added to your dashboard. Looking through 347 pages of images after using the exact search term of the image is 
-                not how I would like to spend my entire evening.
+                I would have loved to have provided the actual links to the people who created the lottie files - but lottiefiles.com is not the most conducive to finding who created the image after its added to your dashboard...
                 </Text>
               </Pressable>
 
