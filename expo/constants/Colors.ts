@@ -8,12 +8,12 @@ const tintColorDark = '#fff';
 
 
 // primary color(primary tint) from uiGradients Ibiza Sunset gradient, Celstial, Megatron
-
+// ffdedf/49393a - svg foregrounds
 export const Colors = {
   light: {
     text: '#11181C',
     textMuted: '#11181C90',
-    background: '#f0f0f0ff',
+    background: '#fcfbfbff',
     surface: '#ffffff',
     primary: '#f7797d',
     primaryTint: '#f7797dbb',
@@ -31,9 +31,9 @@ export const Colors = {
     text: '#ECEDEE',
     textMuted: '#ecedee90',
     background: '#151718',
-    surface: '#2a2a2a',
-    primary: '#f7797d',
-    primaryTint: '#f7797dbb',
+    surface: '#161616ff',
+    primary: '#61b4b4',
+    primaryTint: '#1a6363bb',
     paddingHorizontal: 20,
     verticalMargin: 20,
     tint: tintColorDark,

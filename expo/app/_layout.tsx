@@ -6,10 +6,18 @@ import 'react-native-reanimated'
 import { Colors } from '@/constants/Colors'
 import { useColorScheme } from '@/hooks/useColorScheme'
 import { useAppState } from '@/state/useAppState'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import AdBanner from '@/components/ui/custom/ads/AdBanner'
 import { View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Asset } from 'expo-asset'
+
+// At the top level, preload the images
+Asset.loadAsync([
+  require('@/assets/images/i-like-food-dark-blue-260.png'),
+  require('@/assets/images/i-like-food-light-260.png')
+])
+
 
 export default function RootLayout() {
   const insets = useSafeAreaInsets()
@@ -50,10 +58,9 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <View style={{ flex: 1, backgroundColor: theme.background, paddingBottom: Math.max(insets.bottom, 10) }}>
+      <View style={{ flex: 1, backgroundColor: 'transparent', paddingBottom: Math.max(insets.bottom, 10) }}>
         <StatusBar 
           style={colorScheme === 'dark' ? "light" : "dark"} 
-          backgroundColor={theme.background} 
         />
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

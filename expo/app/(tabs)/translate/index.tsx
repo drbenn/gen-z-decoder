@@ -3,7 +3,7 @@ import { useAppState } from '@/state/useAppState'
 import { TranslationHistoryItem, TranslationMode } from '@/types/translate.types'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { View, Text, TextInput, Pressable, useColorScheme } from 'react-native'
+import { View, Text, TextInput, Pressable, useColorScheme, ImageBackground } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
 import uuid from 'react-native-uuid'
@@ -108,8 +108,25 @@ export default function TranslateInputScreen() {
       paddingHorizontal: theme.paddingHorizontal,
       paddingTop: insets.top + theme.verticalMargin,
       paddingBottom: insets.bottom,
-      backgroundColor: theme.background,
+      // backgroundColor: theme.background
     }}>
+        {/* Sick svg-ish pattern background */}
+        <ImageBackground 
+          source={colorScheme === 'dark' 
+            ? require('@/assets/images/i-like-food-dark-blue-260.png') 
+            : require('@/assets/images/i-like-food-light-260.png')
+          }
+          style={{
+            position: 'absolute',
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0,
+            zIndex: -1
+          }}
+          resizeMode="repeat"
+          fadeDuration={0}
+        />
         {/* Bold Translate to Text */}
         <View style={{ position: 'relative', alignItems: 'center' }}>
           {/* Base layer - Red (bottom) */}
@@ -125,16 +142,18 @@ export default function TranslateInputScreen() {
           </Text>
           
           {/* Middle layer - Blue */}
-          <Text style={{
-            fontSize: 50,
-            fontWeight: 'bold',
-            textAlign: 'center',
-            color: theme.surface,
-            position: 'absolute',
-            transform: [{ translateX: 2 }, { translateY: -1 }],
-          }}>
-            TRANSLATE TO
-          </Text>
+          {colorScheme === 'light' && (
+            <Text style={{
+              fontSize: 50,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: theme.surface,
+              position: 'absolute',
+              transform: [{ translateX: 2 }, { translateY: -1 }],
+            }}>
+              TRANSLATE TO
+            </Text>
+          )}
           
           {/* Top layer - Green (main text) */}
           <Text style={{
@@ -282,7 +301,9 @@ export default function TranslateInputScreen() {
           <Pressable 
             style={({ pressed }) => ({
               marginLeft: 10,
-              paddingHorizontal: 16,
+              width: 60,
+              justifyContent: 'center',
+              alignItems: 'center',
               paddingVertical: 8,
               borderWidth: 1,
               borderRadius: theme.borderRadius,
@@ -291,7 +312,7 @@ export default function TranslateInputScreen() {
                 ? theme.primaryTint 
                 : autoPlayAudio 
                   ? theme.primary 
-                  : 'transparent',
+                  : theme.surface,
             })}
             onPress={() => setAutoPlayAudio(!autoPlayAudio)}
           >

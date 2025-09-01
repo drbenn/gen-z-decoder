@@ -9,7 +9,8 @@ import {
   Text,
   Pressable,
   View,
-  useColorScheme
+  useColorScheme,
+  ImageBackground
 } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
@@ -24,26 +25,32 @@ export default function ThanksScreen() {
     Linking.openURL(APP_CONSTANTS.DEVELOPER_WEBSITE)
   }
 
-  const handleAppWebsitePress = () => {
-    Linking.openURL(APP_CONSTANTS.APP_WEBSITE)
-  }
-
-  const handlePrivacyPolicyPress = () => {
-    Linking.openURL(APP_CONSTANTS.APP_WEBSITE_APP_PRIVACY_POLICY)
-  }
-
-  const handleTermsOfServicePress = () => {
-    Linking.openURL(APP_CONSTANTS.APP_WEBSITE_APP_TERMS_OF_SERVICE)
-  }
-
   return (
     <SafeAreaView style={{
       flex: 1,
-      backgroundColor: theme.background,
+      // backgroundColor: theme.background,
       paddingHorizontal: theme.paddingHorizontal,
       paddingTop: insets.top,
       paddingBottom: insets.bottom,
     }}>
+
+        {/* Sick svg-ish pattern background */}
+        <ImageBackground 
+          source={colorScheme === 'dark' 
+            ? require('@/assets/images/i-like-food-dark-blue-260.png') 
+            : require('@/assets/images/i-like-food-light-260.png')
+          }
+          style={{
+            position: 'absolute',
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0,
+            zIndex: -1
+          }}
+          resizeMode="repeat"
+        />
+
         {/* Header */}
         <View style={{
           flexDirection: 'row',
@@ -94,7 +101,8 @@ export default function ThanksScreen() {
                   color: theme.text,
                 }}>For their excellent animations platform. 
                 {'\n'}{'\n'}
-                However, I would have loved to have provided the actual links to the people who created the lottie files - but lottiefiles.com is not the most conducive to finding who created the image after its added to your dashboard. Sorry. Not spending 3 hours looking through 347 pages of images after using the literal search term &apos;loading cat&apos; of the image title, etc.
+                I would have loved to have provided the actual links to the people who created the lottie files - but lottiefiles.com is not the most conducive to finding who created the image after its added to your dashboard. Looking through 347 pages of images after using the exact search term of the image is 
+                not how I would like to spend my entire evening.
                 </Text>
               </Pressable>
 

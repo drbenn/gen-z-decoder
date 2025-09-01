@@ -9,7 +9,8 @@ import {
   Text,
   Pressable,
   View,
-  useColorScheme
+  useColorScheme,
+  ImageBackground
 } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
@@ -41,13 +42,31 @@ export default function AboutScreen() {
   }
 
   return (
-    <SafeAreaView style={{
+    <View style={{
       flex: 1,
-      backgroundColor: theme.background,
+      // backgroundColor: theme.background,
       paddingHorizontal: theme.paddingHorizontal,
       paddingTop: insets.top,
       paddingBottom: insets.bottom,
     }}>
+
+        {/* Sick svg-ish pattern background */}
+        <ImageBackground 
+          source={colorScheme === 'dark' 
+            ? require('@/assets/images/i-like-food-dark-blue-260.png') 
+            : require('@/assets/images/i-like-food-light-260.png')
+          }
+          style={{
+            position: 'absolute',
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0,
+            zIndex: -1
+          }}
+          resizeMode="repeat"
+        />
+
         {/* Header */}
         <View style={{
           flexDirection: 'row',
@@ -206,6 +225,6 @@ export default function AboutScreen() {
           </View>
         </ScrollView>
         
-    </SafeAreaView>
+    </View>
   )
 }

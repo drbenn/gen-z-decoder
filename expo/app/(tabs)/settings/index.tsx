@@ -1,6 +1,6 @@
 import APP_CONSTANTS from '@/constants/appConstants'
 import { router } from 'expo-router'
-import { Pressable, ScrollView, Share, Text, useColorScheme, View } from 'react-native'
+import { ImageBackground, Pressable, ScrollView, Share, Text, useColorScheme, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
@@ -40,12 +40,29 @@ export default function SettingsScreen() {
   }
 
   return (
-    <ScrollView 
+    <View 
       style={[
-        { flex: 1, backgroundColor: theme.background }, 
+        { flex: 1, backgroundColor: 'transparent'}, 
         { paddingTop: insets.top, paddingBottom: insets.bottom }
       ]}
     >
+        {/* Sick svg-ish pattern background */}
+        <ImageBackground 
+          source={colorScheme === 'dark' 
+            ? require('@/assets/images/i-like-food-dark-blue-260.png') 
+            : require('@/assets/images/i-like-food-light-260.png')
+          }
+          style={{
+            position: 'absolute',
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0,
+            zIndex: -1
+          }}
+          resizeMode="repeat"
+        />
+
         <View style={{ paddingTop: theme.verticalMargin }}>
         
           {/* About */}
@@ -205,6 +222,6 @@ export default function SettingsScreen() {
             </View>
           </Pressable>
         </View>
-    </ScrollView>
+    </View>
   )
 }

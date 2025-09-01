@@ -1,6 +1,6 @@
 import Chip from '@/components/ui/custom/Chip';
 import { useState } from 'react';
-import { StyleSheet, useColorScheme, View } from 'react-native';
+import { ImageBackground, StyleSheet, useColorScheme, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import HistoryContent from '@/components/ui/custom/library/HistoryContent';
 import DictionaryContent from '@/components/ui/custom/library/DictionaryContent';
@@ -22,7 +22,26 @@ export default function LibraryScreen() {
   }
 
   return (
-    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, backgroundColor: theme.background}]}>
+    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, 
+    // backgroundColor: theme.background
+    }]}>
+        {/* Sick svg-ish pattern background */}
+        <ImageBackground 
+          source={colorScheme === 'dark' 
+            ? require('@/assets/images/i-like-food-dark-blue-260.png') 
+            : require('@/assets/images/i-like-food-light-260.png')
+          }
+          style={{
+            position: 'absolute',
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0,
+            zIndex: -1
+          }}
+          resizeMode="repeat"
+        />
+
         <View style={styles.chipContainer}>
           <Chip label={'Dictionary'} onPress={() => handleChipPress('Dictionary')}></Chip>
           <View style={[{paddingHorizontal: 16}]}>

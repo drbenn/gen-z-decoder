@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, Pressable, View, Share, useColorScheme } from 'react-native'
+import { ScrollView, StyleSheet, Text, Pressable, View, Share, useColorScheme, ImageBackground } from 'react-native'
 import * as Speech from 'expo-speech'
 import { useAppState } from '@/state/useAppState'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -96,6 +96,24 @@ export default function TranslateResultScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
+
+        {/* Sick svg-ish pattern background */}
+        <ImageBackground 
+          source={colorScheme === 'dark' 
+            ? require('@/assets/images/i-like-food-dark-blue-260.png') 
+            : require('@/assets/images/i-like-food-light-260.png')
+          }
+          style={{
+            position: 'absolute',
+            top: 0, 
+            left: 0, 
+            right: 0, 
+            bottom: 0,
+            zIndex: -1
+          }}
+          resizeMode="repeat"
+        />
+        
         {/* Original Text (Small) */}
         <View style={styles.originalContainer}>
           <Text style={styles.originalLabel}>Original:</Text>
