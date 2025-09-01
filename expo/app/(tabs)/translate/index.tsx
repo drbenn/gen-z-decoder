@@ -10,7 +10,6 @@ import uuid from 'react-native-uuid'
 import { Colors } from '@/constants/Colors'
 import LottieAnimation from '@/components/ui/custom/LottieAnimation'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
-import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper'
 
 
 export default function TranslateInputScreen() {
@@ -111,27 +110,48 @@ export default function TranslateInputScreen() {
       paddingBottom: insets.bottom,
       backgroundColor: theme.background,
     }}>
-      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
         {/* Bold Translate to Text */}
-        <View>
+        <View style={{ position: 'relative', alignItems: 'center' }}>
+          {/* Base layer - Red (bottom) */}
           <Text style={{
             fontSize: 50,
             fontWeight: 'bold',
-            textAlign:'center',
-            color: theme.text,
-            textShadowColor: theme.primary,
-            textShadowOffset: { width: -1, height: -1 },
-            textShadowRadius: 0,
-            // Add multiple shadows for better outline effect
+            textAlign: 'center',
+            color: theme.primary,
+            position: 'absolute',
+            transform: [{ translateX: -2 }, { translateY: 2 }],
           }}>
-            Translate to
+            TRANSLATE TO
+          </Text>
+          
+          {/* Middle layer - Blue */}
+          <Text style={{
+            fontSize: 50,
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: theme.surface,
+            position: 'absolute',
+            transform: [{ translateX: 2 }, { translateY: -1 }],
+          }}>
+            TRANSLATE TO
+          </Text>
+          
+          {/* Top layer - Green (main text) */}
+          <Text style={{
+            fontSize: 50,
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: theme.primaryTint,
+            position: 'relative',
+          }}>
+            TRANSLATE TO
           </Text>
         </View>
 
         {/* Mode Toggle */}
         <View style={{
           flexDirection: 'row',
-          marginBottom: theme.verticalMargin,
+          marginVertical: theme.verticalMargin,
           borderRadius: theme.borderRadius,
           backgroundColor: theme.surface,
           borderColor: theme.borderColor,
@@ -143,7 +163,8 @@ export default function TranslateInputScreen() {
               flex: 1,
               padding: 8,
               alignItems: 'center',
-
+              borderTopStartRadius: theme.borderRadius,
+              borderBottomStartRadius: theme.borderRadius,
               backgroundColor: pressed 
                 ? theme.primaryTint 
                 : mode === TranslationMode.ENGLISH_TO_GENZ 
@@ -162,6 +183,8 @@ export default function TranslateInputScreen() {
             style={({ pressed }) => ({
               flex: 1,
               padding: 8,
+              borderTopEndRadius: theme.borderRadius,
+              borderBottomEndRadius: theme.borderRadius,
               alignItems: 'center',
               backgroundColor: pressed 
                 ? theme.primaryTint 
@@ -181,8 +204,8 @@ export default function TranslateInputScreen() {
 
         {/* Lottie Animations */}
         <View style={{
-          minHeight: 225,
-          minWidth: 225,
+          minHeight: 200,
+          minWidth: 200,
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -233,6 +256,7 @@ export default function TranslateInputScreen() {
             color: theme.text,
             padding: 15,
             minHeight: 140,
+            marginTop: 5,
             marginBottom: theme.verticalMargin,
             borderRadius: theme.borderRadius,
             fontSize: 16,
@@ -250,7 +274,6 @@ export default function TranslateInputScreen() {
         <View style={{
           flexDirection: 'row',
           alignItems: 'center',
-          marginVertical: theme.verticalMargin,
         }}>
           <Text style={{
             color: theme.text,
@@ -297,7 +320,6 @@ export default function TranslateInputScreen() {
             letterSpacing: 1,
           }}>TRANSLATE</Text>
         </Pressable>
-      </AnimatedTabWrapper>
 
     </View>
   )

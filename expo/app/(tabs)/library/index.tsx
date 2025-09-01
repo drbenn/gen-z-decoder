@@ -6,7 +6,7 @@ import HistoryContent from '@/components/ui/custom/library/HistoryContent';
 import DictionaryContent from '@/components/ui/custom/library/DictionaryContent';
 import FavoriteToggle from '@/components/ui/custom/library/FavoriteToggle';
 import { useAppState } from '@/state/useAppState';
-import { Colors } from '@/constants/Colors';import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper';
+import { Colors } from '@/constants/Colors';
 ;
 
 export default function LibraryScreen() {
@@ -23,7 +23,6 @@ export default function LibraryScreen() {
 
   return (
     <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, backgroundColor: theme.background}]}>
-      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
         <View style={styles.chipContainer}>
           <Chip label={'Dictionary'} onPress={() => handleChipPress('Dictionary')}></Chip>
           <View style={[{paddingHorizontal: 16}]}>
@@ -35,7 +34,6 @@ export default function LibraryScreen() {
           {activeChip === 'History' && <HistoryContent />}
           {activeChip === 'Dictionary' && <DictionaryContent />}
         </View>
-      </AnimatedTabWrapper>
     </View>
   );
 }

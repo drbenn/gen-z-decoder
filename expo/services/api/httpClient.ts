@@ -6,7 +6,7 @@ import { UsageResponse } from '@/types/usage.types'
 import { Platform } from 'react-native'
 import APP_CONSTANTS from '@/constants/appConstants'
 
-let API_BASE = __DEV__ ? APP_CONSTANTS.LOCAL_API_IOS : APP_CONSTANTS.PRODUCTION_WEB_API
+let API_BASE = APP_CONSTANTS.IS_USING_LOCAL_DEV_API ? APP_CONSTANTS.LOCAL_API_IOS : APP_CONSTANTS.PRODUCTION_WEB_API
 
 if (__DEV__ && Platform.OS === 'android') {
   API_BASE = APP_CONSTANTS.LOCAL_API_ANDROID

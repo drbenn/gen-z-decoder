@@ -13,7 +13,6 @@ import {
 } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
-import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper'
 
 
 export default function AboutScreen() {
@@ -49,7 +48,6 @@ export default function AboutScreen() {
       paddingTop: insets.top,
       paddingBottom: insets.bottom,
     }}>
-      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
         {/* Header */}
         <View style={{
           flexDirection: 'row',
@@ -207,8 +205,6 @@ export default function AboutScreen() {
             </View>
           </View>
         </ScrollView>
-        
-      </AnimatedTabWrapper>
         
     </SafeAreaView>
   )

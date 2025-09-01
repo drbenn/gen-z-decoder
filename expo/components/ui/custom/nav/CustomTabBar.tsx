@@ -31,7 +31,7 @@ function AnimatedTab({ route, isFocused, onPress, theme }: any) {
       case 'settings':
         return <Ionicons name="settings-outline" size={size} color={iconColor} />
       default:
-        return <Ionicons name="circle" size={size} color={iconColor} />
+        return <Ionicons name="library-outline" size={size} color={iconColor} />
     }
   }
 
@@ -67,7 +67,7 @@ function AnimatedTab({ route, isFocused, onPress, theme }: any) {
         marginTop: 4,
         fontSize: 11,
         color: isFocused ? theme.primary : theme.textMuted,
-        fontWeight: isFocused ? '600' : '340',
+        fontWeight: isFocused ? '600' : '300',
       }}>
         {route.name.charAt(0).toUpperCase() + route.name.slice(1)}
       </Text>

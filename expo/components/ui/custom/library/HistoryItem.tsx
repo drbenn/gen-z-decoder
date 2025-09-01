@@ -105,17 +105,26 @@ export default function HistoryItem({ item, onToggleFavorite, onRemoveItem }: Hi
           color: theme.text,
           marginBottom: 8,
         }}>
-          {item.originalText}
+          {item.mode === TranslationMode.ENGLISH_TO_GENZ ? 'English' : 'Gen Z'} -- {item.originalText}
         </Text>
+
+      <View style={{marginVertical: theme.verticalMargin / 2, paddingLeft: 10}}>
+        <Ionicons 
+          name={'arrow-down'} 
+          size={25}
+          color={theme.primary} 
+        />
+      </View>
+
+
         <Text style={{
           fontSize: 16,
-          color: theme.primary,
+          color: theme.text,
           fontStyle: 'italic',
         }}>
-          {item.translatedText}
+          {item.mode === TranslationMode.ENGLISH_TO_GENZ ? 'Gen Z' : 'English'} -- {item.translatedText}
         </Text>
       </View>
-    
       <Text style={{
         fontSize: 11,
         color: theme.textMuted,

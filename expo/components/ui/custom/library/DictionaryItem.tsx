@@ -81,7 +81,12 @@ export default function DictionaryItem({ item, onToggleFavorite }: DictionaryIte
         }}>
           <Text style={{
             fontSize: 12,
-            color: theme.primary,
+            color: theme.text,
+            borderWidth: 1.5,
+            paddingHorizontal: 6,
+            paddingVertical: 2,
+            borderRadius: theme.borderRadius,
+            borderColor: theme.textMuted,
             fontWeight: '600',
             textTransform: 'uppercase',
           }}>{item.category}</Text>

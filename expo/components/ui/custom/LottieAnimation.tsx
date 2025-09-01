@@ -5,8 +5,9 @@ import LottieView from 'lottie-react-native'
 import loadingCatAnimation from '@/assets/animations/loading_cat.json'
 import manRunningAnimation from '@/assets/animations/man_running.json'
 import welcomeScreenAnimation from '@/assets/animations/welcome_screen.json'
+import jugglingAnimation from '@/assets/animations/juggling.json'
 
-type AnimationType = 'loading_cat' | 'man_running' | 'welcome_screen'
+type AnimationType = 'loading_cat' | 'man_running' | 'welcome_screen' | 'juggling'
 
 interface LottieAnimationProps {
   animation: AnimationType
@@ -22,6 +23,7 @@ const animationMap = {
   loading_cat: loadingCatAnimation,
   man_running: manRunningAnimation,
   welcome_screen: welcomeScreenAnimation,
+  juggling: jugglingAnimation,
 }
 
 export default function LottieAnimation({ 

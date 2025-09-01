@@ -6,7 +6,6 @@ import { router, useFocusEffect } from 'expo-router'
 import React, { useCallback, useState } from 'react'
 import APP_CONSTANTS from '@/constants/appConstants'
 import { Colors } from '@/constants/Colors';
-import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -97,7 +96,6 @@ export default function TranslateResultScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top, paddingBottom: insets.bottom }]}>
-      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
         {/* Original Text (Small) */}
         <View style={styles.originalContainer}>
           <Text style={styles.originalLabel}>Original:</Text>
@@ -174,7 +172,6 @@ export default function TranslateResultScreen() {
         >
           <Text style={styles.translateAgainText}>TRANSLATE AGAIN</Text>
         </Pressable>
-      </AnimatedTabWrapper>
 
     </View>
   )

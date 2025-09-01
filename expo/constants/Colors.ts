@@ -7,7 +7,7 @@ const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
 
-// primary color(primary tint) from uiGradients Ibiza Sunset gradient
+// primary color(primary tint) from uiGradients Ibiza Sunset gradient, Celstial, Megatron
 
 export const Colors = {
   light: {
@@ -15,8 +15,8 @@ export const Colors = {
     textMuted: '#11181C90',
     background: '#f0f0f0ff',
     surface: '#ffffff',
-    primary: '#ee0979',
-    primaryTint: '#ee0979bb',
+    primary: '#f7797d',
+    primaryTint: '#f7797dbb',
     paddingHorizontal: 20,
     verticalMargin: 20,
     tint: tintColorLight,
@@ -24,7 +24,7 @@ export const Colors = {
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
     borderColor: '#ccccd8ff',
-    borderRadius: 4,
+    borderRadius: 10,
     standardBodyHorizontalMargin: 20,
   },
   dark: {
@@ -32,8 +32,8 @@ export const Colors = {
     textMuted: '#ecedee90',
     background: '#151718',
     surface: '#2a2a2a',
-    primary: '#ee0979',
-    primaryTint: '#ee0979bb',
+    primary: '#f7797d',
+    primaryTint: '#f7797dbb',
     paddingHorizontal: 20,
     verticalMargin: 20,
     tint: tintColorDark,

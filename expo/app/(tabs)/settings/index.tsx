@@ -4,7 +4,7 @@ import { Pressable, ScrollView, Share, Text, useColorScheme, View } from 'react-
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
-import AnimatedTabWrapper, { TabAnimationPresets } from '@/components/ui/custom/AnimatedTabWrapper'
+import { useAppState } from '@/state/useAppState'
 
 
 export default function SettingsScreen() {
@@ -12,8 +12,15 @@ export default function SettingsScreen() {
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
   const insets = useSafeAreaInsets()
 
+  const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
+  const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio) 
+
   const handleAbout = () => {
     router.push('/settings/about')
+  }
+
+  const handleThanks = () => {
+    router.push('/settings/thanks')
   }
 
   const handleShareAppWithFriends = async () => {
@@ -29,8 +36,7 @@ export default function SettingsScreen() {
   }
 
   const handleToggleAutoPlay = () => {
-    // You'll handle this function
-    console.log('Toggle auto play speech')
+    setAutoPlayAudio(!autoPlayAudio)
   }
 
   return (
@@ -40,7 +46,6 @@ export default function SettingsScreen() {
         { paddingTop: insets.top, paddingBottom: insets.bottom }
       ]}
     >
-      <AnimatedTabWrapper {...TabAnimationPresets.veniceBeachFade}>
         <View style={{ paddingTop: theme.verticalMargin }}>
         
           {/* About */}
@@ -74,6 +79,40 @@ export default function SettingsScreen() {
                 fontSize: 14,
                 color: theme.textMuted,
               }}>App info and version details</Text>
+            </View>
+          </Pressable>
+
+          {/* Thanks */}
+          <Pressable 
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingHorizontal: theme.paddingHorizontal,
+              paddingVertical: 16,
+              minHeight: 70,
+            }} 
+            onPress={handleThanks}
+          >
+            <View style={{
+              width: 40,
+              height: 40,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginRight: 16,
+            }}>
+              <Ionicons name="thumbs-up-outline" size={24} color={theme.textMuted} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 17,
+                fontWeight: '400',
+                marginBottom: 2,
+                color: theme.text,
+              }}>Thanks</Text>
+              <Text style={{
+                fontSize: 14,
+                color: theme.textMuted,
+              }}>Shout outs for contributors</Text>
             </View>
           </Pressable>
 
@@ -112,14 +151,14 @@ export default function SettingsScreen() {
           </Pressable>
 
           {/* Auto Play Speech Toggle */}
-          <Pressable 
+          <Pressable
             style={{
               flexDirection: 'row',
               alignItems: 'center',
               paddingHorizontal: theme.paddingHorizontal,
               paddingVertical: 16,
               minHeight: 70,
-            }} 
+            }}
             onPress={handleToggleAutoPlay}
           >
             <View style={{
@@ -143,9 +182,29 @@ export default function SettingsScreen() {
                 color: theme.textMuted,
               }}>Automatically read translations aloud</Text>
             </View>
+            
+            {/* Status Box */}
+            <View style={{
+              paddingHorizontal: 12,
+              paddingVertical: 6,
+              borderRadius: theme.borderRadius,
+              borderWidth: 1,
+              width: 50,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderColor: theme.primary,
+              backgroundColor: autoPlayAudio ? theme.primary : 'transparent',
+            }}>
+              <Text style={{
+                fontSize: 12,
+                fontWeight: '500',
+                color: autoPlayAudio ? '#FFFFFF' : theme.primary,
+              }}>
+                {autoPlayAudio ? 'ON' : 'OFF'}
+              </Text>
+            </View>
           </Pressable>
         </View>
-      </AnimatedTabWrapper>
     </ScrollView>
   )
 }
