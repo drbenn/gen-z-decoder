@@ -8,7 +8,7 @@ type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 interface TypewriterResultProps {
   loadState: TranslateLoadState
   translatedText?: string
-  errorMessage?: string
+  errorMessage?: string | null
 }
 
 export default function TypewriterResult({ loadState, translatedText, errorMessage }: TypewriterResultProps) {

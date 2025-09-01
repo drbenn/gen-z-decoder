@@ -24,6 +24,7 @@ export default function TranslateResultScreen() {
   const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
   const ttsEnabled = useAppState((state) => state.ttsEnabled)
   const translateError = useAppState((state) => state.translateError)
+  const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio) 
 
   // Listen for when screen comes into focus (after navigation or ad dismissal)
   useFocusEffect(
@@ -80,16 +81,24 @@ export default function TranslateResultScreen() {
     if (isSpeaking) return
 
     const availableVoices = await Speech.getAvailableVoicesAsync()
-    const englishEnhancedVoices = availableVoices.filter((voice: any) => voice.language.includes('en-') && voice.quality === 'Enhanced')
-      .map((voice: any) => voice.identifier)
-    logger.log('englishEnhancedVoices: ', englishEnhancedVoices)
+    // const englishEnhancedVoices = availableVoices.filter((voice: any) => voice.language.includes('en-') && voice.quality === 'Enhanced')
+    //   .map((voice: any) => voice.identifier)
+    // logger.log('englishEnhancedVoices: ', englishEnhancedVoices)
     
     Speech.speak(currentTranslation?.translatedText ? currentTranslation.translatedText : 'Thats bitch made bruuh', {
       language: 'en-US',
       pitch: 1.4,
       rate: 0.75,
-      voice: 'en-gb-x-rjs-local'
+      // voice: 'en-gb-x-rjs-local'   // if device doesnt have specific voice should fall back to its default, however, better not to rely on fallback and use default voice.
     })
+  }
+
+  const stopTTS = async () => {
+    await Speech.stop()
+  }
+
+  const handleToggleAutoPlay = () => {
+    setAutoPlayAudio(!autoPlayAudio)
   }
 
   return (
@@ -109,7 +118,7 @@ export default function TranslateResultScreen() {
           position: 'absolute',
           top: 0, 
           left: 0, 
-          right: 0, 
+          right: 0,
           bottom: 0,
           zIndex: -1
         }}
@@ -187,10 +196,52 @@ export default function TranslateResultScreen() {
           }}>Play Audio</Text>
         </Pressable>
 
+
+        {/* TTS Button */}
+        <Pressable 
+          style={({ pressed }) => ({
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: pressed ? theme.primaryTint : theme.surface,
+            borderWidth: 1,
+            borderColor: !ttsEnabled ? theme.borderColor : theme.primary,
+            borderRadius: theme.borderRadius,
+            paddingVertical: 12,
+            paddingHorizontal: 16,
+            opacity: !ttsEnabled ? 0.5 : 1,
+          })}
+          onPress={stopTTS}
+          disabled={!ttsEnabled || isTranslating}
+        >
+          <Ionicons 
+            name="volume-off-outline" 
+            size={20} 
+            color={!ttsEnabled ? theme.textMuted : theme.primary}
+          />
+          <Text style={{
+            fontSize: 14,
+            fontWeight: '500',
+            color: !ttsEnabled ? theme.textMuted : theme.text,
+            marginLeft: 8,
+          }}>Stop Audio</Text>
+        </Pressable>
+      </View>
+
+      {/* Action Buttons Row 2 */}
+      <View style={{
+        flexDirection: 'row',
+        marginBottom: theme.verticalMargin,
+        gap: 12,
+      }}>
         {/* Share Button */}
         {currentTranslation?.translatedText && (
           <Pressable 
             style={({ pressed }) => ({
+              paddingVertical: 14,
+              paddingHorizontal: 20,
+              marginBottom: theme.verticalMargin,
               flex: 1,
               flexDirection: 'row',
               alignItems: 'center',
@@ -199,8 +250,6 @@ export default function TranslateResultScreen() {
               borderWidth: 1,
               borderColor: theme.borderColor,
               borderRadius: theme.borderRadius,
-              paddingVertical: 12,
-              paddingHorizontal: 16,
             })}
             onPress={handleShare}
             disabled={isTranslating}
@@ -214,6 +263,46 @@ export default function TranslateResultScreen() {
             }}>Share</Text>
           </Pressable>
         )}
+
+          {/* Auto Play Speech Toggle */}
+          <Pressable
+            style={({ pressed }) => ({
+              paddingHorizontal: 20,
+              marginBottom: theme.verticalMargin,
+              flex: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: autoPlayAudio ? theme.primary : theme.surface,
+              borderWidth: 1,
+              borderColor: autoPlayAudio ? theme.borderColor : theme.borderColor,
+              borderRadius: theme.borderRadius,
+            })}
+            onPress={handleToggleAutoPlay}
+          >
+            <View style={{
+              flex: 0,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginRight: 0,
+            }}>
+              <Ionicons name="volume-high-outline" size={20} color={autoPlayAudio ? theme.background : theme.text} />
+            </View>
+            <View>
+              <Text style={{
+                fontSize: 14,
+                fontWeight: '500',
+                color: autoPlayAudio ? theme.background : theme.text,
+                flex: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginLeft: 6,
+                marginTop: 14
+              }}>Auto Play</Text>
+            </View>
+          </Pressable>
       </View>
 
       {/* Translate Again Button */}
@@ -234,6 +323,7 @@ export default function TranslateResultScreen() {
           letterSpacing: 1,
         }}>TRANSLATE AGAIN</Text>
       </Pressable>
+
     </View>
   )
 }

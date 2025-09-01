@@ -309,7 +309,7 @@ export default function TranslateInputScreen() {
         <View style={{
           flexDirection: 'row',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         }}>
           <View  style={{
             flexDirection: 'row',
@@ -319,7 +319,7 @@ export default function TranslateInputScreen() {
             <Text style={{
               color: theme.text,
               fontSize: 16,
-            }}>Auto-play audio:</Text>
+            }}>Auto-play speech:</Text>
             <Pressable 
               style={({ pressed }) => ({
                 marginLeft: 10,
