@@ -1,4 +1,4 @@
-import { ScrollView, Text, Pressable, View, Share, useColorScheme, ImageBackground } from 'react-native'
+import { Text, Pressable, View, Share, useColorScheme, ImageBackground } from 'react-native'
 import * as Speech from 'expo-speech'
 import { useAppState } from '@/state/useAppState'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -7,6 +7,7 @@ import React, { useCallback, useState } from 'react'
 import APP_CONSTANTS from '@/constants/appConstants'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
+import TypewriterResult from '@/components/ui/custom/translate/TypewriterResult'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -23,8 +24,6 @@ export default function TranslateResultScreen() {
   const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
   const ttsEnabled = useAppState((state) => state.ttsEnabled)
   const translateError = useAppState((state) => state.translateError)
-
-  const clearAllHistory = useAppState((state) => state.clearAllHistory)
 
   // Listen for when screen comes into focus (after navigation or ad dismissal)
   useFocusEffect(
@@ -71,7 +70,7 @@ export default function TranslateResultScreen() {
     if (autoPlayAudio) {
       setTimeout(() => {
         handleTTS()
-      }, 1200)
+      }, 2000) // Delay to let typewriter effect start
     }
   }
 
@@ -144,108 +143,12 @@ export default function TranslateResultScreen() {
         </Text>
       </View>
 
-      {/* Main Translation Result */}
-      <View style={{
-        flex: 1,
-        backgroundColor: theme.surface,
-        borderRadius: theme.borderRadius,
-        borderWidth: 1,
-        borderColor: theme.borderColor,
-        marginBottom: theme.verticalMargin,
-        overflow: 'hidden',
-      }}>
-        <View style={{
-          backgroundColor: theme.primary,
-          paddingVertical: 12,
-          paddingHorizontal: 15,
-        }}>
-          <Text style={{
-            fontSize: 14,
-            color: '#fff',
-            fontWeight: '600',
-            textTransform: 'uppercase',
-            letterSpacing: 0.5,
-          }}>Translation Result</Text>
-        </View>
-
-        {translateLoadState === 'loading' && (
-          <View style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: 20,
-          }}>
-            <Text style={{
-              fontSize: 18,
-              color: theme.text,
-              fontWeight: '500',
-            }}>Translating...</Text>
-            <Text style={{
-              fontSize: 14,
-              color: theme.textMuted,
-              marginTop: 8,
-            }}>Working some magic</Text>
-          </View>
-        )}
-
-        {translateLoadState === 'error' && (
-          <View style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: 20,
-          }}>
-            <Ionicons name="warning-outline" size={48} color={theme.error} />
-            <Text style={{
-              fontSize: 18,
-              fontWeight: '600',
-              color: theme.error,
-              marginTop: 16,
-              marginBottom: 8,
-              textAlign: 'center',
-            }}>Translation Failed</Text>
-            <Text style={{
-              fontSize: 14,
-              color: theme.textMuted,
-              textAlign: 'center',
-              lineHeight: 20,
-            }}>{translateError}</Text>
-          </View>
-        )}
-
-        {translateLoadState === 'success' && (
-          <ScrollView style={{
-            flex: 1,
-            padding: 15,
-          }}>
-            <Text style={{
-              fontSize: 20,
-              color: theme.text,
-              lineHeight: 28,
-              fontWeight: '400',
-            }}>
-              {currentTranslation?.translatedText}
-            </Text>
-          </ScrollView>
-        )}
-
-        {translateLoadState === 'empty' && (
-          <View style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: 20,
-          }}>
-            <Ionicons name="document-outline" size={48} color={theme.textMuted} />
-            <Text style={{
-              fontSize: 16,
-              color: theme.textMuted,
-              marginTop: 16,
-              fontStyle: 'italic',
-            }}>No translation available</Text>
-          </View>
-        )}
-      </View>
+      {/* Typewriter Translation Result Component */}
+      <TypewriterResult 
+        loadState={translateLoadState}
+        translatedText={currentTranslation?.translatedText}
+        errorMessage={translateError}
+      />
 
       {/* Action Buttons Row */}
       <View style={{
@@ -312,16 +215,6 @@ export default function TranslateResultScreen() {
           </Pressable>
         )}
       </View>
-
-      {/* Debug Button - Remove in production */}
-      {/* <Pressable onPress={clearAllHistory}>
-        <Text style={{
-          fontSize: 12,
-          color: theme.textMuted,
-          textAlign: 'center',
-          marginBottom: theme.verticalMargin,
-        }}>Clear History</Text>
-      </Pressable> */}
 
       {/* Translate Again Button */}
       <Pressable 
