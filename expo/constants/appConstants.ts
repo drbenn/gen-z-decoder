@@ -23,6 +23,10 @@ const APP_CONSTANTS = {
   LOCAL_API_IOS: 'http://localhost:3000/v1',
   LOCAL_API_ANDROID: 'http://10.0.2.2:3000/v1',
   PRODUCTION_WEB_API: 'https://genz.sparkdart.com/v1',
+
+  // Premium Member
+  FREE_MEMBER_DAILY_TRANSLATION_LIMIT: 20,
+  PREMIUM_MEMBER_DAILY_TRANSLATION_LIMIT: 200,
   
   // Developer
   DEVELOPER_CO: 'SparkDart',

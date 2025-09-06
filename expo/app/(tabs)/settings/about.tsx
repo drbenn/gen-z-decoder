@@ -20,6 +20,22 @@ export default function AboutScreen() {
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
   const insets = useSafeAreaInsets()
+  const setDebugModeUnlocked = useAppState((state) => state.setDebugModeUnlocked)
+  
+  // 🎮 EASTER EGG: Version tap counter
+  const [tapCount, setTapCount] = React.useState(0)
+
+  const handleVersionTap = () => {
+    const newCount = tapCount + 1
+    setTapCount(newCount)
+    
+    if (newCount === 14) {
+      setDebugModeUnlocked()
+      setTapCount(0) // Reset counter
+      // Optional: Show some feedback
+      console.log('🎮 DEBUG MODE UNLOCKED!')
+    }
+  }
 
   const handleEmailPress = () => {
     Linking.openURL(`mailto:${APP_CONSTANTS.DEVELOPER_EMAIL}`)

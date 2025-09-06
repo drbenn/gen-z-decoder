@@ -58,6 +58,9 @@ export class UsageService {
     isPremium: boolean
   }> {
     const today = new Date().toISOString().split('T')[0]
+
+    const premiumLimit: number = Number(this.configService.get<string>('PREMIUM_LIMIT'))
+    const freeLimit: number = Number(this.configService.get<string>('FREE_LIMIT'))
     
     const result = await this.db.query(`
       SELECT 
@@ -72,17 +75,16 @@ export class UsageService {
       // User doesn't exist yet
       return {
         translationsUsedToday: 0,
-        dailyLimit: 10, // Free tier
+        dailyLimit: freeLimit, // Free tier
         remainingTranslations: 10,
         isPremium: false
       }
     }
 
-    const premiumLimit: number = Number(this.configService.get<string>('PREMIUM_LIMIT'))
-    const freeLimit: number = Number(this.configService.get<string>('FREE_LIMIT'))
+
     
     const isPremium = result.rows[0].premium_status
-    const dailyLimit = isPremium ?  premiumLimit || 200 : freeLimit || 10
+    const dailyLimit = isPremium ?  premiumLimit || 200 : freeLimit || 20
     const used = result.rows[0].translations_used_today
     
     return {
