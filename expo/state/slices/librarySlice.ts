@@ -4,11 +4,14 @@ import { StateCreator } from 'zustand'
 export interface LibrarySlice {
   dictionaryTerms: DictionaryEntry[]
   isFavoritesChipActive: boolean
+  librarySearchTerm: string
   
   // Actions
   setDictionaryTerms: (enabled: DictionaryEntry[]) => void
   setDictionaryFavorite: (id: string, favorite: boolean) => void
   setIsFavoritesChipActive: (active: boolean) => void
+  setLibrarySearchTerm: (term: string) => void
+  clearLibrarySearchTerm: () => void
 }
 
 export const librarySlice: StateCreator<
@@ -20,6 +23,7 @@ export const librarySlice: StateCreator<
   // Initial state
   dictionaryTerms: [],
   isFavoritesChipActive: false,
+  librarySearchTerm: '',
 
   // Actions
   setDictionaryTerms: (dictionaryTerms: DictionaryEntry[]) => {
@@ -36,5 +40,10 @@ export const librarySlice: StateCreator<
   setIsFavoritesChipActive: (active: boolean) => {
     set({ isFavoritesChipActive: active })
   },
-
+  setLibrarySearchTerm: (term: string) => {
+    set({librarySearchTerm: term})
+  },
+  clearLibrarySearchTerm: () => {
+    set({librarySearchTerm: ''})
+  }
 })

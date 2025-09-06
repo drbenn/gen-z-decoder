@@ -21,7 +21,7 @@ export default function LibraryScreen() {
   }
 
   return (
-    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom}]}>
+    <View style={[styles.container, {paddingTop: insets.top / 10, paddingBottom: insets.bottom}]}>
         {/* Sick svg-ish pattern background */}
         <ImageBackground 
           source={colorScheme === 'dark' 
@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
+    marginBottom: 10,
   },
   contentContainer: {
     flex: 1,

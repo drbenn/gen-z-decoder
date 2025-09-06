@@ -12,15 +12,27 @@ export default function HistoryContent() {
   const translationHistory = useAppState((state) => state.translationHistory)
   const setHistoryFavorite = useAppState((state) => state.setHistoryFavorite)
   const removeOneFromHistory = useAppState((state) => state.removeOneFromHistory)
+  const librarySearchTerm = useAppState((state) => state.librarySearchTerm)
+
   // top nav chip used in librarySlice for filtering of both dictionary and history
   const isFavoritesChipActive = useAppState((state) => state.isFavoritesChipActive)
   
   // useMemo prevents re-filtering on every render (only when dependencies change)
   const filteredHistoryItems = useMemo(() => {
-    return isFavoritesChipActive
-      ? translationHistory.filter((term: TranslationHistoryItem) => term.isFavorite)
+    let filtered = isFavoritesChipActive
+      ? translationHistory.filter((item: TranslationHistoryItem) => item.isFavorite)
       : translationHistory
-  }, [isFavoritesChipActive, translationHistory])
+
+    // Add search filter if search term exists and is longer than 1 character
+    if (librarySearchTerm && librarySearchTerm.length > 1) {
+      filtered = filtered.filter((item: TranslationHistoryItem) => 
+        item.originalText.toLowerCase().includes(librarySearchTerm.toLowerCase()) ||
+        item.translatedText.toLowerCase().includes(librarySearchTerm.toLowerCase())
+      )
+    }
+
+    return filtered
+  }, [isFavoritesChipActive, translationHistory, librarySearchTerm])
 
   const renderHistoryItem = ({ item }: { item: TranslationHistoryItem }) => (
     <HistoryItem
@@ -31,7 +43,7 @@ export default function HistoryContent() {
   )
 
   // empty state message for favorites
-  if (!translationHistory || translationHistory.length === 0) {
+  if (!filteredHistoryItems  || filteredHistoryItems .length === 0) {
     const emptyText = isFavoritesChipActive ? 'No translation history yet' : 'Translation history not loaded'
     const emptySubtext = isFavoritesChipActive ? 'Your translations will appear here' : 'Translation history will appear here'
 

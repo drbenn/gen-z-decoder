@@ -11,15 +11,27 @@ export default function DictionaryContent() {
   
   const dictionaryTerms = useAppState((state) => state.dictionaryTerms)
   const setDictionaryFavorite = useAppState((state) => state.setDictionaryFavorite)
+
+  const librarySearchTerm = useAppState((state) => state.librarySearchTerm)
+
   // top nav chip used in librarySlice for filtering of both dictionary and history
   const isFavoritesChipActive = useAppState((state) => state.isFavoritesChipActive)
   
   // useMemo prevents re-filtering on every render (only when dependencies change)
   const filteredTerms = useMemo(() => {
-    return isFavoritesChipActive
+    let filtered = isFavoritesChipActive
       ? dictionaryTerms.filter((term: DictionaryEntry) => term.is_favorite)
       : dictionaryTerms
-  }, [isFavoritesChipActive, dictionaryTerms])
+
+    // Add search filter if search term exists and is longer than 1 character
+    if (librarySearchTerm && librarySearchTerm.length > 1) {
+      filtered = filtered.filter((term: DictionaryEntry) => 
+        term.term.toLowerCase().includes(librarySearchTerm.toLowerCase())
+      )
+    }
+
+    return filtered
+  }, [isFavoritesChipActive, dictionaryTerms, librarySearchTerm])
 
   const renderDictionaryItem = ({ item }: { item: DictionaryEntry }) => (
     <DictionaryItem

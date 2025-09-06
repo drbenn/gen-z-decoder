@@ -286,7 +286,7 @@ export default function TranslateInputScreen() {
           justifyContent: 'center',
           alignItems: 'center'
         }}>
-          {mode === TranslationMode.ENGLISH_TO_GENZ ? (
+          {mode === TranslationMode.GENZ_TO_ENGLISH ? (
             <Animated.View
               key="welcome"
               entering={FadeIn.duration(300)}
