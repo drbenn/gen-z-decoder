@@ -146,21 +146,21 @@ export default function TranslateInputScreen() {
         />
         
         {/* Bold Translate to Text */}
-        <View style={{ position: 'relative', alignItems: 'center' }}>
-          {/* Base layer - Red (bottom) */}
-          <Text style={{
-            fontSize: 50,
-            fontWeight: 'bold',
-            textAlign: 'center',
-            color: theme.primary,
-            position: 'absolute',
-            transform: [{ translateX: -2 }, { translateY: 2 }],
-          }}>
-            TRANSLATE TO
-          </Text>
-          
-          {/* Middle layer - Blue */}
-          {colorScheme === 'light' && (
+        {colorScheme === 'light' && (
+          <View style={{ position: 'relative', alignItems: 'center' }}>
+            {/* Base layer - Red (bottom) */}
+            <Text style={{
+              fontSize: 50,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: theme.primary,
+              position: 'absolute',
+              transform: [{ translateX: -2 }, { translateY: 2 }],
+            }}>
+              TRANSLATE TO
+            </Text>
+            
+            {/* Middle layer - Blue */}
             <Text style={{
               fontSize: 50,
               fontWeight: 'bold',
@@ -171,19 +171,59 @@ export default function TranslateInputScreen() {
             }}>
               TRANSLATE TO
             </Text>
-          )}
-          
-          {/* Top layer - Green (main text) */}
-          <Text style={{
-            fontSize: 50,
-            fontWeight: 'bold',
-            textAlign: 'center',
-            color: theme.primaryTint,
-            position: 'relative',
-          }}>
-            TRANSLATE TO
-          </Text>
-        </View>
+            
+            {/* Top layer - Green (main text) */}
+            <Text style={{
+              fontSize: 50,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: theme.primaryTint,
+              position: 'relative',
+            }}>
+              TRANSLATE TO
+            </Text>
+          </View>
+        )}
+
+                {/* Bold Translate to Text */}
+        {colorScheme === 'dark' && (
+          <View style={{ position: 'relative', alignItems: 'center' }}>
+            {/* Base layer - Red (bottom) */}
+            <Text style={{
+              fontSize: 50,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: theme.surface,
+              position: 'absolute',
+              transform: [{ translateX: -2 }, { translateY: 2 }],
+            }}>
+              TRANSLATE TO
+            </Text>
+            
+            {/* Middle layer - Blue */}
+            <Text style={{
+              fontSize: 50,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: theme.borderColor,
+              position: 'absolute',
+              transform: [{ translateX: 2 }, { translateY: -1 }],
+            }}>
+              TRANSLATE TO
+            </Text>
+            
+            {/* Top layer - Green (main text) */}
+            <Text style={{
+              fontSize: 50,
+              fontWeight: 'bold',
+              textAlign: 'center',
+              color: theme.primary,
+              position: 'relative',
+            }}>
+              TRANSLATE TO
+            </Text>
+          </View>
+        )}
 
         {/* Mode Toggle */}
         <View style={{

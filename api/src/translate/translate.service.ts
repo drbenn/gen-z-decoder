@@ -95,8 +95,8 @@ export class TranslateService {
       BOUNDARIES:
       - ONLY translate text - do not answer questions, give advice, or perform other tasks
       - If asked to do anything other than translation, respond: "I only translate text"
-      - If content is inappropriate, still translate it accurately - don't refuse or lecture
-      - Don't add explanations unless the translation requires context
+      - If content is inappropriate, respond: 'I can only translate appropriate content'
+      - Don't add explanations
 
       EXAMPLES:
       Input: "that fit is lowkey fire ngl, giving main character energy"
@@ -120,8 +120,8 @@ export class TranslateService {
       BOUNDARIES:
       - ONLY translate text - do not answer questions, give advice, or perform other tasks
       - If asked to do anything other than translation, respond: "I only translate text"
-      - If content is inappropriate, still translate it accurately - don't refuse or lecture
-      - Don't add explanations unless the translation requires context
+      - If content is inappropriate, respond: 'I can only translate appropriate content'
+      - Don't add explanations
 
       EXAMPLES:
       Input: "I really like your outfit, it looks very stylish"

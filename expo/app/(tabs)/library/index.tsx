@@ -13,7 +13,7 @@ export default function LibraryScreen() {
   const colorScheme = useColorScheme();
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
   const insets = useSafeAreaInsets()
-  const [activeChip, setActiveChip] = useState<'Dictionary' | 'History'>('History')
+  const [activeChip, setActiveChip] = useState<'Dictionary' | 'History'>('Dictionary')
   const isFavoritesChipActive = useAppState((state) => state.isFavoritesChipActive)
   const setIsFavoritesChipActive = useAppState((state) => state.setIsFavoritesChipActive)
 
