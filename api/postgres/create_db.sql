@@ -17,6 +17,7 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT NOW(),
     last_active TIMESTAMP DEFAULT NOW(),
     premium_status BOOLEAN DEFAULT FALSE,
+    premium_upgraded_at TIMESTAMP,
     total_translations INTEGER DEFAULT 0
 );
 
@@ -46,22 +47,49 @@ CREATE INDEX idx_daily_usage_date ON daily_usage(date);
 CREATE INDEX idx_daily_usage_device_date ON daily_usage(device_id, date);
 
 -- ============================================
--- PURCHASES TABLE
+-- PURCHASES TABLE (Cross-Platform IAP Support)
 -- ============================================
--- Google Play IAP tracking (cross-device premium)
+-- Supports both Google Play and Apple App Store purchases
 CREATE TABLE purchases (
     id UUID PRIMARY KEY,
-    google_order_id TEXT UNIQUE NOT NULL,
+    platform VARCHAR(20) NOT NULL CHECK (platform IN ('google_play', 'app_store')),
+    
+    -- Google Play specific fields
+    google_order_id TEXT,
+    purchase_token VARCHAR(512),
+    
+    -- Apple App Store specific fields  
+    transaction_id VARCHAR(255),
+    original_transaction_id VARCHAR(255),
+    app_store_receipt_data TEXT,
+    
+    -- Common fields
     product_id VARCHAR(100) NOT NULL,
     purchase_date TIMESTAMP DEFAULT NOW(),
     verified BOOLEAN DEFAULT FALSE,
     device_id VARCHAR(255), -- Optional - links to device that made purchase
     created_at TIMESTAMP DEFAULT NOW(),
-    CONSTRAINT fk_purchases_device FOREIGN KEY (device_id) REFERENCES users(device_id) ON DELETE SET NULL
+    
+    -- Constraints
+    CONSTRAINT fk_purchases_device FOREIGN KEY (device_id) REFERENCES users(device_id) ON DELETE SET NULL,
+    
+    -- Platform-specific unique constraints
+    CONSTRAINT unique_google_order UNIQUE(google_order_id) DEFERRABLE,
+    CONSTRAINT unique_purchase_token UNIQUE(purchase_token) DEFERRABLE,
+    CONSTRAINT unique_transaction_id UNIQUE(transaction_id) DEFERRABLE,
+    
+    -- Platform validation constraints
+    CONSTRAINT google_play_required_fields 
+        CHECK (platform != 'google_play' OR (google_order_id IS NOT NULL AND purchase_token IS NOT NULL)),
+    CONSTRAINT app_store_required_fields 
+        CHECK (platform != 'app_store' OR (transaction_id IS NOT NULL AND app_store_receipt_data IS NOT NULL))
 );
 
 -- Indexes for performance  
+CREATE INDEX idx_purchases_platform ON purchases(platform);
 CREATE INDEX idx_purchases_google_order_id ON purchases(google_order_id);
+CREATE INDEX idx_purchases_purchase_token ON purchases(purchase_token);
+CREATE INDEX idx_purchases_transaction_id ON purchases(transaction_id);
 CREATE INDEX idx_purchases_verified ON purchases(verified);
 CREATE INDEX idx_purchases_device_id ON purchases(device_id);
 
@@ -108,20 +136,18 @@ CREATE INDEX idx_analytics_device_id ON analytics_events(device_id);
 -- VALUES ('1.0.0', CURRENT_DATE, 'https://api.sparkdart.com/dictionary/v1.json', true);
 
 -- ============================================
--- USEFUL QUERIES FOR DEVELOPMENT
+-- CROSS-PLATFORM PURCHASE QUERIES
 -- ============================================
 
--- Check table sizes:
--- SELECT schemaname,tablename,attname,n_distinct,correlation FROM pg_stats;
+-- Check premium status across platforms:
+-- SELECT DISTINCT device_id FROM purchases WHERE verified = true;
 
--- View daily usage for a device:
--- SELECT * FROM daily_usage WHERE device_id = 'your-device-id' ORDER BY date DESC;
+-- Google Play purchases:
+-- SELECT * FROM purchases WHERE platform = 'google_play' AND verified = true;
 
--- Count total active users:
--- SELECT COUNT(*) FROM users WHERE last_active >= NOW() - INTERVAL '7 days';
+-- Apple App Store purchases:
+-- SELECT * FROM purchases WHERE platform = 'app_store' AND verified = true;
 
--- Check premium users:
--- SELECT COUNT(*) FROM users WHERE premium_status = true;
-
--- View dictionary version:
--- SELECT * FROM dictionary_versions WHERE is_active = true;
+-- Cross-device premium detection (same purchase used on multiple devices):
+-- SELECT purchase_token, COUNT(DISTINCT device_id) as device_count 
+-- FROM purchases WHERE platform = 'google_play' GROUP BY purchase_token HAVING COUNT(DISTINCT device_id) > 1;

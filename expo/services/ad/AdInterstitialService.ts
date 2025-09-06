@@ -18,6 +18,10 @@ class AdInterstitialService {
   private interstitial: any = null;
   private isLoaded = false;
   private isInitialized = false;
+  private pendingShowPromise: {
+    resolve: (success: boolean) => void;
+    reject: (error: Error) => void;
+  } | null = null;
 
   static getInstance(): AdInterstitialService {
     if (!AdInterstitialService.instance) {
@@ -29,19 +33,15 @@ class AdInterstitialService {
   // 🚀 Initialize the ad service
   async initialize(): Promise<boolean> {
     if (this.isInitialized) {
-      // // logger.log('🏆 Ad service already initialized!');
       return true;
     }
 
     if (!InterstitialAd || !AdEventType) {
-      // // logger.log('🚨 AdMob not available - running in development mode');
       this.isInitialized = true;
       return false;
     }
 
     try {
-      // // logger.log('🔥 Initializing UNLIMITED interstitial service...');
-      
       this.interstitial = InterstitialAd.createForAdRequest(AD_UNIT_IDS.interstitial, {
         requestNonPersonalizedAdsOnly: true,
       });
@@ -50,7 +50,6 @@ class AdInterstitialService {
       await this.loadAd();
       
       this.isInitialized = true;
-      // // logger.log('🏆 UNLIMITED interstitial service initialized!');
       return true;
     } catch (error) {
       logger.error('🚨 Failed to initialize interstitial service:', error);
@@ -65,12 +64,16 @@ class AdInterstitialService {
 
     this.interstitial.addAdEventListener(AdEventType.LOADED, () => {
       this.isLoaded = true;
-      // // logger.log('🏆 UNLIMITED interstitial loaded and ready!');
     });
 
     this.interstitial.addAdEventListener(AdEventType.ERROR, (error: any) => {
       this.isLoaded = false;
-      // // logger.error('🚨 Interstitial failed to load:', error);
+      
+      // If there's a pending show promise, reject it
+      if (this.pendingShowPromise) {
+        this.pendingShowPromise.reject(new Error(`Ad failed to load: ${error}`));
+        this.pendingShowPromise = null;
+      }
       
       // Retry loading after a delay
       setTimeout(() => {
@@ -79,18 +82,26 @@ class AdInterstitialService {
     });
 
     this.interstitial.addAdEventListener(AdEventType.OPENED, () => {
-      // // logger.log('👀 UNLIMITED interstitial ad opened!');
+      logger.log('💀 Interstitial ad opened!');
     });
 
+    // 🔑 CRITICAL: This is where we resolve the promise when user dismisses ad
     this.interstitial.addAdEventListener(AdEventType.CLOSED, () => {
-      // // logger.log('🔙 UNLIMITED interstitial closed - loading next ad!');
+      logger.log('🔙 Interstitial closed - user dismissed ad!');
+      
+      // Resolve the pending promise with success
+      if (this.pendingShowPromise) {
+        this.pendingShowPromise.resolve(true);
+        this.pendingShowPromise = null;
+      }
+      
       this.isLoaded = false;
-      // Load next ad for future use - NO LIMITS!
+      // Load next ad for future use
       this.loadAd();
     });
 
     this.interstitial.addAdEventListener(AdEventType.CLICKED, () => {
-      // // logger.log('👆 UNLIMITED interstitial clicked! CHA-CHING!');
+      logger.log('💆 Interstitial clicked! CHA-CHING!');
     });
   }
 
@@ -99,52 +110,63 @@ class AdInterstitialService {
     if (!this.interstitial || this.isLoaded) return;
 
     try {
-      // // logger.log('🔄 Loading UNLIMITED interstitial ad...');
       await this.interstitial.load();
     } catch (error) {
       logger.error('🚨 Error loading interstitial:', error);
     }
   }
 
-  // 🎯 Show interstitial ad (MAIN PUBLIC METHOD - UNLIMITED MODE!)
+  // 🎯 Show interstitial ad (MAIN PUBLIC METHOD - PROPERLY AWAITS USER DISMISSAL!)
   async showAd(): Promise<boolean> {
-    // // logger.log('🎯 Attempting to show UNLIMITED interstitial...');
-
     // Check if service is ready
     if (!this.isInitialized) {
-      // // logger.log('🚨 Service not initialized');
+      logger.log('🚨 Service not initialized');
       return false;
     }
 
     // Check if ad is loaded
     if (!this.isLoaded) {
-      // // logger.log('🚨 Ad not loaded yet');
+      logger.log('🚨 Ad not loaded yet');
+      return false;
+    }
+
+    // Prevent multiple simultaneous show attempts
+    if (this.pendingShowPromise) {
+      logger.log('🚨 Ad already being shown');
       return false;
     }
 
     // Development mode simulation
     if (!this.interstitial) {
-      // // logger.log('🔥 [DEV MODE] Simulating UNLIMITED interstitial');
+      logger.log('🔥 [DEV MODE] Simulating interstitial');
       
       // Simulate a 2-second ad in development
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // // logger.log('🏆 [DEV MODE] UNLIMITED simulated ad completed');
+      logger.log('🏆 [DEV MODE] Simulated ad completed');
       return true;
     }
 
-    // Show the real ad - NO LIMITS!
-    try {
-      // // logger.log('🏆 Showing UNLIMITED interstitial ad now!');
-      
-      await this.interstitial.show();
-      this.isLoaded = false; // Mark as used
-      
-      return true;
-    } catch (error) {
-      logger.error('🚨 Failed to show interstitial ad:', error);
-      return false;
-    }
+    // Show the real ad and return a promise that resolves when user dismisses it
+    return new Promise((resolve, reject) => {
+      // Store the promise resolvers
+      this.pendingShowPromise = { resolve, reject };
+
+      try {
+        logger.log('🏆 Showing interstitial ad now!');
+        
+        // This starts the ad display but doesn't wait for completion
+        this.interstitial.show();
+        this.isLoaded = false; // Mark as used immediately
+        
+        // The promise will be resolved in the CLOSED event listener
+        
+      } catch (error) {
+        logger.error('🚨 Failed to show interstitial ad:', error);
+        this.pendingShowPromise = null;
+        reject(error);
+      }
+    });
   }
 
   // 🔍 Check if ad is ready to show
@@ -154,7 +176,6 @@ class AdInterstitialService {
 
   // 🔄 Force reload ad (for debugging)
   async forceReload(): Promise<void> {
-    // // logger.log('🔄 Force reloading UNLIMITED interstitial...');
     this.isLoaded = false;
     await this.loadAd();
   }
@@ -165,12 +186,18 @@ class AdInterstitialService {
       initialized: this.isInitialized,
       loaded: this.isLoaded,
       ready: this.isAdReady(),
-      mode: 'UNLIMITED_REVENUE'
+      hasPendingShow: !!this.pendingShowPromise
     };
   }
 
   // 🧹 Cleanup
   destroy(): void {
+    // Reject any pending promise
+    if (this.pendingShowPromise) {
+      this.pendingShowPromise.reject(new Error('Service destroyed'));
+      this.pendingShowPromise = null;
+    }
+
     if (this.interstitial) {
       this.interstitial.removeAllListeners();
       this.interstitial = null;
@@ -178,8 +205,6 @@ class AdInterstitialService {
     
     this.isInitialized = false;
     this.isLoaded = false;
-    
-    // // logger.log('🧹 UNLIMITED interstitial service destroyed');
   }
 }
 

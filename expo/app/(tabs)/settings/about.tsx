@@ -14,6 +14,7 @@ import {
 } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
+import { useAppState } from '@/state/useAppState'
 
 
 export default function AboutScreen() {
@@ -32,7 +33,6 @@ export default function AboutScreen() {
     if (newCount === 14) {
       setDebugModeUnlocked()
       setTapCount(0) // Reset counter
-      // Optional: Show some feedback
       console.log('🎮 DEBUG MODE UNLOCKED!')
     }
   }
@@ -131,13 +131,15 @@ export default function AboutScreen() {
               Translate Gen Z slang to standard English and vice versa using AI-powered translation that understands context and nuance. Browse an extensive dictionary of authentic slang terms, save your favorites, and keep a history of translations. Whether you&aposre a parent trying to decode your teen&aposs texts or a Gen Z user explaining something to family, we&aposve got you covered - no cap!
             </Text>
             <Text style={{
-              fontSize: 12,
-              lineHeight: 12,
-              marginTop: 18,
-              marginRight: 6,
-              textAlign: 'right',
-              color: theme.primaryTint,
-            }}>
+                fontSize: 12,
+                lineHeight: 12,
+                marginTop: 18,
+                marginRight: 6,
+                textAlign: 'right',
+                color: theme.primaryTint,
+              }}
+              onPress={handleVersionTap}
+            >
               Version { APP_CONSTANTS.VERSION_NO }
             </Text>
           </View>

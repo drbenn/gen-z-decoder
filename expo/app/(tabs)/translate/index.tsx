@@ -35,7 +35,8 @@ export default function TranslateInputScreen() {
   const updateUsageInfo = useAppState((state) => state.updateUsageInfo)
   const setTranslateError = useAppState((state) => state.setTranslateError)
   const addToHistory = useAppState((state) => state.addToHistory)
-  const usageInfo = useAppState((state) => state.usageInfo) 
+  const usageInfo = useAppState((state) => state.usageInfo)
+  const isPremiumMember = useAppState.getState().isPremiumMember
 
 
   // Check if translation is allowed
@@ -47,23 +48,32 @@ export default function TranslateInputScreen() {
       return
     }
 
-    // 1. Handle ad first (blocking)
+    // 1. Handle ad first (blocking) - ONLY for free users
     incrementTranslationCount()
-    const shouldShowAd = checkInterstitialReady()
-    if (shouldShowAd) {
-      try {
-        const adShown = await adInterstitialService.showAd()
-        
-        if (adShown) {
-          markInterstitialShown()
-        }
+    
+    if (!isPremiumMember) {
+      const shouldShowAd = checkInterstitialReady()
+      if (shouldShowAd) {
+        try {
+          logger.log('Showing interstitial ad for free user...')
+          const adShown = await adInterstitialService.showAd()
+          
+          if (adShown) {
+            markInterstitialShown()
+            logger.log('Interstitial ad completed, proceeding with translation')
+          } else {
+            logger.log('Ad failed to show, proceeding anyway')
+          }
 
-      } catch (error) {
-        logger.log('Ad service error:', error)
+        } catch (error) {
+          logger.log('Ad service error:', error)
+        }
       }
+    } else {
+      logger.log('Premium user - skipping ads')
     }
 
-    logger.log('Translate pressed:', { mode, inputText, autoPlayAudio })
+    logger.log('Translate pressed:', { mode, inputText, autoPlayAudio, isPremiumMember })
     
     // 2. Clear input text immediately
     const textToTranslate = inputText.trim()
@@ -89,7 +99,7 @@ export default function TranslateInputScreen() {
       //     isPremium: false
       //   }
       // }
-
+      
       // 5. Update translation, history and usage from successful response
       const translationHistoryItem: TranslationHistoryItem = {
         id: uuid.v4() as string,

@@ -23,6 +23,22 @@ export class UserController {
     return { user }
   }
 
-
+  // COMMENTED OUT: Uncomment when App Store IAP is ready
+  // @Post('upgrade')
+  // async upgradeToPremium(
+  //   @Request() req: ExpressRequest & { deviceId: string },
+  //   @Body() upgradeData: { purchaseToken: string, productId: string }
+  // ) {
+  //   const result = await this.userService.upgradeToPremium(
+  //     req.deviceId, 
+  //     upgradeData.purchaseToken,
+  //     upgradeData.productId
+  //   )
+  //   return {
+  //     status: 'upgrade processed',
+  //     isPremium: result.isPremium,
+  //     verificationResult: result.verificationResult
+  //   }
+  // }
 
 }

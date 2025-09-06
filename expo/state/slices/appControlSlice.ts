@@ -19,9 +19,10 @@ export interface AppControlSlice {
   setAutoPlayAudio: (enabled: boolean) => void
   setTtsEnabled: (enabled: boolean) => void
   setAppLoading: (loading: boolean) => void
+  setIsPremiumMember: (premium: boolean) => void
 
-  setDebugModeUnlocked: () => void;
-  toggleDebugMode: () => void;
+  setDebugModeUnlocked: () => void
+  toggleDebugMode: () => void
 }
 
 export const appControlSlice: StateCreator<
@@ -54,15 +55,16 @@ export const appControlSlice: StateCreator<
     set({ isAppLoading: loading })
   },
 
-  setDebugModeUnlocked: () => {
-    set({ debugModeUnlocked: true });
-  },
-  toggleDebugMode: () => {
-    const { debugModeActive } = get()
-    set({ debugModeActive: !debugModeActive });
+  setIsPremiumMember: (premium: boolean) => {
+    set({ isPremiumMember: premium })
   },
 
-  setIsPremiumMember: (premium: boolean) => {
-    set({ isPremiumMember: premium });
+  setDebugModeUnlocked: () => {
+    set({ debugModeUnlocked: true })
+  },
+  
+  toggleDebugMode: () => {
+    const { debugModeActive } = get()
+    set({ debugModeActive: !debugModeActive })
   },
 })

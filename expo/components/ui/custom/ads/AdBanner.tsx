@@ -1,5 +1,5 @@
 import AD_UNIT_IDS from '@/constants/AdMob';
-import useAdState from '@/state/useAdState';
+import { useAppState } from '@/state/useAppState';
 import React, { useMemo } from 'react';
 import { Platform, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -7,14 +7,12 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 // Conditional import to avoid errors in development
 let BannerAd: any
 let BannerAdSize: any
-// let TestIds: any
 
 try {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   const GoogleMobileAds = require('react-native-google-mobile-ads')
   BannerAd = GoogleMobileAds.BannerAd
   BannerAdSize = GoogleMobileAds.BannerAdSize
-  // TestIds = GoogleMobileAds.TestIds
 } catch (error) {
   // Development mode - AdMob not available
   // logger.log('ad banner GoogleMobileAds init error: ', error)
@@ -37,30 +35,28 @@ const AdBanner: React.FC<AdBannerProps> = ({
 }) => {
   const insets = useSafeAreaInsets()
   
-  // 🚨 FIX: Get state values directly without calling the spammy function repeatedly!
-  const { adsPurchased, quizCompletionCounter, showAdEvery } = useAdState()
+  // Get state values from the correct app state
+  const isPremiumMember = useAppState((state) => state.isPremiumMember)
+  const translationCount = useAppState((state) => state.translationCount)
+  const lastInterstitialAt = useAppState((state) => state.lastInterstitialAt)
 
-  // 🏆 CHAMPIONSHIP FIX: Calculate banner visibility with useMemo to prevent spam!
+  // Calculate banner visibility with useMemo to prevent unnecessary re-renders
   const shouldShowBanner = useMemo(() => {
-    // If user bought ad removal, NEVER show banner
-    if (adsPurchased) {
-      // Only log once when actually purchased (rare event)
-      // logger.log('🏆 Banner hidden - user purchased ad removal!')
+    // If user is premium, NEVER show banner
+    if (isPremiumMember) {
       return false
     }
     
-    // Always show banner for free users (but don't spam logs!)
+    // Always show banner for free users
     return true
-  }, [adsPurchased]) // Only recalculate when purchase status changes
+  }, [isPremiumMember]) // Only recalculate when premium status changes
 
-  // 🚨 EARLY RETURN: No spam, just clean exit
+  // Early return if premium user
   if (!shouldShowBanner) {
     return null
   }
 
-  // 💰 IF WE GET HERE: User is free user, show banner (no spam logs!)
-
-  // 🎯 Calculate smart spacing based on position
+  // Calculate smart spacing based on position
   const getSmartSpacing = () => {
     if (position === 'fixed-bottom') {
       const baseBottomPadding = Math.max(insets.bottom, 10)
@@ -76,7 +72,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
     return marginVertical
   }
 
-  // 🏆 Container styles
+  // Container styles
   const getContainerStyles = () => {
     const smartSpacing = getSmartSpacing()
     
@@ -100,20 +96,20 @@ const AdBanner: React.FC<AdBannerProps> = ({
     ]
   }
 
-  // 🔥 Development placeholder
+  // Development placeholder
   if (!BannerAd || !BannerAdSize) {
     if (__DEV__) {
       return (
         <View style={getContainerStyles()}>
           <View style={styles.placeholderAd}>
             <Text style={styles.placeholderText}>
-              🏆 UNLIMITED REVENUE BANNER - ALWAYS SHOWS!
+              BANNER AD - FREE USER
             </Text>
             <Text style={[styles.placeholderText, { fontSize: 10, marginTop: 4 }]}>
-              Position: {position} | Next Interstitial: {quizCompletionCounter}/{showAdEvery}
+              Translations: {translationCount} | Last Ad: {lastInterstitialAt}
             </Text>
             <Text style={[styles.placeholderText, { fontSize: 8, color: '#ffd61fff' }]}>
-              NO LIMITS • MAXIMUM REVENUE MODE ACTIVE
+              DEV MODE BANNER
             </Text>
           </View>
         </View>
@@ -122,7 +118,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
     return null
   }
 
-  // 🏆 Real banner ad - UNLIMITED REVENUE MODE!
+  // Real banner ad for free users
   return (
     <View style={getContainerStyles()}>
       <BannerAd
@@ -132,23 +128,22 @@ const AdBanner: React.FC<AdBannerProps> = ({
           requestNonPersonalizedAdsOnly: true,
         }}
         onAdLoaded={() => {
-          // Only log important events, not every render
-          // logger.log('🏆 Banner ad loaded!')
+          // Ad loaded successfully
         }}
         onAdFailedToLoad={(error: any) => {
-          // logger.log('🚨 Banner ad failed to load:', error)
+          console.log('Banner ad failed to load:', error)
         }}
         onAdOpened={() => {
-          // logger.log('👀 Banner ad opened!')
+          // Ad opened
         }}
         onAdClosed={() => {
-          // logger.log('🔙 Banner ad closed!')
+          // Ad closed
         }}
         onAdClicked={() => {
-          // logger.log('👆 Banner ad clicked! MAXIMUM CHA-CHING!')
+          // Ad clicked - revenue!
         }}
         onAdImpression={() => {
-          // logger.log('📊 Banner impression! MONEY MONEY MONEY!')
+          // Ad impression - revenue!
         }}
       />
       
@@ -156,7 +151,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
       {__DEV__ && (
         <View style={styles.debugInfo}>
           <Text style={styles.debugText}>
-            UNLIMITED REVENUE | Next Ad: {quizCompletionCounter}/{showAdEvery}
+            FREE USER | Translations: {translationCount}
           </Text>
         </View>
       )}

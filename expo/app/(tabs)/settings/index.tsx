@@ -13,7 +13,8 @@ export default function SettingsScreen() {
   const insets = useSafeAreaInsets()
 
   const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
-  const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio) 
+  const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio)
+  const debugModeUnlocked = useAppState((state) => state.debugModeUnlocked)
 
   const handleAbout = () => {
     router.push('/settings/about')
@@ -21,6 +22,10 @@ export default function SettingsScreen() {
 
   const handleThanks = () => {
     router.push('/settings/thanks')
+  }
+
+  const handleDebug = () => {
+    router.push('/settings/debug')
   }
 
   const handleShareAppWithFriends = async () => {
@@ -63,7 +68,7 @@ export default function SettingsScreen() {
           resizeMode="repeat"
         />
 
-        <View style={{ paddingTop: theme.verticalMargin }}>
+        <ScrollView style={{ paddingTop: theme.verticalMargin }}>
         
           {/* About */}
           <Pressable 
@@ -221,7 +226,45 @@ export default function SettingsScreen() {
               </Text>
             </View>
           </Pressable>
-        </View>
+
+          {/* Debug Section - Only show if debug mode unlocked */}
+          {debugModeUnlocked && (
+            <Pressable 
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                paddingHorizontal: theme.paddingHorizontal,
+                paddingVertical: 16,
+                minHeight: 70,
+                backgroundColor: 'rgba(255, 0, 0, 0.1)', // Subtle red tint for debug
+              }} 
+              onPress={handleDebug}
+            >
+              <View style={{
+                width: 40,
+                height: 40,
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginRight: 16,
+              }}>
+                <Ionicons name="bug-outline" size={24} color="#ff6b6b" />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={{
+                  fontSize: 17,
+                  fontWeight: '400',
+                  marginBottom: 2,
+                  color: theme.text,
+                }}>Debug Mode</Text>
+                <Text style={{
+                  fontSize: 14,
+                  color: theme.textMuted,
+                }}>Developer testing controls</Text>
+              </View>
+            </Pressable>
+          )}
+
+        </ScrollView>
     </View>
   )
 }

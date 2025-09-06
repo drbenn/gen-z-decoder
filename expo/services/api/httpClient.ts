@@ -1,4 +1,3 @@
-// src/services/api/httpClient.ts
 import { TranslateRequest, TranslateResponse } from '@/types/translate.types'
 import { DeviceService } from './deviceService'
 import { DictionaryDownloadResponse, DictionaryVersionResponse } from '@/types/dictionary.types'
@@ -63,18 +62,43 @@ export class HttpClient {
 
   //////////////////////////////////////////////////////
   //
-  //                TODO: IAP
+  //                User Management
   //
   //////////////////////////////////////////////////////
 
-  // Verify Google Play purchase and mark device as premium
-  // static async upgradeToPremium(data: any): Promise<any> {
-  //   return this.request('/upgrade', {
+  // Get current user info
+  static async getUser(): Promise<any> {
+    return await this.request('/user', { method: 'GET' })
+  }
+
+  // COMMENTED OUT: Uncomment when App Store IAP is ready
+  // static async upgradeToPremium(purchaseData: {
+  //   // Google Play fields
+  //   purchaseToken?: string
+  //   googleOrderId?: string
+  //   // Apple App Store fields
+  //   transactionId?: string
+  //   appStoreReceiptData?: string
+  //   // Common field
+  //   productId: string
+  // }): Promise<{
+  //   status: string
+  //   isPremium: boolean
+  //   verificationResult: any
+  // }> {
+  //   // Detect platform automatically
+  //   const platform = Platform.OS === 'ios' ? 'app_store' : 'google_play'
+  //   
+  //   const upgradeData = {
+  //     platform,
+  //     ...purchaseData
+  //   }
+  //   
+  //   return this.request('/user/upgrade', {
   //     method: 'POST',
-  //     body: JSON.stringify(data),
+  //     body: JSON.stringify(upgradeData),
   //   })
   // }
-
 
 
   // Internal HTTP wrapper - adds device ID auth header to all requests
