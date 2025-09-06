@@ -3,8 +3,13 @@
     "name": "gen-z-decoder",
     "slug": "gen-z-decoder",
     "version": "1.0.0",
+    "splash": {
+      "image": "./assets/images/genz-splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#f7797d"
+    },
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/app-icon.png",
     "scheme": "genzdecoder",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,25 +18,26 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/app-icon.png",
+        "backgroundColor": "#f7797d"
       },
       "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/app-icon.png"
     },
     "plugins": [
       "expo-router",
       [
-        "expo-splash-screen",
+        "react-native-google-mobile-ads",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "androidAppId": "ca-app-pub-1220609263451519~2917789174",
+          "iosAppId": "tbd",
+          "maxAdContentRating": "T",
+          "tagForChildDirectedTreatment": false,
+          "tagForUnderAgeOfConsent": false
         }
       ]
     ],

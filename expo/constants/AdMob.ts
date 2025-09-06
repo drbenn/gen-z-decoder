@@ -29,13 +29,13 @@ const AD_UNIT_IDS = {
     ? 'ca-app-pub-3940256099942544/6300978111' // 🧪 GOOGLE'S OFFICIAL TEST BANNER ID
     : Platform.OS === 'ios'
       ? 'tbd' // 🍎 YOUR REAL iOS BANNER AD UNIT ID
-      : 'tbd', // 🤖 YOUR REAL ANDROID BANNER AD UNIT ID
+      : 'ca-app-pub-1220609263451519/7978544163', // 🤖 YOUR REAL ANDROID BANNER AD UNIT ID
   
   interstitial: (__DEV__ || APP_CONSTANTS.ADS_TESTING_PHASE)
     ? 'ca-app-pub-3940256099942544/1033173712' // 🧪 GOOGLE'S OFFICIAL TEST INTERSTITIAL ID
     : Platform.OS === 'ios'
       ? 'tbd' // 🍎 YOUR REAL iOS INTERSTITIAL AD UNIT ID
-      : 'tbd', // 🤖 YOUR REAL ANDROID INTERSTITIAL AD UNIT ID
+      : 'ca-app-pub-1220609263451519/1289884870', // 🤖 YOUR REAL ANDROID INTERSTITIAL AD UNIT ID
 } as const;
 
 export default AD_UNIT_IDS;
