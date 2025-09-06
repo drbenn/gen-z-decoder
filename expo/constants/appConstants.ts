@@ -29,8 +29,10 @@ const APP_CONSTANTS = {
   DEVELOPER_EMAIL: 'sparkdart.contact@gmail.com',
   DEVELOPER_WEBSITE: 'https://sparkdart.com',
   APP_WEBSITE: 'https://sparkdart.com/apps/genz-translator',
-  APP_WEBSITE_APP_PRIVACY_POLICY: 'https://policies.sparkdart.com/genz-translator/privacy-policy.html',
-  APP_WEBSITE_APP_TERMS_OF_SERVICE: 'https://policies.sparkdart.com/genz-translator/terms-of-service.html',
+  // APP_WEBSITE_APP_PRIVACY_POLICY: 'https://policies.sparkdart.com/genz-translator/privacy-policy.html',
+  // APP_WEBSITE_APP_TERMS_OF_SERVICE: 'https://policies.sparkdart.com/genz-translator/terms-of-service.html',
+  APP_WEBSITE_APP_PRIVACY_POLICY: 'https://sites.google.com/view/sparkdart-policies/gen-z-translator-no-cap-privacy-policy',
+  APP_WEBSITE_APP_TERMS_OF_SERVICE: 'https://sites.google.com/view/sparkdart-policies/gen-z-translator-no-cap-terms-of-service',
 
   // App store
   APPLE_APP_STORE_REVIEW_LINK: `https://apps.apple.com/app/id${appleStoreId}?action=write-review`,
