@@ -7,7 +7,6 @@ import DictionaryContent from '@/components/ui/custom/library/DictionaryContent'
 import FavoriteToggle from '@/components/ui/custom/library/FavoriteToggle';
 import { useAppState } from '@/state/useAppState';
 import { Colors } from '@/constants/Colors';
-;
 
 export default function LibraryScreen() {
   const colorScheme = useColorScheme();
@@ -22,9 +21,7 @@ export default function LibraryScreen() {
   }
 
   return (
-    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom, 
-    // backgroundColor: theme.background
-    }]}>
+    <View style={[styles.container, {paddingTop: insets.top, paddingBottom: insets.bottom}]}>
         {/* Sick svg-ish pattern background */}
         <ImageBackground 
           source={colorScheme === 'dark' 
@@ -43,9 +40,17 @@ export default function LibraryScreen() {
         />
 
         <View style={styles.chipContainer}>
-          <Chip label={'Dictionary'} onPress={() => handleChipPress('Dictionary')}></Chip>
+          <Chip 
+            label={'Dictionary'} 
+            onPress={() => handleChipPress('Dictionary')}
+            active={activeChip === 'Dictionary'}
+          />
           <View style={[{paddingHorizontal: 16}]}>
-            <Chip label={'History'} onPress={() => handleChipPress('History')}></Chip>
+            <Chip 
+              label={'History'} 
+              onPress={() => handleChipPress('History')}
+              active={activeChip === 'History'}
+            />
           </View>
           <FavoriteToggle isActive={isFavoritesChipActive} onPress={() => setIsFavoritesChipActive(!isFavoritesChipActive)}></FavoriteToggle>
         </View>
