@@ -22,12 +22,16 @@ export class HttpClient {
 
   // Send text to ChatGPT for translation (main app function)
   static async translateText(translateRequest: TranslateRequest): Promise<TranslateResponse> {
+    // Add artificial delay for better UX (show loading animation)
+    await new Promise(resolve => setTimeout(resolve, 1500)) // 1.5 second delay
+    
     const result = await this.request('/translate', {
       method: 'POST',
       body: JSON.stringify(translateRequest),
     })
     return result
   }
+
 
   //////////////////////////////////////////////////////
   //

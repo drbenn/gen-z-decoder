@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { View, Text, ScrollView, useColorScheme } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Colors } from '@/constants/Colors'
+import LottieAnimation from '@/components/ui/custom/LottieAnimation'
+import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -90,93 +92,105 @@ export default function TypewriterResult({ loadState, translatedText, errorMessa
         }}>Translation Result</Text>
       </View>
 
-      {/* Loading State */}
-      {loadState === 'loading' && (
-        <View style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 20,
-        }}>
-          <Text style={{
-            fontSize: 18,
-            color: theme.text,
-            fontWeight: '500',
-          }}>Translating...</Text>
-          <Text style={{
-            fontSize: 14,
-            color: theme.textMuted,
-            marginTop: 8,
-          }}>Working some magic</Text>
-        </View>
-      )}
-
-      {/* Error State */}
-      {loadState === 'error' && (
-        <View style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 20,
-        }}>
-          <Ionicons name="warning-outline" size={48} color={theme.error} />
-          <Text style={{
-            fontSize: 18,
-            fontWeight: '600',
-            color: theme.error,
-            marginTop: 16,
-            marginBottom: 8,
-            textAlign: 'center',
-          }}>Translation Failed</Text>
-          <Text style={{
-            fontSize: 14,
-            color: theme.textMuted,
-            textAlign: 'center',
-            lineHeight: 20,
-          }}>{errorMessage}</Text>
-        </View>
-      )}
-
-      {/* Success State with Typewriter Effect */}
-      {loadState === 'success' && (
-        <ScrollView style={{
-          flex: 1,
-          padding: 15,
-        }}>
-          <Text style={{
-            fontSize: 20,
-            color: theme.text,
-            lineHeight: 28,
-            fontWeight: '400',
+      {/* Content Area with Consistent Height */}
+      <View style={{
+        flex: 1,
+        minHeight: 250, // Ensures consistent height across all states
+      }}>
+        {/* Loading State */}
+        {loadState === 'loading' && (
+          <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 20,
           }}>
-            {displayedText}
-            {showCursor && (
-              <Text style={{ 
-                color: theme.primary,
-                fontWeight: 'bold' 
-              }}>|</Text>
-            )}
-          </Text>
-        </ScrollView>
-      )}
+            <Animated.View
+              key="loading"
+              entering={FadeIn.duration(300)}
+              exiting={FadeOut.duration(300)}
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <LottieAnimation
+                animation="loading_cat"
+                width={225}
+                height={225}
+                loop={true}
+              />
+            </Animated.View>
+          </View>
+        )}
 
-      {/* Empty State */}
-      {loadState === 'empty' && (
-        <View style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 20,
-        }}>
-          <Ionicons name="document-outline" size={48} color={theme.textMuted} />
-          <Text style={{
-            fontSize: 16,
-            color: theme.textMuted,
-            marginTop: 16,
-            fontStyle: 'italic',
-          }}>No translation available</Text>
-        </View>
-      )}
+        {/* Error State */}
+        {loadState === 'error' && (
+          <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 20,
+          }}>
+            <Ionicons name="warning-outline" size={48} color={theme.error} />
+            <Text style={{
+              fontSize: 18,
+              fontWeight: '600',
+              color: theme.error,
+              marginTop: 16,
+              marginBottom: 8,
+              textAlign: 'center',
+            }}>Translation Failed</Text>
+            <Text style={{
+              fontSize: 14,
+              color: theme.textMuted,
+              textAlign: 'center',
+              lineHeight: 20,
+            }}>{errorMessage}</Text>
+          </View>
+        )}
+
+        {/* Success State with Typewriter Effect */}
+        {loadState === 'success' && (
+          <ScrollView style={{
+            flex: 1,
+            padding: 15,
+          }}>
+            <Text style={{
+              fontSize: 20,
+              color: theme.text,
+              lineHeight: 28,
+              fontWeight: '400',
+            }}>
+              {displayedText}
+              {showCursor && (
+                <Text style={{ 
+                  color: theme.primary,
+                  fontWeight: 'bold' 
+                }}>|</Text>
+              )}
+            </Text>
+          </ScrollView>
+        )}
+
+        {/* Empty State */}
+        {loadState === 'empty' && (
+          <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 20,
+          }}>
+            <Ionicons name="document-outline" size={48} color={theme.textMuted} />
+            <Text style={{
+              fontSize: 16,
+              color: theme.textMuted,
+              marginTop: 16,
+              fontStyle: 'italic',
+            }}>No translation available</Text>
+          </View>
+        )}
+      </View>
     </View>
   )
 }

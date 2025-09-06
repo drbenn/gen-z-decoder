@@ -22,7 +22,19 @@ export default function ThanksScreen() {
   const insets = useSafeAreaInsets()
 
   const handleLottieWebsitePress = () => {
-    Linking.openURL(APP_CONSTANTS.DEVELOPER_WEBSITE)
+    Linking.openURL('https://lottiefiles.com')
+  }
+
+  const handleDirkWebsitePress = () => {
+    Linking.openURL('https://lottiefiles.com/v0c9mqviju3r0pnm')
+  }
+
+  const handleAarthiWebsitePress = () => {
+    Linking.openURL('https://dribbble.com/aarthibn')
+  }
+
+  const handlePhuongWebsitePress = () => {
+    Linking.openURL('https://lottiefiles.com/mthy5bymut')
   }
 
   return (
@@ -94,14 +106,66 @@ export default function ThanksScreen() {
                   fontSize: 16,
                   textDecorationLine: 'underline',
                   color: theme.primary,
-                }}>https://lottiefiles.com</Text>
+                }}>LottieFiles</Text>
                 <Text style={{
                   fontSize: 16,
                   marginRight: 8,
                   color: theme.text,
-                }}>For their excellent animations platform. 
-                {'\n'}{'\n'}
-                I would have loved to have provided the actual links to the people who created the lottie files - but lottiefiles.com is not the most conducive to finding who created the image after its added to your dashboard...
+                }}>For their animations platform. 
+                </Text>
+              </Pressable>
+
+              <Pressable onPress={handleDirkWebsitePress} style={{
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                marginBottom: 20,
+              }}>
+                <Text style={{
+                  fontSize: 16,
+                  textDecorationLine: 'underline',
+                  color: theme.primary,
+                }}>Dirk Rittberger</Text>
+                <Text style={{
+                  fontSize: 16,
+                  marginRight: 8,
+                  color: theme.text,
+                }}>For the most excellent couple giving thumbs up animation.
+                </Text>
+              </Pressable>
+
+              <Pressable onPress={handleAarthiWebsitePress} style={{
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                marginBottom: 20,
+              }}>
+                <Text style={{
+                  fontSize: 16,
+                  textDecorationLine: 'underline',
+                  color: theme.primary,
+                }}>AARTHI B N</Text>
+                <Text style={{
+                  fontSize: 16,
+                  marginRight: 8,
+                  color: theme.text,
+                }}>For the cool, running gen-z in slippers animation.
+                </Text>
+              </Pressable>
+
+              <Pressable onPress={handlePhuongWebsitePress} style={{
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                marginBottom: 20,
+              }}>
+                <Text style={{
+                  fontSize: 16,
+                  textDecorationLine: 'underline',
+                  color: theme.primary,
+                }}>Phuong-Anh Nguyen </Text>
+                <Text style={{
+                  fontSize: 16,
+                  marginRight: 8,
+                  color: theme.text,
+                }}>For the awesome, loading cat animation.
                 </Text>
               </Pressable>
 
