@@ -1,5 +1,4 @@
 import AD_UNIT_IDS from '@/constants/AdMob';
-import APP_CONSTANTS from '@/constants/appConstants';
 import { useAppState } from '@/state/useAppState';
 import React, { useMemo } from 'react';
 import { Platform, StyleSheet, Text, View, ViewStyle } from 'react-native';
@@ -99,7 +98,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
 
   // Development placeholder
   if (!BannerAd || !BannerAdSize) {
-    if (APP_CONSTANTS.DEBUG_TOOLS_ACTIVE) {
+    if (__DEV__) {
       return (
         <View style={getContainerStyles()}>
           <View style={styles.placeholderAd}>
@@ -149,7 +148,7 @@ const AdBanner: React.FC<AdBannerProps> = ({
       />
       
       {/* Debug info in development */}
-      {APP_CONSTANTS.DEBUG_TOOLS_ACTIVE && (
+      {__DEV__ && (
         <View style={styles.debugInfo}>
           <Text style={styles.debugText}>
             FREE USER | Translations: {translationCount}
