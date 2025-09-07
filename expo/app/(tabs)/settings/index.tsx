@@ -69,6 +69,17 @@ export default function SettingsScreen() {
         />
 
         <ScrollView style={{ paddingTop: theme.verticalMargin }}>
+
+          {/* Page Title */}
+          <View style={{marginBottom: 5}}>
+            <Text style={{
+              fontSize: 24,
+              fontWeight: 700,
+              marginLeft: theme.paddingHorizontal * 1.25,
+              marginBottom: 12,
+              color: theme.text,
+            }}>Settings</Text>
+          </View>
         
           {/* About */}
           <Pressable 

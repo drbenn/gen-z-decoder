@@ -95,7 +95,13 @@ export default function ThanksScreen() {
           showsVerticalScrollIndicator={false}
         >
           {/* Thanks Info */}
-          <View>            
+          <View>        
+            <Text style={{
+              fontSize: 24,
+              fontWeight: '700',
+              marginBottom: 12,
+              color: theme.text,
+            }}>Thanks</Text>    
             <View style={{ marginTop: 0 }}>
               <Pressable onPress={handleLottieWebsitePress} style={{
                 flexDirection: 'column',

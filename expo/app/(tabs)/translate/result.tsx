@@ -1,4 +1,4 @@
-import { Text, Pressable, View, Share, useColorScheme, ImageBackground } from 'react-native'
+import { Text, Pressable, View, Share, useColorScheme, ImageBackground, ScrollView } from 'react-native'
 import * as Speech from 'expo-speech'
 import { useAppState } from '@/state/useAppState'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -103,7 +103,7 @@ export default function TranslateResultScreen() {
   }
 
   return (
-    <View style={{
+    <ScrollView contentContainerStyle={{
       flex: 1,
       paddingHorizontal: theme.paddingHorizontal,
       paddingTop: insets.top + theme.verticalMargin,
@@ -134,6 +134,7 @@ export default function TranslateResultScreen() {
         borderWidth: 1,
         borderColor: theme.borderColor,
         padding: 15,
+        marginBottom: theme.verticalMargin
       }}>
         <Text style={{
           fontSize: 12,
@@ -149,22 +150,6 @@ export default function TranslateResultScreen() {
           lineHeight: 22,
         }}>
           {currentTranslation?.originalText || "Sample original text here..."}
-        </Text>
-      </View>
-
-      <View style={{
-        height: 20,
-        alignItems: 'flex-end',
-        justifyContent: 'center',
-        marginTop: 4,
-        marginBottom: theme.verticalMargin / 2,
-        marginEnd: 10,
-      }}>
-        <Text style={{
-          fontSize: 12,
-          color: theme.text,
-        }}>
-          Daily Translations Remaining ({ usageInfo.isPremium ? 'premium mode' : 'free mode'}):  { usageInfo.remainingTranslations }/{ usageInfo.dailyLimit }
         </Text>
       </View>
 
@@ -248,7 +233,7 @@ export default function TranslateResultScreen() {
       {/* Action Buttons Row 2 */}
       <View style={{
         flexDirection: 'row',
-        marginBottom: theme.verticalMargin,
+        marginBottom: 0,
         gap: 12,
       }}>
         {/* Share Button */}
@@ -321,6 +306,23 @@ export default function TranslateResultScreen() {
           </Pressable>
       </View>
 
+      {/* remaining count for day */}
+      <View style={{
+        height: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 0,
+        marginBottom: 5,
+
+      }}>
+        <Text style={{
+          fontSize: 12,
+          color: theme.text,
+        }}>
+          Daily Translations Remaining ({ usageInfo.isPremium ? 'premium mode' : 'free mode'}):  { usageInfo.remainingTranslations }/{ usageInfo.dailyLimit }
+        </Text>
+      </View>
+
       {/* Translate Again Button */}
       <Pressable 
         style={({ pressed }) => ({
@@ -340,6 +342,6 @@ export default function TranslateResultScreen() {
         }}>TRANSLATE AGAIN</Text>
       </Pressable>
 
-    </View>
+    </ScrollView>
   )
 }

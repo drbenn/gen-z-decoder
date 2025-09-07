@@ -52,9 +52,9 @@ export class TranslateService {
         originalText: request.text,
         mode: request.mode,
         usageInfo: {
-          translationsUsedToday: usageCheck.translationsUsedToday,
+          translationsUsedToday: usageCheck.translationsUsedToday + 1,
           dailyLimit: usageCheck.dailyLimit,
-          remainingTranslations: usageCheck.remainingTranslations,
+          remainingTranslations: usageCheck.remainingTranslations - 1,
           isPremium: usageCheck.isPremium
         }
       }
