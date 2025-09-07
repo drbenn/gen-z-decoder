@@ -16,7 +16,7 @@ const APP_CONSTANTS = {
    *    over thinking i am trying to game ads and ban you.
    */
   ADS_TESTING_PHASE: true, // Set to FALSE !!only!! when submitting to App Store - 
-  DEBUG_TOOLS_ACTIVE: false,
+  DEBUG_TOOLS_ACTIVE: true,
 
   // API Access
   IS_USING_LOCAL_DEV_API: true,
