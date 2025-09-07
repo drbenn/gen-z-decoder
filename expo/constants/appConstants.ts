@@ -19,7 +19,7 @@ const APP_CONSTANTS = {
   DEBUG_TOOLS_ACTIVE: false,
 
   // API Access
-  IS_USING_LOCAL_DEV_API: true,
+  IS_USING_LOCAL_DEV_API: false,
   LOCAL_API_IOS: 'http://localhost:3000/v1',
   LOCAL_API_ANDROID: 'http://10.0.2.2:3000/v1',
   PRODUCTION_WEB_API: 'https://genz.sparkdart.com/v1',

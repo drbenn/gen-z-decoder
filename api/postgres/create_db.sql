@@ -1,17 +1,21 @@
 -- Gen Z Translator Database Setup Script
 -- PostgreSQL Database Creation and Tables
+-- Split into two parts for phpPgAdmin execution
+
+
+
+-- IN NAMECHEAP ** IN NAMECHEAP ** IN NAMECHEAP ** IN NAMECHEAP ** 
+--
+--  Running Query in text field doesnt work! just upload the .sql script
+--  and it will work without breaking up
+--
+-- IN NAMECHEAP ** IN NAMECHEAP ** IN NAMECHEAP ** IN NAMECHEAP ** 
 
 -- ============================================
--- DATABASE CREATION
+-- PART 1: RUN THIS FIRST
 -- ============================================
--- Run this first as superuser:
--- CREATE DATABASE genz_translator;
--- Then connect to the genz_translator database and run the rest:
 
--- ============================================
 -- USERS TABLE
--- ============================================
--- Device-based user tracking (no personal data)
 CREATE TABLE users (
     device_id VARCHAR(255) PRIMARY KEY,
     created_at TIMESTAMP DEFAULT NOW(),
@@ -21,16 +25,9 @@ CREATE TABLE users (
     total_translations INTEGER DEFAULT 0
 );
 
--- Index for performance
-CREATE INDEX idx_users_last_active ON users(last_active);
-CREATE INDEX idx_users_premium_status ON users(premium_status);
-
--- ============================================
 -- DAILY USAGE TABLE  
--- ============================================
--- Track daily translation counts (privacy-first - no content stored)
 CREATE TABLE daily_usage (
-    id UUID PRIMARY KEY,
+    id VARCHAR(36) PRIMARY KEY,
     device_id VARCHAR(255) NOT NULL,
     date DATE NOT NULL,
     translation_count INTEGER DEFAULT 0,
@@ -41,17 +38,9 @@ CREATE TABLE daily_usage (
     CONSTRAINT unique_device_date UNIQUE(device_id, date)
 );
 
--- Indexes for performance
-CREATE INDEX idx_daily_usage_device_id ON daily_usage(device_id);
-CREATE INDEX idx_daily_usage_date ON daily_usage(date);
-CREATE INDEX idx_daily_usage_device_date ON daily_usage(device_id, date);
-
--- ============================================
 -- PURCHASES TABLE (Cross-Platform IAP Support)
--- ============================================
--- Supports both Google Play and Apple App Store purchases
 CREATE TABLE purchases (
-    id UUID PRIMARY KEY,
+    id VARCHAR(36) PRIMARY KEY,
     platform VARCHAR(20) NOT NULL CHECK (platform IN ('google_play', 'app_store')),
     
     -- Google Play specific fields
@@ -67,7 +56,7 @@ CREATE TABLE purchases (
     product_id VARCHAR(100) NOT NULL,
     purchase_date TIMESTAMP DEFAULT NOW(),
     verified BOOLEAN DEFAULT FALSE,
-    device_id VARCHAR(255), -- Optional - links to device that made purchase
+    device_id VARCHAR(255),
     created_at TIMESTAMP DEFAULT NOW(),
     
     -- Constraints
@@ -85,20 +74,9 @@ CREATE TABLE purchases (
         CHECK (platform != 'app_store' OR (transaction_id IS NOT NULL AND app_store_receipt_data IS NOT NULL))
 );
 
--- Indexes for performance  
-CREATE INDEX idx_purchases_platform ON purchases(platform);
-CREATE INDEX idx_purchases_google_order_id ON purchases(google_order_id);
-CREATE INDEX idx_purchases_purchase_token ON purchases(purchase_token);
-CREATE INDEX idx_purchases_transaction_id ON purchases(transaction_id);
-CREATE INDEX idx_purchases_verified ON purchases(verified);
-CREATE INDEX idx_purchases_device_id ON purchases(device_id);
-
--- ============================================
 -- DICTIONARY VERSIONS TABLE
--- ============================================
--- Track dictionary updates (monthly releases)
 CREATE TABLE dictionary_versions (
-    id UUID PRIMARY KEY,
+    id VARCHAR(36) PRIMARY KEY,
     version VARCHAR(50) UNIQUE NOT NULL,
     release_date DATE NOT NULL,
     download_url TEXT NOT NULL,
@@ -106,48 +84,62 @@ CREATE TABLE dictionary_versions (
     created_at TIMESTAMP DEFAULT NOW()
 );
 
--- Only one active version at a time
-CREATE UNIQUE INDEX idx_dictionary_active ON dictionary_versions(is_active) WHERE is_active = true;
-CREATE INDEX idx_dictionary_version ON dictionary_versions(version);
-
--- ============================================
 -- ANALYTICS TABLE (Optional - Business Metrics)
--- ============================================
--- Track usage patterns for business insights (no personal content)
 CREATE TABLE analytics_events (
-    id UUID PRIMARY KEY,
+    id VARCHAR(36) PRIMARY KEY,
     event_type VARCHAR(100) NOT NULL,
     device_id VARCHAR(255),
-    event_data JSONB, -- Flexible for different event types
+    event_data JSONB,
     created_at TIMESTAMP DEFAULT NOW(),
     CONSTRAINT fk_analytics_device FOREIGN KEY (device_id) REFERENCES users(device_id) ON DELETE SET NULL
 );
 
--- Indexes for analytics queries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ============================================
+-- PART 2: RUN THIS SECOND (AFTER PART 1 SUCCEEDS)
+-- ============================================
+
+-- Users table indexes
+CREATE INDEX idx_users_last_active ON users(last_active);
+CREATE INDEX idx_users_premium_status ON users(premium_status);
+
+-- Daily usage indexes
+CREATE INDEX idx_daily_usage_device_id ON daily_usage(device_id);
+CREATE INDEX idx_daily_usage_date ON daily_usage(date);
+CREATE INDEX idx_daily_usage_device_date ON daily_usage(device_id, date);
+
+-- Purchases indexes
+CREATE INDEX idx_purchases_platform ON purchases(platform);
+CREATE INDEX idx_purchases_google_order_id ON purchases(google_order_id);
+CREATE INDEX idx_purchases_purchase_token ON purchases(purchase_token);
+CREATE INDEX idx_purchases_transaction_id ON purchases(transaction_id);
+CREATE INDEX idx_purchases_verified ON purchases(verified);
+CREATE INDEX idx_purchases_device_id ON purchases(device_id);
+
+-- Dictionary versions indexes
+CREATE UNIQUE INDEX idx_dictionary_active ON dictionary_versions(is_active) WHERE is_active = true;
+CREATE INDEX idx_dictionary_version ON dictionary_versions(version);
+
+-- Analytics indexes
 CREATE INDEX idx_analytics_event_type ON analytics_events(event_type);
 CREATE INDEX idx_analytics_created_at ON analytics_events(created_at);
 CREATE INDEX idx_analytics_device_id ON analytics_events(device_id);
-
--- ============================================
--- INITIAL DATA
--- ============================================
--- Insert initial dictionary version (placeholder)
--- INSERT INTO dictionary_versions (version, release_date, download_url, is_active)
--- VALUES ('1.0.0', CURRENT_DATE, 'https://api.sparkdart.com/dictionary/v1.json', true);
-
--- ============================================
--- CROSS-PLATFORM PURCHASE QUERIES
--- ============================================
-
--- Check premium status across platforms:
--- SELECT DISTINCT device_id FROM purchases WHERE verified = true;
-
--- Google Play purchases:
--- SELECT * FROM purchases WHERE platform = 'google_play' AND verified = true;
-
--- Apple App Store purchases:
--- SELECT * FROM purchases WHERE platform = 'app_store' AND verified = true;
-
--- Cross-device premium detection (same purchase used on multiple devices):
--- SELECT purchase_token, COUNT(DISTINCT device_id) as device_count 
--- FROM purchases WHERE platform = 'google_play' GROUP BY purchase_token HAVING COUNT(DISTINCT device_id) > 1;

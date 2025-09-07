@@ -130,7 +130,7 @@ export default function TranslateInputScreen() {
         {/* Background Pattern */}
         <ImageBackground 
           source={colorScheme === 'dark' 
-            ? require('@/assets/images/i-like-food-dark-blue-260.png') 
+            ? require('@/assets/images/i-like-food-light-260.png') 
             : require('@/assets/images/i-like-food-light-260.png')
           }
           style={{

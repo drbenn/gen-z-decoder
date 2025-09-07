@@ -16,7 +16,9 @@ import { UserModule } from './user/user.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: './env/namecheap.production.env',
+    envFilePath: process.env.NODE_ENV?.includes('production')
+      ? '.env'  // Production: simple .env in root
+      : './env/namecheap.production.env',  // Development: specific file in env folder
       isGlobal: true,
     }),
     ThrottlerModule.forRootAsync({
