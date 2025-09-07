@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "gen-z-decoder",
-    "slug": "gen-z-decoder",
+    "name": "Gen-Z Translator: No Cap",
+    "slug": "gen-z-translator-no-cap",
     "version": "1.0.0",
     "splash": {
       "image": "./assets/images/genz-splash.png",
