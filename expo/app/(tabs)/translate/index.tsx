@@ -137,7 +137,7 @@ export default function TranslateInputScreen() {
       flexGrow: 1,
       paddingHorizontal: theme.paddingHorizontal,
       paddingTop: insets.top + theme.verticalMargin,
-      paddingBottom: insets.bottom,
+      paddingBottom: insets.bottom * 3,
     }}>
 
         {/* Background Pattern */}

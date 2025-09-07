@@ -20,12 +20,20 @@ export const useAppState = create<AppState>()(
       name: 'app-storage',
       storage: createJSONStorage(() => AsyncStorage), // ✅ Configure AsyncStorage for React Native
       partialize: (state) => ({
-        translationCount: state.translationCount,
-        lastInterstitialAt: state.lastInterstitialAt,
+        // app control slice
+        isPremiumMember: state.isPremiumMember,
+        debugModeUnlocked: state.debugModeUnlocked,
+        debugModeActive: state.debugModeActive,
         autoPlayAudio: state.autoPlayAudio,
-        ttsEnabled: state.ttsEnabled,
+        ttsEnabled: state.ttsEnabled,  // is this really necessary? kind of duplicate of autoplayaudio?
+
+        // library slice
+        dictionaryTerms: state.dictionaryTerms,
+        translationCount: state.translationCount,
+
+        // translate slice
         translationHistory: state.translationHistory,
-        dictionaryTerms: state.dictionaryTerms
+        usageInfo: state.usageInfo
       }),
     }
   )
