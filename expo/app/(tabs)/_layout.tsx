@@ -5,6 +5,7 @@ import CustomTabBar from '@/components/ui/custom/nav/CustomTabBar'
 export default function TabLayout() {
   return (
     <Tabs
+      initialRouteName="translate"
       tabBar={(props) => <CustomTabBar {...props} />}
       screenOptions={{
         headerShown: false,

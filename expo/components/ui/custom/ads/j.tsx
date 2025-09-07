@@ -3,7 +3,7 @@ import { useAppState } from '@/state/useAppState'
 import { TranslationHistoryItem, TranslationMode } from '@/types/translate.types'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { View, Text, TextInput, Pressable, useColorScheme, ImageBackground, ScrollView } from 'react-native'
+import { View, Text, TextInput, Pressable, useColorScheme, ImageBackground } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
 import uuid from 'react-native-uuid'
@@ -11,6 +11,7 @@ import { Colors } from '@/constants/Colors'
 import LottieAnimation from '@/components/ui/custom/LottieAnimation'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 import { Ionicons } from '@expo/vector-icons'
+import logger from '@/utils/logger'
 
 const MIN_TEXT_LENGTH = 5
 const MAX_TEXT_LENGTH = 200
@@ -37,8 +38,7 @@ export default function TranslateInputScreen() {
   const setTranslateError = useAppState((state) => state.setTranslateError)
   const addToHistory = useAppState((state) => state.addToHistory)
   const usageInfo = useAppState((state) => state.usageInfo)
-  const isPremiumMember = useAppState.getState().isPremiumMember
-
+  const isPremiumMember = useAppState((state) => state.isPremiumMember)
 
   // Check if translation is allowed
   const canTranslate = inputText.trim().length >= MIN_TEXT_LENGTH && inputText.trim().length <= MAX_TEXT_LENGTH && usageInfo.remainingTranslations > 0
@@ -89,18 +89,6 @@ export default function TranslateInputScreen() {
       const response = await HttpClient.translateText({ text: textToTranslate, mode })
       console.log('api response: ', response);
       
-      // const response = {
-      //   translatedText: 'YOLO',
-      //   originalText: 'BOLO',
-      //   mode: TranslationMode.ENGLISH_TO_GENZ,
-      //   usageInfo: {
-      //     translationsUsedToday: 1,
-      //     dailyLimit: 10,
-      //     remainingTranslations: 9,
-      //     isPremium: false
-      //   }
-      // }
-      
       // 5. Update translation, history and usage from successful response
       const translationHistoryItem: TranslationHistoryItem = {
         id: uuid.v4() as string,
@@ -131,15 +119,14 @@ export default function TranslateInputScreen() {
   }
 
   return (
-    <ScrollView contentContainerStyle={{
+    <View style={{
+      flex: 0,
       alignItems: 'stretch',
       justifyContent: 'flex-start',
-      flexGrow: 1,
       paddingHorizontal: theme.paddingHorizontal,
       paddingTop: insets.top + theme.verticalMargin,
       paddingBottom: insets.bottom,
     }}>
-
         {/* Background Pattern */}
         <ImageBackground 
           source={colorScheme === 'dark' 
@@ -198,7 +185,7 @@ export default function TranslateInputScreen() {
           </View>
         )}
 
-                {/* Bold Translate to Text */}
+        {/* Bold Translate to Text - Dark Mode */}
         {colorScheme === 'dark' && (
           <View style={{ position: 'relative', alignItems: 'center' }}>
             {/* Base layer - Red (bottom) */}
@@ -346,7 +333,7 @@ export default function TranslateInputScreen() {
             color: theme.text,
             padding: 15,
             minHeight: 140,
-            marginTop: 0,
+            marginTop: 5,
             marginBottom: 0,
             borderRadius: theme.borderRadius,
             fontSize: 16,
@@ -364,11 +351,10 @@ export default function TranslateInputScreen() {
         <View style={{
           alignItems: 'flex-end',
           justifyContent: 'flex-start',
-          height: 18,
-          marginBottom: 0,
+          marginBottom: theme.verticalMargin,
           marginVertical: 3,
           marginRight: 5,
-          backgroundColor: 'tranparent'
+          backgroundColor: 'red'
         }}>
           {inputText.length > 0 && (
             <Text style={{
@@ -389,107 +375,107 @@ export default function TranslateInputScreen() {
           )}
         </View>
 
-        {/* Auto Play Speech Toggle - Settings page style */}
-        <Pressable
-          style={({ pressed }) => ({
-            flexDirection: 'row',
-            alignItems: 'center',
-            // marginHorizontal: theme.paddingHorizontal / 2,
-            paddingVertical: 4,
-            paddingHorizontal: 10,
-            marginTop: theme.verticalMargin / 2,
-            backgroundColor: pressed ? theme.primaryTint : theme.surface,
-            borderRadius: theme.borderRadius,
-            borderColor: theme.primary,
-            borderWidth: 1
-          })}
-          onPress={() => setAutoPlayAudio(!autoPlayAudio)}
-        >
-          <View style={{
-            width: 40,
-            height: 40,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginRight: 16,
-          }}>
-            <Ionicons name="volume-high-outline" size={24} color={theme.textMuted} />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={{
-              fontSize: 17,
-              fontWeight: '400',
-              marginBottom: 2,
-              color: theme.text,
-            }}>Auto Play Speech</Text>
-            <Text style={{
-              fontSize: 12,
-              color: theme.textMuted,
-            }}>Automatically read translations aloud</Text>
-          </View>
-          
-          {/* Status Box */}
-          <View style={{
-            paddingHorizontal: 12,
-            paddingVertical: 6,
-            borderRadius: theme.borderRadius,
-            borderWidth: 1,
-            width: 50,
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderColor: theme.primary,
-            backgroundColor: autoPlayAudio ? theme.primary : 'transparent',
-          }}>
-            <Text style={{
-              fontSize: 12,
-              fontWeight: '500',
-              color: autoPlayAudio ? '#FFFFFF' : theme.primary,
-            }}>
-              {autoPlayAudio ? 'ON' : 'OFF'}
-            </Text>
-          </View>
-        </Pressable>
 
-        {/* Daily Translations Remaining - Above translate button */}
-        <View style={{
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: theme.verticalMargin / 1.5,
-          marginBottom: 5
-        }}>
-          <Text style={{
-            fontSize: 12,
-            color: theme.text,
-            textAlign: 'center',
-          }}>
-            Daily Translations Remaining ({usageInfo.isPremium ? 'premium mode' : 'free mode'}): {usageInfo.remainingTranslations}/{usageInfo.dailyLimit}
-          </Text>
+        <View style={{ marginTop: 0 }}>
+          {/* Auto Play Speech Toggle - Settings page style */}
+          <Pressable
+            style={({ pressed }) => ({
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingHorizontal: theme.paddingHorizontal,
+              paddingVertical: 0,
+              marginHorizontal: -theme.paddingHorizontal,
+              marginBottom: theme.verticalMargin,
+              backgroundColor: pressed ? 'rgba(0,0,0,0.05)' : 'red',
+            })}
+            onPress={() => setAutoPlayAudio(!autoPlayAudio)}
+          >
+            <View style={{
+              width: 40,
+              height: 40,
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginRight: 16,
+            }}>
+              <Ionicons name="volume-high-outline" size={24} color={theme.textMuted} />
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={{
+                fontSize: 17,
+                fontWeight: '400',
+                marginBottom: 2,
+                color: theme.text,
+              }}>Auto Play Speech</Text>
+              <Text style={{
+                fontSize: 14,
+                color: theme.textMuted,
+              }}>Automatically read translations aloud</Text>
+            </View>
+            
+            {/* Status Box */}
+            <View style={{
+              paddingHorizontal: 12,
+              paddingVertical: 6,
+              borderRadius: theme.borderRadius,
+              borderWidth: 1,
+              width: 50,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderColor: theme.primary,
+              backgroundColor: autoPlayAudio ? theme.primary : 'transparent',
+            }}>
+              <Text style={{
+                fontSize: 12,
+                fontWeight: '500',
+                color: autoPlayAudio ? '#FFFFFF' : theme.primary,
+              }}>
+                {autoPlayAudio ? 'ON' : 'OFF'}
+              </Text>
+            </View>
+          </Pressable>
+
+          {/* Daily Translations Remaining - Above translate button */}
+          {usageInfo.remainingTranslations < 6 && (
+            <View style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: theme.verticalMargin,
+            }}>
+              <Text style={{
+                fontSize: 12,
+                color: theme.text,
+                textAlign: 'center',
+              }}>
+                Daily Translations Remaining ({usageInfo.isPremium ? 'premium mode' : 'free mode'}): {usageInfo.remainingTranslations}/{usageInfo.dailyLimit}
+              </Text>
+            </View>
+          )}
+
+          {/* Translate Button */}
+          <Pressable 
+            style={({ pressed }) => ({
+              backgroundColor: !canTranslate 
+                ? theme.textMuted 
+                : pressed 
+                  ? theme.primaryTint 
+                  : theme.primary,
+              padding: 12,
+              alignItems: 'center',
+              borderRadius: theme.borderRadius,
+              opacity: !canTranslate ? 0.5 : 1,
+            })}
+            onPress={handleTranslate}
+            disabled={!canTranslate}
+          >
+            <Text style={{
+              color: !canTranslate ? theme.textMuted : '#fff',
+              fontSize: 20,
+              fontWeight: 'bold',
+              letterSpacing: 1,
+            }}>TRANSLATE</Text>
+          </Pressable>
         </View>
 
-        {/* Translate Button */}
-        <Pressable 
-          style={({ pressed }) => ({
-            backgroundColor: !canTranslate 
-              ? theme.textMuted 
-              : pressed 
-                ? theme.primaryTint 
-                : theme.primary,
-            padding: 12,
-            alignItems: 'center',
-            borderRadius: theme.borderRadius,
-            marginTop: 0,
-            opacity: !canTranslate ? 0.5 : 1,
-          })}
-          onPress={handleTranslate}
-          disabled={!canTranslate}
-        >
-          <Text style={{
-            color: !canTranslate ? theme.textMuted : '#fff',
-            fontSize: 20,
-            fontWeight: 'bold',
-            letterSpacing: 1,
-          }}>TRANSLATE</Text>
-        </Pressable>
-
-    </ScrollView>
+    </View>
   )
 }
