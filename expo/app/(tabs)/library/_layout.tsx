@@ -36,7 +36,11 @@ export default function LibraryLayout() {
           headerShadowVisible: false,
           headerLargeTitleShadowVisible: false,
           headerStyle: { backgroundColor: theme.background},
+          headerTitleStyle: { color: theme.text},
           headerSearchBarOptions: {
+            textColor: theme.text,
+            hintTextColor: theme.textMuted,
+            headerIconColor: theme.textMuted,
             placeholder: 'Search Library',
             hideWhenScrolling: false,
             onChangeText(e) {

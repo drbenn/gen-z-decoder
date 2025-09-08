@@ -31,8 +31,13 @@ export default function RootLayout() {
 
   useEffect(() => {
     const loadDictionary = () => {
-      if (!dictionaryTerms) {   
+      console.log('load dictionary in layout');
+      console.log(dictionaryTerms);
+      
+      
+      if (!dictionaryTerms || !dictionaryTerms.length) {   
         try {
+          console.log('...no dictionary terms, attempting to load dictionary.json');
           // Import your newDictionary.json with UUIDs       
             const dictionaryData = require('@/assets/data/dictionary.json')
             
