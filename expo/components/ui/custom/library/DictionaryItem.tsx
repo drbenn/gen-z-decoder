@@ -3,6 +3,7 @@ import { View, Text, Pressable, useColorScheme } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Colors } from '@/constants/Colors'
 import { DictionaryEntry } from '@/types/dictionary.types'
+import { TextToSpeechService } from '@/services/TextToSpeechService'
 
 interface DictionaryItemProps {
   item: DictionaryEntry
@@ -13,6 +14,10 @@ export default function DictionaryItem({ item, onToggleFavorite }: DictionaryIte
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
   const [expanded, setExpanded] = useState(false)
+
+  const handleTTS = async (text: string) => {
+    await TextToSpeechService.handleTTS(text)
+  }
 
   return (
     <View style={{
@@ -113,12 +118,40 @@ export default function DictionaryItem({ item, onToggleFavorite }: DictionaryIte
               marginBottom: 4,
             }}>Examples:</Text>
             {item.examples.map((example: string, index: number) => (
-              <Text key={index} style={{
-                fontSize: 14,
-                color: theme.textMuted,
-                fontStyle: 'italic',
-                marginBottom: 2,
-              }}>• {example}</Text>
+              <View 
+                key={index}
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'space-between',
+                  alignItems: 'center'
+                }}
+              >
+                <Text  style={{
+                  fontSize: 14,
+                  color: theme.textMuted,
+                  fontStyle: 'italic',
+                  marginBottom: 2,
+                }}>• {example}</Text>
+
+                <Pressable
+                  style={({ pressed }) => ({
+                    paddingLeft: 10,
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    marginBottom: 10,
+                    backgroundColor: pressed ? theme.primaryTint : theme.surface,
+                    borderWidth: 1,
+                    borderColor: theme.primary,
+                    borderRadius: theme.borderRadius,
+                    height: 30,
+                    width: 40,
+                  })}
+                  onPress={() => handleTTS(example)}
+                >
+                  <Ionicons name="volume-high-outline" size={18} color={theme.primary} />  
+                </Pressable>
+              </View>  
             ))}
           </View>
 

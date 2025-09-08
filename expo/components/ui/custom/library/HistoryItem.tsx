@@ -3,6 +3,7 @@ import { View, Text, Pressable, useColorScheme, Alert } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Colors } from '@/constants/Colors'
 import { TranslationHistoryItem, TranslationMode } from '@/types/translate.types'
+import { TextToSpeechService } from '@/services/TextToSpeechService'
 
 interface HistoryItemProps {
   item: TranslationHistoryItem
@@ -35,6 +36,10 @@ export default function HistoryItem({ item, onToggleFavorite, onRemoveItem }: Hi
         }
       ]
     )
+  }
+
+  const handleTTS = async (text: string) => {
+    await TextToSpeechService.handleTTS(text)
   }
 
   return (
@@ -100,13 +105,49 @@ export default function HistoryItem({ item, onToggleFavorite, onRemoveItem }: Hi
       </View>
     
       <View style={{ marginBottom: 8 }}>
-        <Text style={{
-          fontSize: 16,
-          color: theme.text,
-          marginBottom: 8,
-        }}>
-          {item.mode === TranslationMode.ENGLISH_TO_GENZ ? 'English' : 'Gen Z'} -- {item.originalText}
-        </Text>
+
+        <View 
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            marginTop: 10,
+          }}
+        >
+          <Text style={{
+            fontSize: 16,
+            color: theme.text,
+            paddingTop: 0,
+            flex: 1,
+            flexShrink: 1,
+            marginRight: 10,
+          }}>
+            {item.mode === TranslationMode.ENGLISH_TO_GENZ ? 'English' : 'Gen Z'}: {item.originalText}
+          </Text>
+
+          <Pressable
+            style={({ pressed }) => ({
+              paddingLeft: 10,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginBottom: 10,
+              backgroundColor: pressed ? theme.primaryTint : theme.surface,
+              borderWidth: 1,
+              borderColor: theme.primary,
+              borderRadius: theme.borderRadius,
+              height: 30,
+              width: 40,
+            })}
+            onPress={() => handleTTS(item.originalText)}
+          >
+            <Ionicons name="volume-high-outline" size={18} color={theme.primary} />  
+          </Pressable>
+
+        </View>
+
+
 
       <View style={{marginVertical: theme.verticalMargin / 2, paddingLeft: 10}}>
         <Ionicons 
@@ -116,14 +157,48 @@ export default function HistoryItem({ item, onToggleFavorite, onRemoveItem }: Hi
         />
       </View>
 
-
+      <View 
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          marginVertical: 10,
+        }}
+      >
         <Text style={{
           fontSize: 16,
           color: theme.text,
           fontStyle: 'italic',
+          paddingTop: 0,
+          flex: 1,
+          flexShrink: 1,
+          marginRight: 10,
         }}>
-          {item.mode === TranslationMode.ENGLISH_TO_GENZ ? 'Gen Z' : 'English'} -- {item.translatedText}
+          {item.mode === TranslationMode.ENGLISH_TO_GENZ ? 'Gen Z' : 'English'}: {item.translatedText}
         </Text>
+
+        <Pressable
+          style={({ pressed }) => ({
+            paddingLeft: 10,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: 10,
+            backgroundColor: pressed ? theme.primaryTint : theme.surface,
+            borderWidth: 1,
+            borderColor: theme.primary,
+            borderRadius: theme.borderRadius,
+            height: 30,
+            width: 40,
+          })}
+          onPress={() => handleTTS(item.translatedText)}
+        >
+          <Ionicons name="volume-high-outline" size={18} color={theme.primary} />  
+        </Pressable>
+      </View>
+
+
       </View>
       <Text style={{
         fontSize: 11,

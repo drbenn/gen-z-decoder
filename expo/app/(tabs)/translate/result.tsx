@@ -9,6 +9,7 @@ import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import TypewriterResult from '@/components/ui/custom/translate/TypewriterResult'
 import logger from '@/utils/logger'
+import { TextToSpeechService } from '@/services/TextToSpeechService'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -95,21 +96,8 @@ export default function TranslateResultScreen() {
   }
 
   const handleTTS = async () => {
-    const isSpeaking = await Speech.isSpeakingAsync()
-
-    if (isSpeaking) return
-
-    const availableVoices = await Speech.getAvailableVoicesAsync()
-    // const englishEnhancedVoices = availableVoices.filter((voice: any) => voice.language.includes('en-') && voice.quality === 'Enhanced')
-    //   .map((voice: any) => voice.identifier)
-    // logger.log('englishEnhancedVoices: ', englishEnhancedVoices)
-    
-    Speech.speak(currentTranslation?.translatedText ? currentTranslation.translatedText : 'Thats bitch made bruuh', {
-      language: 'en-US',
-      pitch: 1.4,
-      rate: 0.75,
-      // voice: 'en-gb-x-rjs-local'   // if device doesnt have specific voice should fall back to its default, however, better not to rely on fallback and use default voice.
-    })
+    const translation: string | null = currentTranslation?.translatedText ? currentTranslation.translatedText : null
+    await TextToSpeechService.handleTTS(translation)
   }
 
   const stopTTS = async () => {
