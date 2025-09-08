@@ -11,6 +11,8 @@ import AdBanner from '@/components/ui/custom/ads/AdBanner'
 import { View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Asset } from 'expo-asset'
+import logger from '@/utils/logger'
+import appInitializationService from '@/services/AppInitializationService'
 
 // At the top level, preload the images
 Asset.loadAsync([
@@ -23,39 +25,29 @@ export default function RootLayout() {
   const insets = useSafeAreaInsets()
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
-  const dictionaryTerms = useAppState((state) => state.dictionaryTerms)
-  const setDictionaryTerms = useAppState((state) => state.setDictionaryTerms)
+   const isAppLoading = useAppState((state) => state.isAppLoading)
+  // const dictionaryTerms = useAppState((state) => state.dictionaryTerms)
+  // const setDictionaryTerms = useAppState((state) => state.setDictionaryTerms)
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   })
 
   useEffect(() => {
-    const loadDictionary = () => {
-      console.log('load dictionary in layout');
-      console.log(dictionaryTerms);
-      
-      
-      if (!dictionaryTerms || !dictionaryTerms.length) {   
-        try {
-          console.log('...no dictionary terms, attempting to load dictionary.json');
-          // Import your newDictionary.json with UUIDs       
-            const dictionaryData = require('@/assets/data/dictionary.json')
-            
-            // Set it in state
-            setDictionaryTerms(dictionaryData)
-        } catch (error) {
-          logger.error('Failed to load dictionary:', error)
-          // Set empty array as fallback
-          setDictionaryTerms([])
-        }
+    // Initialize dictionary and other startup tasks
+    const initializeApp = async () => {
+      try {
+        await appInitializationService.initialize()
+        console.log('App initialization complete')
+      } catch (error) {
+        console.error('App initialization failed:', error)
       }
     }
 
-    loadDictionary()
-  }, [setDictionaryTerms])
+    initializeApp()
+  }, [])
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
+  if (!loaded || isAppLoading) {
+    // Show loading while fonts load or app initializes
     return null
   }
 

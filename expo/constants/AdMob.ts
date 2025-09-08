@@ -8,8 +8,9 @@
  * to work at all and set once per installed app.
  */
 
-import { Platform } from 'react-native';
-import APP_CONSTANTS from './appConstants';
+import { Platform } from 'react-native'
+import APP_CONSTANTS from './appConstants'
+import logger from '@/utils/logger'
 /**
  * 🏆  ADMOB CONFIGURATION
  * 
@@ -36,9 +37,9 @@ const AD_UNIT_IDS = {
     : Platform.OS === 'ios'
       ? 'tbd' // 🍎 YOUR REAL iOS INTERSTITIAL AD UNIT ID
       : 'ca-app-pub-1220609263451519/1289884870', // 🤖 YOUR REAL ANDROID INTERSTITIAL AD UNIT ID
-} as const;
+} as const
 
-export default AD_UNIT_IDS;
+export default AD_UNIT_IDS
 
 // =================================================================
 // 🎯  SETUP CHECKLIST
@@ -92,19 +93,19 @@ export default AD_UNIT_IDS;
 // =================================================================
 
 export const getAdUnitInfo = () => {
-  const platform = Platform.OS;
-  const environment = __DEV__ ? 'TEST' : 'PRODUCTION';
+  const platform = Platform.OS
+  const environment = __DEV__ ? 'TEST' : 'PRODUCTION'
   
   return {
     platform,
     environment,
     bannerAdUnit: AD_UNIT_IDS.banner,
     interstitialAdUnit: AD_UNIT_IDS.interstitial,
-  };
-};
+  }
+}
 
 // 🎯 USAGE FOR DEBUGGING:
-// logger.log('🔍  AD UNIT INFO:', getAdUnitInfo());
+// logger.log('🔍  AD UNIT INFO:', getAdUnitInfo())
 
 // =================================================================
 // 🏆 EXAMPLE PRODUCTION IDS (REPLACE WITH YOUR ACTUAL IDS)

@@ -1,8 +1,9 @@
-import AD_UNIT_IDS from '@/constants/AdMob';
-import { useAppState } from '@/state/useAppState';
-import React, { useMemo } from 'react';
-import { Platform, StyleSheet, Text, View, ViewStyle } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import AD_UNIT_IDS from '@/constants/AdMob'
+import { useAppState } from '@/state/useAppState'
+import React, { useMemo } from 'react'
+import { Platform, StyleSheet, Text, View, ViewStyle } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import logger from '@/utils/logger'
 
 // Conditional import to avoid errors in development
 let BannerAd: any

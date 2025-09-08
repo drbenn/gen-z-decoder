@@ -8,7 +8,7 @@ import APP_CONSTANTS from '@/constants/appConstants'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import TypewriterResult from '@/components/ui/custom/translate/TypewriterResult'
-import logger from '@/utils/logger';
+import logger from '@/utils/logger'
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 
@@ -23,7 +23,6 @@ export default function TranslateResultScreen() {
   const isTranslating = useAppState((state) => state.isTranslating)
   const currentTranslation = useAppState((state) => state.currentTranslation)
   const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
-  const ttsEnabled = useAppState((state) => state.ttsEnabled)
   const translateError = useAppState((state) => state.translateError)
   const setAutoPlayAudio = useAppState((state) => state.setAutoPlayAudio) 
   const usageInfo = useAppState((state) => state.usageInfo) 
@@ -194,24 +193,24 @@ export default function TranslateResultScreen() {
             justifyContent: 'center',
             backgroundColor: pressed ? theme.primaryTint : theme.surface,
             borderWidth: 1,
-            borderColor: !ttsEnabled ? theme.borderColor : theme.primary,
+            borderColor: theme.primary,
             borderRadius: theme.borderRadius,
             paddingVertical: 12,
             paddingHorizontal: 16,
-            opacity: !ttsEnabled ? 0.5 : 1,
+            opacity: 1,
           })}
           onPress={handleTTS}
-          disabled={!ttsEnabled || isTranslating}
+          disabled={isTranslating}
         >
           <Ionicons 
             name="volume-high-outline" 
             size={20} 
-            color={!ttsEnabled ? theme.textMuted : theme.primary}
+            color={theme.primary}
           />
           <Text style={{
             fontSize: 14,
             fontWeight: '500',
-            color: !ttsEnabled ? theme.textMuted : theme.text,
+            color: theme.text,
             marginLeft: 8,
           }}>Play Audio</Text>
         </Pressable>
@@ -226,24 +225,24 @@ export default function TranslateResultScreen() {
             justifyContent: 'center',
             backgroundColor: pressed ? theme.primaryTint : theme.surface,
             borderWidth: 1,
-            borderColor: !ttsEnabled ? theme.borderColor : theme.primary,
+            borderColor: theme.primary,
             borderRadius: theme.borderRadius,
             paddingVertical: 12,
             paddingHorizontal: 16,
-            opacity: !ttsEnabled ? 0.5 : 1,
+            opacity: 1,
           })}
           onPress={stopTTS}
-          disabled={!ttsEnabled || isTranslating}
+          disabled={isTranslating}
         >
           <Ionicons 
             name="volume-off-outline" 
             size={20} 
-            color={!ttsEnabled ? theme.textMuted : theme.primary}
+            color={theme.primary}
           />
           <Text style={{
             fontSize: 14,
             fontWeight: '500',
-            color: !ttsEnabled ? theme.textMuted : theme.text,
+            color: theme.text,
             marginLeft: 8,
           }}>Stop Audio</Text>
         </Pressable>
@@ -284,45 +283,68 @@ export default function TranslateResultScreen() {
           </Pressable>
         )}
 
-          {/* Auto Play Speech Toggle */}
-          <Pressable
-            style={({ pressed }) => ({
-              paddingHorizontal: 20,
-              marginBottom: theme.verticalMargin,
-              flex: 1,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: autoPlayAudio ? theme.primary : theme.surface,
-              borderWidth: 1,
-              borderColor: autoPlayAudio ? theme.borderColor : theme.borderColor,
-              borderRadius: theme.borderRadius,
-            })}
-            onPress={handleToggleAutoPlay}
-          >
-            <View style={{
-              flex: 0,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginRight: 0,
-            }}>
-              <Ionicons name="volume-high-outline" size={20} color={autoPlayAudio ? theme.background : theme.text} />
-            </View>
+        {/* Auto Play Speech Toggle */}
+        <Pressable
+          style={({ pressed }) => ({
+            paddingHorizontal: 18,
+            marginBottom: theme.verticalMargin,
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            backgroundColor: autoPlayAudio ? theme.surface : theme.surface,
+            borderWidth: 1,
+            borderColor: autoPlayAudio ? theme.primary : theme.borderColor,
+            borderRadius: theme.borderRadius,
+            minHeight: 50
+          })}
+          onPress={handleToggleAutoPlay}
+        >
+          <View style={{
+            flex: 0,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginRight: 0,
+          }}>
+            <Ionicons name="volume-high-outline" size={20} color={autoPlayAudio ? theme.primary : theme.text} />
             <View>
               <Text style={{
                 fontSize: 14,
                 fontWeight: '500',
-                color: autoPlayAudio ? theme.background : theme.text,
+                color: autoPlayAudio ? theme.text : theme.textMuted,
                 flex: 1,
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginLeft: 6,
+                marginLeft: 14,
                 marginTop: 14
               }}>Auto Play</Text>
             </View>
-          </Pressable>
+          </View>
+
+            {/* Status Box */}
+            <View style={{
+              paddingHorizontal: 2,
+              paddingVertical: 6,
+              borderRadius: theme.borderRadius,
+              borderWidth: 1,
+              width: 30,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderColor: autoPlayAudio ? theme.primary : theme.borderColor,
+              backgroundColor: autoPlayAudio ? theme.primary : 'transparent',
+            }}>
+              <Text style={{
+                fontSize: 7,
+                fontWeight: '500',
+                flexWrap: 'wrap',
+                color: autoPlayAudio ? '#FFFFFF' : theme.textMuted,
+              }}>
+                {autoPlayAudio ? 'ON' : 'OFF'}
+              </Text>
+            </View>
+        </Pressable>
       </View>
 
       {/* remaining count for day */}
@@ -336,7 +358,8 @@ export default function TranslateResultScreen() {
       }}>
         <Text style={{
           fontSize: 12,
-          color: theme.text,
+          fontWeight: usageInfo.remainingTranslations > 3 ? 400 : 900,
+          color: usageInfo.remainingTranslations > 3 ? theme.text : theme.error,
         }}>
           Daily Translations Remaining ({ usageInfo.isPremium ? 'premium mode' : 'free mode'}):  { usageInfo.remainingTranslations }/{ usageInfo.dailyLimit }
         </Text>

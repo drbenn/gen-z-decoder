@@ -5,7 +5,7 @@ import { router, useFocusEffect } from 'expo-router'
 import React, { useState, useEffect, useCallback } from 'react'
 import { View, Text, TextInput, Pressable, useColorScheme, ImageBackground, ScrollView } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { HttpClient } from '@/services/api/httpClient'
+import HttpClientService from '@/services/api/HttpClientService'
 import uuid from 'react-native-uuid'
 import { Colors } from '@/constants/Colors'
 import LottieAnimation from '@/components/ui/custom/LottieAnimation'
@@ -122,8 +122,8 @@ export default function TranslateInputScreen() {
     
     // 4. API call with error handling
     try {      
-      const response = await HttpClient.translateText({ text: textToTranslate, mode })
-      console.log('api response: ', response);
+      const response = await HttpClientService.translateText({ text: textToTranslate, mode })
+      console.log('api response: ', response)
 
       // const response = {
       //   translatedText: 'YOLO',
@@ -532,7 +532,8 @@ export default function TranslateInputScreen() {
         }}>
           <Text style={{
             fontSize: 12,
-            color: theme.text,
+            fontWeight: usageInfo.remainingTranslations > 3 ? 400 : 900,
+            color: usageInfo.remainingTranslations > 3 ? theme.text : theme.error,
             textAlign: 'center',
             opacity: !isConnected ? 0.5 : 1,
           }}>

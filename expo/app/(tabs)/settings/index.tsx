@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import { useAppState } from '@/state/useAppState'
+import logger from '@/utils/logger'
 
 
 export default function SettingsScreen() {

@@ -61,7 +61,7 @@ export const translateSlice: StateCreator<
   },
 
   setTranslateError: (error: string | null) => {
-    set({ error })
+    set({ translateError: error })
   },
 
   addToHistory: (item: TranslationHistoryItem) => {

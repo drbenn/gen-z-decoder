@@ -1,14 +1,14 @@
-import adInterstitialService from '@/services/ad/AdInterstitialService';
-import { useAppState } from '@/state/useAppState';
-import logger from '@/utils/logger'; // Add this import
+import adInterstitialService from '@/services/ad/AdInterstitialService'
+import { useAppState } from '@/state/useAppState'
+import logger from '@/utils/logger' // Add this import
 
-let GoogleMobileAds: any;
+let GoogleMobileAds: any
 
 try {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-  GoogleMobileAds = require('react-native-google-mobile-ads');
+  GoogleMobileAds = require('react-native-google-mobile-ads')
 } catch (error) {
-  logger.log('🚨 : Google Mobile Ads not available:', error);
+  logger.log('🚨 : Google Mobile Ads not available:', error)
 }
 
 const initializeAds = async () => {
@@ -29,13 +29,13 @@ const initializeAds = async () => {
     useAppState.getState().resetAdState()
     logger.log('🔄 : Ad state reset for new session')
     
-    return;
+    return
   }
 
   try {
     // 🚀 STEP 1: Initialize Google Mobile Ads SDK
     logger.log('🚀 : Initializing AdMob SDK...')
-    await GoogleMobileAds.default().initialize();
+    await GoogleMobileAds.default().initialize()
     logger.log('✅ : AdMob SDK initialized successfully!')
     
     // 🎯 STEP 2: Set request configuration
@@ -43,7 +43,7 @@ const initializeAds = async () => {
       maxAdContentRating: 'T', // Teen content rating (perfect for educational app)
       tagForChildDirectedTreatment: false,
       tagForUnderAgeOfConsent: false,
-    });
+    })
     logger.log('⚙️ : AdMob request configuration set!')
     
     // 🔥 STEP 3: Initialize our interstitial service
@@ -69,6 +69,6 @@ const initializeAds = async () => {
       logger.log('❌ : Fallback initialization failed:', fallbackError)
     }
   }
-};
+}
 
-export default initializeAds;
+export default initializeAds

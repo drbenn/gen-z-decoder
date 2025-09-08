@@ -1,10 +1,10 @@
 import { TranslateRequest, TranslateResponse } from '@/types/translate.types'
-import { DeviceService } from './deviceService'
+import { DeviceService } from './DeviceService'
 import { DictionaryDownloadResponse, DictionaryVersionResponse } from '@/types/dictionary.types'
 import { UsageResponse } from '@/types/usage.types'
 import { Platform } from 'react-native'
 import APP_CONSTANTS from '@/constants/appConstants'
-import logger from '@/utils/logger';
+import logger from '@/utils/logger'
 
 // let API_BASE = APP_CONSTANTS.IS_USING_LOCAL_DEV_API ? APP_CONSTANTS.LOCAL_API_IOS : APP_CONSTANTS.PRODUCTION_WEB_API
 
@@ -15,7 +15,7 @@ import logger from '@/utils/logger';
 let API_BASE = APP_CONSTANTS.PRODUCTION_WEB_API
 
 
-export class HttpClient {
+export default class HttpClientService {
 
   //////////////////////////////////////////////////////
   //
@@ -33,7 +33,7 @@ export class HttpClient {
       })
 
       // Add artificial delay for better UX (show loading animation)
-      await new Promise(resolve => setTimeout(resolve, 1500)) // 1.5 second delay
+      await new Promise(resolve => setTimeout(resolve, 500)) // 1.5 second delay
       
       const result = await this.request('/translate', {
         method: 'POST',

@@ -1,24 +1,25 @@
 import { StateCreator } from 'zustand'
 
 export interface AppControlSlice {
+  // General UI State
+  isAppLoading: boolean
+
   // Audio Settings
   autoPlayAudio: boolean
-  ttsEnabled: boolean
 
   // Premium Member
   isPremiumMember: boolean
   
-  // General UI State
-  isAppLoading: boolean
 
   // debug state
   debugModeUnlocked: boolean
   debugModeActive: boolean
   
   // Actions
-  setAutoPlayAudio: (enabled: boolean) => void
-  setTtsEnabled: (enabled: boolean) => void
   setAppLoading: (loading: boolean) => void
+
+  setAutoPlayAudio: (enabled: boolean) => void
+
   setIsPremiumMember: (premium: boolean) => void
 
   setDebugModeUnlocked: () => void
@@ -31,28 +32,23 @@ export const appControlSlice: StateCreator<
   [],
   AppControlSlice
 > = (set, get) => ({
+  isAppLoading: false,
+
   // Audio Settings
   autoPlayAudio: true,
-  ttsEnabled: true,
 
   isPremiumMember: false,
-
-  isAppLoading: false,
 
   debugModeUnlocked: false,
   debugModeActive: false,
 
   // Actions
-  setAutoPlayAudio: (enabled: boolean) => {
-    set({ autoPlayAudio: enabled })
-  },
-
-  setTtsEnabled: (enabled: boolean) => {
-    set({ ttsEnabled: enabled })
-  },
-
   setAppLoading: (loading: boolean) => {
     set({ isAppLoading: loading })
+  },
+
+  setAutoPlayAudio: (enabled: boolean) => {
+    set({ autoPlayAudio: enabled })
   },
 
   setIsPremiumMember: (premium: boolean) => {

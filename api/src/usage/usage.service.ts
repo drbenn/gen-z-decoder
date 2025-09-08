@@ -103,6 +103,10 @@ export class UsageService {
     isPremium: boolean
   }> {
     const today = new Date().toISOString().split('T')[0]
+
+    // Get config values with fallbacks
+    const premiumLimit: number = Number(this.configService.get<string>('PREMIUM_LIMIT')) || 200
+    const freeLimit: number = Number(this.configService.get<string>('FREE_LIMIT')) || 20
     
     const result = await this.db.query(`
       SELECT 
@@ -121,7 +125,7 @@ export class UsageService {
       used = result.rows[0].translations_used_today
     }
 
-    const dailyLimit = isPremium ? 200 : 10
+    const dailyLimit = isPremium ? premiumLimit : freeLimit
     const remaining = Math.max(0, dailyLimit - used)
     
     return {
