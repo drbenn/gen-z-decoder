@@ -1,8 +1,8 @@
 import adInterstitialService from '@/services/ad/AdInterstitialService'
 import { useAppState } from '@/state/useAppState'
 import { TranslationHistoryItem, TranslationMode } from '@/types/translate.types'
-import { router } from 'expo-router'
-import React, { useState } from 'react'
+import { router, useFocusEffect } from 'expo-router'
+import React, { useState, useEffect, useCallback } from 'react'
 import { View, Text, TextInput, Pressable, useColorScheme, ImageBackground, ScrollView } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { HttpClient } from '@/services/api/httpClient'
@@ -11,6 +11,8 @@ import { Colors } from '@/constants/Colors'
 import LottieAnimation from '@/components/ui/custom/LottieAnimation'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 import { Ionicons } from '@expo/vector-icons'
+import NetInfo from '@react-native-community/netinfo'
+import logger from '@/utils/logger'
 
 const MIN_TEXT_LENGTH = 5
 const MAX_TEXT_LENGTH = 200
@@ -22,6 +24,7 @@ export default function TranslateInputScreen() {
   const insets = useSafeAreaInsets()
   const [mode, setMode] = useState<TranslationMode>(TranslationMode.ENGLISH_TO_GENZ)
   const [inputText, setInputText] = useState('')
+  const [isConnected, setIsConnected] = useState(true)
 
   // State value - regular selector
   const autoPlayAudio = useAppState((state) => state.autoPlayAudio)
@@ -39,12 +42,45 @@ export default function TranslateInputScreen() {
   const usageInfo = useAppState((state) => state.usageInfo)
   const isPremiumMember = useAppState.getState().isPremiumMember
 
+  // Clear previous translation when screen comes into focus
+  useFocusEffect(
+    useCallback(() => {
+      // Clear any previous translation and errors
+      setCurrentTranslation(null)
+      setTranslateError(null)
+      
+      logger.log('Input screen focused - cleared previous translation')
+    }, [setCurrentTranslation, setTranslateError])
+  )
+
+  // Network connectivity monitoring
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(state => {
+      setIsConnected(state.isConnected ?? false)
+      logger.log('Network connectivity changed:', {
+        isConnected: state.isConnected,
+        type: state.type,
+        isInternetReachable: state.isInternetReachable
+      })
+    })
+
+    // Check initial connectivity
+    NetInfo.fetch().then(state => {
+      setIsConnected(state.isConnected ?? false)
+    })
+
+    return () => unsubscribe()
+  }, [])
 
   // Check if translation is allowed
-  const canTranslate = inputText.trim().length >= MIN_TEXT_LENGTH && inputText.trim().length <= MAX_TEXT_LENGTH && usageInfo.remainingTranslations > 0
+  const canTranslate = 
+    inputText.trim().length >= MIN_TEXT_LENGTH && 
+    inputText.trim().length <= MAX_TEXT_LENGTH && 
+    usageInfo.remainingTranslations > 0 &&
+    isConnected
 
   const handleTranslate = async () => {
-    // Early return if text is too short
+    // Early return if text is too short or no internet
     if (!canTranslate) {
       return
     }
@@ -88,7 +124,7 @@ export default function TranslateInputScreen() {
     try {      
       const response = await HttpClient.translateText({ text: textToTranslate, mode })
       console.log('api response: ', response);
-      
+
       // const response = {
       //   translatedText: 'YOLO',
       //   originalText: 'BOLO',
@@ -125,6 +161,10 @@ export default function TranslateInputScreen() {
   }
     
   const getPlaceholder = () => {
+    if (!isConnected) {
+      return 'Internet connection required for translation...'
+    }
+    
     return mode === TranslationMode.GENZ_TO_ENGLISH 
       ? 'Enter Gen Z text to translate into English...' 
       : 'Enter English text to translate to Gen Z...'
@@ -136,8 +176,8 @@ export default function TranslateInputScreen() {
       justifyContent: 'flex-start',
       flexGrow: 1,
       paddingHorizontal: theme.paddingHorizontal,
-      paddingTop: insets.top + theme.verticalMargin,
-      paddingBottom: insets.bottom * 3,
+      paddingTop: insets.top,
+      paddingBottom: insets.bottom * 3.5,
     }}>
 
         {/* Background Pattern */}
@@ -247,6 +287,7 @@ export default function TranslateInputScreen() {
           borderColor: theme.borderColor,
           borderWidth: 1,
           padding: 0,
+          opacity: !isConnected ? 0.5 : 1,
         }}>
           <Pressable 
             style={({ pressed }) => ({
@@ -262,6 +303,7 @@ export default function TranslateInputScreen() {
                   : 'transparent',
             })}
             onPress={() => setMode(TranslationMode.ENGLISH_TO_GENZ)}
+            disabled={!isConnected}
           >
             <Text style={{
               color: mode === TranslationMode.ENGLISH_TO_GENZ ? '#fff' : theme.text,
@@ -283,6 +325,7 @@ export default function TranslateInputScreen() {
                   : 'transparent',
             })}
             onPress={() => setMode(TranslationMode.GENZ_TO_ENGLISH)}
+            disabled={!isConnected}
           >
             <Text style={{
               color: mode === TranslationMode.GENZ_TO_ENGLISH ? '#fff' : theme.text,
@@ -297,7 +340,8 @@ export default function TranslateInputScreen() {
           minHeight: 200,
           minWidth: 200,
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          opacity: !isConnected ? 0.5 : 1,
         }}>
           {mode === TranslationMode.GENZ_TO_ENGLISH ? (
             <Animated.View
@@ -341,9 +385,13 @@ export default function TranslateInputScreen() {
         <TextInput
           style={{
             borderWidth: 1,
-            borderColor: !canTranslate && inputText.length > 0 ? theme.error : theme.borderColor,
+            borderColor: !isConnected 
+              ? theme.textMuted 
+              : !canTranslate && inputText.length > 0 
+                ? theme.error 
+                : theme.borderColor,
             backgroundColor: theme.surface,
-            color: theme.text,
+            color: !isConnected ? theme.textMuted : theme.text,
             padding: 15,
             minHeight: 140,
             marginTop: 0,
@@ -351,6 +399,7 @@ export default function TranslateInputScreen() {
             borderRadius: theme.borderRadius,
             fontSize: 16,
             textAlignVertical: 'top',
+            opacity: !isConnected ? 0.5 : 1,
           }}
           placeholder={getPlaceholder()}
           placeholderTextColor={theme.textMuted}
@@ -358,6 +407,7 @@ export default function TranslateInputScreen() {
           onChangeText={setInputText}
           multiline
           numberOfLines={6}
+          editable={isConnected}
         />
 
         {/* Character count / validation message - Right below text input */}
@@ -368,9 +418,9 @@ export default function TranslateInputScreen() {
           marginBottom: 0,
           marginVertical: 3,
           marginRight: 5,
-          backgroundColor: 'tranparent'
+          backgroundColor: 'transparent'
         }}>
-          {inputText.length > 0 && (
+          {inputText.length > 0 && isConnected && (
             <Text style={{
               fontSize: 12,
               color: canTranslate ? theme.textMuted : theme.error,
@@ -394,16 +444,17 @@ export default function TranslateInputScreen() {
           style={({ pressed }) => ({
             flexDirection: 'row',
             alignItems: 'center',
-            // marginHorizontal: theme.paddingHorizontal / 2,
             paddingVertical: 4,
             paddingHorizontal: 10,
-            marginTop: theme.verticalMargin / 2,
+            marginTop: 8,
             backgroundColor: pressed ? theme.primaryTint : theme.surface,
             borderRadius: theme.borderRadius,
             borderColor: theme.primary,
-            borderWidth: 1
+            borderWidth: 1,
+            opacity: !isConnected ? 0.5 : 1,
           })}
           onPress={() => setAutoPlayAudio(!autoPlayAudio)}
+          disabled={!isConnected}
         >
           <View style={{
             width: 40,
@@ -449,6 +500,29 @@ export default function TranslateInputScreen() {
           </View>
         </Pressable>
 
+        {/* Network Status Warning */}
+        {!isConnected && (
+          <View style={{
+            backgroundColor: theme.error,
+            paddingHorizontal: 18,
+            paddingVertical: 12,
+            borderRadius: theme.borderRadius,
+            marginTop: theme.verticalMargin,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
+            <Ionicons name="wifi-outline" size={20} color="#fff" />
+            <Text style={{
+              color: '#fff',
+              fontSize: 14,
+              fontWeight: '500',
+              marginLeft: 16,
+            }}>
+              No internet connection - translation requires internet access
+            </Text>
+          </View>
+        )}
+
         {/* Daily Translations Remaining - Above translate button */}
         <View style={{
           alignItems: 'center',
@@ -460,6 +534,7 @@ export default function TranslateInputScreen() {
             fontSize: 12,
             color: theme.text,
             textAlign: 'center',
+            opacity: !isConnected ? 0.5 : 1,
           }}>
             Daily Translations Remaining ({usageInfo.isPremium ? 'premium mode' : 'free mode'}): {usageInfo.remainingTranslations}/{usageInfo.dailyLimit}
           </Text>
@@ -487,7 +562,9 @@ export default function TranslateInputScreen() {
             fontSize: 20,
             fontWeight: 'bold',
             letterSpacing: 1,
-          }}>TRANSLATE</Text>
+          }}>
+            {!isConnected ? 'NO INTERNET CONNECTION' : 'TRANSLATE'}
+          </Text>
         </Pressable>
 
     </ScrollView>

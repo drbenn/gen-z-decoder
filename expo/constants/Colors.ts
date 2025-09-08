@@ -26,7 +26,7 @@ export const Colors = {
     borderColor: '#ccccd8ff',
     borderRadius: 10,
     standardBodyHorizontalMargin: 20,
-    error: '#ec5d5d',
+    error: '#cf0000ff',
   },
   dark: {
     //  ONLY SUPERIOR  STRAWBERRY LIGHT MODE!
@@ -45,7 +45,7 @@ export const Colors = {
     borderColor: '#ccccd8ff',
     borderRadius: 10,
     standardBodyHorizontalMargin: 20,
-    error: '#ec5d5d',
+    error: '#cf0000ff',
     // text: '#ECEDEE',
     // textMuted: '#ecedee90',
     // background: '#151718',
