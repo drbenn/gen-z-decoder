@@ -3,7 +3,7 @@ import * as Speech from 'expo-speech'
 import { useAppState } from '@/state/useAppState'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { router, useFocusEffect } from 'expo-router'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import APP_CONSTANTS from '@/constants/appConstants'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
@@ -41,14 +41,32 @@ export default function TranslateResultScreen() {
         } else if (currentTranslation) {
           setTranslateLoadState('success')
           autoplayAudio()
+        } else if (isTranslating) {
+          // Still translating - keep loading state
+          setTranslateLoadState('loading')
         } else {
+          // Not translating and no translation - truly empty
           setTranslateLoadState('empty')
         }
       }, 1500) // 1.5 seconds minimum loading for all scenarios
       
       return () => clearTimeout(timer)
-    }, [translateError, currentTranslation])
+    }, [translateError, currentTranslation, isTranslating])
   )
+
+  // Additional useEffect to handle state changes during active translation
+  useEffect(() => {
+    // If translation completes while we're on this screen, update immediately
+    if (!isTranslating && currentTranslation && translateLoadState === 'loading') {
+      setTranslateLoadState('success')
+      autoplayAudio()
+    }
+    
+    // If error occurs while we're on this screen, show error immediately  
+    if (translateError && translateLoadState === 'loading') {
+      setTranslateLoadState('error')
+    }
+  }, [isTranslating, currentTranslation, translateError, translateLoadState])
   
   // Action functions (stable references)
   const handleTranslateAgain = () => {
