@@ -21,7 +21,8 @@
         "foregroundImage": "./assets/images/app-icon.png",
         "backgroundColor": "#f7797d"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.drbenn.genztranslatornocap"
     },
     "web": {
       "bundler": "metro",
@@ -43,6 +44,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "99672f97-055e-4ba1-a225-d11b6d565630"
+      }
     }
   }
 }
