@@ -8,6 +8,7 @@ import APP_CONSTANTS from '@/constants/appConstants'
 import { Colors } from '@/constants/Colors'
 import { Ionicons } from '@expo/vector-icons'
 import TypewriterResult from '@/components/ui/custom/translate/TypewriterResult'
+import logger from '@/utils/logger';
 
 type TranslateLoadState = 'loading' | 'success' | 'error' | 'empty'
 

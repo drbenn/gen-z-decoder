@@ -1,3 +1,4 @@
+import APP_CONSTANTS from '@/constants/appConstants'
 import { TranslateResponse, TranslationHistoryItem } from '@/types/translate.types'
 import { StateCreator } from 'zustand'
 
@@ -45,8 +46,8 @@ export const translateSlice: StateCreator<
   translationHistory: [],
   usageInfo: {
     translationsUsedToday: 0,
-    dailyLimit: 10,
-    remainingTranslations: 10,
+    dailyLimit: APP_CONSTANTS.FREE_MEMBER_DAILY_TRANSLATION_LIMIT,
+    remainingTranslations: APP_CONSTANTS.FREE_MEMBER_DAILY_TRANSLATION_LIMIT,
     isPremium: false,
   },
 
