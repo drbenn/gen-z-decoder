@@ -172,7 +172,7 @@ export default function TranslateResultScreen() {
         marginBottom: theme.verticalMargin,
         gap: 12,
       }}>
-        {/* TTS Button */}
+        {/* TTS PLAY Button */}
         <Pressable 
           style={({ pressed }) => ({
             flex: 1,
@@ -204,7 +204,7 @@ export default function TranslateResultScreen() {
         </Pressable>
 
 
-        {/* TTS Button */}
+        {/* TTS STOP Button */}
         <Pressable 
           style={({ pressed }) => ({
             flex: 1,
