@@ -18,6 +18,7 @@ const MIN_TEXT_LENGTH = 5
 const MAX_TEXT_LENGTH = 200
 
 export default function TranslateInputScreen() {
+  console.log('🎯 TRANSLATE INDEX SCREEN LOADING')
   const colorScheme = useColorScheme()
   const theme = colorScheme === 'light' ? Colors.light : Colors.dark
 
