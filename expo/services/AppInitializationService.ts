@@ -15,6 +15,7 @@ class AppInitializationService {
   }
 
   async initialize(): Promise<void> {
+    console.log('=== APP STARTUP BEGIN ===')
     if (this.isInitialized || this.isInitializing) {
       return
     }
@@ -25,6 +26,7 @@ class AppInitializationService {
     try {
       setAppLoading(true)
       
+      console.log('Zustand rehydration check...')
       // Wait for Zustand to finish rehydrating from AsyncStorage
       await this.waitForRehydration()
 
