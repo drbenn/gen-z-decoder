@@ -1,10 +1,9 @@
-import { TranslateRequest, TranslateResponse } from '@/types/translate.types'
-import { DeviceService } from './DeviceService'
-import { DictionaryDownloadResponse, DictionaryVersionResponse } from '@/types/dictionary.types'
-import { UsageResponse } from '@/types/usage.types'
-import { Platform } from 'react-native'
 import APP_CONSTANTS from '@/constants/appConstants'
+import { DictionaryDownloadResponse, DictionaryVersionResponse } from '@/types/dictionary.types'
+import { TranslateRequest, TranslateResponse } from '@/types/translate.types'
+import { UsageResponse } from '@/types/usage.types'
 import logger from '@/utils/logger'
+import { DeviceService } from './DeviceService'
 
 // let API_BASE = APP_CONSTANTS.IS_USING_LOCAL_DEV_API ? APP_CONSTANTS.LOCAL_API_IOS : APP_CONSTANTS.PRODUCTION_WEB_API
 
@@ -15,7 +14,7 @@ import logger from '@/utils/logger'
 let API_BASE = APP_CONSTANTS.PRODUCTION_WEB_API
 
 
-export default class HttpClientService {
+export class HttpClientService {
 
   //////////////////////////////////////////////////////
   //
